@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://djc2wirwhg3g"]
+[gd_scene load_steps=17 format=3 uid="uid://djc2wirwhg3g"]
 
 [ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://pixel_shader/camera.tscn" id="1_nnx1f"]
 [ext_resource type="Shader" path="res://pixel_shader/pixelart_stylizer.gdshader" id="2_w500p"]
-[ext_resource type="PackedScene" uid="uid://0ujm1lrb06aq" path="res://3DPlants/Aloe_Vera/aloe_vera_neutral/aloevera_neutral.glb" id="3_hoq1c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gg7it"]
 
@@ -196,6 +195,3 @@ libraries = {
 "": SubResource("AnimationLibrary_y7lvy")
 }
 autoplay = "loop"
-
-[node name="aloevera" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_hoq1c")]
-transform = Transform3D(-0.169935, 0, -0.470236, 0, 0.5, 0, 0.470236, 0, -0.169935, -2.5662, 0, 0.872972)
