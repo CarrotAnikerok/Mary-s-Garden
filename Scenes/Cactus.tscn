@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6u46ej1sh4ok"]
+
+[ext_resource type="Script" path="res://Scripts/cactus.gd" id="1_4veha"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4veha")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 101.0
+offset_bottom = 47.0
+text = "Pour Cactus"
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_4veha")
+
+[connection signal="pressed" from="Button" to="Node" method="_on_button_pressed"]
