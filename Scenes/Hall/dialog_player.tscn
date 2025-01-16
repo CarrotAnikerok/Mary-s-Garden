@@ -1,0 +1,140 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5neg873g5wfk"]
+
+[ext_resource type="Script" path="res://Scripts/dialog_player.gd" id="1_4aop0"]
+[ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://Sprites/novel_part/mary_chill.png" id="2_judwd"]
+[ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://Sprites/novel_part/mary_worried.png" id="3_17y02"]
+[ext_resource type="Texture2D" uid="uid://dyxqta62y80pr" path="res://Sprites/novel_part/arin_chill.png" id="3_ompeb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ye78b"]
+
+[sub_resource type="FontFile" id="FontFile_1aufa"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/7/0/ascent = 0.0
+cache/0/7/0/descent = 0.0
+cache/0/7/0/underline_position = 0.0
+cache/0/7/0/underline_thickness = 0.0
+cache/0/7/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_mxfw7"]
+font = SubResource("FontFile_1aufa")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_or6hk"]
+font_size = 9
+font_color = Color(1, 1, 0.243137, 1)
+
+[node name="DialogPlayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_4aop0")
+mary_moods = {
+"mary_chill": ExtResource("2_judwd"),
+"mary_worried": ExtResource("3_17y02")
+}
+
+[node name="MarySprite" type="Sprite2D" parent="."]
+position = Vector2(57, 90)
+scale = Vector2(0.151, 0.167)
+texture = ExtResource("2_judwd")
+
+[node name="GuestSprite" type="Sprite2D" parent="."]
+position = Vector2(263, 91)
+scale = Vector2(0.151, 0.165)
+texture = ExtResource("3_ompeb")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.816631, 0.286571, 0.506709, 1)
+offset_left = 50.0
+offset_top = 134.0
+offset_right = 278.0
+offset_bottom = 176.0
+texture = SubResource("CanvasTexture_ye78b")
+
+[node name="TextLabel" type="Label" parent="."]
+modulate = Color(0.63923, 0.974971, 0.72433, 1)
+offset_left = 56.0
+offset_top = 137.0
+offset_right = 273.0
+offset_bottom = 174.0
+label_settings = SubResource("LabelSettings_mxfw7")
+autowrap_mode = 3
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 120.0
+offset_right = 96.0
+offset_bottom = 133.0
+label_settings = SubResource("LabelSettings_or6hk")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

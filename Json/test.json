@@ -1,0 +1,50 @@
+{
+	"tea": [
+	"I love tea!",
+	"I shuold arrange a tea party..."
+	],
+	"flowers": [
+		"oh i love flowers"
+	],
+	"friends": [
+		"friends....?",
+		"i have them",
+		"...dont i?"
+	], 
+	"first_dialog":[
+	{
+		"name":"Arin",
+		"mood":"arin_chill",
+		"text": [
+			"Привет, мэри! Как твои дела??"]
+	},
+	{
+		"name":"Mary",
+		"mood":"mary_chill",
+		"text": [
+			"..."
+		]
+	},
+	{
+		"name":"Mary",
+		"mood":"mary_worried",
+		"text": [
+			"ААААААААААААААА, ГОВОРЯЩЕЕ АЛОЕ"
+		]
+	},
+	{
+		"name":"Arin",
+		"mood":"arin_chill",
+		"text": [
+			"...",
+		]
+	},
+	{
+		"name":"Arin",
+		"mood":"arin_angry",
+		"text": [
+			"Какое алое",
+		]
+	}
+]
+}

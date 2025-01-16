@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://c6mo7fj5a4yvd"]
+
+[ext_resource type="PackedScene" uid="uid://x1dx72vtbapt" path="res://Scenes/mary.tscn" id="2_e03vk"]
+[ext_resource type="Texture2D" uid="uid://dyxqta62y80pr" path="res://Sprites/novel_part/arin_chill.png" id="2_mrx77"]
+[ext_resource type="PackedScene" uid="uid://0hci7qr3mlmf" path="res://Scenes/dialog_area.tscn" id="2_rafpc"]
+[ext_resource type="Texture2D" uid="uid://bmb3th7v22gy" path="res://Sprites/Aloe.png" id="3_krj7e"]
+[ext_resource type="Texture2D" uid="uid://do4iu333ej1k2" path="res://Sprites/novel_part/arin_angry.png" id="3_sxdxm"]
+[ext_resource type="PackedScene" uid="uid://b5neg873g5wfk" path="res://Scenes/dialog_player.tscn" id="4_pv853"]
+[ext_resource type="Texture2D" uid="uid://cafakvrmht3il" path="res://Sprites/backgroundHaLongl.png" id="4_xd7qa"]
+[ext_resource type="Script" path="res://Scenes/player_camera.gd" id="7_frs3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8b1a"]
+size = Vector2(30, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oohdb"]
+size = Vector2(29, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ehd8"]
+size = Vector2(6, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otbe7"]
+size = Vector2(28, 34)
+
+[node name="Hall" type="Node2D"]
+
+[node name="DialogPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_pv853")]
+scene_text_file = "res://Json/test.json"
+arin_moods = {
+"arin_angry": ExtResource("3_sxdxm"),
+"arin_chill": ExtResource("2_mrx77")
+}
+player = NodePath("../Mary")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(240, 90)
+texture = ExtResource("4_xd7qa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(139, 122)
+scale = Vector2(0.056, 0.068)
+texture = ExtResource("3_krj7e")
+
+[node name="Mary" parent="." instance=ExtResource("2_e03vk")]
+position = Vector2(45, 108)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="Mary"]
+offset = Vector2(0, -18)
+limit_left = 0
+limit_right = 480
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("7_frs3n")
+
+[node name="DialogAreaDoor" parent="." node_paths=PackedStringArray("dialog_player") instance=ExtResource("2_rafpc")]
+position = Vector2(27, 105)
+collision_layer = 3
+collision_mask = 3
+text_key = "flowers"
+dialog_player = NodePath("../DialogPlayer")
+
+[node name="CollisionShape2D" parent="DialogAreaDoor" index="0"]
+shape = SubResource("RectangleShape2D_v8b1a")
+
+[node name="DialogAreaTea" parent="." node_paths=PackedStringArray("dialog_player") instance=ExtResource("2_rafpc")]
+position = Vector2(179, 102)
+collision_layer = 3
+collision_mask = 3
+text_key = "tea"
+dialog_player = NodePath("../DialogPlayer")
+
+[node name="CollisionShape2D" parent="DialogAreaTea" index="0"]
+position = Vector2(4.5, -1)
+shape = SubResource("RectangleShape2D_oohdb")
+
+[node name="DialogAreaFriends" parent="." node_paths=PackedStringArray("dialog_player") instance=ExtResource("2_rafpc")]
+position = Vector2(290, 115)
+text_key = "friends"
+dialog_player = NodePath("../DialogPlayer")
+
+[node name="CollisionShape2D" parent="DialogAreaFriends" index="0"]
+position = Vector2(27, -9)
+shape = SubResource("RectangleShape2D_1ehd8")
+
+[node name="DialogAreaArin" parent="." node_paths=PackedStringArray("dialog_player") instance=ExtResource("2_rafpc")]
+position = Vector2(137, 124)
+text_key = "first_dialog"
+dialog_player = NodePath("../DialogPlayer")
+
+[node name="CollisionShape2D" parent="DialogAreaArin" index="0"]
+position = Vector2(2, -2)
+shape = SubResource("RectangleShape2D_otbe7")
+
+[editable path="DialogAreaDoor"]
+[editable path="DialogAreaTea"]
+[editable path="DialogAreaFriends"]
+[editable path="DialogAreaArin"]
