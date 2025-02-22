@@ -1,40 +1,314 @@
-[gd_scene load_steps=3 format=3 uid="uid://b20sqxrpc7sei"]
+[gd_scene load_steps=10 format=3 uid="uid://b20sqxrpc7sei"]
 
-[ext_resource type="Texture2D" uid="uid://bmb3th7v22gy" path="res://Sprites/Aloe.png" id="1_h5cl4"]
+[ext_resource type="Texture2D" uid="uid://bnpwevpnq26fl" path="res://Sprites/plant_menu.png" id="1_rj0h1"]
+[ext_resource type="Texture2D" uid="uid://bgofdi202ecwe" path="res://Sprites/plant_menu/bg_plant_menu.png" id="4_0p0ua"]
+[ext_resource type="Script" path="res://Scripts/rotate_block.gd" id="4_nvpui"]
+[ext_resource type="Theme" uid="uid://c5hj2gg0bpnnj" path="res://Sprites/plant_menu/button_themes/button.tres" id="4_q04cj"]
+[ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://pixel_shader/camera.tscn" id="5_3gbbb"]
+[ext_resource type="Theme" uid="uid://bxj03pbbshigq" path="res://Sprites/plant_menu/button_themes/spray.tres" id="5_6myum"]
+[ext_resource type="Theme" uid="uid://cfkmw81av5jt8" path="res://Sprites/plant_menu/button_themes/light.tres" id="6_38kvi"]
 
 [sub_resource type="GDScript" id="GDScript_d7kgb"]
-script/source = "extends Node2D
+script/source = "extends Control
 
 @export var active_plant: Plant
+var plant_model;
+@onready var watering_slider_menu = $SliderMenu
+@onready var slider = $SliderMenu/ColorRect2/WaterAmountHSlider
+@onready var slider_label = $SliderMenu/ColorRect2/SliderLabel
 
-func _on_button_pressed():
-	active_plant.waterPlant()
+func _ready():
+	watering_slider_menu.visible = false
+	update_info()
+	
+func _process(_delta):
+	update_info() #а можно я буду это из таймера как-то делть а...
+	
+func _on_exit_button_pressed():
+	queue_free()
+
+func _on_pour_button_pressed():
+	active_plant.pour(slider.value)
+	watering_slider_menu.visible = false
+	$PlantInfo/SoilHumidityInt.text = \"%0.2f%%\" % active_plant.actual_water_coefficent
+
+func _on_watering_can_button_pressed():
+	slider.max_value = active_plant.normal_water_amount
+	watering_slider_menu.visible = true
+	
+func _on_spray_button_pressed():
+	active_plant.spray();
+	$PlantInfo/HumidityInt.text = \"%0.2f%%\" % active_plant.actual_humidity
+	
+func _on_light_button_pressed():
+	active_plant.switch_light(3000)
+	$PlantInfo/LightInt.text = str(active_plant.actual_light_amount)
+		
+
+func _on_water_amount_h_slider_value_changed(value):
+	slider_label.text = str(slider.value)
+
+
+func _on_slider_bg_gui_input(_event):
+	if Input.is_action_just_released(\"click\"):
+		watering_slider_menu.visible = false
+		
+func update_info():
+	var plant_state = active_plant.plant_state
+	#print(\"State \" + str(active_plant.plant_states[plant_state]))
+	if ($SubViewportContainer/SubViewport/Plant3D.get_child_count() > 0):
+		$SubViewportContainer/SubViewport/Plant3D.remove_child(plant_model)
+	plant_model = active_plant.plant_states[plant_state].instantiate()
+	if ($SubViewportContainer/SubViewport/Plant3D.get_child_count() == 0):
+		$SubViewportContainer/SubViewport/Plant3D.add_child(plant_model)
+	
+	#print(\"Plant model \" + str(plant_model))
+	plant_model.position = Vector3.ZERO
+	
+	$PlantInfo/SoilHumidityInt.text = \"%0.2f%%\" % active_plant.actual_water_coefficent
+	$PlantInfo/LightInt.text = str(active_plant.actual_light_amount)
+	$PlantInfo/HumidityInt.text = \"%0.2f%%\" % active_plant.actual_humidity
+	$PlantInfo/TemperatureInt.text = str(active_plant.actual_temperature)
+	
 "
 
-[node name="PlantWindow" type="Node2D"]
+[sub_resource type="Environment" id="Environment_yf8wi"]
+background_mode = 1
+background_color = Color(0.544486, 0.754161, 0.997224, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.651183, 0.802953, 0.946444, 1)
+ambient_light_sky_contribution = 0.13
+
+[node name="PlantWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = SubResource("GDScript_d7kgb")
 
-[node name="PourButton" type="Button" parent="."]
-offset_left = 2.0
-offset_top = 144.0
-offset_right = 121.0
-offset_bottom = 176.0
-text = "Pour the Plant
+[node name="PlantWindowBg" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 321.0
+offset_bottom = 181.0
+color = Color(0.172833, 0.172833, 0.172833, 0.333333)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 10.0
+offset_right = 259.0
+offset_bottom = 162.0
+texture = ExtResource("1_rj0h1")
+expand_mode = 3
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 15.0
+offset_right = 270.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 6
+text = "Leave
 "
 
-[node name="SprayButton" type="Button" parent="."]
-offset_left = 141.0
-offset_top = 140.0
-offset_right = 267.0
-offset_bottom = 176.0
-text = "Spray the Plant"
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 14.0
+offset_right = 170.0
+offset_bottom = 136.0
+stretch = true
 
-[node name="Plant_3D" type="Node2D" parent="."]
-position = Vector2(102, 63)
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(120, 122)
+render_target_update_mode = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Plant_3D"]
-position = Vector2(29, 15)
-scale = Vector2(0.188, 0.198)
-texture = ExtResource("1_h5cl4")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495741, 1.90735e-06, 4.35081)
 
-[connection signal="pressed" from="PourButton" to="." method="_on_button_pressed"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_yf8wi")
+
+[node name="Camera" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_3gbbb")]
+transform = Transform3D(1, 0, 0, 0, 0.915241, 0.402906, 0, -0.402906, 0.915241, 0, 3, 4)
+size = 4.9
+
+[node name="Plant3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
+script = ExtResource("4_nvpui")
+
+[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.000649035, -0.485567, -4.76066)
+texture = ExtResource("4_0p0ua")
+
+[node name="PlantInfo" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 118.0
+offset_right = 270.0
+offset_bottom = 158.0
+color = Color(0.101961, 0.239216, 0.266667, 0.34902)
+metadata/_edit_group_ = true
+
+[node name="SoilHumidity" type="Label" parent="PlantInfo"]
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 6.0
+theme_override_font_sizes/font_size = 4
+text = "Мокрость кома:"
+
+[node name="SoilHumidityInt" type="Label" parent="PlantInfo"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 40.0
+offset_bottom = 6.0
+theme_override_font_sizes/font_size = 4
+text = "0
+"
+
+[node name="Light" type="Label" parent="PlantInfo"]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 41.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 4
+text = "Освещенность:"
+
+[node name="LightInt" type="Label" parent="PlantInfo"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 9.0
+offset_right = 40.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 4
+text = "0
+"
+
+[node name="Humidity" type="Label" parent="PlantInfo"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 41.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 4
+text = "Влажность:"
+
+[node name="HumidityInt" type="Label" parent="PlantInfo"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 19.0
+offset_right = 31.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 4
+text = "0
+"
+
+[node name="Temperature" type="Label" parent="PlantInfo"]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 41.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 4
+text = "Температура:"
+
+[node name="TemperatureInt" type="Label" parent="PlantInfo"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 28.0
+offset_right = 35.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 4
+text = "0
+"
+
+[node name="WorkButtons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WateringCanButton" type="Button" parent="WorkButtons"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 135.0
+offset_right = 85.0
+offset_bottom = 165.0
+theme = ExtResource("4_q04cj")
+theme_override_font_sizes/font_size = 5
+
+[node name="SprayButton" type="Button" parent="WorkButtons"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 136.0
+offset_right = 126.0
+offset_bottom = 161.0
+theme = ExtResource("5_6myum")
+theme_override_font_sizes/font_size = 5
+
+[node name="LightButton" type="Button" parent="WorkButtons"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 137.0
+offset_right = 164.0
+offset_bottom = 162.0
+theme = ExtResource("6_38kvi")
+theme_override_font_sizes/font_size = 5
+text = "
+"
+
+[node name="SliderMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SliderBG" type="ColorRect" parent="SliderMenu"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 10.0
+offset_right = 273.0
+offset_bottom = 162.0
+color = Color(0.172833, 0.172833, 0.172833, 0.333333)
+
+[node name="ColorRect2" type="ColorRect" parent="SliderMenu"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 58.0
+offset_right = 235.0
+offset_bottom = 115.0
+color = Color(0.342875, 0.735886, 0.550254, 1)
+
+[node name="WaterAmountHSlider" type="HSlider" parent="SliderMenu/ColorRect2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 20.0
+offset_right = 133.0
+offset_bottom = 36.0
+
+[node name="PourButton" type="Button" parent="SliderMenu/ColorRect2"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 36.0
+offset_right = 83.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 6
+text = "Pour
+"
+
+[node name="SliderLabel" type="Label" parent="SliderMenu/ColorRect2"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 1.0
+offset_right = 94.0
+offset_bottom = 23.3333
+text = "0"
+horizontal_alignment = 1
+
+[connection signal="gui_input" from="PlantWindowBg" to="." method="_on_slider_bg_gui_input"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="gui_input" from="SubViewportContainer" to="SubViewportContainer/SubViewport/Plant3D" method="_on_sub_viewport_container_gui_input"]
+[connection signal="pressed" from="WorkButtons/WateringCanButton" to="." method="_on_watering_can_button_pressed"]
+[connection signal="pressed" from="WorkButtons/SprayButton" to="." method="_on_spray_button_pressed"]
+[connection signal="pressed" from="WorkButtons/LightButton" to="." method="_on_light_button_pressed"]
+[connection signal="gui_input" from="SliderMenu/SliderBG" to="." method="_on_slider_bg_gui_input"]
+[connection signal="value_changed" from="SliderMenu/ColorRect2/WaterAmountHSlider" to="." method="_on_water_amount_h_slider_value_changed"]
+[connection signal="pressed" from="SliderMenu/ColorRect2/PourButton" to="." method="_on_pour_button_pressed"]

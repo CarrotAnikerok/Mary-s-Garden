@@ -13,34 +13,34 @@
 	], 
 	"first_dialog":[
 	{
-		"name":"Arin",
+		"name":"Арин",
 		"mood":"arin_chill",
 		"text": [
 			"Привет, мэри! Как твои дела??"]
 	},
 	{
-		"name":"Mary",
+		"name":"Мэри",
 		"mood":"mary_chill",
 		"text": [
 			"..."
 		]
 	},
 	{
-		"name":"Mary",
+		"name":"Мэри",
 		"mood":"mary_worried",
 		"text": [
 			"ААААААААААААААА, ГОВОРЯЩЕЕ АЛОЕ"
 		]
 	},
 	{
-		"name":"Arin",
+		"name":"Арин",
 		"mood":"arin_chill",
 		"text": [
 			"...",
 		]
 	},
 	{
-		"name":"Arin",
+		"name":"Арин",
 		"mood":"arin_angry",
 		"text": [
 			"Какое алое",

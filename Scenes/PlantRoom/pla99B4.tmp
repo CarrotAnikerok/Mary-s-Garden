@@ -1,0 +1,209 @@
+[gd_scene load_steps=13 format=3 uid="uid://gao1je8jpkpk"]
+
+[ext_resource type="Texture2D" uid="uid://3weuar16uk4d" path="res://Sprites/bgPlantRoom.png" id="1_8uj76"]
+[ext_resource type="PackedScene" uid="uid://bf65ywlrwh3hp" path="res://Scenes/PlantRoom/garden_slot.tscn" id="2_vglss"]
+[ext_resource type="PackedScene" uid="uid://b6u46ej1sh4ok" path="res://Scenes/Cactus.tscn" id="4_4uwg6"]
+[ext_resource type="Script" path="res://Scenes/PlantRoom/phase_сhange.gd" id="5_b5k77"]
+[ext_resource type="PackedScene" uid="uid://qi51764v7mh7" path="res://Scripts/Plants/kalanchoe_blossfeldiana.tscn" id="5_jgt6p"]
+[ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://Scenes/Aloe_Vera.tscn" id="5_pstx4"]
+[ext_resource type="PackedScene" uid="uid://bbh45jsywolop" path="res://navigator_manager.tscn" id="7_25ep0"]
+
+[sub_resource type="Gradient" id="Gradient_2uby6"]
+offsets = PackedFloat32Array(0, 0.73516)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_evbq6"]
+gradient = SubResource("Gradient_2uby6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_i2a8q"]
+resource_name = "light_moving_hall"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.53, 1.0, 0.53]
+}
+
+[sub_resource type="Animation" id="Animation_crypt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.53]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lo4g1"]
+_data = {
+"RESET": SubResource("Animation_crypt"),
+"light_moving_hall": SubResource("Animation_i2a8q")
+}
+
+[node name="PlantRoom" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(160, 92)
+texture = ExtResource("1_8uj76")
+
+[node name="GardenSlots" type="Node2D" parent="."]
+
+[node name="GardenSlot" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(20, 31)
+
+[node name="GardenSlot2" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(44, 31)
+
+[node name="Cactus" parent="GardenSlots/GardenSlot2" instance=ExtResource("4_4uwg6")]
+
+[node name="GardenSlot3" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(69, 31)
+
+[node name="GardenSlot4" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(93, 31)
+
+[node name="KalanchoeBlossfeldiana" parent="GardenSlots/GardenSlot4" instance=ExtResource("5_jgt6p")]
+
+[node name="GardenSlot5" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(151, 26)
+
+[node name="GardenSlot6" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(175, 26)
+
+[node name="GardenSlot7" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(200, 26)
+
+[node name="GardenSlot8" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(224, 26)
+
+[node name="GardenSlot9" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(20, 79)
+
+[node name="GardenSlot10" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(44, 79)
+
+[node name="GardenSlot11" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(69, 79)
+
+[node name="AloeVera" parent="GardenSlots/GardenSlot11" instance=ExtResource("5_pstx4")]
+
+[node name="GardenSlot12" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(93, 79)
+
+[node name="GardenSlot13" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(150, 76)
+
+[node name="GardenSlot14" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(174, 76)
+
+[node name="GardenSlot15" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(199, 76)
+
+[node name="GardenSlot16" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(223, 76)
+
+[node name="GardenSlot17" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(22, 111)
+
+[node name="GardenSlot18" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(46, 111)
+
+[node name="GardenSlot19" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(71, 111)
+
+[node name="GardenSlot20" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(95, 111)
+
+[node name="GardenSlot21" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(149, 117)
+
+[node name="GardenSlot22" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(173, 117)
+
+[node name="GardenSlot23" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(198, 117)
+
+[node name="GardenSlot24" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(222, 117)
+
+[node name="GardenSlot25" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(21, 157)
+
+[node name="GardenSlot26" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(45, 157)
+
+[node name="GardenSlot27" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(70, 157)
+
+[node name="GardenSlot28" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(94, 157)
+
+[node name="GardenSlot29" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(151, 144)
+
+[node name="GardenSlot30" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(175, 144)
+
+[node name="GardenSlot31" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(200, 144)
+
+[node name="GardenSlot32" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(224, 144)
+
+[node name="PhaseTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+script = ExtResource("5_b5k77")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visibility_layer = 2
+position = Vector2(96, 52)
+scale = Vector2(1, 0.984)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_evbq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PointLight2D"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="ToHallButton" type="Button" parent="."]
+offset_left = 278.0
+offset_top = 162.0
+offset_right = 320.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 8
+text = "To Hall"
+
+[node name="NavigatorManager" parent="." instance=ExtResource("7_25ep0")]
+
+[connection signal="timeout" from="PhaseTimer" to="PhaseTimer" method="_on_timeout"]
+[connection signal="pressed" from="ToHallButton" to="NavigatorManager" method="_on_to_hall_button_pressed"]

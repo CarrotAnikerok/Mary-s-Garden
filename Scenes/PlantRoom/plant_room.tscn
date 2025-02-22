@@ -1,35 +1,147 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4b1rdq1fxbw5"]
+[gd_scene load_steps=8 format=3 uid="uid://gao1je8jpkpk"]
 
-[ext_resource type="Script" path="res://Scripts/choose_plant.gd" id="1_3deo4"]
-[ext_resource type="PackedScene" uid="uid://b20sqxrpc7sei" path="res://Scenes/PlantRoom/plant_window.tscn" id="2_x7rax"]
-[ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://Scenes/Aloe_Vera.tscn" id="3_yts85"]
-[ext_resource type="PackedScene" uid="uid://b6u46ej1sh4ok" path="res://Scenes/Cactus.tscn" id="4_sd0tm"]
+[ext_resource type="Texture2D" uid="uid://3weuar16uk4d" path="res://Sprites/bgPlantRoom.png" id="1_8uj76"]
+[ext_resource type="PackedScene" uid="uid://bf65ywlrwh3hp" path="res://Scenes/PlantRoom/garden_slot.tscn" id="2_vglss"]
+[ext_resource type="PackedScene" uid="uid://bwqsvc17c5c5j" path="res://Sprites/plant_menu/button_themes/chlorophytum_comosum.tscn" id="3_hq6iw"]
+[ext_resource type="Script" path="res://Scenes/PlantRoom/phase_сhange.gd" id="5_b5k77"]
+[ext_resource type="PackedScene" uid="uid://qi51764v7mh7" path="res://Scripts/Plants/kalanchoe_blossfeldiana.tscn" id="5_jgt6p"]
+[ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://Scenes/Aloe_Vera.tscn" id="5_pstx4"]
+[ext_resource type="PackedScene" uid="uid://bbh45jsywolop" path="res://navigator_manager.tscn" id="7_25ep0"]
 
 [node name="PlantRoom" type="Node2D"]
-script = ExtResource("1_3deo4")
 
-[node name="PlantWindow" parent="." instance=ExtResource("2_x7rax")]
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(160, 92)
+texture = ExtResource("1_8uj76")
 
-[node name="AloeVera" parent="." instance=ExtResource("3_yts85")]
-position = Vector2(-5, 3)
+[node name="GardenSlots" type="Node2D" parent="."]
 
-[node name="Cactus" parent="." instance=ExtResource("4_sd0tm")]
-position = Vector2(13, 16)
+[node name="GardenSlot" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(27, 30)
 
-[node name="AloeButton" type="Button" parent="."]
-offset_left = 16.0
-offset_top = 72.0
-offset_right = 118.0
-offset_bottom = 107.0
-text = "AloeButton
-"
+[node name="GardenSlot2" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(51, 30)
 
-[node name="CactusButton" type="Button" parent="."]
-offset_left = 185.0
-offset_top = 74.0
-offset_right = 302.0
-offset_bottom = 105.0
-text = "Cactus Button"
+[node name="GardenSlot3" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(76, 30)
 
-[connection signal="pressed" from="AloeButton" to="." method="_on_aloe_button_pressed"]
-[connection signal="pressed" from="CactusButton" to="." method="_on_cactus_button_pressed"]
+[node name="ChlorophytumComosum" parent="GardenSlots/GardenSlot3" groups=["plant"] instance=ExtResource("3_hq6iw")]
+
+[node name="GardenSlot4" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(100, 30)
+
+[node name="KalanchoeBlossfeldiana" parent="GardenSlots/GardenSlot4" groups=["plant"] instance=ExtResource("5_jgt6p")]
+
+[node name="GardenSlot5" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(154, 25)
+
+[node name="GardenSlot6" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(178, 25)
+
+[node name="GardenSlot7" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(203, 25)
+
+[node name="GardenSlot8" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(227, 25)
+
+[node name="GardenSlot9" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(27, 80)
+
+[node name="GardenSlot10" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(51, 80)
+
+[node name="GardenSlot11" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(76, 80)
+
+[node name="AloeVera" parent="GardenSlots/GardenSlot11" instance=ExtResource("5_pstx4")]
+position = Vector2(0, 0)
+
+[node name="GardenSlot12" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(100, 80)
+
+[node name="GardenSlot13" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(154, 71)
+
+[node name="GardenSlot14" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(178, 71)
+
+[node name="GardenSlot15" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(203, 71)
+
+[node name="GardenSlot16" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(227, 71)
+
+[node name="GardenSlot17" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(27, 106)
+
+[node name="GardenSlot18" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(51, 106)
+
+[node name="GardenSlot19" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(76, 106)
+
+[node name="GardenSlot20" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(100, 106)
+
+[node name="GardenSlot21" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(154, 121)
+
+[node name="GardenSlot22" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(178, 121)
+
+[node name="GardenSlot23" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(203, 121)
+
+[node name="GardenSlot24" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(227, 121)
+
+[node name="GardenSlot25" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(27, 155)
+
+[node name="GardenSlot26" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(51, 155)
+
+[node name="GardenSlot27" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(76, 155)
+
+[node name="GardenSlot28" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(100, 155)
+
+[node name="GardenSlot29" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(154, 145)
+
+[node name="GardenSlot30" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(178, 145)
+
+[node name="GardenSlot31" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(203, 145)
+
+[node name="GardenSlot32" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(227, 145)
+
+[node name="PhaseTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+script = ExtResource("5_b5k77")
+
+[node name="ToHallButton" type="Button" parent="."]
+offset_left = 278.0
+offset_top = 162.0
+offset_right = 320.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 8
+text = "To Hall"
+
+[node name="NavigatorManager" parent="." instance=ExtResource("7_25ep0")]
+
+[connection signal="timeout" from="PhaseTimer" to="PhaseTimer" method="_on_timeout"]
+[connection signal="pressed" from="ToHallButton" to="NavigatorManager" method="_on_to_hall_button_pressed"]

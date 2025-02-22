@@ -1,21 +1,21 @@
-extends Panel
+extends StaticBody2D
 
 @export var item: Node2D #даа нужно что то с этим делать
+@onready var sprite = $Sprite2D
 var can_place = false
 
-func _process(delta):
+func _process(_delta):
 	pass
 	if global.is_dragging:
-		visible = true
+		sprite.visible = true
 	else:
-		pass
-		#visible = false
+		pass #item dissapears
+		sprite.visible = false
 		
 
 func _on_mouse_entered():
-	focus_mode = 1
 	if global.is_dragging:
-		print("can_place!!!!!")
+		#print("can_place!!!!!")
 		can_place = true
 		
 

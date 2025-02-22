@@ -1,94 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5neg873g5wfk"]
+[gd_scene load_steps=10 format=3 uid="uid://b5neg873g5wfk"]
 
 [ext_resource type="Script" path="res://Scripts/dialog_player.gd" id="1_4aop0"]
-[ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://Sprites/novel_part/mary_chill.png" id="2_judwd"]
-[ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://Sprites/novel_part/mary_worried.png" id="3_17y02"]
-[ext_resource type="Texture2D" uid="uid://dyxqta62y80pr" path="res://Sprites/novel_part/arin_chill.png" id="3_ompeb"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_ye78b"]
-
-[sub_resource type="FontFile" id="FontFile_1aufa"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/7/0/ascent = 0.0
-cache/0/7/0/descent = 0.0
-cache/0/7/0/underline_position = 0.0
-cache/0/7/0/underline_thickness = 0.0
-cache/0/7/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/8/0/ascent = 0.0
-cache/0/8/0/descent = 0.0
-cache/0/8/0/underline_position = 0.0
-cache/0/8/0/underline_thickness = 0.0
-cache/0/8/0/scale = 1.0
-cache/0/9/0/ascent = 0.0
-cache/0/9/0/descent = 0.0
-cache/0/9/0/underline_position = 0.0
-cache/0/9/0/underline_thickness = 0.0
-cache/0/9/0/scale = 1.0
-cache/0/10/0/ascent = 0.0
-cache/0/10/0/descent = 0.0
-cache/0/10/0/underline_position = 0.0
-cache/0/10/0/underline_thickness = 0.0
-cache/0/10/0/scale = 1.0
-cache/0/11/0/ascent = 0.0
-cache/0/11/0/descent = 0.0
-cache/0/11/0/underline_position = 0.0
-cache/0/11/0/underline_thickness = 0.0
-cache/0/11/0/scale = 1.0
-cache/0/12/0/ascent = 0.0
-cache/0/12/0/descent = 0.0
-cache/0/12/0/underline_position = 0.0
-cache/0/12/0/underline_thickness = 0.0
-cache/0/12/0/scale = 1.0
-cache/0/13/0/ascent = 0.0
-cache/0/13/0/descent = 0.0
-cache/0/13/0/underline_position = 0.0
-cache/0/13/0/underline_thickness = 0.0
-cache/0/13/0/scale = 1.0
-cache/0/14/0/ascent = 0.0
-cache/0/14/0/descent = 0.0
-cache/0/14/0/underline_position = 0.0
-cache/0/14/0/underline_thickness = 0.0
-cache/0/14/0/scale = 1.0
-cache/0/15/0/ascent = 0.0
-cache/0/15/0/descent = 0.0
-cache/0/15/0/underline_position = 0.0
-cache/0/15/0/underline_thickness = 0.0
-cache/0/15/0/scale = 1.0
-cache/0/17/0/ascent = 0.0
-cache/0/17/0/descent = 0.0
-cache/0/17/0/underline_position = 0.0
-cache/0/17/0/underline_thickness = 0.0
-cache/0/17/0/scale = 1.0
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-cache/0/19/0/ascent = 0.0
-cache/0/19/0/descent = 0.0
-cache/0/19/0/underline_position = 0.0
-cache/0/19/0/underline_thickness = 0.0
-cache/0/19/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
+[ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://Sprites/novel_part/Mary/mary_chill.png" id="2_judwd"]
+[ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://Sprites/novel_part/Mary/mary_worried.png" id="3_17y02"]
+[ext_resource type="Texture2D" uid="uid://ve4jpk7g24g2" path="res://Sprites/novel_part/Arin/arin_chill_1.png" id="3_ompeb"]
+[ext_resource type="Texture2D" uid="uid://dwm2m8lggyump" path="res://Sprites/novel_part/text_box.png" id="5_wm8ow"]
+[ext_resource type="FontFile" uid="uid://b8pvdi5csuer8" path="res://Fonts/Blogger/Blogger_Sans-Medium.otf" id="6_dhbxe"]
+[ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://Fonts/Neucha/Neucha-Regular.ttf" id="6_p3hlc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mxfw7"]
-font = SubResource("FontFile_1aufa")
+line_spacing = 1.0
+font = ExtResource("6_dhbxe")
 font_size = 10
+shadow_size = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_or6hk"]
+font = ExtResource("6_p3hlc")
 font_size = 9
-font_color = Color(1, 1, 0.243137, 1)
 
 [node name="DialogPlayer" type="CanvasLayer"]
 process_mode = 3
@@ -99,37 +27,39 @@ mary_moods = {
 }
 
 [node name="MarySprite" type="Sprite2D" parent="."]
-position = Vector2(57, 90)
+position = Vector2(65, 87)
 scale = Vector2(0.151, 0.167)
 texture = ExtResource("2_judwd")
 
 [node name="GuestSprite" type="Sprite2D" parent="."]
-position = Vector2(263, 91)
+position = Vector2(263, 90)
 scale = Vector2(0.151, 0.165)
 texture = ExtResource("3_ompeb")
 
 [node name="Background" type="TextureRect" parent="."]
-modulate = Color(0.816631, 0.286571, 0.506709, 1)
-offset_left = 50.0
-offset_top = 134.0
-offset_right = 278.0
-offset_bottom = 176.0
-texture = SubResource("CanvasTexture_ye78b")
+offset_left = 1.0
+offset_top = 128.0
+offset_right = 319.0
+offset_bottom = 181.0
+texture = ExtResource("5_wm8ow")
+expand_mode = 5
 
-[node name="TextLabel" type="Label" parent="."]
-modulate = Color(0.63923, 0.974971, 0.72433, 1)
-offset_left = 56.0
-offset_top = 137.0
-offset_right = 273.0
-offset_bottom = 174.0
+[node name="TextLabel" type="Label" parent="Background"]
+modulate = Color(0.94902, 0.219608, 0.415686, 1)
+layout_mode = 0
+offset_left = 53.0
+offset_top = 14.0
+offset_right = 267.0
+offset_bottom = 44.0
 label_settings = SubResource("LabelSettings_mxfw7")
 autowrap_mode = 3
 
-[node name="NameLabel" type="Label" parent="."]
-offset_left = 52.0
-offset_top = 120.0
-offset_right = 96.0
-offset_bottom = 133.0
+[node name="NameLabel" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 3.0
+offset_right = 101.0
+offset_bottom = 14.0
 label_settings = SubResource("LabelSettings_or6hk")
 
 [node name="Timer" type="Timer" parent="."]

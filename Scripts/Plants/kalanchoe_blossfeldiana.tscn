@@ -1,0 +1,34 @@
+[gd_scene load_steps=11 format=3 uid="uid://qi51764v7mh7"]
+
+[ext_resource type="Script" path="res://Scripts/Plants/kalanchoe_blossfeldiana.gd" id="1_f2sa8"]
+[ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://Scenes/PlantRoom/draggable_item.tscn" id="1_qy24j"]
+[ext_resource type="PackedScene" uid="uid://dtwsnyi4jpog8" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Perfect/Kalanchoe_Perfect_End.glb" id="2_dahl0"]
+[ext_resource type="PackedScene" uid="uid://0upibrc5edvd" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Good/Kalanchoe_Good_End.glb" id="3_rgyke"]
+[ext_resource type="PackedScene" uid="uid://45mnohumabfi" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Neutral/Kalanchoe_Neutral_End.glb" id="4_uauvx"]
+[ext_resource type="PackedScene" uid="uid://c6dkbix55uujq" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalacnhoe_Bad/Kalanchoe_Bad_End.glb" id="5_crbfn"]
+[ext_resource type="PackedScene" uid="uid://b88y0nooqeqlt" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Horrible/Kalanchoe_Horrible_End.glb" id="6_o65k8"]
+[ext_resource type="PackedScene" uid="uid://d1trhmyocaj5c" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalacnhoe_Dead/Kalanchoe_Dead_End.glb" id="7_y2gir"]
+[ext_resource type="Texture2D" uid="uid://c26bil8bu76of" path="res://Sprites/pixel_plants/kalanchoe.png" id="9_3ykcs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a3gp"]
+size = Vector2(17, 22)
+
+[node name="KalanchoeBlossfeldiana" type="Node2D"]
+script = ExtResource("1_f2sa8")
+plant_states = [ExtResource("2_dahl0"), ExtResource("3_rgyke"), ExtResource("4_uauvx"), ExtResource("5_crbfn"), ExtResource("6_o65k8"), ExtResource("7_y2gir")]
+
+[node name="DraggableItem" parent="." instance=ExtResource("1_qy24j")]
+position = Vector2(1, -5)
+
+[node name="DraggableCollision" parent="DraggableItem" index="0"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_7a3gp")
+
+[node name="DropableCollision" parent="DraggableItem/DraggableCollision/DropableArea" index="0"]
+position = Vector2(0.5, 5.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+texture = ExtResource("9_3ykcs")
+
+[editable path="DraggableItem"]

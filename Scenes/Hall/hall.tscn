@@ -1,16 +1,90 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6mo7fj5a4yvd"]
+[gd_scene load_steps=48 format=3 uid="uid://c6mo7fj5a4yvd"]
 
 [ext_resource type="PackedScene" uid="uid://b5neg873g5wfk" path="res://Scenes/Hall/dialog_player.tscn" id="1_wkokc"]
-[ext_resource type="Texture2D" uid="uid://do4iu333ej1k2" path="res://Sprites/novel_part/arin_angry.png" id="2_7awf8"]
-[ext_resource type="Texture2D" uid="uid://dyxqta62y80pr" path="res://Sprites/novel_part/arin_chill.png" id="3_e8ohk"]
-[ext_resource type="Texture2D" uid="uid://cafakvrmht3il" path="res://Sprites/backgroundHaLongl.png" id="4_7vbx1"]
+[ext_resource type="Texture2D" uid="uid://do4iu333ej1k2" path="res://Sprites/novel_part/Arin/arin_angry.png" id="2_7awf8"]
+[ext_resource type="Texture2D" uid="uid://cnwhj6jirobbm" path="res://Scripts/Hall/bgs/HallBackground.png" id="4_vg36q"]
+[ext_resource type="Texture2D" uid="uid://dqk1ntr6ieia8" path="res://Scripts/Hall/bgs/plant_bg2.png" id="5_84350"]
+[ext_resource type="Texture2D" uid="uid://cysiq70465pgn" path="res://Scripts/Hall/bgs/plant_bg.png" id="5_hboqj"]
 [ext_resource type="Texture2D" uid="uid://df81sumoux41f" path="res://Sprites/arinStatic.png" id="5_tuisg"]
 [ext_resource type="PackedScene" uid="uid://x1dx72vtbapt" path="res://Scenes/Hall/mary.tscn" id="6_6dx4x"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="7_bob82"]
 [ext_resource type="PackedScene" uid="uid://0hci7qr3mlmf" path="res://Scenes/Hall/dialog_area.tscn" id="8_vgbn8"]
+[ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://Sprites/novel_part/Mary/mary_chill.png" id="9_quuig"]
+[ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://Sprites/novel_part/Mary/mary_worried.png" id="10_15elq"]
+[ext_resource type="Texture2D" uid="uid://bs1hsa04wul3i" path="res://Sprites/novel_part/Mary/mary_confidence.png" id="11_revie"]
+[ext_resource type="Texture2D" uid="uid://0bvlsgpp7h3h" path="res://Sprites/novel_part/Mary/mary_fear.png" id="12_tk8qh"]
+[ext_resource type="Texture2D" uid="uid://db68wkty71otq" path="res://Sprites/novel_part/Mary/mary_sad_1.png" id="13_vs4os"]
+[ext_resource type="Texture2D" uid="uid://cemyrxk5c85gw" path="res://Sprites/novel_part/Mary/mary_sad_2.png" id="14_th5da"]
+[ext_resource type="Texture2D" uid="uid://ve4jpk7g24g2" path="res://Sprites/novel_part/Arin/arin_chill_1.png" id="16_rllwe"]
+[ext_resource type="Texture2D" uid="uid://blbb6tph45cae" path="res://Sprites/novel_part/Arin/arin_chill_2.png" id="17_3l4ws"]
+[ext_resource type="Texture2D" uid="uid://fg41lxgeu405" path="res://Sprites/novel_part/Arin/arin_sad.png" id="18_e8l5j"]
+[ext_resource type="Texture2D" uid="uid://dmlfxw165ntyu" path="res://Sprites/novel_part/Arin/arin_tired.png" id="19_vlhtu"]
+[ext_resource type="Texture2D" uid="uid://cndta7lttsov4" path="res://Sprites/novel_part/Arin/arin_worried.png" id="20_shaur"]
+[ext_resource type="Texture2D" uid="uid://k3q3qq00dejm" path="res://Sprites/novel_part/Scarlett/scarlett_arrogance_1.png" id="20_wt2ht"]
+[ext_resource type="Texture2D" uid="uid://tyvy5i31u3as" path="res://Sprites/novel_part/Scarlett/scarlett_arrogance_2.png" id="21_sd0lx"]
+[ext_resource type="Texture2D" uid="uid://ca74enrietump" path="res://Sprites/novel_part/Scarlett/scarlett_chill_1.png" id="22_6b4be"]
+[ext_resource type="Texture2D" uid="uid://bql0kcnj88st8" path="res://Sprites/novel_part/Scarlett/scarlett_chill_2.png" id="23_qeaj2"]
+[ext_resource type="Texture2D" uid="uid://lgx58yw154ss" path="res://Sprites/novel_part/Scarlett/scarlett_sigh.png" id="24_iir4v"]
+[ext_resource type="Texture2D" uid="uid://2l6oribw2le3" path="res://Sprites/novel_part/Scarlett/scarlett_thinks.png" id="25_scdvu"]
+[ext_resource type="Texture2D" uid="uid://bhyftmqt22hdi" path="res://Sprites/novel_part/Mark/mark_confidence.png" id="26_4ynti"]
+[ext_resource type="Texture2D" uid="uid://2oxh1pfoixsf" path="res://Sprites/novel_part/Scarlett/scarlett_tired.png" id="27_guqjn"]
+[ext_resource type="Texture2D" uid="uid://25xan6jdb6ho" path="res://Sprites/novel_part/Mark/mark_evil.png" id="27_nrifc"]
+[ext_resource type="Texture2D" uid="uid://di74rqo2sv35w" path="res://Sprites/novel_part/Mark/mark_offended.png" id="28_x5evv"]
+[ext_resource type="Texture2D" uid="uid://ie6ttqp1wyqc" path="res://Sprites/novel_part/Mark/mark_positive.png" id="29_aynh0"]
+[ext_resource type="Texture2D" uid="uid://2iesko6uuwbx" path="res://Sprites/novel_part/Mark/mark_thinks_1.png" id="30_xmbh0"]
+[ext_resource type="Texture2D" uid="uid://dy8r1wy035ew" path="res://Sprites/novel_part/Chris/chris_angry.png" id="31_arejo"]
+[ext_resource type="Texture2D" uid="uid://b3qu0q7kj1qmg" path="res://Sprites/novel_part/Chris/chris_confidence.png" id="32_5bkkr"]
+[ext_resource type="Texture2D" uid="uid://dcalgv3tdqcw4" path="res://Sprites/novel_part/Chris/chris_oath.png" id="33_7cf3l"]
+[ext_resource type="Texture2D" uid="uid://c7bdyjb5oducm" path="res://Sprites/novel_part/Chris/chris_thinks.png" id="34_idsjt"]
+[ext_resource type="Texture2D" uid="uid://ctsjhty1bsnwv" path="res://Sprites/novel_part/Chris/chris_worry_1.png" id="35_6ud4u"]
+[ext_resource type="PackedScene" uid="uid://bbh45jsywolop" path="res://navigator_manager.tscn" id="38_nd7im"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8b1a"]
-size = Vector2(30, 65)
+[sub_resource type="Gradient" id="Gradient_nvc6w"]
+offsets = PackedFloat32Array(0, 0.73516)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t587b"]
+gradient = SubResource("Gradient_nvc6w")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_crypt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.53]
+}
+
+[sub_resource type="Animation" id="Animation_i2a8q"]
+resource_name = "light_moving_hall"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.53, 1.0, 0.53]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lo4g1"]
+_data = {
+"RESET": SubResource("Animation_crypt"),
+"light_moving_hall": SubResource("Animation_i2a8q")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oohdb"]
 size = Vector2(29, 26)
@@ -21,19 +95,217 @@ size = Vector2(6, 65)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otbe7"]
 size = Vector2(28, 34)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cilli"]
+size = Vector2(25.5, 62.5)
+
 [node name="Hall" type="Node2D"]
 
-[node name="DialogPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_wkokc")]
-scene_text_file = "res://Json/test.json"
-arin_moods = {
-"arin_angry": ExtResource("2_7awf8"),
-"arin_chill": ExtResource("3_e8ohk")
-}
-player = NodePath("../Mary")
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = -1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+
+[node name="BackgroundPlants" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+z_index = -2
 position = Vector2(240, 90)
-texture = ExtResource("4_7vbx1")
+texture = ExtResource("4_vg36q")
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(16, 22)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(53, 22)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(90, 22)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D3"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(127, 22)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D4"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(164, 22)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D5"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(202, 19.9842)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D6"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(239, 19.9842)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D7"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D8" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(276, 19.9842)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D8"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D9" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(313, 19.9842)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D9"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D10" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(350, 19.9842)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D10"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D11" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(389, 17.9842)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D11"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D12" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(426, 17.9842)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D12"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
+
+[node name="PointLight2D13" type="PointLight2D" parent="Lights"]
+visibility_layer = 2
+position = Vector2(463, 17.9842)
+scale = Vector2(1, 0.968256)
+color = Color(0.980333, 1, 0.41, 1)
+energy = 0.53
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_t587b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D13"]
+libraries = {
+"": SubResource("AnimationLibrary_lo4g1")
+}
+autoplay = "light_moving_hall"
 
 [node name="ArinStatic" type="Sprite2D" parent="."]
 position = Vector2(262, 108)
@@ -41,7 +313,7 @@ texture = ExtResource("5_tuisg")
 flip_h = true
 
 [node name="Mary" parent="." instance=ExtResource("6_6dx4x")]
-position = Vector2(45, 108)
+position = Vector2(73, 108)
 collision_layer = 3
 collision_mask = 3
 
@@ -54,15 +326,25 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("7_bob82")
 
-[node name="DialogAreaDoor" parent="." node_paths=PackedStringArray("dialog_player") instance=ExtResource("8_vgbn8")]
-position = Vector2(27, 105)
-collision_layer = 3
-collision_mask = 3
-text_key = "flowers"
-dialog_player = NodePath("../DialogPlayer")
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
+layer = 1
 
-[node name="CollisionShape2D" parent="DialogAreaDoor" index="0"]
-shape = SubResource("RectangleShape2D_v8b1a")
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground3"]
+motion_scale = Vector2(1.65, 1.65)
+
+[node name="BackgroundPlants2" type="Sprite2D" parent="ParallaxBackground3/ParallaxLayer"]
+position = Vector2(300, 90)
+texture = ExtResource("5_84350")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.74, 1.74)
+
+[node name="BackgroundPlants" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(300, 90)
+texture = ExtResource("5_hboqj")
 
 [node name="DialogAreaTea" parent="." node_paths=PackedStringArray("dialog_player") instance=ExtResource("8_vgbn8")]
 position = Vector2(179, 102)
@@ -93,7 +375,60 @@ dialog_player = NodePath("../DialogPlayer")
 position = Vector2(124, -3)
 shape = SubResource("RectangleShape2D_otbe7")
 
-[editable path="DialogAreaDoor"]
+[node name="DialogPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_wkokc")]
+scene_text_file = "res://Json/dialog_text.json"
+mary_moods = {
+"mary_chill": ExtResource("9_quuig"),
+"mary_confidence": ExtResource("11_revie"),
+"mary_fear": ExtResource("12_tk8qh"),
+"mary_sad_1": ExtResource("13_vs4os"),
+"mary_sad_2": ExtResource("14_th5da"),
+"mary_worried": ExtResource("10_15elq")
+}
+arin_moods = {
+"arin_angry": ExtResource("2_7awf8"),
+"arin_chill_1": ExtResource("16_rllwe"),
+"arin_chill_2": ExtResource("17_3l4ws"),
+"arin_sad": ExtResource("18_e8l5j"),
+"arin_tired": ExtResource("19_vlhtu"),
+"arin_worried": ExtResource("20_shaur")
+}
+scarlett_moods = {
+"scarlett_arrogance_1": ExtResource("20_wt2ht"),
+"scarlett_arrogance_2": ExtResource("21_sd0lx"),
+"scarlett_chill_1": ExtResource("22_6b4be"),
+"scarlett_chill_2": ExtResource("23_qeaj2"),
+"scarlett_sigh": ExtResource("24_iir4v"),
+"scarlett_thinks": ExtResource("25_scdvu"),
+"scarlett_tired": ExtResource("27_guqjn")
+}
+mark_moods = {
+"mark_confidence": ExtResource("26_4ynti"),
+"mark_evil": ExtResource("27_nrifc"),
+"mark_offended": ExtResource("28_x5evv"),
+"mark_positive": ExtResource("29_aynh0"),
+"mark_thinks_1": ExtResource("30_xmbh0")
+}
+chris_moods = {
+"chris_angry": ExtResource("31_arejo"),
+"chris_confidence": ExtResource("32_5bkkr"),
+"chris_oath": ExtResource("33_7cf3l"),
+"chris_thinks": ExtResource("34_idsjt"),
+"chris_worry_1": ExtResource("35_6ud4u")
+}
+player = NodePath("../Mary")
+
+[node name="ToPlantRoomArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToPlantRoomArea"]
+position = Vector2(28.25, 107.25)
+shape = SubResource("RectangleShape2D_cilli")
+
+[node name="NavigatorManager" parent="." instance=ExtResource("38_nd7im")]
+
+[connection signal="area_entered" from="ToPlantRoomArea" to="NavigatorManager" method="_on_to_plant_room_area_entered"]
+[connection signal="area_exited" from="ToPlantRoomArea" to="NavigatorManager" method="_on_to_plant_room_area_area_exited"]
+
 [editable path="DialogAreaTea"]
 [editable path="DialogAreaFriends"]
 [editable path="DialogAreaArin"]

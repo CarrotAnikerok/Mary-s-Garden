@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpflb23uml7rn"]
+
+[ext_resource type="Script" path="res://Scripts/draggable_item.gd" id="1_lx1ib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqocf"]
+size = Vector2(8, 11)
+
+[node name="DraggableItem" type="Area2D"]
+script = ExtResource("1_lx1ib")
+
+[node name="DraggableCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="DropableArea" type="Area2D" parent="DraggableCollision"]
+
+[node name="DropableCollision" type="CollisionShape2D" parent="DraggableCollision/DropableArea"]
+shape = SubResource("RectangleShape2D_oqocf")
+
+[node name="ClickTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="DraggableCollision/DropableArea" to="." method="_on_dropable_area_body_entered"]
+[connection signal="body_exited" from="DraggableCollision/DropableArea" to="." method="_on_dropable_area_body_exited"]

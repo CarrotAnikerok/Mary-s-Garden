@@ -1,13 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6u46ej1sh4ok"]
+[gd_scene load_steps=11 format=3 uid="uid://b6u46ej1sh4ok"]
 
-[ext_resource type="Script" path="res://Scripts/cactus.gd" id="1_4veha"]
+[ext_resource type="Script" path="res://Scripts/Plants/cactus.gd" id="1_4veha"]
+[ext_resource type="PackedScene" uid="uid://dtwsnyi4jpog8" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Perfect/Kalanchoe_Perfect_End.glb" id="2_dc5rc"]
+[ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://Scenes/PlantRoom/draggable_item.tscn" id="2_tnmkq"]
+[ext_resource type="PackedScene" uid="uid://0upibrc5edvd" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Good/Kalanchoe_Good_End.glb" id="3_3apfq"]
+[ext_resource type="PackedScene" uid="uid://45mnohumabfi" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Neutral/Kalanchoe_Neutral_End.glb" id="4_hxkn2"]
+[ext_resource type="PackedScene" uid="uid://c6dkbix55uujq" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalacnhoe_Bad/Kalanchoe_Bad_End.glb" id="5_lwavb"]
+[ext_resource type="PackedScene" uid="uid://b88y0nooqeqlt" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Horrible/Kalanchoe_Horrible_End.glb" id="6_8kfh5"]
+[ext_resource type="PackedScene" uid="uid://d1trhmyocaj5c" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalacnhoe_Dead/Kalanchoe_Dead_End.glb" id="7_j7uq6"]
+[ext_resource type="Texture2D" uid="uid://chhmsv2cg0d3r" path="res://Sprites/cactus.png" id="8_opcum"]
 
-[node name="Cactus" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6oyvw"]
+size = Vector2(14, 15.9375)
+
+[node name="Cactus" type="Node2D" groups=["plant"]]
 script = ExtResource("1_4veha")
+plant_states = [ExtResource("2_dc5rc"), ExtResource("3_3apfq"), ExtResource("4_hxkn2"), ExtResource("5_lwavb"), ExtResource("6_8kfh5"), ExtResource("7_j7uq6")]
 
-[node name="Button" type="Button" parent="."]
-offset_right = 101.0
-offset_bottom = 47.0
-text = "Pour Cactus"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+texture = ExtResource("8_opcum")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="DraggableItem" parent="." instance=ExtResource("2_tnmkq")]
+position = Vector2(0, -5)
+
+[node name="DraggableCollision" parent="DraggableItem" index="0"]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_6oyvw")
+
+[node name="DropableCollision" parent="DraggableItem/DraggableCollision/DropableArea" index="0"]
+position = Vector2(0, 2)
+
+[editable path="DraggableItem"]

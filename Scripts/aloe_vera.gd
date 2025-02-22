@@ -1,15 +1,70 @@
 class_name AloeVera
 extends Plant
 
+#максимальное количество воды в слайдере должно зависеть от растения
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	normalWaterAmount = 300
-	actualWaterCoefficent = 0
-	minWaterCoefficent = 0.2
-	maxWaterCoefficent = 0.95
+	plant_name = "Aloe Vera"
+	place_update()
+	normal_water_amount = 300
+	actual_water_coefficent = 0
+	acceptable_water_coefficent = Vector2(0.3, 0.6)
+	perfect_water_coefficent = Vector2(0.1, 0.9)
+	actual_light_amount = base_light_amount
+	acceptable_light_time = Vector2(8, 14)
+	perfect_light_time = Vector2(14, 16)
+	actual_light_time = 0 
+	acceptable_light_amount = Vector2(3000, 5000)
+	perfect_light_amount = Vector2(5000, 8000)
+	actual_humidity = base_humidity
+	acceptable_humidity = Vector2(0.55, 0.85)
+	perfect_humidity = Vector2(0.4, 1.0)
+	actual_temperature = base_temperature
+	acceptable_temperature = Vector2(15, 30)
+	perfect_temperature = Vector2(20, 24)
+	
+	
+func pour(water_amount: float):
+	pour_logic(water_amount)
+	
+func dry():
+	dry_logic(0.2)
 
+func spray():
+	spray_logic(0.05)
+	
+func change_state():
+	change_state_logic()
+	update_phase_logic()
+	
+func switch_light(lamp_power: int):
+	switch_light_logic(lamp_power)
 	
 func waterPlant():
-	normalWaterAmount += 50
-	print(normalWaterAmount)
+	normal_water_amount += 50
+	print(normal_water_amount)
 	print("Aloe was watered")
+
+func changeToPerfect():
+	pass
+	
+	
+				
+#за этим последуют просто другие проблемы... мне стоит сделать это все интерфейсными штуками.
+#в общем, надо переделывать всю систему
+#ИЛИ НЕТ ХА. но боже, все должно быть более однотипно
+
+
+
+#func _on_plant_pressed():
+	#print("SAY PLANT")
+	#var plantwindow_instance = plant_window.instantiate()
+	#plantwindow_instance.active_plant = self
+	#get_tree().get_root().add_child(plantwindow_instance)
+
+
+#func _on_gui_input(event):
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			#print("I've been clicked D:")

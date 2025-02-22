@@ -3,6 +3,9 @@ extends CanvasLayer
 @export_file("*json") var scene_text_file: String
 @export var mary_moods: Dictionary
 @export var arin_moods: Dictionary
+@export var scarlett_moods: Dictionary
+@export var mark_moods: Dictionary
+@export var chris_moods: Dictionary
 @export var player: CharacterBody2D
 
 var scene_text: Dictionary = {}
@@ -20,8 +23,8 @@ var text = ""
 
 @onready var timer = $Timer
 @onready var background = $Background
-@onready var text_label = $TextLabel
-@onready var name_label = $NameLabel
+@onready var text_label = $Background/TextLabel
+@onready var name_label = $Background/NameLabel
 @onready var mary_sprite = $MarySprite
 @onready var guest_sprite = $GuestSprite
 @onready var audio_player = $AudioStreamPlayer
@@ -55,17 +58,19 @@ func next_line():
 		timer.stop()
 		letter_index = 0
 		return
-	if dialog_part.size() > 0:
-		if selected_text.size() > 0:
-			print("next_line is here", selected_text.size())
-			show_text()
-		else:
-			print("next block is here?", dialog_block.size())
-			dialog_block = dialog_part.pop_front()
-			selected_text = dialog_block["text"].duplicate()
-			show_text()
+	print(str(dialog_part.size()) + " and " + str(selected_text.size()))
+	if selected_text.size() > 0:
+		print("next_line is here", selected_text.size())
+		show_text()
+	elif dialog_part.size() > 0:
+		print("next block is here?", dialog_block.size())
+		dialog_block = dialog_part.pop_front()
+		selected_text = dialog_block["text"].duplicate()
+		show_text()
 	else:
 		finish()
+	#if dialog_part.size() == 0 && selected_text.size() == 0:
+		#finish()
 	
 func finish():
 	text_label.text = ""
@@ -78,7 +83,7 @@ func finish():
 	#get_tree().paused = false
 	
 func change_sprite():
-	if (name_label.text == "Mary"):
+	if (name_label.text == "Мэри"):
 		mary_sprite.visible = true
 		guest_sprite.visible = false
 	else:
@@ -88,10 +93,16 @@ func change_sprite():
 func change_mood():
 	if (dialog_block.has("mood")):
 		print(dialog_block["mood"])
-		if (name_label.text == "Mary"):
+		if (name_label.text == "Мэри"):
 			mary_sprite.texture = mary_moods[dialog_block["mood"]]
-		else:
+		elif (name_label.text == "Арин"):
 			guest_sprite.texture = arin_moods[dialog_block["mood"]]
+		elif (name_label.text == "Скарлетт"):
+			guest_sprite.texture = scarlett_moods[dialog_block["mood"]]
+		elif (name_label.text == "Марк"):
+			guest_sprite.texture = mark_moods[dialog_block["mood"]]
+		elif (name_label.text == "Крис"):
+			guest_sprite.texture = chris_moods[dialog_block["mood"]]
 
 func on_display_dialog(text_key):
 	audio_player.stream = speech_sound

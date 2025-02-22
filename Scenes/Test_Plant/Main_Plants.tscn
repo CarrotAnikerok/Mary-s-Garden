@@ -77,7 +77,7 @@ render_target_update_mode = 4
 environment = SubResource("Environment_uyvf5")
 
 [node name="Camera" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_nx0xa")]
-transform = Transform3D(1, 0, 0, 0, 0.915241, 0.402906, 0, -0.402906, 0.915241, 3.01705, 2.99106, 3.66615)
+transform = Transform3D(1, 0, 0, 0, 0.915241, 0.402906, 0, -0.402906, 0.915241, 22.2354, 2.99106, 3.66615)
 size = 4.9
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
@@ -184,7 +184,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.2236, 0, 0)
 script = ExtResource("3_3swnt")
 
 [node name="Pelargonium_Dead_End" parent="SubViewportContainer/SubViewport" instance=ExtResource("28_k3hsy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+transform = Transform3D(0.785166, 0, -0.619286, 0, 1, 0, 0.619286, 0, 0.785166, 24, 0, 0)
 script = ExtResource("3_3swnt")
 
 [node name="Pelargonium_Horrible_End" parent="SubViewportContainer/SubViewport" instance=ExtResource("29_7357d")]
@@ -260,11 +260,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 0)
 script = ExtResource("3_3swnt")
 
 [node name="aloevera_dead_end" parent="SubViewportContainer/SubViewport" instance=ExtResource("47_l7trr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 0)
+transform = Transform3D(-0.330432, 0, 0.94383, 0, 1, 0, -0.94383, 0, -0.330432, 90, 0, 0)
 script = ExtResource("3_3swnt")
 
 [node name="aloevera_horrible_end" parent="SubViewportContainer/SubViewport" instance=ExtResource("48_g6p14")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 0, 0)
+transform = Transform3D(0.0426081, 0, -0.999092, 0, 1, 0, 0.999092, 0, 0.0426081, 87, 0, 0)
 script = ExtResource("3_3swnt")
 
 [node name="aloevera_bad_end" parent="SubViewportContainer/SubViewport" instance=ExtResource("49_8f6qu")]
@@ -272,7 +272,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 0)
 script = ExtResource("3_3swnt")
 
 [node name="aloevera_neutral_end" parent="SubViewportContainer/SubViewport" instance=ExtResource("50_pmrmq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81, 0, 0)
+transform = Transform3D(0.766258, 0, -0.642534, 0, 1, 0, 0.642534, 0, 0.766258, 81, 0, 0)
 script = ExtResource("3_3swnt")
 
 [node name="aloevera_good_end" parent="SubViewportContainer/SubViewport" instance=ExtResource("51_hftdc")]

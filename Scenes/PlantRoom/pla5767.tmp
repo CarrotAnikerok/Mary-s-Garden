@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://gao1je8jpkpk"]
+
+[ext_resource type="Texture2D" uid="uid://3weuar16uk4d" path="res://Sprites/bgPlantRoom.png" id="1_ibn8c"]
+[ext_resource type="PackedScene" uid="uid://bf65ywlrwh3hp" path="res://Scenes/PlantRoom/garden_slot.tscn" id="2_vglss"]
+[ext_resource type="PackedScene" uid="uid://b6u46ej1sh4ok" path="res://Scenes/Cactus.tscn" id="4_4uwg6"]
+[ext_resource type="Script" path="res://Scenes/PlantRoom/phase_сhange.gd" id="5_b5k77"]
+[ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://Scenes/Aloe_Vera.tscn" id="5_pstx4"]
+
+[node name="PlantRoom" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(160, 92)
+texture = ExtResource("1_ibn8c")
+
+[node name="GardenSlots" type="Node2D" parent="."]
+
+[node name="GardenSlot" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(23, 31)
+
+[node name="GardenSlot2" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(56, 31)
+
+[node name="Cactus" parent="GardenSlots/GardenSlot2" instance=ExtResource("4_4uwg6")]
+
+[node name="GardenSlot3" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(90, 31)
+
+[node name="AloeVera" parent="GardenSlots/GardenSlot3" instance=ExtResource("5_pstx4")]
+
+[node name="GardenSlot4" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(150, 26)
+
+[node name="GardenSlot5" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(185, 26)
+
+[node name="GardenSlot6" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(221, 26)
+
+[node name="GardenSlot7" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(153, 78)
+
+[node name="GardenSlot8" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(185, 78)
+
+[node name="GardenSlot9" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(219, 78)
+
+[node name="GardenSlot10" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(24, 110)
+
+[node name="GardenSlot11" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(90, 110)
+
+[node name="GardenSlot12" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(56, 110)
+
+[node name="GardenSlot13" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(154, 144)
+
+[node name="GardenSlot14" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(220, 144)
+
+[node name="GardenSlot15" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(186, 144)
+
+[node name="PhaseTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+script = ExtResource("5_b5k77")
+
+[connection signal="timeout" from="PhaseTimer" to="PhaseTimer" method="_on_timeout"]
