@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://gao1je8jpkpk"]
+[gd_scene load_steps=36 format=3 uid="uid://gao1je8jpkpk"]
 
 [ext_resource type="Texture2D" uid="uid://3weuar16uk4d" path="res://Sprites/bgPlantRoom.png" id="1_8uj76"]
 [ext_resource type="PackedScene" uid="uid://bf65ywlrwh3hp" path="res://Scenes/PlantRoom/garden_slot.tscn" id="2_vglss"]
@@ -7,6 +7,197 @@
 [ext_resource type="PackedScene" uid="uid://qi51764v7mh7" path="res://Scripts/Plants/kalanchoe_blossfeldiana.tscn" id="5_jgt6p"]
 [ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://Scenes/Aloe_Vera.tscn" id="5_pstx4"]
 [ext_resource type="PackedScene" uid="uid://bbh45jsywolop" path="res://navigator_manager.tscn" id="7_25ep0"]
+[ext_resource type="Texture2D" uid="uid://di0yw08o6dxnj" path="res://Sprites/mary_garden_anim.png" id="8_vwt8o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dybbd"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haf8u"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3blf"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mera4"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcbjt"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi008"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yuik"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gg2s"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whawl"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kwsg"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbchs"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk6l6"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp0d2"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2pry"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2v8v"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(896, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f6eb"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(960, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55opu"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1024, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv7iv"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1088, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py1am"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1152, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp5ic"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1216, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr0e7"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1280, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y1q7"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1344, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m34h"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1408, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koy2t"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1472, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odtig"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1536, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0taes"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7t48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dybbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haf8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3blf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mera4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcbjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi008")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yuik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gg2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whawl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kwsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbchs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk6l6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp0d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2pry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2v8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f6eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55opu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv7iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py1am")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp5ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr0e7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y1q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m34h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koy2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odtig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0taes")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
 
 [node name="PlantRoom" type="Node2D"]
 
@@ -142,6 +333,13 @@ theme_override_font_sizes/font_size = 8
 text = "To Hall"
 
 [node name="NavigatorManager" parent="." instance=ExtResource("7_25ep0")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(283, 34)
+sprite_frames = SubResource("SpriteFrames_c7t48")
+autoplay = "default"
+frame = 21
+frame_progress = 0.724974
 
 [connection signal="timeout" from="PhaseTimer" to="PhaseTimer" method="_on_timeout"]
 [connection signal="pressed" from="ToHallButton" to="NavigatorManager" method="_on_to_hall_button_pressed"]
