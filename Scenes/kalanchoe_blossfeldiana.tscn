@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://qi51764v7mh7"]
 
-[ext_resource type="Script" path="res://Scripts/Plants/kalanchoe_blossfeldiana.gd" id="1_f2sa8"]
+[ext_resource type="Script" uid="uid://bbmht06uvjaof" path="res://Scripts/Plants/kalanchoe_blossfeldiana.gd" id="1_f2sa8"]
 [ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://Scenes/PlantRoom/draggable_item.tscn" id="1_qy24j"]
 [ext_resource type="PackedScene" uid="uid://dtwsnyi4jpog8" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Perfect/Kalanchoe_Perfect_End.glb" id="2_dahl0"]
 [ext_resource type="PackedScene" uid="uid://0upibrc5edvd" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Good/Kalanchoe_Good_End.glb" id="3_rgyke"]

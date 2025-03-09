@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw7rxodm1n0gt"
+uid="uid://c5alqa6rmuotb"
 path.s3tc="res://.godot/imported/Chlorophytum_Neutral_end_Chlor_Leaf_002.png-58790111c622e678d5e6b24aaa59d43f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "8165c47298f46dc02d66b7e31dc341f9"
 }
 
 [deps]

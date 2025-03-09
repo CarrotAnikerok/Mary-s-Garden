@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4b1rdq1fxbw5"]
 
-[ext_resource type="Script" path="res://Scripts/choose_plant.gd" id="1_3deo4"]
+[ext_resource type="Script" uid="uid://cnmhf6n1atc1x" path="res://Scripts/choose_plant.gd" id="1_3deo4"]
 [ext_resource type="PackedScene" uid="uid://b20sqxrpc7sei" path="res://Scenes/PlantRoom/plant_window.tscn" id="2_x7rax"]
 [ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://Scenes/Aloe_Vera.tscn" id="3_yts85"]
 [ext_resource type="PackedScene" uid="uid://b6u46ej1sh4ok" path="res://Scenes/Cactus.tscn" id="4_sd0tm"]

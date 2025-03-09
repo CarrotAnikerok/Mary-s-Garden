@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bf65ywlrwh3hp"]
 
-[ext_resource type="Script" path="res://Scripts/garden_slot.gd" id="1_b210g"]
+[ext_resource type="Script" uid="uid://c1mu4sgebqw3e" path="res://Scripts/garden_slot.gd" id="1_b210g"]
 [ext_resource type="Texture2D" uid="uid://c2gddv1qgbho6" path="res://Sprites/slot.png" id="2_4yp6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcw1i"]

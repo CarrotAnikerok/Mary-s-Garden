@@ -12,13 +12,20 @@ config_version=5
 
 config/name="Mary's Garden"
 run/main_scene="res://Scenes/Hall/hall.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-global="*res://Scripts/global.gd"
+global="*res://Scripts/Singletons/global.gd"
 SignulBus="*res://Scripts/Singletons/signul_bus.gd"
+SceneManager="*res://Scripts/Singletons/scene_manager.gd"
+HandbookInfo="*res://Scripts/Singletons/handbook_info.gd"
+GlobalTimer="*res://Scenes/Global/global_timer.tscn"
+
+[debug]
+
+gdscript/warnings/unused_parameter=0
 
 [display]
 
@@ -31,6 +38,10 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="Mary-s Garden"
+
+[editor]
+
+movie_writer/movie_file="D:/veshi/godotgames/MyRecordings/MyRecordings.avi"
 
 [filesystem]
 

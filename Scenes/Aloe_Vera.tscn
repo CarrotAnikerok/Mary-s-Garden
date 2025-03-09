@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ctororhwgysd7"]
 
-[ext_resource type="Script" path="res://Scripts/aloe_vera.gd" id="1_8b0w6"]
+[ext_resource type="Script" uid="uid://bn24r68bvj50s" path="res://Scripts/Plants/aloe_vera.gd" id="1_8b0w6"]
 [ext_resource type="PackedScene" uid="uid://cptur4xiphi6b" path="res://3DPlants/Aloe_Vera/aloe_vera_perfect/aloevera_perfect.glb" id="2_efrt1"]
 [ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://Scenes/PlantRoom/draggable_item.tscn" id="3_1s1gn"]
 [ext_resource type="PackedScene" uid="uid://jbrxm846v500" path="res://3DPlants/Aloe_Vera/aloe_vera_good/aloevera_good_end.glb" id="3_y5er5"]
@@ -14,9 +14,10 @@
 size = Vector2(20, 22)
 
 [node name="AloeVera" type="Node2D" groups=["plant"]]
-position = Vector2(0, -2)
 script = ExtResource("1_8b0w6")
 plant_states = [ExtResource("2_efrt1"), ExtResource("3_y5er5"), ExtResource("4_eoykq"), ExtResource("5_6dxjm"), ExtResource("6_rh4co"), ExtResource("7_u6o7v")]
+metadata/_edit_horizontal_guides_ = [-16.0, 6.0]
+metadata/_edit_vertical_guides_ = [-10.0, 10.0]
 
 [node name="DraggableItem" parent="." instance=ExtResource("3_1s1gn")]
 position = Vector2(0, 5)

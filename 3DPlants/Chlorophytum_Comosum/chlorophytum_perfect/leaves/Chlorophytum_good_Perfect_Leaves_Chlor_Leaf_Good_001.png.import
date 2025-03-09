@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hunmy0kxmfob"
+uid="uid://clfidhx36lxq8"
 path.s3tc="res://.godot/imported/Chlorophytum_good_Perfect_Leaves_Chlor_Leaf_Good_001.png-8c05d8e6350aaa8888752479bec1e879.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "a76ab0387d59fa88830ac6682050894d"
 }
 
 [deps]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b5neg873g5wfk"]
 
-[ext_resource type="Script" path="res://Scripts/dialog_player.gd" id="1_4aop0"]
+[ext_resource type="Script" uid="uid://di4isil2vrqy3" path="res://Scripts/dialog_player.gd" id="1_4aop0"]
 [ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://Sprites/novel_part/Mary/mary_chill.png" id="2_judwd"]
 [ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://Sprites/novel_part/Mary/mary_worried.png" id="3_17y02"]
 [ext_resource type="Texture2D" uid="uid://ve4jpk7g24g2" path="res://Sprites/novel_part/Arin/arin_chill_1.png" id="3_ompeb"]

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cysiq70465pgn" path="res://Scripts/Hall/bgs/plant_bg.png" id="5_hboqj"]
 [ext_resource type="Texture2D" uid="uid://df81sumoux41f" path="res://Sprites/arinStatic.png" id="5_tuisg"]
 [ext_resource type="PackedScene" uid="uid://x1dx72vtbapt" path="res://Scenes/Hall/mary.tscn" id="6_6dx4x"]
-[ext_resource type="Script" path="res://Scripts/player_camera.gd" id="7_bob82"]
+[ext_resource type="Script" uid="uid://d4b1wji5imsun" path="res://Scripts/player_camera.gd" id="7_bob82"]
 [ext_resource type="PackedScene" uid="uid://0hci7qr3mlmf" path="res://Scenes/Hall/dialog_area.tscn" id="8_vgbn8"]
 [ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://Sprites/novel_part/Mary/mary_chill.png" id="9_quuig"]
 [ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://Sprites/novel_part/Mary/mary_worried.png" id="10_15elq"]
@@ -82,8 +82,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lo4g1"]
 _data = {
-"RESET": SubResource("Animation_crypt"),
-"light_moving_hall": SubResource("Animation_i2a8q")
+&"RESET": SubResource("Animation_crypt"),
+&"light_moving_hall": SubResource("Animation_i2a8q")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oohdb"]
@@ -123,7 +123,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -138,7 +138,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D2"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -153,7 +153,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D3"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -168,7 +168,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D4"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -183,7 +183,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D5"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -198,7 +198,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D6"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -213,7 +213,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D7"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -228,7 +228,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D8"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -243,7 +243,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D9"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -258,7 +258,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D10"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -273,7 +273,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D11"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -288,7 +288,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D12"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 
@@ -303,7 +303,7 @@ texture = SubResource("GradientTexture2D_t587b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/PointLight2D13"]
 libraries = {
-"": SubResource("AnimationLibrary_lo4g1")
+&"": SubResource("AnimationLibrary_lo4g1")
 }
 autoplay = "light_moving_hall"
 

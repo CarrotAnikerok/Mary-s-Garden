@@ -72,8 +72,7 @@ func update_phase_logic():
 func change_state_logic():
 	var how_bad_is_it = 0
 	if !(can_be_perfect_logic()):
-		how_bad_is_it = is_water_bad() + is_humidity_bad() + is_temperature_bad()
-		+ is_light_bad() + bad_too_long()
+		how_bad_is_it = is_water_bad() + is_humidity_bad() + is_temperature_bad() + is_light_bad() + bad_too_long()
 	
 	print("total bads is " + str(how_bad_is_it) + " for " + plant_name)
 	
@@ -224,9 +223,11 @@ func is_water_bad():
 	if actual_water_coefficent < acceptable_water_coefficent[0]:
 		bad_count += 1
 		print("water bad for " + plant_name)
+		HandbookInfo.add_note("plant_after", plant_name, plant_name + " походу засыхает.")
 		bad_parameters[0] += 1
 	elif is_overpoured:
 		bad_count += 1
+		HandbookInfo.add_note("plant_after", plant_name, plant_name + " выглядит залитым.")
 		is_overpoured = false
 		bad_parameters[0] += 1
 	if bad_count == 0:
@@ -241,6 +242,7 @@ func is_humidity_bad():
 			or actual_humidity < acceptable_humidity[0]
 	):
 		bad_count += 1
+		HandbookInfo.add_note("plant_after", plant_name, plant_name + " чувствует себя некомфортно в этой влажности")
 		print("humidity bad for " + plant_name)
 	bad_parameters[2] = bad_count
 	return bad_count
@@ -254,6 +256,7 @@ func is_temperature_bad():
 	):
 		bad_count += 1
 		print("temperature bad for " + plant_name)
+		HandbookInfo.add_note("plant_after", plant_name, plant_name + " чувствет себя плохо из-за температуры.")
 	bad_parameters[3] = bad_count
 	return bad_count
 
@@ -265,6 +268,7 @@ func is_light_bad():
 			and ((actual_light_amount > acceptable_light_amount[1]) 
 			or (actual_light_amount < acceptable_light_amount[0]))
 		):
+		HandbookInfo.add_note("plant_after", plant_name, "что-то не так со светом для " + plant_name)
 		bad_count += 1
 		print("light bad for " + plant_name)
 	if (
@@ -273,6 +277,7 @@ func is_light_bad():
 			or (actual_light_time < acceptable_light_time[0]))
 		): #если новый день наступил, но в пред день свет горел неправильно
 		bad_count += 1
+		HandbookInfo.add_note("plant_after", plant_name, plant_name + " совсем не отдохнуло за ночь")
 		print("light time bad for " + plant_name + " " + str(global.phase_of_day))
 	if (global.phase_of_day == 0):
 		actual_light_time = 0 #лучшее ли это место для этого? лучше придумать не могу

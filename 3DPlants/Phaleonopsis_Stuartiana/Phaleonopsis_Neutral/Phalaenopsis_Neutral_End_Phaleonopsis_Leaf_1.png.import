@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy3e0nsvpdefp"
+uid="uid://imwyuaqamoqj"
 path.s3tc="res://.godot/imported/Phalaenopsis_Neutral_End_Phaleonopsis_Leaf_1.png-957fdffc7550baafb97e39b8fe1b68ed.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "338384d3e65474cbf2eab1ed9fcb64b2"
 }
 
 [deps]

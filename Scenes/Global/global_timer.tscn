@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://sqddvb8evxis"]
+
+[ext_resource type="Script" uid="uid://drvwlao2y6so4" path="res://Scripts/Singletons/timer_change.gd" id="1_jdeq7"]
+
+[node name="Timer" type="Timer"]
+wait_time = 5.0
+autostart = true
+script = ExtResource("1_jdeq7")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

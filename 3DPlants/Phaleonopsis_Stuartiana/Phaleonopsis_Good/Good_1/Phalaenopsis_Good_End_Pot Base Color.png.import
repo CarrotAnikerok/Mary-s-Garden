@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yxx55e41noln"
+uid="uid://bj607olwrymdo"
 path.s3tc="res://.godot/imported/Phalaenopsis_Good_End_Pot Base Color.png-3e4aeecd1b3351d65bde6228a9a520c5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "d77c9593b7d0314eaccec8fd224c6a26"
 }
 
 [deps]

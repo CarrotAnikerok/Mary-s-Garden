@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://utxccawyvotp"
+uid="uid://dw0p87mmlrieu"
 path.s3tc="res://.godot/imported/Bergenia_Neutral_End_Bergenia_Leaf_Good_2.png-f8ef4cace388bad3b3272a7cfe23a185.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "ba38ea5d0c5a52ae172b7487abc35333"
 }
 
 [deps]

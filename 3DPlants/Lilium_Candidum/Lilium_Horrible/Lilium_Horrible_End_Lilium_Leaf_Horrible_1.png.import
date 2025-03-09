@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blhdr8obfsj1i"
+uid="uid://cil1l60jisxqe"
 path.s3tc="res://.godot/imported/Lilium_Horrible_End_Lilium_Leaf_Horrible_1.png-337db50fb70331ea9c88bab8194189b5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "1db1a4a5c8395bdd44cec68d635e5ba2"
 }
 
 [deps]

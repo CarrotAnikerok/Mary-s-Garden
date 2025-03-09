@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bwqsvc17c5c5j"]
 
 [ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://Scenes/PlantRoom/draggable_item.tscn" id="1_aubv6"]
-[ext_resource type="Script" path="res://Scenes/chlorophytum_comosum.gd" id="1_bho8o"]
+[ext_resource type="Script" uid="uid://ldlhlv2jewar" path="res://Scripts/Plants/chlorophytum_comosum.gd" id="1_bho8o"]
 [ext_resource type="PackedScene" uid="uid://bga38llulatl6" path="res://3DPlants/Chlorophytum_Comosum/chlorophytum_perfect/leaves/Chlorophytum_good_Perfect_Leaves.glb" id="2_b2h10"]
 [ext_resource type="PackedScene" uid="uid://bm4drtdmtv4nc" path="res://3DPlants/Chlorophytum_Comosum/chlorophytum_good/Chlorophytum_good_end.glb" id="3_1rr35"]
 [ext_resource type="PackedScene" uid="uid://chj56mrbvsfro" path="res://3DPlants/Chlorophytum_Comosum/chlorophytum_neutral/Chlorophytum_Neutral_end.glb" id="4_1l3b4"]

@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwbekil1uw01v"
+uid="uid://b3fpaydsaa2ql"
 path.s3tc="res://.godot/imported/Viola_Bad_End_Viola_Leaf _1.png-209b2aa069d8b7c5c81e68c90961a461.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "49f80bfabcdde619221951fdf724397b"
 }
 
 [deps]

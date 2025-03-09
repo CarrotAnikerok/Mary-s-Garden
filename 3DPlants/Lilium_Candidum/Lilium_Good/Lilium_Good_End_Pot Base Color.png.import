@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkwcxh2eflgn7"
+uid="uid://dm4vjqhb7ibd5"
 path.s3tc="res://.godot/imported/Lilium_Good_End_Pot Base Color.png-7af81eeef5fff33cf127c7cdbe151cca.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "d77c9593b7d0314eaccec8fd224c6a26"
 }
 
 [deps]

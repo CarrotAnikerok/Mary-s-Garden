@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm0vil47j5pe1"
+uid="uid://d3ebefshqlg1q"
 path.s3tc="res://.godot/imported/aloevera_perfect_Petals2 Base Color.png-ab9beef385b0eaf32d9a6dacd674b731.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "b5c8befdf1e1dca6c722a4ee46cee5eb"
 }
 
 [deps]

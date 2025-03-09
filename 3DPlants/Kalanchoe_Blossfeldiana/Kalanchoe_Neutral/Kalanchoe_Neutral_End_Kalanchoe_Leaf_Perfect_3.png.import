@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mexwqhkb57lt"
+uid="uid://cfwjnx8es6qmk"
 path.s3tc="res://.godot/imported/Kalanchoe_Neutral_End_Kalanchoe_Leaf_Perfect_3.png-eecb353023299038c37f87b566d2b098.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "feda8ba30ca5f6050211c7e70b64547e"
 }
 
 [deps]

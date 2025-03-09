@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://djc2wirwhg3g"]
 
 [ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://pixel_shader/camera.tscn" id="1_nnx1f"]
-[ext_resource type="Shader" path="res://pixel_shader/pixelart_stylizer.gdshader" id="2_w500p"]
+[ext_resource type="Shader" uid="uid://dnuchhug4y3v" path="res://pixel_shader/pixelart_stylizer.gdshader" id="2_w500p"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gg7it"]
 
@@ -135,8 +135,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y7lvy"]
 _data = {
-"RESET": SubResource("Animation_clmft"),
-"loop": SubResource("Animation_b55y7")
+&"RESET": SubResource("Animation_clmft"),
+&"loop": SubResource("Animation_b55y7")
 }
 
 [node name="Demo" type="Node3D"]

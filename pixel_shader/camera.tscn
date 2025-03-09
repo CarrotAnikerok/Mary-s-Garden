@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuh1yaoty6gvf"]
 
-[ext_resource type="Script" path="res://pixel_shader/camera.gd" id="1_rd5nv"]
-[ext_resource type="Shader" path="res://pixel_shader/pixelart_stylizer.gdshader" id="2_t571y"]
+[ext_resource type="Script" uid="uid://c65pn06dldybw" path="res://pixel_shader/camera.gd" id="1_rd5nv"]
+[ext_resource type="Shader" uid="uid://dnuchhug4y3v" path="res://pixel_shader/pixelart_stylizer.gdshader" id="2_t571y"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_57txa"]
 size = Vector2(10, 10)

@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drd7swux64t2l"
+uid="uid://dpj5ym01byd0f"
 path.s3tc="res://.godot/imported/Chlorophytum_Neutral_end_Pot Base Color.png-10dbe7c523a3ac773f32e5a646f0184b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "d77c9593b7d0314eaccec8fd224c6a26"
 }
 
 [deps]
