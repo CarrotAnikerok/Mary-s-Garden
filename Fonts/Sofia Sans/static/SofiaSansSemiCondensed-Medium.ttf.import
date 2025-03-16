@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cctjwlh0005si"
-path="res://.godot/imported/SofiaSansSemiCondensed-Medium.ttf-bfeeef58d28715404308469dd1133008.fontdata"
+path="res://.godot/imported/SofiaSansSemiCondensed-Medium.ttf-6179c8b68135cb1a6d8e7a15f160b104.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Sofia Sans/static/SofiaSansSemiCondensed-Medium.ttf"
-dest_files=["res://.godot/imported/SofiaSansSemiCondensed-Medium.ttf-bfeeef58d28715404308469dd1133008.fontdata"]
+source_file="res://fonts/Sofia Sans/static/SofiaSansSemiCondensed-Medium.ttf"
+dest_files=["res://.godot/imported/SofiaSansSemiCondensed-Medium.ttf-6179c8b68135cb1a6d8e7a15f160b104.fontdata"]
 
 [params]
 

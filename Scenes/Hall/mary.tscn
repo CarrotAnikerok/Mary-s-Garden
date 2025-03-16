@@ -1,16 +1,24 @@
-[gd_scene load_steps=17 format=3 uid="uid://x1dx72vtbapt"]
+[gd_scene load_steps=19 format=3 uid="uid://x1dx72vtbapt"]
 
-[ext_resource type="Script" uid="uid://hexvp0pk2n8s" path="res://Scripts/mary.gd" id="1_r6d4t"]
-[ext_resource type="Texture2D" uid="uid://dvw0iw5gskli2" path="res://Sprites/Mary_Behavi/maryStateAnim-Sheet.png" id="2_vu55w"]
-[ext_resource type="Texture2D" uid="uid://bm6xmklqqoi3v" path="res://Sprites/Mary_Behavi/Mary_walkcicle_real-Sheet.png" id="3_8p4od"]
+[ext_resource type="Script" uid="uid://hexvp0pk2n8s" path="res://scripts/hall/mary.gd" id="1_r6d4t"]
+[ext_resource type="Texture2D" uid="uid://dvw0iw5gskli2" path="res://sprites/pixel_sprites/mary/maryStateAnim-Sheet.png" id="2_vu55w"]
+[ext_resource type="Texture2D" uid="uid://bm6xmklqqoi3v" path="res://sprites/pixel_sprites/mary/Mary_walkcicle_real-Sheet.png" id="3_8p4od"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ty8ie"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu55w"]
 atlas = ExtResource("2_vu55w")
 region = Rect2(0, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wylin"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p4od"]
 atlas = ExtResource("2_vu55w")
 region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty8ie"]
+atlas = ExtResource("2_vu55w")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wylin"]
+atlas = ExtResource("2_vu55w")
+region = Rect2(96, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y17ax"]
 atlas = ExtResource("3_8p4od")
@@ -48,6 +56,12 @@ region = Rect2(224, 0, 32, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vu55w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p4od")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ty8ie")
 }, {
 "duration": 1.0,
@@ -55,7 +69,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"stay",
-"speed": 4.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -84,7 +98,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 9.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkgxl"]
@@ -99,8 +113,6 @@ script = ExtResource("1_r6d4t")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6kfe4")
 animation = &"walk"
-frame = 3
-frame_progress = 0.903806
 flip_h = true
 
 [node name="DialogInterationArea" type="Area2D" parent="."]

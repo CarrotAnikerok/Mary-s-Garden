@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs1hsa04wul3i"
-path="res://.godot/imported/mary_confidence.png-5e144982c4622385da974a263c0da37b.ctex"
+path="res://.godot/imported/mary_confidence.png-22d4d64629107f7ce4e7c688433fef0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/novel_part/Mary/mary_confidence.png"
-dest_files=["res://.godot/imported/mary_confidence.png-5e144982c4622385da974a263c0da37b.ctex"]
+source_file="res://sprites/novel_part/Mary/mary_confidence.png"
+dest_files=["res://.godot/imported/mary_confidence.png-22d4d64629107f7ce4e7c688433fef0f.ctex"]
 
 [params]
 

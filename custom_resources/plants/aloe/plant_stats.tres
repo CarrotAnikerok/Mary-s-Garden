@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SavedPlantData" load_steps=2 format=3 uid="uid://ccsjfo5hf20bt"]
+
+[ext_resource type="Script" uid="uid://dfm66evancocx" path="res://scripts/resources/saving/saved_plant_data.gd" id="1_0e2fk"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_0e2fk")
+id = 0
+plant_name = ""
+normal_water_amount = 0
+actual_water_coefficent = 0.0
+actual_light_amount = 0
+actual_light_time = 0
+actual_humidity = 0.0
+actual_temperature = 0
+plant_state = 0
+is_alive = true
+light_on = false
+is_overpoured = false
+is_first_pour = true
+deadly_bad_for_too_long = false
+bad_parameters = [0, 0, 0, 0]
+parent_path = ""
+scene_path = ""
+metadata/_custom_type_script = "uid://dfm66evancocx"

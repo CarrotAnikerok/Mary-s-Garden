@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://do4iu333ej1k2"
-path="res://.godot/imported/arin_angry.png-8e61ccbdd7afa799589d8ea13ef852d2.ctex"
+path="res://.godot/imported/arin_angry.png-c2e05a4c48344e175b83f2542d5affe6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/novel_part/Arin/arin_angry.png"
-dest_files=["res://.godot/imported/arin_angry.png-8e61ccbdd7afa799589d8ea13ef852d2.ctex"]
+source_file="res://sprites/novel_part/Arin/arin_angry.png"
+dest_files=["res://.godot/imported/arin_angry.png-c2e05a4c48344e175b83f2542d5affe6.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://pixel_shader/camera.tscn" id="1_nx0xa"]
 [ext_resource type="PackedScene" uid="uid://uu0ke4ygiivp" path="res://3DPlants/Phaleonopsis_Stuartiana/Phaleonopsis_Dead/Phalaenopsis_Dead_End.glb" id="2_fymdx"]
-[ext_resource type="Script" uid="uid://b2svmituwfk4i" path="res://Scripts/rotate_block.gd" id="3_3swnt"]
+[ext_resource type="Script" uid="uid://b2svmituwfk4i" path="res://scripts/plant_room/plant_window/rotate_block.gd" id="3_3swnt"]
 [ext_resource type="PackedScene" uid="uid://ut2m2p2xccp1" path="res://3DPlants/Phaleonopsis_Stuartiana/Phaleonopsis_Horrible/Phalaenopsis_Horrible_End.glb" id="4_8ety1"]
 [ext_resource type="PackedScene" uid="uid://trdliskvvdys" path="res://3DPlants/Phaleonopsis_Stuartiana/Phaleonopsis_Bad/Phalaenopsis_Bad_End.glb" id="5_h7535"]
 [ext_resource type="PackedScene" uid="uid://ctrufd7n1j3j3" path="res://3DPlants/Phaleonopsis_Stuartiana/Phaleonopsis_Neutral/Phalaenopsis_Neutral_End.glb" id="6_3fsko"]

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d2adfxafalg0u"
-path="res://.godot/imported/Neucha-Regular.ttf-95747a0eb80bb61b47ad9c47df9a255f.fontdata"
+path="res://.godot/imported/Neucha-Regular.ttf-6bf213a1f1b67dc93c1618ae1aa17534.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Neucha/Neucha-Regular.ttf"
-dest_files=["res://.godot/imported/Neucha-Regular.ttf-95747a0eb80bb61b47ad9c47df9a255f.fontdata"]
+source_file="res://fonts/Neucha/Neucha-Regular.ttf"
+dest_files=["res://.godot/imported/Neucha-Regular.ttf-6bf213a1f1b67dc93c1618ae1aa17534.fontdata"]
 
 [params]
 

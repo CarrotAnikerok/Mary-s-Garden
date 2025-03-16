@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c26bil8bu76of"
-path="res://.godot/imported/kalanchoe.png-4b00007d5455ff20bc4f8b5973f7845a.ctex"
+path="res://.godot/imported/kalanchoe.png-3f3a3c351914c2e5f002736691b9c0d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/pixel_plants/kalanchoe.png"
-dest_files=["res://.godot/imported/kalanchoe.png-4b00007d5455ff20bc4f8b5973f7845a.ctex"]
+source_file="res://sprites/pixel_plants/kalanchoe.png"
+dest_files=["res://.godot/imported/kalanchoe.png-3f3a3c351914c2e5f002736691b9c0d6.ctex"]
 
 [params]
 

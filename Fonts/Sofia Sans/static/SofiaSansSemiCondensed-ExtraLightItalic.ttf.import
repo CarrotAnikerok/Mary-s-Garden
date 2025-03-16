@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://isaly6g8imok"
-path="res://.godot/imported/SofiaSansSemiCondensed-ExtraLightItalic.ttf-9b0ad1e429a4c568a0628da4d8c78d1a.fontdata"
+path="res://.godot/imported/SofiaSansSemiCondensed-ExtraLightItalic.ttf-4c9149ee9ae4e3ef85c4213f0f69cf7e.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Sofia Sans/static/SofiaSansSemiCondensed-ExtraLightItalic.ttf"
-dest_files=["res://.godot/imported/SofiaSansSemiCondensed-ExtraLightItalic.ttf-9b0ad1e429a4c568a0628da4d8c78d1a.fontdata"]
+source_file="res://fonts/Sofia Sans/static/SofiaSansSemiCondensed-ExtraLightItalic.ttf"
+dest_files=["res://.godot/imported/SofiaSansSemiCondensed-ExtraLightItalic.ttf-4c9149ee9ae4e3ef85c4213f0f69cf7e.fontdata"]
 
 [params]
 

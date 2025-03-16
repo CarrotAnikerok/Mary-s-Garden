@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca74enrietump"
-path="res://.godot/imported/scarlett_chill_1.png-a3ae18eefe1d041c38afb08d23107618.ctex"
+path="res://.godot/imported/scarlett_chill_1.png-14a89defb8c8bbce16e539157caa1b8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/novel_part/Scarlett/scarlett_chill_1.png"
-dest_files=["res://.godot/imported/scarlett_chill_1.png-a3ae18eefe1d041c38afb08d23107618.ctex"]
+source_file="res://sprites/novel_part/Scarlett/scarlett_chill_1.png"
+dest_files=["res://.godot/imported/scarlett_chill_1.png-14a89defb8c8bbce16e539157caa1b8c.ctex"]
 
 [params]
 

@@ -1,20 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwqsvc17c5c5j"]
+[gd_scene load_steps=12 format=3 uid="uid://bwqsvc17c5c5j"]
 
-[ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://Scenes/PlantRoom/draggable_item.tscn" id="1_aubv6"]
-[ext_resource type="Script" uid="uid://ldlhlv2jewar" path="res://Scripts/Plants/chlorophytum_comosum.gd" id="1_bho8o"]
+[ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://scenes/plant_room/draggable_item.tscn" id="1_aubv6"]
+[ext_resource type="Script" uid="uid://ldlhlv2jewar" path="res://scripts/plants/chlorophytum_comosum.gd" id="1_bho8o"]
 [ext_resource type="PackedScene" uid="uid://bga38llulatl6" path="res://3DPlants/Chlorophytum_Comosum/chlorophytum_perfect/leaves/Chlorophytum_good_Perfect_Leaves.glb" id="2_b2h10"]
+[ext_resource type="Resource" uid="uid://c32qxcudibp2l" path="res://custom_resources/plants/aloe/aloe_acceptable_stats.tres" id="2_bp3s5"]
 [ext_resource type="PackedScene" uid="uid://bm4drtdmtv4nc" path="res://3DPlants/Chlorophytum_Comosum/chlorophytum_good/Chlorophytum_good_end.glb" id="3_1rr35"]
 [ext_resource type="PackedScene" uid="uid://chj56mrbvsfro" path="res://3DPlants/Chlorophytum_Comosum/chlorophytum_neutral/Chlorophytum_Neutral_end.glb" id="4_1l3b4"]
 [ext_resource type="PackedScene" uid="uid://dd7tu44dlcde5" path="res://3DPlants/Chlorophytum_Comosum/chlorophytum_bad/Chlorophytum_Bad_End.glb" id="5_6lnys"]
 [ext_resource type="PackedScene" uid="uid://dwdm721hukeu0" path="res://3DPlants/Chlorophytum_Comosum/chlorophytum__horrible/Chlorophytum_Horrible_End.glb" id="6_2gfv4"]
 [ext_resource type="PackedScene" uid="uid://pqy7m8pe5vcg" path="res://3DPlants/Chlorophytum_Comosum/chlorophytum_dead/Chlorophytum_Dead_End.glb" id="7_1tdep"]
-[ext_resource type="Texture2D" uid="uid://dxs884f1s0kew" path="res://Sprites/pixel_plants/chlorophytum.png" id="9_q6rnv"]
+[ext_resource type="Texture2D" uid="uid://dxs884f1s0kew" path="res://sprites/pixel_plants/chlorophytum.png" id="9_q6rnv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8l2ao"]
 size = Vector2(18, 22)
 
-[node name="ChlorophytumComosum" type="Node2D"]
+[node name="ChlorophytumComosum" type="Node2D" groups=["game_events", "plant_room_events"]]
 script = ExtResource("1_bho8o")
+acceptable_stats = ExtResource("2_bp3s5")
 plant_states = [ExtResource("2_b2h10"), ExtResource("3_1rr35"), ExtResource("4_1l3b4"), ExtResource("5_6lnys"), ExtResource("6_2gfv4"), ExtResource("7_1tdep")]
 
 [node name="DraggableItem" parent="." instance=ExtResource("1_aubv6")]

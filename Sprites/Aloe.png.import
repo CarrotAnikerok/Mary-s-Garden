@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmb3th7v22gy"
-path="res://.godot/imported/Aloe.png-15e6689de7e621a9374ecc3da7ca5754.ctex"
+path="res://.godot/imported/Aloe.png-81e6331729f6558ef0a4650375b8a8f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Aloe.png"
-dest_files=["res://.godot/imported/Aloe.png-15e6689de7e621a9374ecc3da7ca5754.ctex"]
+source_file="res://sprites/Aloe.png"
+dest_files=["res://.godot/imported/Aloe.png-81e6331729f6558ef0a4650375b8a8f8.ctex"]
 
 [params]
 

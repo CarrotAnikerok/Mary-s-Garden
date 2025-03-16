@@ -1,0 +1,586 @@
+[gd_scene load_steps=55 format=3 uid="uid://gao1je8jpkpk"]
+
+[ext_resource type="Script" uid="uid://donw7vjqlqx8b" path="res://scripts/plant_room/plant_room.gd" id="1_1gmqi"]
+[ext_resource type="Texture2D" uid="uid://7uxnhq6khcex" path="res://sprites/plant_room/bgPlantRoomMarUI.png" id="2_bhw56"]
+[ext_resource type="PackedScene" uid="uid://bf65ywlrwh3hp" path="res://scenes/plant_room/garden_slot.tscn" id="2_vglss"]
+[ext_resource type="PackedScene" uid="uid://bwqsvc17c5c5j" path="res://sprites/plant_menu/button_themes/chlorophytum_comosum.tscn" id="3_hq6iw"]
+[ext_resource type="Script" uid="uid://cbkysea36ql0x" path="res://scenes/plant_room/plant_room.ui.gd" id="4_l1uuk"]
+[ext_resource type="PackedScene" uid="uid://qi51764v7mh7" path="res://scenes/kalanchoe_blossfeldiana.tscn" id="5_jgt6p"]
+[ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://scenes/Aloe_Vera.tscn" id="5_pstx4"]
+[ext_resource type="Texture2D" uid="uid://dcs5h6fr8gkt2" path="res://sprites/plant_room/UI/handbook.png" id="5_tbtck"]
+[ext_resource type="Texture2D" uid="uid://dsolnq53gnw6e" path="res://sprites/plant_room/UI/door.png" id="6_fv2ki"]
+[ext_resource type="Texture2D" uid="uid://cga7up24vw41p" path="res://sprites/plant_room/UI/clock_phase/clock_phase_2.png" id="6_gxb4b"]
+[ext_resource type="Script" uid="uid://iutq522h1jjy" path="res://scripts/plant_room/time_count.gd" id="7_1gmqi"]
+[ext_resource type="Script" uid="uid://b32rmceec1j3s" path="res://scripts/plant_room/UI/time_phase_sprite.gd" id="7_f5rt3"]
+[ext_resource type="Texture2D" uid="uid://jf3wp03c3x04" path="res://sprites/plant_room/UI/calendar.png" id="7_fv2ki"]
+[ext_resource type="Texture2D" uid="uid://dbme5d2q75mf2" path="res://sprites/plant_room/UI/clock_phase/clock_phase_4.png" id="8_6rbcv"]
+[ext_resource type="Texture2D" uid="uid://di0yw08o6dxnj" path="res://sprites/pixel_sprites/mary/mary_garden_anim.png" id="8_vwt8o"]
+[ext_resource type="Texture2D" uid="uid://cpp5wvkxthenm" path="res://sprites/plant_room/UI/clock_phase/clock_phase_5.png" id="9_34jyk"]
+[ext_resource type="Script" uid="uid://d21o7gpdc68jr" path="res://scenes/plant_room/plant_room_scene_navigator.gd" id="9_gngg7"]
+[ext_resource type="Texture2D" uid="uid://d0xy37k81apml" path="res://sprites/plant_room/UI/clock_phase/clock_phase_1.png" id="10_cedpl"]
+[ext_resource type="Texture2D" uid="uid://55jyrf7cq87h" path="res://sprites/plant_room/UI/clock_phase/clock_phase_6.png" id="10_mkj6r"]
+[ext_resource type="Texture2D" uid="uid://cgrnnrh6sta8n" path="res://sprites/plant_room/UI/clock_time.png" id="10_sngjb"]
+[ext_resource type="Texture2D" uid="uid://ricu78kl72fu" path="res://sprites/plant_room/UI/clock_phase/clock_phase_7.png" id="11_4tg3j"]
+[ext_resource type="Texture2D" uid="uid://xqp4rohkygc2" path="res://sprites/plant_room/UI/clock_phase/clock_phase_8.png" id="12_i121n"]
+[ext_resource type="Texture2D" uid="uid://qeixo8fu55sn" path="res://sprites/plant_room/UI/clock_phase/clock_phase_3.png" id="13_7ntu0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k66hf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6rbcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_34jyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mkj6r")
+}],
+"loop": false,
+"name": &"day_to_evenenig",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_mkj6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4tg3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_i121n")
+}],
+"loop": false,
+"name": &"evening_to_night",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gxb4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7ntu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6rbcv")
+}],
+"loop": false,
+"name": &"morning_to_day",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_i121n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cedpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gxb4b")
+}],
+"loop": false,
+"name": &"night_to_morning",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dybbd"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haf8u"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3blf"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mera4"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcbjt"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi008"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yuik"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gg2s"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whawl"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kwsg"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbchs"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk6l6"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp0d2"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2pry"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2v8v"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(896, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f6eb"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(960, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55opu"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1024, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv7iv"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1088, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py1am"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1152, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp5ic"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1216, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr0e7"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1280, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y1q7"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1344, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m34h"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1408, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koy2t"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1472, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odtig"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(1536, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0taes"]
+atlas = ExtResource("8_vwt8o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7t48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dybbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haf8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3blf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mera4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcbjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi008")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yuik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gg2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whawl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kwsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbchs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk6l6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp0d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2pry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2v8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f6eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55opu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv7iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py1am")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp5ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr0e7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y1q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m34h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koy2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odtig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0taes")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1gmqi"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 1)
+gravity = Vector3(0, 10, 0)
+color = Color(0.88, 0.88, 0.88, 1)
+turbulence_enabled = true
+turbulence_noise_strength = 9.86
+turbulence_noise_scale = 3.602
+turbulence_influence_max = 0.233
+
+[sub_resource type="Gradient" id="Gradient_tbtck"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fv2ki"]
+gradient = SubResource("Gradient_tbtck")
+fill_from = Vector2(0.545455, 1)
+fill_to = Vector2(0.502164, 0)
+
+[node name="PlantRoom" type="Node2D"]
+script = ExtResource("1_1gmqi")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(160, 90)
+texture = ExtResource("2_bhw56")
+
+[node name="TimeCount" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 14.0
+script = ExtResource("7_1gmqi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Day" type="Label" parent="TimeCount"]
+layout_mode = 0
+offset_left = 35.0
+offset_right = 75.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.392157, 0.509804, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "день 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Phase" type="Label" parent="TimeCount"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.391, 0.51, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Утро"
+metadata/_edit_use_anchors_ = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_l1uuk")
+
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 28.0
+
+[node name="TimeClockButton" type="TextureButton" parent="UI/Button"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture_normal = ExtResource("10_sngjb")
+
+[node name="TimePhaseSprite" type="Sprite2D" parent="UI/Button"]
+position = Vector2(31, 9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gxb4b")
+script = ExtResource("7_f5rt3")
+
+[node name="TimePhaseAnimated" type="AnimatedSprite2D" parent="UI/Button/TimePhaseSprite"]
+sprite_frames = SubResource("SpriteFrames_k66hf")
+animation = &"day_to_evenenig"
+
+[node name="CalendarButton" type="TextureButton" parent="UI/Button"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -1.0
+offset_right = 28.0
+offset_bottom = 31.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_fv2ki")
+
+[node name="HandbookButton" type="TextureButton" parent="UI"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -3.0
+offset_right = 65.0
+offset_bottom = 29.0
+texture_normal = ExtResource("5_tbtck")
+
+[node name="DoorButton" type="TextureButton" parent="UI"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = -3.0
+offset_right = 87.0
+offset_bottom = 29.0
+texture_normal = ExtResource("6_fv2ki")
+
+[node name="GardenSlots" type="Node2D" parent="."]
+position = Vector2(1.52588e-05, -2)
+
+[node name="GardenSlot" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(31, 43)
+
+[node name="AloeVera" parent="GardenSlots/GardenSlot" instance=ExtResource("5_pstx4")]
+
+[node name="GardenSlot2" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(55, 43)
+
+[node name="ChlorophytumComosum" parent="GardenSlots/GardenSlot2" groups=["plant"] instance=ExtResource("3_hq6iw")]
+
+[node name="GardenSlot3" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(80, 43)
+
+[node name="GardenSlot4" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(104, 43)
+
+[node name="KalanchoeBlossfeldiana" parent="GardenSlots/GardenSlot4" groups=["plant"] instance=ExtResource("5_jgt6p")]
+
+[node name="GardenSlot5" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(155, 34)
+
+[node name="GardenSlot6" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(179, 34)
+
+[node name="GardenSlot7" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(204, 34)
+
+[node name="GardenSlot8" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(228, 34)
+
+[node name="GardenSlot9" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(27, 80)
+
+[node name="GardenSlot10" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(51, 80)
+
+[node name="GardenSlot11" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(76, 80)
+
+[node name="GardenSlot12" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
+position = Vector2(100, 80)
+
+[node name="GardenSlot13" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(154, 83)
+
+[node name="GardenSlot14" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(178, 83)
+
+[node name="GardenSlot15" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(203, 83)
+
+[node name="GardenSlot16" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
+position = Vector2(227, 83)
+
+[node name="GardenSlot17" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(27, 114)
+
+[node name="GardenSlot18" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(51, 114)
+
+[node name="GardenSlot19" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(76, 114)
+
+[node name="GardenSlot20" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(100, 114)
+
+[node name="GardenSlot21" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(154, 121)
+
+[node name="GardenSlot22" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(178, 121)
+
+[node name="GardenSlot23" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(203, 121)
+
+[node name="GardenSlot24" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(227, 121)
+
+[node name="GardenSlot25" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(27, 161)
+
+[node name="GardenSlot26" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(51, 161)
+
+[node name="GardenSlot27" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(76, 161)
+
+[node name="GardenSlot28" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
+position = Vector2(100, 161)
+
+[node name="GardenSlot29" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(155, 145)
+
+[node name="GardenSlot30" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(179, 145)
+
+[node name="GardenSlot31" parent="GardenSlots" instance=ExtResource("2_vglss")]
+z_index = -1
+position = Vector2(204, 145)
+
+[node name="GardenSlot32" parent="GardenSlots" instance=ExtResource("2_vglss")]
+position = Vector2(228, 145)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.96, 0.864, 0.9136, 1)
+light_mask = 2
+position = Vector2(283, 32)
+sprite_frames = SubResource("SpriteFrames_c7t48")
+autoplay = "default"
+frame = 15
+frame_progress = 0.0906181
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(158, 92)
+scale = Vector2(1.64, 1)
+amount = 15
+lifetime = 10.0
+preprocess = 10.0
+process_material = SubResource("ParticleProcessMaterial_1gmqi")
+
+[node name="Utilities" type="Node" parent="."]
+
+[node name="PlantRoomSceneNavigator" type="Node" parent="Utilities"]
+script = ExtResource("9_gngg7")
+
+[node name="Light" type="Node" parent="."]
+
+[node name="rays" type="Node" parent="Light"]
+
+[node name="PointLight2D5" type="PointLight2D" parent="Light/rays"]
+visible = false
+position = Vector2(-113, -301)
+rotation = -1.89522
+scale = Vector2(1.81262, 72.0072)
+skew = 1.43221
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+texture = SubResource("GradientTexture2D_fv2ki")
+
+[node name="PointLight2D" type="PointLight2D" parent="Light/rays"]
+visible = false
+position = Vector2(83, -32)
+rotation = -0.437993
+scale = Vector2(0.476274, 8.9156)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+texture = SubResource("GradientTexture2D_fv2ki")
+
+[node name="ColorRect" type="ColorRect" parent="Light/rays"]
+visible = false
+offset_left = -234.0
+offset_top = -305.0
+offset_right = -194.0
+offset_bottom = -265.0
+color = Color(0.85, 0.793333, 0, 1)
+
+[node name="PointLight2D2" type="PointLight2D" parent="Light/rays"]
+visible = false
+position = Vector2(163, -28)
+rotation = -0.437993
+scale = Vector2(0.476274, 8.9156)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+texture = SubResource("GradientTexture2D_fv2ki")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Light/rays"]
+visible = false
+position = Vector2(235, -31)
+rotation = -0.437993
+scale = Vector2(0.113904, 8.68092)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+texture = SubResource("GradientTexture2D_fv2ki")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Light/rays"]
+visible = false
+position = Vector2(-28, -33)
+rotation = -0.437993
+scale = Vector2(0.200246, 8.9156)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+texture = SubResource("GradientTexture2D_fv2ki")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light"]
+color = Color(0.131643, 0.470445, 0.575676, 1)
+energy = 0.35
+
+[connection signal="pressed" from="UI/HandbookButton" to="UI" method="_on_handbook_button_pressed"]
+[connection signal="pressed" from="UI/DoorButton" to="UI" method="_on_door_button_pressed"]
+[connection signal="pressed" from="UI/DoorButton" to="Utilities/PlantRoomSceneNavigator" method="_on_door_button_pressed"]

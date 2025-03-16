@@ -11,17 +11,17 @@ config_version=5
 [application]
 
 config/name="Mary's Garden"
-run/main_scene="res://Scenes/Hall/hall.tscn"
+run/main_scene="res://scenes/hall/hall.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-global="*res://Scripts/Singletons/global.gd"
-SignulBus="*res://Scripts/Singletons/signul_bus.gd"
-SceneManager="*res://Scripts/Singletons/scene_manager.gd"
-HandbookInfo="*res://Scripts/Singletons/handbook_info.gd"
-GlobalTimer="*res://Scenes/Global/global_timer.tscn"
+global="*res://scripts/singletons/global.gd"
+SignulBus="*res://scripts/singletons/signul_bus.gd"
+SceneManager="*res://scripts/singletons/scene_manager.gd"
+HandbookInfo="*res://scripts/singletons/handbook_info.gd"
+GlobalTimer="*res://scenes/global/global_timer.tscn"
 
 [debug]
 
@@ -47,6 +47,12 @@ movie_writer/movie_file="D:/veshi/godotgames/MyRecordings/MyRecordings.avi"
 
 import/blender/enabled=false
 import/fbx/enabled=false
+
+[global_group]
+
+plant_room_events=""
+global_world=""
+handbook_info=""
 
 [gui]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vfhrfy52vras"
-path="res://.godot/imported/Mary_walkcicle-Sheet.png-6c9aaa79a895e9255b53080a6d6fd7d8.ctex"
+path="res://.godot/imported/Mary_walkcicle-Sheet.png-52db883691a21707321c31e0ef7ef4f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Mary_walkcicle-Sheet.png"
-dest_files=["res://.godot/imported/Mary_walkcicle-Sheet.png-6c9aaa79a895e9255b53080a6d6fd7d8.ctex"]
+source_file="res://sprites/Mary_walkcicle-Sheet.png"
+dest_files=["res://.godot/imported/Mary_walkcicle-Sheet.png-52db883691a21707321c31e0ef7ef4f6.ctex"]
 
 [params]
 

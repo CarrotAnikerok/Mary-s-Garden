@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SavedGame" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_data.gd" id="1_jd040"]
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_game.gd" id="2_jd040"]
+
+[resource]
+script = ExtResource("2_jd040")
+plant_room = Array[ExtResource("1_jd040")]([])
+notes = Array[ExtResource("1_jd040")]([])
+hall = Array[ExtResource("1_jd040")]([])
+global_world = Array[ExtResource("1_jd040")]([])

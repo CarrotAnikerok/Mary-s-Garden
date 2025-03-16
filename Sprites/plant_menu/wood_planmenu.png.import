@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfytjd2qgrog7"
-path.s3tc="res://.godot/imported/wood_planmenu.png-62f9bb4204c926f8faa6cc51688a335e.s3tc.ctex"
+path.s3tc="res://.godot/imported/wood_planmenu.png-88e894d12a38f16ef86d8a3a1fb1dc76.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/plant_menu/wood_planmenu.png"
-dest_files=["res://.godot/imported/wood_planmenu.png-62f9bb4204c926f8faa6cc51688a335e.s3tc.ctex"]
+source_file="res://sprites/plant_menu/wood_planmenu.png"
+dest_files=["res://.godot/imported/wood_planmenu.png-88e894d12a38f16ef86d8a3a1fb1dc76.s3tc.ctex"]
 
 [params]
 

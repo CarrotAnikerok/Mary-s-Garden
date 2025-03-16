@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cemyrxk5c85gw"
-path="res://.godot/imported/mary_sad_2.png-c7dcbe07f23ac9f7ee8007f22cc45371.ctex"
+path="res://.godot/imported/mary_sad_2.png-09c426c80003e3ca8f88abadadb397bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/novel_part/Mary/mary_sad_2.png"
-dest_files=["res://.godot/imported/mary_sad_2.png-c7dcbe07f23ac9f7ee8007f22cc45371.ctex"]
+source_file="res://sprites/novel_part/Mary/mary_sad_2.png"
+dest_files=["res://.godot/imported/mary_sad_2.png-09c426c80003e3ca8f88abadadb397bb.ctex"]
 
 [params]
 

@@ -1,27 +1,19 @@
 class_name AloeVera
 extends Plant
 
-#максимальное количество воды в слайдере должно зависеть от растения
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	plant_name = "Aloe Vera"
 	place_update()
 	normal_water_amount = 300
 	actual_water_coefficent = 0
-	acceptable_water_coefficent = Vector2(0.3, 0.6)
 	perfect_water_coefficent = Vector2(0.1, 0.9)
 	actual_light_amount = base_light_amount
-	acceptable_light_time = Vector2(8, 14)
 	perfect_light_time = Vector2(14, 16)
 	actual_light_time = 0 
-	acceptable_light_amount = Vector2(3000, 5000)
 	perfect_light_amount = Vector2(5000, 8000)
 	actual_humidity = base_humidity
-	acceptable_humidity = Vector2(0.55, 0.85)
 	perfect_humidity = Vector2(0.4, 1.0)
 	actual_temperature = base_temperature
-	acceptable_temperature = Vector2(15, 30)
 	perfect_temperature = Vector2(20, 24)
 	
 	

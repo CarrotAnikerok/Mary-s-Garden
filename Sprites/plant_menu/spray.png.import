@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cb3vmrxj01cgi"
-path="res://.godot/imported/spray.png-bd32bf2f7e78c915b96b40129e8e2ecd.ctex"
+path="res://.godot/imported/spray.png-30cb90cd011ecf9e231c2c30eb94e631.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/plant_menu/spray.png"
-dest_files=["res://.godot/imported/spray.png-bd32bf2f7e78c915b96b40129e8e2ecd.ctex"]
+source_file="res://sprites/plant_menu/spray.png"
+dest_files=["res://.godot/imported/spray.png-30cb90cd011ecf9e231c2c30eb94e631.ctex"]
 
 [params]
 

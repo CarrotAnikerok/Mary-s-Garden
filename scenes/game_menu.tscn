@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://clq5v1wudo8iw"]
+
+[ext_resource type="Script" uid="uid://bsdfheu4eoih6" path="res://scripts/game_menu/game_menu.gd" id="1_qdaa4"]
+
+[node name="GameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 180.0
+color = Color(0.7675, 1, 0.55, 1)
+
+[node name="Menu" type="Node" parent="."]
+script = ExtResource("1_qdaa4")
+
+[node name="NewGameButton" type="Button" parent="Menu"]
+offset_left = 110.0
+offset_top = 41.0
+offset_right = 210.0
+offset_bottom = 72.0
+text = "Новая игра"
+
+[node name="ContinueButton" type="Button" parent="Menu"]
+offset_left = 104.0
+offset_top = 81.0
+offset_right = 215.0
+offset_bottom = 112.0
+text = "Продолжить"
+
+[node name="ExitButton" type="Button" parent="Menu"]
+offset_left = 117.0
+offset_top = 119.0
+offset_right = 202.0
+offset_bottom = 150.0
+text = "Выйти :0"
+
+[node name="Utilities" type="Node" parent="."]
+
+[node name="GameMenuNavigator" type="Node" parent="Utilities"]
+
+[connection signal="pressed" from="Menu/NewGameButton" to="Menu" method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Menu/ContinueButton" to="Menu" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Menu/ExitButton" to="Menu" method="_on_exit_button_pressed"]

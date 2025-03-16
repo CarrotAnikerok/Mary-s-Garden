@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dsc8jbo7d5ooi"
-path="res://.godot/imported/Blogger_Sans-Light_Italic.otf-99a02b50be3512fad775d21abd354b77.fontdata"
+path="res://.godot/imported/Blogger_Sans-Light_Italic.otf-05eba4da45ba2c94d352da921c813104.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Blogger/Blogger_Sans-Light_Italic.otf"
-dest_files=["res://.godot/imported/Blogger_Sans-Light_Italic.otf-99a02b50be3512fad775d21abd354b77.fontdata"]
+source_file="res://fonts/Blogger/Blogger_Sans-Light_Italic.otf"
+dest_files=["res://.godot/imported/Blogger_Sans-Light_Italic.otf-05eba4da45ba2c94d352da921c813104.fontdata"]
 
 [params]
 

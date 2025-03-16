@@ -1,20 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctororhwgysd7"]
+[gd_scene load_steps=12 format=3 uid="uid://ctororhwgysd7"]
 
-[ext_resource type="Script" uid="uid://bn24r68bvj50s" path="res://Scripts/Plants/aloe_vera.gd" id="1_8b0w6"]
+[ext_resource type="Script" uid="uid://bn24r68bvj50s" path="res://scripts/plants/aloe_vera.gd" id="1_8b0w6"]
+[ext_resource type="Resource" uid="uid://c32qxcudibp2l" path="res://custom_resources/plants/aloe/aloe_acceptable_stats.tres" id="2_4r8di"]
 [ext_resource type="PackedScene" uid="uid://cptur4xiphi6b" path="res://3DPlants/Aloe_Vera/aloe_vera_perfect/aloevera_perfect.glb" id="2_efrt1"]
-[ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://Scenes/PlantRoom/draggable_item.tscn" id="3_1s1gn"]
+[ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://scenes/plant_room/draggable_item.tscn" id="3_1s1gn"]
 [ext_resource type="PackedScene" uid="uid://jbrxm846v500" path="res://3DPlants/Aloe_Vera/aloe_vera_good/aloevera_good_end.glb" id="3_y5er5"]
 [ext_resource type="PackedScene" uid="uid://d1q1pk5bormur" path="res://3DPlants/Aloe_Vera/aloe_vera_neutral/aloevera_neutral_end.glb" id="4_eoykq"]
 [ext_resource type="PackedScene" uid="uid://d4cqv1yo1navd" path="res://3DPlants/Aloe_Vera/aloe_vera_bad/aloevera_bad_end.glb" id="5_6dxjm"]
 [ext_resource type="PackedScene" uid="uid://dhinluiweylrg" path="res://3DPlants/Aloe_Vera/aloe_vera_horrible/aloevera_horrible_end.glb" id="6_rh4co"]
 [ext_resource type="PackedScene" uid="uid://cxps05hj3uox4" path="res://3DPlants/Aloe_Vera/aloe_vera_dead/aloevera_dead_end.glb" id="7_u6o7v"]
-[ext_resource type="Texture2D" uid="uid://c63nifnt7s54n" path="res://Sprites/pixel_plants/aloe_vera3.png" id="9_ruqj4"]
+[ext_resource type="Texture2D" uid="uid://c63nifnt7s54n" path="res://sprites/pixel_plants/aloe_vera3.png" id="9_ruqj4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew20g"]
 size = Vector2(20, 22)
 
-[node name="AloeVera" type="Node2D" groups=["plant"]]
+[node name="AloeVera" type="Node2D" groups=["plant", "plant_room_events"]]
 script = ExtResource("1_8b0w6")
+acceptable_stats = ExtResource("2_4r8di")
 plant_states = [ExtResource("2_efrt1"), ExtResource("3_y5er5"), ExtResource("4_eoykq"), ExtResource("5_6dxjm"), ExtResource("6_rh4co"), ExtResource("7_u6o7v")]
 metadata/_edit_horizontal_guides_ = [-16.0, 6.0]
 metadata/_edit_vertical_guides_ = [-10.0, 10.0]

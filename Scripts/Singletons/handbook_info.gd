@@ -6,8 +6,9 @@ var notes_dict: Array[Dictionary]
 var json_notes: Dictionary = {}
 var json_phases = JSON.stringify(phases)
  
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
+	add_to_group("handbook_info")
 	json_notes.type = "plant_action"
 	json_notes.name = "Aloe Vera"
 	json_notes.description = "Water for 5 ml"
@@ -18,9 +19,10 @@ func _ready():
 	load_from("res://SAVES/file.json")
 	add_title(phases[global.phase_of_day])
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass
+	
 	
 func add_note(type, plant_name="", description=""):
 	var dict = {
@@ -30,6 +32,7 @@ func add_note(type, plant_name="", description=""):
 		}
 	notes.append(dict)
 	
+	
 func add_title(title):
 	var dict = {
 			"type": "phase_change",
@@ -37,12 +40,14 @@ func add_title(title):
 		}
 	notes.append(dict)
 	
+	
 func change_phase_title():
 	var i = global.phase_of_day + 1
 	if (i == 3):
 		i = 0
 		change_day()
 	add_title(phases[i])
+	
 	
 func change_day():
 	var i = 0
@@ -61,6 +66,7 @@ func save_to_file(content):
 	var file = FileAccess.open("res://SAVES/file.json", FileAccess.WRITE)
 	file.store_line(content)
 	
+	
 func load_from(path):
 	if not FileAccess.file_exists(path):
 		return
@@ -74,6 +80,14 @@ func load_from(path):
 	var data = json.data
 	print(data[1].name)
 			
-		
+			
+func on_save_game(saved_data: Array[SavedData]):
+	var my_data = SavedNotebookData.new()
+	my_data.notes = notes
+	saved_data.append(my_data)
+	
+
+func on_load_game(saved_data: SavedData):
+	notes = saved_data.notes
 		
 	

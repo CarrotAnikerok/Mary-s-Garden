@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2iesko6uuwbx"
-path="res://.godot/imported/mark_thinks_1.png-4119e8ab8a300db6efb99f28e6d7b700.ctex"
+path="res://.godot/imported/mark_thinks_1.png-04ba69cf976345374d197aa9ab4fc44d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/novel_part/Mark/mark_thinks_1.png"
-dest_files=["res://.godot/imported/mark_thinks_1.png-4119e8ab8a300db6efb99f28e6d7b700.ctex"]
+source_file="res://sprites/novel_part/Mark/mark_thinks_1.png"
+dest_files=["res://.godot/imported/mark_thinks_1.png-04ba69cf976345374d197aa9ab4fc44d.ctex"]
 
 [params]
 

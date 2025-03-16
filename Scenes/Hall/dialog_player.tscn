@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://b5neg873g5wfk"]
 
-[ext_resource type="Script" uid="uid://di4isil2vrqy3" path="res://Scripts/dialog_player.gd" id="1_4aop0"]
-[ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://Sprites/novel_part/Mary/mary_chill.png" id="2_judwd"]
-[ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://Sprites/novel_part/Mary/mary_worried.png" id="3_17y02"]
-[ext_resource type="Texture2D" uid="uid://ve4jpk7g24g2" path="res://Sprites/novel_part/Arin/arin_chill_1.png" id="3_ompeb"]
-[ext_resource type="Texture2D" uid="uid://dwm2m8lggyump" path="res://Sprites/novel_part/text_box.png" id="5_wm8ow"]
-[ext_resource type="FontFile" uid="uid://b8pvdi5csuer8" path="res://Fonts/Blogger/Blogger_Sans-Medium.otf" id="6_dhbxe"]
-[ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://Fonts/Neucha/Neucha-Regular.ttf" id="6_p3hlc"]
+[ext_resource type="Script" uid="uid://di4isil2vrqy3" path="res://scripts/hall/dialog_system/dialog_player.gd" id="1_4aop0"]
+[ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://sprites/novel_part/Mary/mary_chill.png" id="2_judwd"]
+[ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://sprites/novel_part/Mary/mary_worried.png" id="3_17y02"]
+[ext_resource type="Texture2D" uid="uid://ve4jpk7g24g2" path="res://sprites/novel_part/Arin/arin_chill_1.png" id="3_ompeb"]
+[ext_resource type="Texture2D" uid="uid://dwm2m8lggyump" path="res://sprites/novel_part/text_box.png" id="5_wm8ow"]
+[ext_resource type="FontFile" uid="uid://b8pvdi5csuer8" path="res://fonts/Blogger/Blogger_Sans-Medium.otf" id="6_dhbxe"]
+[ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://fonts/Neucha/Neucha-Regular.ttf" id="6_p3hlc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mxfw7"]
 line_spacing = 1.0

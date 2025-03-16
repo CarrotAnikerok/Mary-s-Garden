@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tyvy5i31u3as"
-path="res://.godot/imported/scarlett_arrogance_2.png-6a329bfb02d884aecfd8e3075fc84bd2.ctex"
+path="res://.godot/imported/scarlett_arrogance_2.png-b5a96433bfca2dffc0b24706836c2517.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/novel_part/Scarlett/scarlett_arrogance_2.png"
-dest_files=["res://.godot/imported/scarlett_arrogance_2.png-6a329bfb02d884aecfd8e3075fc84bd2.ctex"]
+source_file="res://sprites/novel_part/Scarlett/scarlett_arrogance_2.png"
+dest_files=["res://.godot/imported/scarlett_arrogance_2.png-b5a96433bfca2dffc0b24706836c2517.ctex"]
 
 [params]
 

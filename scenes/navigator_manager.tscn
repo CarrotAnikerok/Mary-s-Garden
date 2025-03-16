@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b30m0h51igqng"]
+
+[sub_resource type="GDScript" id="GDScript_trmnh"]
+script/source = "extends Node
+
+var SCENE_HALL = \"res://scenes/hall/hall.tscn\"
+
+func _ready():
+	SceneManager.load_game()
+
+func _on_to_hall_button_pressed():
+	SceneManager.goto_scene(SCENE_HALL)
+"
+
+[node name="NavigatorManager" type="Node2D"]
+script = SubResource("GDScript_trmnh")

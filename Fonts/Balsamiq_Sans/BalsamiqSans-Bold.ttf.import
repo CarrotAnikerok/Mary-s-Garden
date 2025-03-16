@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dcb3mlo4injv4"
-path="res://.godot/imported/BalsamiqSans-Bold.ttf-586d2327dd42daac82f52ad313d7a872.fontdata"
+path="res://.godot/imported/BalsamiqSans-Bold.ttf-b9e906218614a43e8ab96269643a7fed.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Balsamiq_Sans/BalsamiqSans-Bold.ttf"
-dest_files=["res://.godot/imported/BalsamiqSans-Bold.ttf-586d2327dd42daac82f52ad313d7a872.fontdata"]
+source_file="res://fonts/Balsamiq_Sans/BalsamiqSans-Bold.ttf"
+dest_files=["res://.godot/imported/BalsamiqSans-Bold.ttf-b9e906218614a43e8ab96269643a7fed.fontdata"]
 
 [params]
 

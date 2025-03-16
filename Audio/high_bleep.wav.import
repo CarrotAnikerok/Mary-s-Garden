@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://85byjp5pacyj"
-path="res://.godot/imported/high_bleep.wav-15ff4ab245349870cec27b507beb25b2.sample"
+path="res://.godot/imported/high_bleep.wav-57e9d53d33b42521ec7b8e07dd60aa52.sample"
 
 [deps]
 
-source_file="res://Audio/high_bleep.wav"
-dest_files=["res://.godot/imported/high_bleep.wav-15ff4ab245349870cec27b507beb25b2.sample"]
+source_file="res://audio/high_bleep.wav"
+dest_files=["res://.godot/imported/high_bleep.wav-57e9d53d33b42521ec7b8e07dd60aa52.sample"]
 
 [params]
 

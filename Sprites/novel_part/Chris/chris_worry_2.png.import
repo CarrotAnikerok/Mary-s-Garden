@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://baeyp557t4le2"
-path="res://.godot/imported/chris_worry_2.png-d9f5584f4c932084caa08eb201ea8f54.ctex"
+path="res://.godot/imported/chris_worry_2.png-52c1384c5463f0893692b17ea4c2430b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/novel_part/Chris/chris_worry_2.png"
-dest_files=["res://.godot/imported/chris_worry_2.png-d9f5584f4c932084caa08eb201ea8f54.ctex"]
+source_file="res://sprites/novel_part/Chris/chris_worry_2.png"
+dest_files=["res://.godot/imported/chris_worry_2.png-52c1384c5463f0893692b17ea4c2430b.ctex"]
 
 [params]
 

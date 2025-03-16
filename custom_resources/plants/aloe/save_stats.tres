@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantStats" load_steps=2 format=3 uid="uid://1b6ekbp6bwms"]
+
+[ext_resource type="Script" uid="uid://dfm66evancocx" path="res://scripts/resources/saving/saved_plant_data.gd" id="1_2pvv0"]
+
+[resource]
+script = ExtResource("1_2pvv0")
+plant_name = ""
+normal_water_amount = 300
+actual_water_coefficent = 0
+actual_light_amount = 0
+actual_light_time = 0
+actual_humidity = 0.0
+actual_temperature = 0
+metadata/_custom_type_script = "uid://dfm66evancocx"

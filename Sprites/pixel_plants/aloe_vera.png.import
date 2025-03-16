@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bo4hwxs8twsra"
-path="res://.godot/imported/aloe_vera.png-f4435bc78f7111cee5a0d167fe2a65c2.ctex"
+path="res://.godot/imported/aloe_vera.png-c35464fd33d83aed8b473fc57512b094.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/pixel_plants/aloe_vera.png"
-dest_files=["res://.godot/imported/aloe_vera.png-f4435bc78f7111cee5a0d167fe2a65c2.ctex"]
+source_file="res://sprites/pixel_plants/aloe_vera.png"
+dest_files=["res://.godot/imported/aloe_vera.png-c35464fd33d83aed8b473fc57512b094.ctex"]
 
 [params]
 

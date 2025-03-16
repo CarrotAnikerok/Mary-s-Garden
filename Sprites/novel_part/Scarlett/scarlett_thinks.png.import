@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2l6oribw2le3"
-path="res://.godot/imported/scarlett_thinks.png-70b6d27707da33a2bf955f054db5cea9.ctex"
+path="res://.godot/imported/scarlett_thinks.png-d162e2bec4de39d321db2a731e0006ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/novel_part/Scarlett/scarlett_thinks.png"
-dest_files=["res://.godot/imported/scarlett_thinks.png-70b6d27707da33a2bf955f054db5cea9.ctex"]
+source_file="res://sprites/novel_part/Scarlett/scarlett_thinks.png"
+dest_files=["res://.godot/imported/scarlett_thinks.png-d162e2bec4de39d321db2a731e0006ef.ctex"]
 
 [params]
 
