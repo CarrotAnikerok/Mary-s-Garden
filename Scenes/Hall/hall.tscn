@@ -1,14 +1,16 @@
-[gd_scene load_steps=48 format=3 uid="uid://c6mo7fj5a4yvd"]
+[gd_scene load_steps=80 format=3 uid="uid://c6mo7fj5a4yvd"]
 
 [ext_resource type="PackedScene" uid="uid://b5neg873g5wfk" path="res://scenes/hall/dialog_player.tscn" id="1_wkokc"]
 [ext_resource type="Texture2D" uid="uid://do4iu333ej1k2" path="res://sprites/novel_part/Arin/arin_angry.png" id="2_7awf8"]
+[ext_resource type="Texture2D" uid="uid://crngkhd00i6nh" path="res://scripts/plant_room/spritesheets/plant_2_spritesheet.png" id="2_bdgvf"]
+[ext_resource type="Texture2D" uid="uid://dr0bhrw4iwh1v" path="res://scripts/plant_room/spritesheets/plant_3_spritesheet.png" id="3_qlbdb"]
+[ext_resource type="Texture2D" uid="uid://crgvu3n8rwsvb" path="res://scripts/plant_room/spritesheets/clock_cat_spritesheet_2.png" id="4_4qh33"]
 [ext_resource type="Texture2D" uid="uid://cnwhj6jirobbm" path="res://sprites/hall/bgs/HallBackground.png" id="4_vg36q"]
 [ext_resource type="Texture2D" uid="uid://dqk1ntr6ieia8" path="res://sprites/hall/bgs/plant_bg2.png" id="5_84350"]
 [ext_resource type="Texture2D" uid="uid://cysiq70465pgn" path="res://sprites/hall/bgs/plant_bg.png" id="5_hboqj"]
-[ext_resource type="Texture2D" uid="uid://df81sumoux41f" path="res://sprites/pixel_sprites/arin/arinStatic.png" id="5_tuisg"]
-[ext_resource type="PackedScene" uid="uid://x1dx72vtbapt" path="res://scenes/hall/mary.tscn" id="6_6dx4x"]
+[ext_resource type="PackedScene" uid="uid://x1dx72vtbapt" path="res://scenes/hall/characters/mary.tscn" id="6_6dx4x"]
 [ext_resource type="Script" uid="uid://d4b1wji5imsun" path="res://scripts/hall/player_camera.gd" id="7_bob82"]
-[ext_resource type="PackedScene" uid="uid://0hci7qr3mlmf" path="res://scenes/hall/dialog_area.tscn" id="8_vgbn8"]
+[ext_resource type="PackedScene" uid="uid://hhpxwqm7546x" path="res://scenes/hall/characters/scarlett.tscn" id="9_cbiwe"]
 [ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://sprites/novel_part/Mary/mary_chill.png" id="9_quuig"]
 [ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://sprites/novel_part/Mary/mary_worried.png" id="10_15elq"]
 [ext_resource type="Texture2D" uid="uid://bs1hsa04wul3i" path="res://sprites/novel_part/Mary/mary_confidence.png" id="11_revie"]
@@ -37,7 +39,182 @@
 [ext_resource type="Texture2D" uid="uid://dcalgv3tdqcw4" path="res://sprites/novel_part/Chris/chris_oath.png" id="33_7cf3l"]
 [ext_resource type="Texture2D" uid="uid://c7bdyjb5oducm" path="res://sprites/novel_part/Chris/chris_thinks.png" id="34_idsjt"]
 [ext_resource type="Texture2D" uid="uid://ctsjhty1bsnwv" path="res://sprites/novel_part/Chris/chris_worry_1.png" id="35_6ud4u"]
+[ext_resource type="Texture2D" uid="uid://c1x3mquh4oph3" path="res://scripts/plant_room/spritesheets/plant_1_spritesheet.png" id="39_bdgvf"]
 [ext_resource type="Script" uid="uid://c6kfyig1o3ce6" path="res://scripts/hall/hall_scene_navigator.gd" id="39_ofr0x"]
+[ext_resource type="PackedScene" uid="uid://c8j40uul4amh1" path="res://scenes/hall/characters/arin.tscn" id="42_4qh33"]
+[ext_resource type="Script" uid="uid://cykmq6n7emplc" path="res://scripts/command_pattern/ai_controller.gd" id="42_vdr2x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlbdb"]
+atlas = ExtResource("39_bdgvf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qh33"]
+atlas = ExtResource("39_bdgvf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbiwe"]
+atlas = ExtResource("39_bdgvf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdr2x"]
+atlas = ExtResource("39_bdgvf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a6q06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlbdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qh33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbiwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdr2x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6q06"]
+atlas = ExtResource("2_bdgvf")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43hkt"]
+atlas = ExtResource("2_bdgvf")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poutj"]
+atlas = ExtResource("2_bdgvf")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gneps"]
+atlas = ExtResource("2_bdgvf")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pr67"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6q06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43hkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poutj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gneps")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pr67"]
+atlas = ExtResource("3_qlbdb")
+region = Rect2(0, 0, 30, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih215"]
+atlas = ExtResource("3_qlbdb")
+region = Rect2(30, 0, 30, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u80b0"]
+atlas = ExtResource("3_qlbdb")
+region = Rect2(60, 0, 30, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8d5n"]
+atlas = ExtResource("3_qlbdb")
+region = Rect2(90, 0, 30, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_obkld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pr67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih215")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u80b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8d5n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obkld"]
+atlas = ExtResource("4_4qh33")
+region = Rect2(0, 0, 45, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvusc"]
+atlas = ExtResource("4_4qh33")
+region = Rect2(45, 0, 45, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6hqy"]
+atlas = ExtResource("4_4qh33")
+region = Rect2(90, 0, 45, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4bec"]
+atlas = ExtResource("4_4qh33")
+region = Rect2(135, 0, 45, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qanqm"]
+atlas = ExtResource("4_4qh33")
+region = Rect2(180, 0, 45, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neabg"]
+atlas = ExtResource("4_4qh33")
+region = Rect2(225, 0, 45, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54kjl"]
+atlas = ExtResource("4_4qh33")
+region = Rect2(270, 0, 45, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxkgo"]
+atlas = ExtResource("4_4qh33")
+region = Rect2(315, 0, 45, 43)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrpb5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obkld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvusc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6hqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4bec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qanqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neabg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54kjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxkgo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Gradient" id="Gradient_nvc6w"]
 offsets = PackedFloat32Array(0, 0.73516)
@@ -86,22 +263,126 @@ _data = {
 &"light_moving_hall": SubResource("Animation_i2a8q")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oohdb"]
-size = Vector2(29, 26)
+[sub_resource type="Animation" id="Animation_a6q06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 90)]
+}
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ehd8"]
-size = Vector2(6, 65)
+[sub_resource type="Animation" id="Animation_vdr2x"]
+resource_name = "new_animation"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.99246, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(300, 90), Vector2(305, 90), Vector2(300, 90)]
+}
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_otbe7"]
-size = Vector2(28, 34)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43hkt"]
+_data = {
+&"RESET": SubResource("Animation_a6q06"),
+&"new_animation": SubResource("Animation_vdr2x")
+}
+
+[sub_resource type="Animation" id="Animation_cbiwe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 90)]
+}
+
+[sub_resource type="Animation" id="Animation_4qh33"]
+resource_name = "bg_plants"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.83333, 9.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(300, 90), Vector2(305, 90), Vector2(300, 90)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vdr2x"]
+_data = {
+&"RESET": SubResource("Animation_cbiwe"),
+&"bg_plants": SubResource("Animation_4qh33")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cilli"]
 size = Vector2(25.5, 62.5)
 
 [node name="Hall" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("main_object")]
+position = Vector2(107, 108)
+offset = Vector2(0, -18)
+limit_left = 0
+limit_right = 480
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("7_bob82")
+main_object = NodePath("../Mary")
+
+[node name="AnimatedBG" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedBG"]
+position = Vector2(213, 80)
+sprite_frames = SubResource("SpriteFrames_a6q06")
+autoplay = "default"
+frame_progress = 0.112911
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedBG"]
+position = Vector2(345, 118)
+sprite_frames = SubResource("SpriteFrames_4pr67")
+autoplay = "default"
+frame_progress = 0.66262
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedBG"]
+position = Vector2(460, 117)
+sprite_frames = SubResource("SpriteFrames_obkld")
+autoplay = "default"
+frame_progress = 0.61302
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="AnimatedBG"]
+position = Vector2(72, 77)
+sprite_frames = SubResource("SpriteFrames_nrpb5")
+autoplay = "default"
+frame_progress = 0.402536
+
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-layer = -1
+layer = -5
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 
@@ -110,7 +391,11 @@ z_index = -2
 position = Vector2(240, 90)
 texture = ExtResource("4_vg36q")
 
+[node name="Arin" parent="." instance=ExtResource("42_4qh33")]
+position = Vector2(143, 109)
+
 [node name="Lights" type="Node2D" parent="."]
+visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Lights"]
 visibility_layer = 2
@@ -307,27 +592,14 @@ libraries = {
 }
 autoplay = "light_moving_hall"
 
-[node name="ArinStatic" type="Sprite2D" parent="."]
-position = Vector2(262, 108)
-texture = ExtResource("5_tuisg")
-flip_h = true
-
 [node name="Mary" parent="." instance=ExtResource("6_6dx4x")]
-position = Vector2(73, 108)
-collision_layer = 3
-collision_mask = 3
+position = Vector2(100, 108)
 
-[node name="Camera2D" type="Camera2D" parent="Mary"]
-offset = Vector2(0, -18)
-limit_left = 0
-limit_right = 480
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-script = ExtResource("7_bob82")
+[node name="Scarlett" parent="." instance=ExtResource("9_cbiwe")]
+position = Vector2(508, 109)
 
 [node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
-layer = 1
+layer = -2
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground3"]
 motion_scale = Vector2(1.65, 1.65)
@@ -336,44 +608,28 @@ motion_scale = Vector2(1.65, 1.65)
 position = Vector2(300, 90)
 texture = ExtResource("5_84350")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground3/ParallaxLayer/BackgroundPlants2"]
+libraries = {
+&"": SubResource("AnimationLibrary_43hkt")
+}
+autoplay = "new_animation"
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-layer = 1
+layer = 0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -3
 motion_scale = Vector2(1.74, 1.74)
 
 [node name="BackgroundPlants" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(300, 90)
 texture = ExtResource("5_hboqj")
 
-[node name="DialogAreaTea" parent="." node_paths=PackedStringArray("dialog_player") instance=ExtResource("8_vgbn8")]
-position = Vector2(179, 102)
-collision_layer = 3
-collision_mask = 3
-text_key = "tea"
-dialog_player = NodePath("../DialogPlayer")
-
-[node name="CollisionShape2D" parent="DialogAreaTea" index="0"]
-position = Vector2(4.5, -1)
-shape = SubResource("RectangleShape2D_oohdb")
-
-[node name="DialogAreaFriends" parent="." node_paths=PackedStringArray("dialog_player") instance=ExtResource("8_vgbn8")]
-position = Vector2(290, 115)
-text_key = "friends"
-dialog_player = NodePath("../DialogPlayer")
-
-[node name="CollisionShape2D" parent="DialogAreaFriends" index="0"]
-position = Vector2(27, -9)
-shape = SubResource("RectangleShape2D_1ehd8")
-
-[node name="DialogAreaArin" parent="." node_paths=PackedStringArray("dialog_player") instance=ExtResource("8_vgbn8")]
-position = Vector2(137, 124)
-text_key = "first_dialog"
-dialog_player = NodePath("../DialogPlayer")
-
-[node name="CollisionShape2D" parent="DialogAreaArin" index="0"]
-position = Vector2(124, -3)
-shape = SubResource("RectangleShape2D_otbe7")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/BackgroundPlants"]
+libraries = {
+&"": SubResource("AnimationLibrary_vdr2x")
+}
+autoplay = "bg_plants"
 
 [node name="DialogPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_wkokc")]
 scene_text_file = "res://Json/dialog_text.json"
@@ -426,12 +682,15 @@ shape = SubResource("RectangleShape2D_cilli")
 
 [node name="Utilities" type="Node" parent="."]
 
+[node name="AiPlot" type="Node" parent="Utilities" node_paths=PackedStringArray("camera", "arin", "mary", "scarlett")]
+script = ExtResource("42_vdr2x")
+camera = NodePath("../../Camera2D")
+arin = NodePath("../../Arin")
+mary = NodePath("../../Mary")
+scarlett = NodePath("../../Scarlett")
+
 [node name="HallSceneNavigator" type="Node" parent="Utilities"]
 script = ExtResource("39_ofr0x")
 
 [connection signal="area_entered" from="ToPlantRoomArea" to="Utilities/HallSceneNavigator" method="_on_to_plant_room_area_entered"]
 [connection signal="area_exited" from="ToPlantRoomArea" to="Utilities/HallSceneNavigator" method="_on_to_plant_room_area_exited"]
-
-[editable path="DialogAreaTea"]
-[editable path="DialogAreaFriends"]
-[editable path="DialogAreaArin"]

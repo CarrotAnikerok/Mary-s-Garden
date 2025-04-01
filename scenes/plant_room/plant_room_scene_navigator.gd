@@ -17,4 +17,5 @@ func save_plant_room():
 
 func _on_door_button_pressed():
 	save_plant_room()
+	global.current_scene = 1
 	SceneManager.goto_scene(SCENE_HALL)

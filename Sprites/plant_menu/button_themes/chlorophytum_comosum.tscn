@@ -26,7 +26,22 @@ position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_8l2ao")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
 position = Vector2(0, -10)
 texture = ExtResource("9_q6rnv")
+
+[node name="PlantButton" type="TextureButton" parent="."]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 9.0
+offset_bottom = 6.0
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="timeout" from="DraggableItem/ClickTimer" to="DraggableItem" method="_on_click_timer_timeout"]
+[connection signal="button_down" from="PlantButton" to="DraggableItem" method="_on_plant_button_down"]
+[connection signal="button_up" from="PlantButton" to="DraggableItem" method="_on_plant_button_up"]
+[connection signal="pressed" from="PlantButton" to="DraggableItem" method="_on_plant_button_pressed"]
 
 [editable path="DraggableItem"]

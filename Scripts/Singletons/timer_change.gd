@@ -12,10 +12,12 @@ func _ready():
 	#SceneManager.changed_scene.connect(pause_timer)
 
 func change_phase():
-	changed_phase.emit()
 	global.phase_of_day += 1
 	if (global.phase_of_day == global.NUMBER_OF_PHASES):
 		change_day()
+		changed_phase.emit()
+	else:
+		changed_phase.emit()
 	
 		
 func update_handbook():

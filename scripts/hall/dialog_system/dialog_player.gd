@@ -6,7 +6,7 @@ extends CanvasLayer
 @export var scarlett_moods: Dictionary
 @export var mark_moods: Dictionary
 @export var chris_moods: Dictionary
-@export var player: CharacterBody2D
+@export var player: Character
 
 var scene_text: Dictionary = {}
 var dialog_part: Array = []
@@ -21,10 +21,12 @@ var space_time = 0.06
 var punctuation_time = 0.1
 var text = ""
 
+
 @onready var timer = $Timer
-@onready var background = $Background
-@onready var text_label = $Background/TextLabel
-@onready var name_label = $Background/NameLabel
+@onready var background = $TextBox
+@onready var text_label = $TextBox/TextBoxPretty/TextLabel
+@onready var name_label = $TextBox/NameLabel
+@onready var text_box_pretty = $TextBox/TextBoxPretty
 @onready var mary_sprite = $MarySprite
 @onready var guest_sprite = $GuestSprite
 @onready var audio_player = $AudioStreamPlayer
@@ -35,14 +37,16 @@ func _ready():
 	mary_sprite.visible = false
 	guest_sprite.visible = false
 	scene_text = load_scene_text()
-	SignulBus.connect("display_dialog", Callable(self, "on_display_dialog"))
-	
+	SignulBus.connect("display_dialog", Callable(self, "on_start_dialog"))
+
+
 func load_scene_text():
 	if FileAccess.file_exists(scene_text_file):
 		var file = FileAccess.open(scene_text_file, FileAccess.READ)
 		var test_json_conv = JSON.new()
 		test_json_conv.parse(file.get_as_text())
 		return test_json_conv.get_data()
+
 
 func show_text():
 	name_label.text = dialog_block["name"]
@@ -51,6 +55,7 @@ func show_text():
 	change_sprite()
 	change_mood()
 	display_letter()
+
 
 func next_line():
 	if (text_label.text != text):
@@ -73,15 +78,19 @@ func next_line():
 		#finish()
 	
 func finish():
+	var fin_timer =  get_tree().create_timer(0.1)
 	text_label.text = ""
 	background.visible = false
 	name_label.visible = false
 	mary_sprite.visible = false
 	guest_sprite.visible = false
-	in_progress = false
 	player.dialog = false
-	#get_tree().paused = false
+	await fin_timer.timeout
+	in_progress = false
+	SignulBus.dialog_ended.emit()
 	
+
+
 func change_sprite():
 	if (name_label.text == "Мэри"):
 		mary_sprite.visible = true
@@ -89,20 +98,27 @@ func change_sprite():
 	else:
 		guest_sprite.visible = true
 		mary_sprite.visible = false
-		
+
+
 func change_mood():
 	if (dialog_block.has("mood")):
 		print(dialog_block["mood"])
 		if (name_label.text == "Мэри"):
 			mary_sprite.texture = mary_moods[dialog_block["mood"]]
+			text_box_pretty.modulate = Color(0.9, 0.0, 0.42)
+			print($TextBox/TextBoxPretty.modulate)
 		elif (name_label.text == "Арин"):
 			guest_sprite.texture = arin_moods[dialog_block["mood"]]
+			text_box_pretty.modulate = Color(0.325, 0.802, 1.0)
+			print($TextBox/TextBoxPretty.modulate)
 		elif (name_label.text == "Скарлетт"):
 			guest_sprite.texture = scarlett_moods[dialog_block["mood"]]
+			text_box_pretty.modulate = Color(0.494, 0.003, 0.847)
 		elif (name_label.text == "Марк"):
 			guest_sprite.texture = mark_moods[dialog_block["mood"]]
 		elif (name_label.text == "Крис"):
 			guest_sprite.texture = chris_moods[dialog_block["mood"]]
+
 
 func on_display_dialog(text_key):
 	audio_player.stream = speech_sound
@@ -110,7 +126,6 @@ func on_display_dialog(text_key):
 		next_line()
 	else:
 		player.dialog = true
-		#get_tree().paused = true
 		background.visible = true
 		name_label.visible = true
 		in_progress = true
@@ -118,6 +133,19 @@ func on_display_dialog(text_key):
 		dialog_block = dialog_part.pop_front()
 		selected_text = dialog_block["text"].duplicate()
 		show_text()
+		
+func on_start_dialog(text_key):
+	audio_player.stream = speech_sound
+	if !in_progress:
+		player.dialog = true
+		background.visible = true
+		name_label.visible = true
+		in_progress = true
+		dialog_part = scene_text[text_key].duplicate()
+		dialog_block = dialog_part.pop_front()
+		selected_text = dialog_block["text"].duplicate()
+		show_text()
+	
 		
 func display_letter():
 	text_label.text += text[letter_index]
@@ -144,5 +172,11 @@ func display_letter():
 			await new_audio_player.finished
 			new_audio_player.queue_free()
 
+
 func _on_timer_timeout():
 	display_letter()
+
+
+func _input(event):
+	if event.is_action_pressed("ui_accept") and in_progress:
+		next_line()

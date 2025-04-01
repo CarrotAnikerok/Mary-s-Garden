@@ -2,18 +2,28 @@ extends Node
 
 var current_scene = null
 
+#inner_menu
+var menu_path = load("res://scenes/game_menu/small_menu.tscn") as PackedScene
+
 #save
 var save_path = "res://SAVES/game_save.tres"
 var plants_data: Array[SavedData]
 
 signal changed_scene()
-signal loaded_world()
 signal exit()
 
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(-1)
-	load_game()
+	#load_game()
+	
+	
+func start_scene():
+	match global.current_scene:
+		0:
+			goto_scene("res://scenes/plant_room/plant_room.tscn")
+		1:
+			goto_scene("res://scenes/hall/hall.tscn")
 	
 	
 func goto_scene(path):
@@ -84,3 +94,17 @@ func _notification(what):
 		exit.emit()
 		save_game()
 	
+	
+func _input(event):
+	if Input.is_action_just_released("ui_cancel"):
+		var menu = menu_path.instantiate()
+		get_tree().get_root().add_child(menu)
+			
+			
+		
+	
+			
+		
+		
+
+		

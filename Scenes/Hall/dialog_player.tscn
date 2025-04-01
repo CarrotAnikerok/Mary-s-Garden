@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5neg873g5wfk"]
+[gd_scene load_steps=11 format=3 uid="uid://b5neg873g5wfk"]
 
 [ext_resource type="Script" uid="uid://di4isil2vrqy3" path="res://scripts/hall/dialog_system/dialog_player.gd" id="1_4aop0"]
 [ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://sprites/novel_part/Mary/mary_chill.png" id="2_judwd"]
 [ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://sprites/novel_part/Mary/mary_worried.png" id="3_17y02"]
 [ext_resource type="Texture2D" uid="uid://ve4jpk7g24g2" path="res://sprites/novel_part/Arin/arin_chill_1.png" id="3_ompeb"]
-[ext_resource type="Texture2D" uid="uid://dwm2m8lggyump" path="res://sprites/novel_part/text_box.png" id="5_wm8ow"]
+[ext_resource type="Texture2D" uid="uid://b8rv4j3cugocc" path="res://sprites/novel_part/text_box/text_box.png" id="5_fvtql"]
 [ext_resource type="FontFile" uid="uid://b8pvdi5csuer8" path="res://fonts/Blogger/Blogger_Sans-Medium.otf" id="6_dhbxe"]
 [ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://fonts/Neucha/Neucha-Regular.ttf" id="6_p3hlc"]
+[ext_resource type="Texture2D" uid="uid://btl1pe1644drn" path="res://sprites/novel_part/text_box/text_box_pretty.png" id="6_rfoa3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mxfw7"]
 line_spacing = 1.0
@@ -36,16 +37,30 @@ position = Vector2(263, 90)
 scale = Vector2(0.151, 0.165)
 texture = ExtResource("3_ompeb")
 
-[node name="Background" type="TextureRect" parent="."]
-offset_left = 1.0
-offset_top = 128.0
-offset_right = 319.0
-offset_bottom = 181.0
-texture = ExtResource("5_wm8ow")
+[node name="TextBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextBoxBg" type="TextureRect" parent="TextBox"]
+offset_left = 2.0
+offset_top = 125.0
+offset_right = 320.0
+offset_bottom = 179.656
+texture = ExtResource("5_fvtql")
 expand_mode = 5
 
-[node name="TextLabel" type="Label" parent="Background"]
-modulate = Color(0.94902, 0.219608, 0.415686, 1)
+[node name="TextBoxPretty" type="TextureRect" parent="TextBox"]
+modulate = Color(0.459182, 0.313503, 0.504087, 1)
+offset_left = 2.0
+offset_top = 125.0
+offset_right = 320.0
+offset_bottom = 179.656
+texture = ExtResource("6_rfoa3")
+expand_mode = 5
+
+[node name="TextLabel" type="Label" parent="TextBox/TextBoxPretty"]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 14.0
@@ -54,13 +69,13 @@ offset_bottom = 44.0
 label_settings = SubResource("LabelSettings_mxfw7")
 autowrap_mode = 3
 
-[node name="NameLabel" type="Label" parent="Background"]
-layout_mode = 0
-offset_left = 71.0
-offset_top = 3.0
-offset_right = 101.0
-offset_bottom = 14.0
+[node name="NameLabel" type="Label" parent="TextBox"]
+offset_left = 60.0
+offset_top = 129.0
+offset_right = 102.0
+offset_bottom = 140.0
 label_settings = SubResource("LabelSettings_or6hk")
+horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://djqxymtc1r6e6"]
+
+[sub_resource type="Gradient" id="Gradient_tbtck"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fv2ki"]
+gradient = SubResource("Gradient_tbtck")
+fill_from = Vector2(0.545455, 1)
+fill_to = Vector2(0.502164, 0)
+
+[node name="Light" type="Node"]
+
+[node name="rays" type="Node" parent="."]
+
+[node name="PointLight2D5" type="PointLight2D" parent="rays"]
+position = Vector2(-113, -301)
+rotation = -1.89522
+scale = Vector2(1.81262, 72.0072)
+skew = 1.43221
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+texture = SubResource("GradientTexture2D_fv2ki")
+
+[node name="PointLight2D" type="PointLight2D" parent="rays"]
+position = Vector2(83, -32)
+rotation = -0.437993
+scale = Vector2(0.476274, 8.9156)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+texture = SubResource("GradientTexture2D_fv2ki")
+
+[node name="PointLight2D2" type="PointLight2D" parent="rays"]
+visible = false
+position = Vector2(163, -28)
+rotation = -0.437993
+scale = Vector2(0.476274, 8.9156)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+texture = SubResource("GradientTexture2D_fv2ki")
+
+[node name="PointLight2D3" type="PointLight2D" parent="rays"]
+visible = false
+position = Vector2(235, -31)
+rotation = -0.437993
+scale = Vector2(0.113904, 8.68092)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+texture = SubResource("GradientTexture2D_fv2ki")
+
+[node name="PointLight2D4" type="PointLight2D" parent="rays"]
+visible = false
+position = Vector2(-28, -33)
+rotation = -0.437993
+scale = Vector2(0.200246, 8.9156)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+texture = SubResource("GradientTexture2D_fv2ki")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.38, 0.21508, 0.0266, 1)
+energy = 0.4
+blend_mode = 2
+range_layer_max = 1

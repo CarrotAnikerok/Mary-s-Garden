@@ -1,103 +1,31 @@
-[gd_resource type="Resource" script_class="SavedGame" load_steps=11 format=3]
+[gd_resource type="Resource" script_class="SavedGame" load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/saving/saved_data.gd" id="1_w3a04"]
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_global_data.gd" id="2_1pgu4"]
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_global_data.gd" id="2_d4v2n"]
 [ext_resource type="Script" path="res://scripts/resources/saving/saved_game.gd" id="2_fwbdc"]
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_notebook_data.gd" id="3_rhb7w"]
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_plant_data.gd" id="4_ijs44"]
-
-[sub_resource type="Resource" id="Resource_1pgu4"]
-script = ExtResource("2_1pgu4")
-phase_of_day = 0
-day_count = 17
-scene_path = ""
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_notebook_data.gd" id="3_1pgu4"]
 
 [sub_resource type="Resource" id="Resource_rhb7w"]
-script = ExtResource("3_rhb7w")
+script = ExtResource("2_d4v2n")
+phase_of_day = 0
+day_count = 6
+current_scene = 1
+scene_path = ""
+
+[sub_resource type="Resource" id="Resource_ijs44"]
+script = ExtResource("3_1pgu4")
 notes = Array[Dictionary]([{
 "title": "Прошлый вечер",
 "type": "phase_change"
-}, {
-"description": "Aloe Vera чувствует себя некомфортно в этой влажности",
-"name": "Aloe Vera",
-"type": "plant_after"
-}, {
-"description": "Aloe Vera чувствет себя плохо из-за температуры.",
-"name": "Aloe Vera",
-"type": "plant_after"
-}, {
-"description": "Aloe Vera совсем не отдохнуло за ночь",
-"name": "Aloe Vera",
-"type": "plant_after"
 }, {
 "title": "Утро",
 "type": "phase_change"
 }])
 scene_path = ""
 
-[sub_resource type="Resource" id="Resource_ijs44"]
-script = ExtResource("4_ijs44")
-id = 0
-plant_name = "Aloe Vera"
-normal_water_amount = 300
-actual_water_coefficent = 0.0
-actual_light_amount = 3000
-actual_light_time = 9
-actual_humidity = 0.722794
-actual_temperature = 25
-plant_state = 5
-is_alive = true
-light_on = false
-is_overpoured = false
-is_first_pour = true
-deadly_bad_for_too_long = false
-bad_parameters = [0, 1, 1, 1]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot"
-scene_path = "res://scenes/Aloe_Vera.tscn"
-
-[sub_resource type="Resource" id="Resource_5f4ar"]
-script = ExtResource("4_ijs44")
-id = 0
-plant_name = "Chlorophytum Comosum"
-normal_water_amount = 300
-actual_water_coefficent = 0.0
-actual_light_amount = 3000
-actual_light_time = 6
-actual_humidity = 0.695461
-actual_temperature = 25
-plant_state = 3
-is_alive = true
-light_on = false
-is_overpoured = false
-is_first_pour = true
-deadly_bad_for_too_long = false
-bad_parameters = [2, 0, 0, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot2"
-scene_path = "res://sprites/plant_menu/button_themes/chlorophytum_comosum.tscn"
-
-[sub_resource type="Resource" id="Resource_o42qe"]
-script = ExtResource("4_ijs44")
-id = 0
-plant_name = "Kalanchoe Blossfeldiana"
-normal_water_amount = 300
-actual_water_coefficent = 0.0
-actual_light_amount = 3000
-actual_light_time = 6
-actual_humidity = 0.715036
-actual_temperature = 25
-plant_state = 3
-is_alive = true
-light_on = false
-is_overpoured = false
-is_first_pour = true
-deadly_bad_for_too_long = false
-bad_parameters = [2, 0, 0, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot4"
-scene_path = "res://scenes/kalanchoe_blossfeldiana.tscn"
-
 [resource]
 script = ExtResource("2_fwbdc")
-plant_room = Array[ExtResource("1_w3a04")]([SubResource("Resource_ijs44"), SubResource("Resource_5f4ar"), SubResource("Resource_o42qe")])
-notes = Array[ExtResource("1_w3a04")]([SubResource("Resource_rhb7w")])
+plant_room = Array[ExtResource("1_w3a04")]([])
+notes = Array[ExtResource("1_w3a04")]([SubResource("Resource_ijs44")])
 hall = Array[ExtResource("1_w3a04")]([])
-global_world = Array[ExtResource("1_w3a04")]([SubResource("Resource_1pgu4")])
+global_world = Array[ExtResource("1_w3a04")]([SubResource("Resource_rhb7w")])

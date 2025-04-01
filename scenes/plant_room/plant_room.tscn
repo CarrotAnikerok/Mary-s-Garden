@@ -1,13 +1,17 @@
-[gd_scene load_steps=59 format=3 uid="uid://gao1je8jpkpk"]
+[gd_scene load_steps=79 format=3 uid="uid://gao1je8jpkpk"]
 
 [ext_resource type="Script" uid="uid://donw7vjqlqx8b" path="res://scripts/plant_room/plant_room.gd" id="1_1gmqi"]
+[ext_resource type="Texture2D" uid="uid://hk7ole3fkrbf" path="res://sprites/plant_room/windows.png" id="2_7ntu0"]
 [ext_resource type="Texture2D" uid="uid://7uxnhq6khcex" path="res://sprites/plant_room/bgPlantRoomMarUI.png" id="2_bhw56"]
 [ext_resource type="PackedScene" uid="uid://bf65ywlrwh3hp" path="res://scenes/plant_room/garden_slot.tscn" id="2_vglss"]
 [ext_resource type="PackedScene" uid="uid://bwqsvc17c5c5j" path="res://sprites/plant_menu/button_themes/chlorophytum_comosum.tscn" id="3_hq6iw"]
+[ext_resource type="Theme" uid="uid://b4uu16ao6kfi0" path="res://themes/new_theme.tres" id="4_6rbcv"]
+[ext_resource type="Texture2D" uid="uid://brw672mg4askh" path="res://sprites/plant_room/room.png" id="4_k66hf"]
 [ext_resource type="Script" uid="uid://cbkysea36ql0x" path="res://scenes/plant_room/plant_room.ui.gd" id="4_l1uuk"]
 [ext_resource type="PackedScene" uid="uid://qi51764v7mh7" path="res://scenes/kalanchoe_blossfeldiana.tscn" id="5_jgt6p"]
 [ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://scenes/Aloe_Vera.tscn" id="5_pstx4"]
 [ext_resource type="Texture2D" uid="uid://dcs5h6fr8gkt2" path="res://sprites/plant_room/UI/handbook.png" id="5_tbtck"]
+[ext_resource type="Texture2D" uid="uid://pkiaopwi015v" path="res://sprites/plant_room/bgPlantRoomMary_n_5.png" id="5_ytfrs"]
 [ext_resource type="Texture2D" uid="uid://dsolnq53gnw6e" path="res://sprites/plant_room/UI/door.png" id="6_fv2ki"]
 [ext_resource type="Texture2D" uid="uid://cga7up24vw41p" path="res://sprites/plant_room/UI/clock_phase/clock_phase_2.png" id="6_gxb4b"]
 [ext_resource type="Script" uid="uid://iutq522h1jjy" path="res://scripts/plant_room/time_count.gd" id="7_1gmqi"]
@@ -23,7 +27,91 @@
 [ext_resource type="Texture2D" uid="uid://ricu78kl72fu" path="res://sprites/plant_room/UI/clock_phase/clock_phase_7.png" id="11_4tg3j"]
 [ext_resource type="Texture2D" uid="uid://xqp4rohkygc2" path="res://sprites/plant_room/UI/clock_phase/clock_phase_8.png" id="12_i121n"]
 [ext_resource type="Texture2D" uid="uid://qeixo8fu55sn" path="res://sprites/plant_room/UI/clock_phase/clock_phase_3.png" id="13_7ntu0"]
+[ext_resource type="Texture2D" uid="uid://d32v2ylnyg07f" path="res://sprites/plant_room/UI/point.png" id="18_34jyk"]
 [ext_resource type="FontFile" uid="uid://b6q0wvaf10l3g" path="res://fonts/Micro_5/Micro5-Regular.ttf" id="18_f5rt3"]
+[ext_resource type="Script" uid="uid://dwsm1qsvjsd86" path="res://scenes/plant_room/light.gd" id="28_4tg3j"]
+
+[sub_resource type="Gradient" id="Gradient_7ntu0"]
+offsets = PackedFloat32Array(0.05, 0.56, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.631579, 0.631579, 0.631579, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k66hf"]
+gradient = SubResource("Gradient_7ntu0")
+fill = 2
+fill_from = Vector2(0.445122, 0.256098)
+fill_to = Vector2(0.426829, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4tg3j"]
+diffuse_texture = ExtResource("4_k66hf")
+normal_texture = ExtResource("5_ytfrs")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mkj6r"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4tg3j"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i121n"]
+light_mode = 1
+
+[sub_resource type="Animation" id="Animation_f5rt3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mkj6r"]
+resource_name = "arrow_round"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_gxb4b"]
+resource_name = "line_rotate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6rbcv"]
+_data = {
+&"RESET": SubResource("Animation_f5rt3"),
+&"arrow_round": SubResource("Animation_mkj6r"),
+&"line_rotate": SubResource("Animation_gxb4b")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7ntu0"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_23luj"]
+light_mode = 1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k66hf"]
 animations = [{
@@ -84,42 +172,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_f5rt3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ytfrs"]
+light_mode = 1
 
-[sub_resource type="Animation" id="Animation_gxb4b"]
-resource_name = "line_rotate"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ntu0"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6rbcv"]
-_data = {
-&"RESET": SubResource("Animation_f5rt3"),
-&"line_rotate": SubResource("Animation_gxb4b")
-}
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tmx1f"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_02e7d"]
+light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dybbd"]
 atlas = ExtResource("8_vwt8o")
@@ -326,16 +388,41 @@ turbulence_influence_max = 0.233
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fv2ki"]
 gradient = SubResource("Gradient_tbtck")
-fill_from = Vector2(0.545455, 1)
-fill_to = Vector2(0.502164, 0)
+fill_from = Vector2(0.519481, 1)
+fill_to = Vector2(0.497835, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_34jyk"]
+polygon = PackedVector2Array(63, 41, 78, 41, 78, 62, 64, 61)
 
 [node name="PlantRoom" type="Node2D"]
 script = ExtResource("1_1gmqi")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(160.5, 29.5)
+scale = Vector2(7.67187, 1.79688)
+energy = 0.2
+range_item_cull_mask = 6
+texture = SubResource("GradientTexture2D_k66hf")
+height = 670.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+light_mask = 4
+z_index = -3
+position = Vector2(161, 27)
+texture = ExtResource("2_7ntu0")
+metadata/_edit_lock_ = true
+
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 z_index = -10
 position = Vector2(160, 90)
 texture = ExtResource("2_bhw56")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+z_index = -1
+position = Vector2(161, 90)
+texture = SubResource("CanvasTexture_4tg3j")
 
 [node name="TimeCount" type="Control" parent="."]
 visible = false
@@ -369,48 +456,65 @@ text = "Утро"
 metadata/_edit_use_anchors_ = true
 
 [node name="UI" type="Control" parent="."]
+light_mask = 0
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("4_6rbcv")
 script = ExtResource("4_l1uuk")
 
-[node name="Button" type="Button" parent="UI"]
-layout_mode = 0
-offset_right = 38.0
-offset_bottom = 28.0
-
-[node name="TimeClockButton" type="TextureButton" parent="UI/Button"]
+[node name="DateButton" type="Button" parent="UI"]
+material = SubResource("CanvasItemMaterial_mkj6r")
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_right = 32.0
-offset_bottom = 32.0
-texture_normal = ExtResource("10_sngjb")
+offset_bottom = 40.0
+theme_type_variation = &"blank_button"
 
-[node name="TimePhaseSprite" type="Sprite2D" parent="UI/Button"]
-position = Vector2(31, 9)
+[node name="TImeClock" type="Sprite2D" parent="UI/DateButton"]
+modulate = Color(0.82, 0.51824, 0.4264, 1)
+material = SubResource("CanvasItemMaterial_4tg3j")
+position = Vector2(19, 15)
+texture = ExtResource("10_sngjb")
+
+[node name="Arrow" type="Sprite2D" parent="UI/DateButton/TImeClock"]
+modulate = Color(0.650128, 0.650128, 0.650128, 1)
+z_index = 1
+material = SubResource("CanvasItemMaterial_i121n")
+position = Vector2(-0.5, -0.5)
+texture = ExtResource("18_34jyk")
+offset = Vector2(0, -4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/DateButton/TImeClock/Arrow"]
+libraries = {
+&"": SubResource("AnimationLibrary_6rbcv")
+}
+autoplay = "line_rotate"
+
+[node name="TimePhaseSprite" type="Sprite2D" parent="UI/DateButton"]
+material = SubResource("CanvasItemMaterial_7ntu0")
+position = Vector2(33, 9)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_gxb4b")
 script = ExtResource("7_f5rt3")
 
-[node name="TimePhaseAnimated" type="AnimatedSprite2D" parent="UI/Button/TimePhaseSprite"]
+[node name="TimePhaseAnimated" type="AnimatedSprite2D" parent="UI/DateButton/TimePhaseSprite"]
+material = SubResource("CanvasItemMaterial_23luj")
 sprite_frames = SubResource("SpriteFrames_k66hf")
-animation = &"day_to_evenenig"
+animation = &"morning_to_day"
 
-[node name="CalendarButton" type="TextureButton" parent="UI/Button"]
-layout_mode = 0
-offset_left = -4.0
-offset_top = -1.0
-offset_right = 28.0
-offset_bottom = 31.0
+[node name="Calendar" type="Sprite2D" parent="UI/DateButton"]
+material = SubResource("CanvasItemMaterial_ytfrs")
+position = Vector2(6, 7)
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("7_fv2ki")
+texture = ExtResource("7_fv2ki")
 
-[node name="CalendarLabel" type="Label" parent="UI/Button/CalendarButton"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 4.0
-offset_right = 17.0
-offset_bottom = 15.0
+[node name="CalendarLabel" type="Label" parent="UI/DateButton/Calendar"]
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 1.0
+offset_bottom = -1.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.75, 0.2625, 0.286875, 1)
 theme_override_fonts/font = ExtResource("18_f5rt3")
@@ -418,36 +522,34 @@ theme_override_font_sizes/font_size = 10
 text = "20"
 horizontal_alignment = 1
 
-[node name="HandbookButton" type="TextureButton" parent="UI"]
+[node name="Panel" type="Panel" parent="UI"]
+z_index = -1
 layout_mode = 0
-offset_left = 33.0
-offset_top = -3.0
-offset_right = 65.0
-offset_bottom = 29.0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7ntu0")
+
+[node name="HandbookButton" type="TextureButton" parent="UI/Panel"]
+material = SubResource("CanvasItemMaterial_tmx1f")
+layout_mode = 2
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 32.0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 0
+mouse_filter = 1
 texture_normal = ExtResource("5_tbtck")
 
-[node name="DoorButton" type="TextureButton" parent="UI"]
+[node name="DoorButton" type="TextureButton" parent="UI/Panel"]
+material = SubResource("CanvasItemMaterial_02e7d")
 layout_mode = 0
-offset_left = 55.0
-offset_top = -3.0
-offset_right = 87.0
-offset_bottom = 29.0
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 39.0
+offset_bottom = 38.0
+scale = Vector2(0.8, 0.8)
+mouse_filter = 1
 texture_normal = ExtResource("6_fv2ki")
-
-[node name="ColorRect" type="ColorRect" parent="UI"]
-layout_mode = 0
-offset_left = -4.0
-offset_top = -24.0
-offset_right = 36.0
-offset_bottom = 16.0
-scale = Vector2(0.02, 0.348)
-pivot_offset = Vector2(20, 40)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ColorRect"]
-libraries = {
-&"": SubResource("AnimationLibrary_6rbcv")
-}
-autoplay = "line_rotate"
 
 [node name="GardenSlots" type="Node2D" parent="."]
 position = Vector2(1.52588e-05, -2)
@@ -456,11 +558,13 @@ position = Vector2(1.52588e-05, -2)
 position = Vector2(31, 43)
 
 [node name="AloeVera" parent="GardenSlots/GardenSlot" instance=ExtResource("5_pstx4")]
+light_mask = 3
 
 [node name="GardenSlot2" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(55, 43)
 
 [node name="ChlorophytumComosum" parent="GardenSlots/GardenSlot2" groups=["plant"] instance=ExtResource("3_hq6iw")]
+light_mask = 3
 
 [node name="GardenSlot3" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 z_index = -1
@@ -564,7 +668,7 @@ position = Vector2(228, 145)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.96, 0.864, 0.9136, 1)
-light_mask = 2
+light_mask = 8
 position = Vector2(283, 32)
 sprite_frames = SubResource("SpriteFrames_c7t48")
 autoplay = "default"
@@ -572,7 +676,6 @@ frame = 15
 frame_progress = 0.0906181
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-visible = false
 position = Vector2(158, 92)
 scale = Vector2(1.64, 1)
 amount = 15
@@ -580,74 +683,127 @@ lifetime = 10.0
 preprocess = 10.0
 process_material = SubResource("ParticleProcessMaterial_1gmqi")
 
+[node name="Light" type="Node" parent="."]
+script = ExtResource("28_4tg3j")
+
+[node name="rays" type="Node" parent="Light"]
+
+[node name="Ray1" type="PointLight2D" parent="Light/rays"]
+position = Vector2(-51.608, 10.352)
+scale = Vector2(0.231, 6.261)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fv2ki")
+height = 55.0
+
+[node name="Ray2" type="PointLight2D" parent="Light/rays"]
+position = Vector2(-51.608, 10.352)
+scale = Vector2(0.231, 6.261)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fv2ki")
+height = 55.0
+
+[node name="Ray3" type="PointLight2D" parent="Light/rays"]
+position = Vector2(-51.608, 10.352)
+scale = Vector2(0.231, 6.261)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fv2ki")
+height = 55.0
+
+[node name="Ray4" type="PointLight2D" parent="Light/rays"]
+position = Vector2(-51.608, 10.352)
+scale = Vector2(0.231, 6.261)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fv2ki")
+height = 55.0
+
+[node name="Ray5" type="PointLight2D" parent="Light/rays"]
+position = Vector2(-51.608, 10.352)
+scale = Vector2(0.231, 6.261)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fv2ki")
+height = 55.0
+
+[node name="Ray6" type="PointLight2D" parent="Light/rays"]
+position = Vector2(-51.608, 10.352)
+scale = Vector2(0.231, 6.261)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fv2ki")
+height = 55.0
+
+[node name="Ray7" type="PointLight2D" parent="Light/rays"]
+position = Vector2(-51.608, 10.352)
+scale = Vector2(0.231, 6.261)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fv2ki")
+height = 55.0
+
+[node name="Ray8" type="PointLight2D" parent="Light/rays"]
+position = Vector2(-51.608, 10.352)
+scale = Vector2(0.231, 6.261)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fv2ki")
+height = 55.0
+
+[node name="Ray9" type="PointLight2D" parent="Light/rays"]
+position = Vector2(-51.608, 10.352)
+scale = Vector2(0.231, 6.261)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fv2ki")
+height = 55.0
+
+[node name="Ray10" type="PointLight2D" parent="Light/rays"]
+position = Vector2(-51.608, 10.352)
+scale = Vector2(0.231, 6.261)
+color = Color(1, 0.706, 0.02, 1)
+energy = 2.75
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fv2ki")
+height = 55.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Light"]
+color = Color(0.6006, 0.64246, 0.78, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light"]
+visible = false
+position = Vector2(-31, 0)
+energy = 0.41
+range_layer_max = 1
+height = 0.44
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Light"]
+visible = false
+position = Vector2(79, 62)
+occluder = SubResource("OccluderPolygon2D_34jyk")
+
 [node name="Utilities" type="Node" parent="."]
 
 [node name="PlantRoomSceneNavigator" type="Node" parent="Utilities"]
 script = ExtResource("9_gngg7")
 
-[node name="Light" type="Node" parent="."]
-
-[node name="rays" type="Node" parent="Light"]
-
-[node name="PointLight2D5" type="PointLight2D" parent="Light/rays"]
-visible = false
-position = Vector2(-113, -301)
-rotation = -1.89522
-scale = Vector2(1.81262, 72.0072)
-skew = 1.43221
-color = Color(1, 0.706, 0.02, 1)
-energy = 2.75
-texture = SubResource("GradientTexture2D_fv2ki")
-
-[node name="PointLight2D" type="PointLight2D" parent="Light/rays"]
-visible = false
-position = Vector2(83, -32)
-rotation = -0.437993
-scale = Vector2(0.476274, 8.9156)
-color = Color(1, 0.706, 0.02, 1)
-energy = 2.75
-texture = SubResource("GradientTexture2D_fv2ki")
-
-[node name="ColorRect" type="ColorRect" parent="Light/rays"]
-visible = false
-offset_left = -234.0
-offset_top = -305.0
-offset_right = -194.0
-offset_bottom = -265.0
-color = Color(0.85, 0.793333, 0, 1)
-
-[node name="PointLight2D2" type="PointLight2D" parent="Light/rays"]
-visible = false
-position = Vector2(163, -28)
-rotation = -0.437993
-scale = Vector2(0.476274, 8.9156)
-color = Color(1, 0.706, 0.02, 1)
-energy = 2.75
-texture = SubResource("GradientTexture2D_fv2ki")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Light/rays"]
-visible = false
-position = Vector2(235, -31)
-rotation = -0.437993
-scale = Vector2(0.113904, 8.68092)
-color = Color(1, 0.706, 0.02, 1)
-energy = 2.75
-texture = SubResource("GradientTexture2D_fv2ki")
-
-[node name="PointLight2D4" type="PointLight2D" parent="Light/rays"]
-visible = false
-position = Vector2(-28, -33)
-rotation = -0.437993
-scale = Vector2(0.200246, 8.9156)
-color = Color(1, 0.706, 0.02, 1)
-energy = 2.75
-texture = SubResource("GradientTexture2D_fv2ki")
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light"]
-color = Color(0.131643, 0.470445, 0.575676, 1)
-energy = 0.35
-
-[connection signal="animation_finished" from="UI/Button/TimePhaseSprite/TimePhaseAnimated" to="UI/Button/TimePhaseSprite" method="_on_time_phase_animated_animation_finished"]
-[connection signal="pressed" from="UI/HandbookButton" to="UI" method="_on_handbook_button_pressed"]
-[connection signal="pressed" from="UI/DoorButton" to="UI" method="_on_door_button_pressed"]
-[connection signal="pressed" from="UI/DoorButton" to="Utilities/PlantRoomSceneNavigator" method="_on_door_button_pressed"]
+[connection signal="animation_finished" from="UI/DateButton/TimePhaseSprite/TimePhaseAnimated" to="UI/DateButton/TimePhaseSprite" method="_on_time_phase_animated_animation_finished"]
+[connection signal="mouse_entered" from="UI/Panel" to="UI" method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Panel" to="UI" method="_on_panel_mouse_exited"]
+[connection signal="mouse_entered" from="UI/Panel/HandbookButton" to="UI" method="_on_handbook_button_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Panel/HandbookButton" to="UI" method="_on_handbook_button_mouse_exited"]
+[connection signal="pressed" from="UI/Panel/HandbookButton" to="UI" method="_on_handbook_button_pressed"]
+[connection signal="mouse_entered" from="UI/Panel/DoorButton" to="UI" method="_on_door_button_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Panel/DoorButton" to="UI" method="_on_door_button_mouse_exited"]
+[connection signal="pressed" from="UI/Panel/DoorButton" to="Utilities/PlantRoomSceneNavigator" method="_on_door_button_pressed"]

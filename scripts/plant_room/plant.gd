@@ -322,13 +322,21 @@ func bad_too_long():
 	return bad_count;
 		
 	
-func _input(event):
-	if event is InputEventMouseButton && $DraggableItem.draggable:
-		if (event.position - $Sprite2D.global_position).length() < click_radius:
-			if Input.is_action_just_released("click") and !global.is_dragging:
-				var plantwindow_instance = plant_window.instantiate()
-				plantwindow_instance.active_plant = self
-				get_tree().get_root().add_child(plantwindow_instance)
+func show_plant_menu():
+	var plantwindow_instance = plant_window.instantiate()
+	plantwindow_instance.active_plant = self
+	get_tree().get_root().add_child(plantwindow_instance)
+	
+	
+	
+	
+#func _input(event):
+	#if event is InputEventMouseButton && $DraggableItem.draggable:
+		#if (event.position - $Sprite2D.global_position).length() < click_radius:
+			#if Input.is_action_just_released("click") and !global.is_dragging:
+				#var plantwindow_instance = plant_window.instantiate()
+				#plantwindow_instance.active_plant = self
+				#get_tree().get_root().add_child(plantwindow_instance)
 	
 	
 		#if (plant_state == 1 && how_bad_is_it >= 1):

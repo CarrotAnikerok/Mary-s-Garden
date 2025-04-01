@@ -15,6 +15,7 @@
 size = Vector2(17, 22)
 
 [node name="KalanchoeBlossfeldiana" type="Node2D" groups=["game_events", "plant_room_events"]]
+light_mask = 3
 script = ExtResource("1_f2sa8")
 acceptable_stats = ExtResource("2_hebtg")
 plant_states = [ExtResource("2_dahl0"), ExtResource("3_rgyke"), ExtResource("4_uauvx"), ExtResource("5_crbfn"), ExtResource("6_o65k8"), ExtResource("7_y2gir")]
@@ -30,7 +31,21 @@ shape = SubResource("RectangleShape2D_7a3gp")
 position = Vector2(0.5, 5.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
 position = Vector2(0, -10)
 texture = ExtResource("9_3ykcs")
+
+[node name="PlantButton" type="TextureButton" parent="."]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 8.0
+offset_bottom = 6.0
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="timeout" from="DraggableItem/ClickTimer" to="DraggableItem" method="_on_click_timer_timeout"]
+[connection signal="button_down" from="PlantButton" to="DraggableItem" method="_on_plant_button_down"]
+[connection signal="button_up" from="PlantButton" to="DraggableItem" method="_on_plant_button_up"]
 
 [editable path="DraggableItem"]

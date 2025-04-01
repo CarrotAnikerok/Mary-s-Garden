@@ -10,6 +10,7 @@ func _ready():
 
 func _on_to_hall_button_pressed():
 	SceneManager.goto_scene(SCENE_HALL)
+	
 "
 
 [node name="NavigatorManager" type="Node2D"]

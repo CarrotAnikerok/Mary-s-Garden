@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ddrog6ayej6vj"]
+
+[ext_resource type="FontFile" uid="uid://dcb3mlo4injv4" path="res://fonts/Balsamiq_Sans/BalsamiqSans-Bold.ttf" id="1_ttqpc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttqpc"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1443, 0.37, 0.291005, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_right = 6
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5yxm"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1833, 0.47, 0.369655, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_right = 6
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xaafh"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1365, 0.35, 0.275275, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_right = 6
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tuv1"]
+bg_color = Color(0.289375, 0.689333, 0.495487, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.871773, 0.7994, 0.547535, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.6278, 0.86, 0.5504, 0.6)
+shadow_size = 8
+anti_aliasing = false
+
+[resource]
+Button/colors/font_color = Color(0.88, 0.79376, 0.5104, 1)
+Button/font_sizes/font_size = 6
+Button/fonts/font = ExtResource("1_ttqpc")
+Button/styles/focus = SubResource("StyleBoxFlat_ttqpc")
+Button/styles/hover = SubResource("StyleBoxFlat_h5yxm")
+Button/styles/normal = SubResource("StyleBoxFlat_h5yxm")
+Button/styles/pressed = SubResource("StyleBoxFlat_xaafh")
+Label/font_sizes/font_size = 16
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_1tuv1")

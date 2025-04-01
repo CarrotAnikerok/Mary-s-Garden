@@ -5,6 +5,8 @@ var is_dragging = false
 
 const TIME_OF_PERIOD = 3
 const NUMBER_OF_PHASES = 3
+
+var current_scene = 1
 var phase_of_day = 0
 var day_count = 0
 
@@ -20,6 +22,7 @@ func on_save_game(saved_data:Array[SavedData]):
 	var my_data = SavedGlobalData.new()
 	my_data.day_count = day_count
 	my_data.phase_of_day = phase_of_day
+	my_data.current_scene = current_scene
 	saved_data.append(my_data)
 	
 	
@@ -28,5 +31,6 @@ func on_load_game(saved_data:SavedData):
 	var my_data:SavedGlobalData = saved_data as SavedGlobalData
 	day_count = my_data.day_count
 	phase_of_day = my_data.phase_of_day
+	current_scene = my_data.current_scene
 	
 	
