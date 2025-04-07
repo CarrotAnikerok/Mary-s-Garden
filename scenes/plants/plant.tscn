@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ih3atqhsoj5"]
+
+[ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://scenes/plant_room/draggable_item.tscn" id="1_k38v5"]
+
+[node name="Plant" type="Node2D" groups=["game_events", "plant"]]
+
+[node name="DraggableItem" parent="." instance=ExtResource("1_k38v5")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="PlantButton" type="TextureButton" parent="."]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 9.0
+offset_bottom = 7.0
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="button_down" from="PlantButton" to="DraggableItem" method="_on_plant_button_down"]
+[connection signal="button_up" from="PlantButton" to="DraggableItem" method="_on_plant_button_up"]
+
+[editable path="DraggableItem"]

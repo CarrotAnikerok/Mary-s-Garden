@@ -1,15 +1,14 @@
-[gd_scene load_steps=79 format=3 uid="uid://gao1je8jpkpk"]
+[gd_scene load_steps=80 format=3 uid="uid://gao1je8jpkpk"]
 
-[ext_resource type="Script" uid="uid://donw7vjqlqx8b" path="res://scripts/plant_room/plant_room.gd" id="1_1gmqi"]
 [ext_resource type="Texture2D" uid="uid://hk7ole3fkrbf" path="res://sprites/plant_room/windows.png" id="2_7ntu0"]
 [ext_resource type="Texture2D" uid="uid://7uxnhq6khcex" path="res://sprites/plant_room/bgPlantRoomMarUI.png" id="2_bhw56"]
 [ext_resource type="PackedScene" uid="uid://bf65ywlrwh3hp" path="res://scenes/plant_room/garden_slot.tscn" id="2_vglss"]
-[ext_resource type="PackedScene" uid="uid://bwqsvc17c5c5j" path="res://sprites/plant_menu/button_themes/chlorophytum_comosum.tscn" id="3_hq6iw"]
+[ext_resource type="PackedScene" uid="uid://bwqsvc17c5c5j" path="res://scenes/plants/chlorophytum_comosum.tscn" id="3_hq6iw"]
 [ext_resource type="Theme" uid="uid://b4uu16ao6kfi0" path="res://themes/new_theme.tres" id="4_6rbcv"]
 [ext_resource type="Texture2D" uid="uid://brw672mg4askh" path="res://sprites/plant_room/room.png" id="4_k66hf"]
 [ext_resource type="Script" uid="uid://cbkysea36ql0x" path="res://scenes/plant_room/plant_room.ui.gd" id="4_l1uuk"]
-[ext_resource type="PackedScene" uid="uid://qi51764v7mh7" path="res://scenes/kalanchoe_blossfeldiana.tscn" id="5_jgt6p"]
-[ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://scenes/Aloe_Vera.tscn" id="5_pstx4"]
+[ext_resource type="PackedScene" uid="uid://qi51764v7mh7" path="res://scenes/plants/kalanchoe_blossfeldiana.tscn" id="5_jgt6p"]
+[ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://scenes/plants/aloe_vera.tscn" id="5_pstx4"]
 [ext_resource type="Texture2D" uid="uid://dcs5h6fr8gkt2" path="res://sprites/plant_room/UI/handbook.png" id="5_tbtck"]
 [ext_resource type="Texture2D" uid="uid://pkiaopwi015v" path="res://sprites/plant_room/bgPlantRoomMary_n_5.png" id="5_ytfrs"]
 [ext_resource type="Texture2D" uid="uid://dsolnq53gnw6e" path="res://sprites/plant_room/UI/door.png" id="6_fv2ki"]
@@ -29,7 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://qeixo8fu55sn" path="res://sprites/plant_room/UI/clock_phase/clock_phase_3.png" id="13_7ntu0"]
 [ext_resource type="Texture2D" uid="uid://d32v2ylnyg07f" path="res://sprites/plant_room/UI/point.png" id="18_34jyk"]
 [ext_resource type="FontFile" uid="uid://b6q0wvaf10l3g" path="res://fonts/Micro_5/Micro5-Regular.ttf" id="18_f5rt3"]
+[ext_resource type="PackedScene" uid="uid://4um7sgslreot" path="res://scenes/plants/pelargonium_graveolens.tscn" id="27_k66hf"]
 [ext_resource type="Script" uid="uid://dwsm1qsvjsd86" path="res://scenes/plant_room/light.gd" id="28_4tg3j"]
+[ext_resource type="PackedScene" uid="uid://cti7uh2emmyxi" path="res://scenes/plants/bergenia_crassoifolia.tscn" id="29_ytfrs"]
 
 [sub_resource type="Gradient" id="Gradient_7ntu0"]
 offsets = PackedFloat32Array(0.05, 0.56, 1)
@@ -395,7 +396,6 @@ fill_to = Vector2(0.497835, 0)
 polygon = PackedVector2Array(63, 41, 78, 41, 78, 62, 64, 61)
 
 [node name="PlantRoom" type="Node2D"]
-script = ExtResource("1_1gmqi")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(160.5, 29.5)
@@ -563,17 +563,19 @@ light_mask = 3
 [node name="GardenSlot2" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(55, 43)
 
-[node name="ChlorophytumComosum" parent="GardenSlots/GardenSlot2" groups=["plant"] instance=ExtResource("3_hq6iw")]
+[node name="ChlorophytumComosum" parent="GardenSlots/GardenSlot2" instance=ExtResource("3_hq6iw")]
 light_mask = 3
 
 [node name="GardenSlot3" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 z_index = -1
 position = Vector2(80, 43)
 
+[node name="PelargoniumGraveolens" parent="GardenSlots/GardenSlot3" instance=ExtResource("27_k66hf")]
+
 [node name="GardenSlot4" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(104, 43)
 
-[node name="KalanchoeBlossfeldiana" parent="GardenSlots/GardenSlot4" groups=["plant"] instance=ExtResource("5_jgt6p")]
+[node name="KalanchoeBlossfeldiana" parent="GardenSlots/GardenSlot4" instance=ExtResource("5_jgt6p")]
 
 [node name="GardenSlot5" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
 position = Vector2(155, 34)
@@ -600,6 +602,8 @@ position = Vector2(76, 80)
 
 [node name="GardenSlot12" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(100, 80)
+
+[node name="BergeniaCrassoifolia" parent="GardenSlots/GardenSlot12" instance=ExtResource("29_ytfrs")]
 
 [node name="GardenSlot13" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
 position = Vector2(154, 83)
@@ -798,6 +802,13 @@ occluder = SubResource("OccluderPolygon2D_34jyk")
 [node name="PlantRoomSceneNavigator" type="Node" parent="Utilities"]
 script = ExtResource("9_gngg7")
 
+[node name="Button" type="Button" parent="."]
+offset_left = 227.0
+offset_top = 148.0
+offset_right = 321.0
+offset_bottom = 179.0
+text = "next phase"
+
 [connection signal="animation_finished" from="UI/DateButton/TimePhaseSprite/TimePhaseAnimated" to="UI/DateButton/TimePhaseSprite" method="_on_time_phase_animated_animation_finished"]
 [connection signal="mouse_entered" from="UI/Panel" to="UI" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="UI/Panel" to="UI" method="_on_panel_mouse_exited"]
@@ -807,3 +818,4 @@ script = ExtResource("9_gngg7")
 [connection signal="mouse_entered" from="UI/Panel/DoorButton" to="UI" method="_on_door_button_mouse_entered"]
 [connection signal="mouse_exited" from="UI/Panel/DoorButton" to="UI" method="_on_door_button_mouse_exited"]
 [connection signal="pressed" from="UI/Panel/DoorButton" to="Utilities/PlantRoomSceneNavigator" method="_on_door_button_pressed"]
+[connection signal="pressed" from="Button" to="UI" method="_on_button_pressed"]

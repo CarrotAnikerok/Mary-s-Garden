@@ -1,0 +1,49 @@
+[gd_scene load_steps=13 format=3 uid="uid://4um7sgslreot"]
+
+[ext_resource type="Script" uid="uid://blgjsk3v2apkr" path="res://scripts/plants/types/pelargonium_graveolens.gd" id="1_m6nw8"]
+[ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://scenes/plant_room/draggable_item.tscn" id="2_44ip3"]
+[ext_resource type="PackedScene" uid="uid://c108l4ra32skt" path="res://3DPlants/Pelargonium_Graveolenus/pelargonium_perfect/Pelargonium_Perfect_End.glb" id="2_brbxr"]
+[ext_resource type="Resource" uid="uid://bqyq508b815c2" path="res://custom_resources/plants/pelargonium/pelargonium_acceptable_stats.tres" id="2_in4bu"]
+[ext_resource type="PackedScene" uid="uid://bartfh5lfmv40" path="res://3DPlants/Pelargonium_Graveolenus/pelargonium_good/Pelargonium_Good_End.glb" id="3_c40d5"]
+[ext_resource type="Resource" uid="uid://bg4skprihh1f8" path="res://custom_resources/plants/pelargonium/pelargonium_perfect_stats.tres" id="3_xk4ha"]
+[ext_resource type="PackedScene" uid="uid://bvyrg23xrpqlg" path="res://3DPlants/Pelargonium_Graveolenus/pelargonium_neutral/Pelargonium_Neutral_End.glb" id="4_5rpyh"]
+[ext_resource type="PackedScene" uid="uid://dkd6bteayqqjj" path="res://3DPlants/Pelargonium_Graveolenus/pelargonium_bad/Pelargonium_Bad_End.glb" id="5_in4bu"]
+[ext_resource type="PackedScene" uid="uid://dc7imsa1l8eox" path="res://3DPlants/Pelargonium_Graveolenus/pelargonium_horrible/Pelargonium_Horrible_End.glb" id="6_xk4ha"]
+[ext_resource type="PackedScene" uid="uid://cwutmd5cc4iwr" path="res://3DPlants/Pelargonium_Graveolenus/pelargonium_dead/Pelargonium_Dead_End.glb" id="7_pib7c"]
+[ext_resource type="Texture2D" uid="uid://n6imjrxwklb4" path="res://sprites/pixel_plants/pelargonia.png" id="9_c40d5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj4iq"]
+size = Vector2(18, 22)
+
+[node name="PelargoniumGraveolens" type="Node2D" groups=["game_events", "plant", "plant_room_events"]]
+script = ExtResource("1_m6nw8")
+acceptable_stats = ExtResource("2_in4bu")
+perfect_stats = ExtResource("3_xk4ha")
+plant_states = Array[PackedScene]([ExtResource("2_brbxr"), ExtResource("3_c40d5"), ExtResource("4_5rpyh"), ExtResource("5_in4bu"), ExtResource("6_xk4ha"), ExtResource("7_pib7c")])
+
+[node name="DraggableItem" parent="." instance=ExtResource("2_44ip3")]
+
+[node name="DraggableCollision" parent="DraggableItem" index="0"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_aj4iq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
+position = Vector2(0, -10)
+texture = ExtResource("9_c40d5")
+
+[node name="PlantButton" type="TextureButton" parent="."]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 9.0
+offset_bottom = 6.0
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="DraggableItem/ClickTimer" to="DraggableItem" method="_on_click_timer_timeout"]
+[connection signal="button_down" from="PlantButton" to="DraggableItem" method="_on_plant_button_down"]
+[connection signal="button_up" from="PlantButton" to="DraggableItem" method="_on_plant_button_up"]
+
+[editable path="DraggableItem"]

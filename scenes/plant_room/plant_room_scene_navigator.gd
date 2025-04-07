@@ -4,7 +4,6 @@ var SCENE_HALL = "res://scenes/hall/hall.tscn"
 
 func _ready():
 	SceneManager.exit.connect(save_plant_room)
-	print("Loading plants?")
 	SceneManager.load_plants()
 
 #func _on_to_hall_button_pressed():

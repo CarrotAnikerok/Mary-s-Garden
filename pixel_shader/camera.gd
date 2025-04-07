@@ -13,8 +13,8 @@ extends Camera3D
 			$Postprocess.hide()
 			post_processing = p
 			
-func _process(_delta):
-	pass
+#func _process(_delta):
+	#pass
 	#if Input.is_action_pressed("ui_right"):
 		#position.x += 0.5
 	#elif Input.is_action_pressed("ui_left"):

@@ -82,7 +82,6 @@ func _on_plant_button_up():
 			item.position = Vector2(0, 0)
 			item.place_update() #должноо ли оно быть здесь?
 		else:
-			#old_slot_parent.add_child(item)
 			var tween = get_tree().create_tween()
 			tween.tween_property(item, "position", Vector2(0, 0), 0.1)
 			
@@ -96,3 +95,7 @@ func set_dragging():
 
 func _on_click_timer_timeout():
 	set_dragging()
+
+
+func _on_plant_button_button_down():
+	pass # Replace with function body.

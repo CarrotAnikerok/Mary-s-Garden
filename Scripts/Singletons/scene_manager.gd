@@ -41,7 +41,7 @@ func _deferred_goto_scene(path):
 	
 func save_game():
 	#создаю сохранение
-	print("СОХРАНЯЮ ИГРУ")
+	#print("СОХРАНЯЮ ИГРУ")
 	var saved_game: SavedGame = SavedGame.new()
 	var saved_global_data: Array[SavedData] = []
 	var saved_handbook_data: Array[SavedData] = []
@@ -57,7 +57,7 @@ func save_game():
 	
 func load_game():
 	#нахожу сохранение
-	print("ЗАГРУЖАЮ ИГРЫ ИГРУ")
+	#print("ЗАГРУЖАЮ ИГРЫ ИГРУ")
 	var saved_game:SavedGame = load(save_path)
 	#загружаю глобальное сохранение
 	if saved_game.global_world.size() != 0:
@@ -69,14 +69,14 @@ func load_game():
 			
 			
 func save_plants():
-	print_debug("СОХРАНЯЮ РАСТЕНИЯ")
+	#print_debug("СОХРАНЯЮ РАСТЕНИЯ")
 	var saved_plant_data: Array[SavedData] = []
 	get_tree().call_group("plant_room_events", "on_save_game", saved_plant_data)
 	plants_data = saved_plant_data
 	
 	
 func load_plants():
-	print("ЗАГРУЖАЮ РАСТЕНИЯ")
+	#print("ЗАГРУЖАЮ РАСТЕНИЯ")
 	if plants_data.size() != 0:
 		get_tree().call_group("plant_room_events", "on_before_load_game")
 		for item in plants_data:

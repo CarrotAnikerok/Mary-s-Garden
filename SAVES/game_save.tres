@@ -1,31 +1,176 @@
-[gd_resource type="Resource" script_class="SavedGame" load_steps=7 format=3]
+[gd_resource type="Resource" script_class="SavedGame" load_steps=13 format=3]
 
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_data.gd" id="1_w3a04"]
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_global_data.gd" id="2_d4v2n"]
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_game.gd" id="2_fwbdc"]
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_notebook_data.gd" id="3_1pgu4"]
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_data.gd" id="1_1pgu4"]
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_global_data.gd" id="2_rhb7w"]
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_notebook_data.gd" id="3_ijs44"]
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_plant_data.gd" id="4_5f4ar"]
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_game.gd" id="5_o42qe"]
 
-[sub_resource type="Resource" id="Resource_rhb7w"]
-script = ExtResource("2_d4v2n")
+[sub_resource type="Resource" id="Resource_1xn6o"]
+script = ExtResource("2_rhb7w")
 phase_of_day = 0
-day_count = 6
+day_count = 2
 current_scene = 1
 scene_path = ""
 
-[sub_resource type="Resource" id="Resource_ijs44"]
-script = ExtResource("3_1pgu4")
+[sub_resource type="Resource" id="Resource_pbl23"]
+script = ExtResource("3_ijs44")
 notes = Array[Dictionary]([{
 "title": "Прошлый вечер",
 "type": "phase_change"
+}, {
+"description": "Aloe Vera походу засыхает.",
+"name": "Aloe Vera",
+"type": "plant_after"
+}, {
+"description": "Aloe Vera совсем не отдохнуло за ночь",
+"name": "Aloe Vera",
+"type": "plant_after"
+}, {
+"description": "Chlorophytum Comosum походу засыхает.",
+"name": "Chlorophytum Comosum",
+"type": "plant_after"
+}, {
+"description": "Chlorophytum Comosum чувствует себя некомфортно в этой влажности",
+"name": "Chlorophytum Comosum",
+"type": "plant_after"
+}, {
+"description": "Chlorophytum Comosum совсем не отдохнуло за ночь",
+"name": "Chlorophytum Comosum",
+"type": "plant_after"
+}, {
+"description": "Pelargonium Grabeolens походу засыхает.",
+"name": "Pelargonium Grabeolens",
+"type": "plant_after"
+}, {
+"description": "Pelargonium Grabeolens совсем не отдохнуло за ночь",
+"name": "Pelargonium Grabeolens",
+"type": "plant_after"
+}, {
+"description": "Kalanchoe Blossfeldiana походу засыхает.",
+"name": "Kalanchoe Blossfeldiana",
+"type": "plant_after"
+}, {
+"description": "Kalanchoe Blossfeldiana чувствует себя некомфортно в этой влажности",
+"name": "Kalanchoe Blossfeldiana",
+"type": "plant_after"
+}, {
+"description": "Bergenia Crassoifolia походу засыхает.",
+"name": "Bergenia Crassoifolia",
+"type": "plant_after"
+}, {
+"description": "Bergenia Crassoifolia чувствует себя некомфортно в этой влажности",
+"name": "Bergenia Crassoifolia",
+"type": "plant_after"
 }, {
 "title": "Утро",
 "type": "phase_change"
 }])
 scene_path = ""
 
+[sub_resource type="Resource" id="Resource_f4ck5"]
+script = ExtResource("4_5f4ar")
+id = 0
+plant_name = "Aloe Vera"
+normal_water_amount = 300
+actual_water_coefficent = 0.0
+actual_light_amount = 3000
+actual_light_time = 0
+actual_humidity = 0.621753
+actual_temperature = 25
+plant_state = 5
+is_alive = true
+light_on = false
+is_overpoured = false
+is_first_pour = true
+deadly_bad_for_too_long = false
+bad_parameters = [6, 2, 0, 0]
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot"
+scene_path = "res://scenes/plants/aloe_vera.tscn"
+
+[sub_resource type="Resource" id="Resource_ipaky"]
+script = ExtResource("4_5f4ar")
+id = 0
+plant_name = "Pelargonium Grabeolens"
+normal_water_amount = 300
+actual_water_coefficent = 0.0
+actual_light_amount = 3000
+actual_light_time = 0
+actual_humidity = 0.617662
+actual_temperature = 25
+plant_state = 5
+is_alive = true
+light_on = false
+is_overpoured = false
+is_first_pour = true
+deadly_bad_for_too_long = false
+bad_parameters = [6, 2, 2, 0]
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot3"
+scene_path = "res://scenes/plants/pelargonium_graveolens.tscn"
+
+[sub_resource type="Resource" id="Resource_ps5qk"]
+script = ExtResource("4_5f4ar")
+id = 0
+plant_name = "Kalanchoe Blossfeldiana"
+normal_water_amount = 300
+actual_water_coefficent = 0.0
+actual_light_amount = 3000
+actual_light_time = 9
+actual_humidity = 0.696048
+actual_temperature = 25
+plant_state = 5
+is_alive = true
+light_on = false
+is_overpoured = false
+is_first_pour = true
+deadly_bad_for_too_long = false
+bad_parameters = [6, 0, 6, 0]
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot4"
+scene_path = "res://scenes/plants/kalanchoe_blossfeldiana.tscn"
+
+[sub_resource type="Resource" id="Resource_rf602"]
+script = ExtResource("4_5f4ar")
+id = 0
+plant_name = "Bergenia Crassoifolia"
+normal_water_amount = 300
+actual_water_coefficent = 0.0
+actual_light_amount = 3000
+actual_light_time = 9
+actual_humidity = 0.748856
+actual_temperature = 25
+plant_state = 5
+is_alive = true
+light_on = false
+is_overpoured = false
+is_first_pour = true
+deadly_bad_for_too_long = false
+bad_parameters = [5, 0, 6, 0]
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot12"
+scene_path = "res://scenes/plants/bergenia_crassoifolia.tscn"
+
+[sub_resource type="Resource" id="Resource_ltmyr"]
+script = ExtResource("4_5f4ar")
+id = 0
+plant_name = "Chlorophytum Comosum"
+normal_water_amount = 300
+actual_water_coefficent = 0.0
+actual_light_amount = 3000
+actual_light_time = 0
+actual_humidity = 0.45233
+actual_temperature = 25
+plant_state = 5
+is_alive = true
+light_on = false
+is_overpoured = false
+is_first_pour = true
+deadly_bad_for_too_long = false
+bad_parameters = [6, 2, 6, 0]
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot13"
+scene_path = "res://scenes/plants/chlorophytum_comosum.tscn"
+
 [resource]
-script = ExtResource("2_fwbdc")
-plant_room = Array[ExtResource("1_w3a04")]([])
-notes = Array[ExtResource("1_w3a04")]([SubResource("Resource_ijs44")])
-hall = Array[ExtResource("1_w3a04")]([])
-global_world = Array[ExtResource("1_w3a04")]([SubResource("Resource_rhb7w")])
+script = ExtResource("5_o42qe")
+plant_room = Array[ExtResource("1_1pgu4")]([SubResource("Resource_f4ck5"), SubResource("Resource_ipaky"), SubResource("Resource_ps5qk"), SubResource("Resource_rf602"), SubResource("Resource_ltmyr")])
+notes = Array[ExtResource("1_1pgu4")]([SubResource("Resource_pbl23")])
+hall = Array[ExtResource("1_1pgu4")]([])
+global_world = Array[ExtResource("1_1pgu4")]([SubResource("Resource_1xn6o")])

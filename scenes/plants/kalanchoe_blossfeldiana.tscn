@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=3 uid="uid://qi51764v7mh7"]
+
+[ext_resource type="Script" uid="uid://bbmht06uvjaof" path="res://scripts/plants/types/kalanchoe_blossfeldiana.gd" id="1_f2sa8"]
+[ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://scenes/plant_room/draggable_item.tscn" id="1_qy24j"]
+[ext_resource type="PackedScene" uid="uid://dtwsnyi4jpog8" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Perfect/Kalanchoe_Perfect_End.glb" id="2_dahl0"]
+[ext_resource type="Resource" uid="uid://gru0q10b6yib" path="res://custom_resources/plants/kalanchoe/kalanchoe_acceptable_stats.tres" id="2_yw3hb"]
+[ext_resource type="Resource" uid="uid://qybubcfanwxt" path="res://custom_resources/plants/kalanchoe/kalanchoe_perfect_stats.tres" id="3_bahtu"]
+[ext_resource type="PackedScene" uid="uid://0upibrc5edvd" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Good/Kalanchoe_Good_End.glb" id="3_rgyke"]
+[ext_resource type="PackedScene" uid="uid://45mnohumabfi" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Neutral/Kalanchoe_Neutral_End.glb" id="4_uauvx"]
+[ext_resource type="PackedScene" uid="uid://c6dkbix55uujq" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalacnhoe_Bad/Kalanchoe_Bad_End.glb" id="5_crbfn"]
+[ext_resource type="PackedScene" uid="uid://b88y0nooqeqlt" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Horrible/Kalanchoe_Horrible_End.glb" id="6_o65k8"]
+[ext_resource type="PackedScene" uid="uid://d1trhmyocaj5c" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalacnhoe_Dead/Kalanchoe_Dead_End.glb" id="7_y2gir"]
+[ext_resource type="Texture2D" uid="uid://c26bil8bu76of" path="res://sprites/pixel_plants/kalanchoe.png" id="9_3ykcs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a3gp"]
+size = Vector2(17, 22)
+
+[node name="KalanchoeBlossfeldiana" type="Node2D" groups=["game_events", "plant", "plant_room_events"]]
+light_mask = 3
+script = ExtResource("1_f2sa8")
+acceptable_stats = ExtResource("2_yw3hb")
+perfect_stats = ExtResource("3_bahtu")
+plant_states = Array[PackedScene]([ExtResource("2_dahl0"), ExtResource("3_rgyke"), ExtResource("4_uauvx"), ExtResource("5_crbfn"), ExtResource("6_o65k8"), ExtResource("7_y2gir")])
+
+[node name="DraggableItem" parent="." instance=ExtResource("1_qy24j")]
+position = Vector2(1, -5)
+
+[node name="DraggableCollision" parent="DraggableItem" index="0"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_7a3gp")
+
+[node name="DropableCollision" parent="DraggableItem/DraggableCollision/DropableArea" index="0"]
+position = Vector2(0.5, 5.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
+position = Vector2(0, -10)
+texture = ExtResource("9_3ykcs")
+
+[node name="PlantButton" type="TextureButton" parent="."]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 8.0
+offset_bottom = 6.0
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="timeout" from="DraggableItem/ClickTimer" to="DraggableItem" method="_on_click_timer_timeout"]
+[connection signal="button_down" from="PlantButton" to="DraggableItem" method="_on_plant_button_down"]
+[connection signal="button_up" from="PlantButton" to="DraggableItem" method="_on_plant_button_up"]
+
+[editable path="DraggableItem"]

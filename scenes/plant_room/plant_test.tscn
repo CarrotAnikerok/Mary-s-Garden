@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dc6wbaq0gkja"]
 
 [ext_resource type="PackedScene" uid="uid://b20sqxrpc7sei" path="res://scenes/plant_room/plant_window.tscn" id="2_x7rax"]
-[ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://scenes/Aloe_Vera.tscn" id="3_yts85"]
-[ext_resource type="PackedScene" uid="uid://b6u46ej1sh4ok" path="res://scenes/Cactus.tscn" id="4_sd0tm"]
+[ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://scenes/plants/aloe_vera.tscn" id="3_yts85"]
+[ext_resource type="PackedScene" uid="uid://b6u46ej1sh4ok" path="res://scenes/plants/Cactus.tscn" id="4_sd0tm"]
 
 [sub_resource type="GDScript" id="GDScript_ygwsd"]
 script/source = "extends Node

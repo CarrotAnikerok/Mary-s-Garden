@@ -69,3 +69,7 @@ func _on_door_button_mouse_entered():
 func _on_door_button_mouse_exited():
 	var tween_door = get_tree().create_tween()
 	tween_door.tween_property(door_button, "scale", Vector2(0.8, 0.8), 0.2)
+
+
+func _on_button_pressed():
+	GlobalTimer._on_timeout()

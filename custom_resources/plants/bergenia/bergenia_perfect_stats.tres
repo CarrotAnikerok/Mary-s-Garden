@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PerfectStats" load_steps=2 format=3 uid="uid://c5q5lpaqbtjik"]
+
+[ext_resource type="Script" uid="uid://d15mfjfa7ejkw" path="res://scripts/resources/perfect_stats.gd" id="1_ho8ex"]
+
+[resource]
+script = ExtResource("1_ho8ex")
+perfect_water_coefficent = Vector2(0, 0)
+perfect_light_time = Vector2(3, 6)
+perfect_light_amount = Vector2(1000, 3000)
+perfect_humidity = Vector2(0.4, 0)
+perfect_temperature = Vector2(0, 0)
+metadata/_custom_type_script = "uid://d15mfjfa7ejkw"

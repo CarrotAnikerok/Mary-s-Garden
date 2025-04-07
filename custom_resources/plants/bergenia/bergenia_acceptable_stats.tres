@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AcceptableStats" load_steps=2 format=3 uid="uid://blv1egnoxi5dn"]
+
+[ext_resource type="Script" uid="uid://cy8u0hscf6ef1" path="res://scripts/resources/acceptable_stats.gd" id="1_spfec"]
+
+[resource]
+script = ExtResource("1_spfec")
+acceptable_water_coefficent = Vector2(0.5, 0.7)
+acceptable_light_time = Vector2(3, 6)
+acceptable_light_amount = Vector2(1000, 3000)
+acceptable_humidity = Vector2(0.4, 0.6)
+acceptable_temperature = Vector2(0, 30)
+metadata/_custom_type_script = "uid://cy8u0hscf6ef1"

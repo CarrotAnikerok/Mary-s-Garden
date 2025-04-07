@@ -77,7 +77,7 @@ render_target_update_mode = 4
 environment = SubResource("Environment_uyvf5")
 
 [node name="Camera" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_nx0xa")]
-transform = Transform3D(1, 0, 0, 0, 0.915241, 0.402906, 0, -0.402906, 0.915241, 22.2354, 2.99106, 3.66615)
+transform = Transform3D(1, 0, 0, 0, 0.915241, 0.402906, 0, -0.402906, 0.915241, -56.8363, 2.99106, 3.66615)
 size = 4.9
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
@@ -173,14 +173,16 @@ script = ExtResource("3_3swnt")
 
 [node name="Bergenia_Neutral_End" parent="SubViewportContainer/SubViewport" instance=ExtResource("25_panmr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.2236, 0, 0)
+visible = false
 script = ExtResource("3_3swnt")
 
 [node name="Bergenia_Good_End" parent="SubViewportContainer/SubViewport" instance=ExtResource("26_83k2j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2236, 0, 0)
+transform = Transform3D(0.217479, 0, -0.976065, 0, 1, 0, 0.976065, 0, 0.217479, -69.2236, 0, 0)
 script = ExtResource("3_3swnt")
 
 [node name="Bergenia_Perfect_End" parent="SubViewportContainer/SubViewport" instance=ExtResource("27_su2qw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.2236, 0, 0)
+visible = false
 script = ExtResource("3_3swnt")
 
 [node name="Pelargonium_Dead_End" parent="SubViewportContainer/SubViewport" instance=ExtResource("28_k3hsy")]

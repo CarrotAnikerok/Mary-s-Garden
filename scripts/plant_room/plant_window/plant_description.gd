@@ -10,7 +10,7 @@ extends Control
 var pages: Array[Vector2]
 var page_number: int = 0
 
-var descriptions
+var descriptions: Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,15 +21,11 @@ func _ready():
 	update_info()
 
 
-func set_label_name():
-	label_name.text = active_plant.plant_name
-	
-	
 func load_descriptions_file():
 	if FileAccess.file_exists(plant_description_file):
 		var file = FileAccess.open(plant_description_file, FileAccess.READ)
 		var test_json_conv = JSON.new()
-		test_json_conv.parse(file.get_as_text())
+		test_json_conv.parse(file.get_as_text(true))
 		return test_json_conv.get_data()
 		
 
@@ -40,6 +36,11 @@ func _on_desc_button_pressed():
 
 func _on_info_button_pressed():
 	change_check_to("info_check")
+	update_info()
+
+
+func _on_pract_desc_button_pressed():
+	change_check_to("pract_check")
 	update_info()
 
 
@@ -120,15 +121,17 @@ func check_capacity(paper):
 
 
 func update_info():
-	set_label_name()
+	var plant_name = active_plant.plant_name
+	var plant_description = descriptions[plant_name].duplicate()
+	label_name.text = plant_description[0]
 	if global.desc_check:
 		hide_info_stuff()
-		var plant_name = active_plant.plant_name
-		var plant_description = descriptions[plant_name].duplicate()
 		label_description.text = plant_description[1]
 	elif global.info_check:
 		label_description.text = ""
 		add_plant_notes()
+	elif global.pract_check:
+		label_description.text = plant_description[2]
 
 
 func change_check_to(state):
@@ -136,9 +139,15 @@ func change_check_to(state):
 		"info_check":
 			global.desc_check = false
 			global.info_check = true
+			global.pract_check = false
 		"desc_check":
 			global.info_check = false
 			global.desc_check = true
+			global.pract_check = false
+		"pract_check":
+			global.pract_check = true
+			global.info_check = false
+			global.desc_check = false
 		_:
 			push_error("not right check")
 

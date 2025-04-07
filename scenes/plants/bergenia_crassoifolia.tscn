@@ -1,0 +1,50 @@
+[gd_scene load_steps=13 format=3 uid="uid://cti7uh2emmyxi"]
+
+[ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://scenes/plant_room/draggable_item.tscn" id="1_qbspn"]
+[ext_resource type="Script" uid="uid://cjq6btvb718gf" path="res://scripts/plants/types/bergenia_crassoifolia.gd" id="1_vermt"]
+[ext_resource type="Resource" uid="uid://blv1egnoxi5dn" path="res://custom_resources/plants/bergenia/bergenia_acceptable_stats.tres" id="2_avtqp"]
+[ext_resource type="PackedScene" uid="uid://dq1v7ed3eyo2l" path="res://3DPlants/Bergenia_Crassifolia/Bergenia_Perfect/Bergenia_Perfect_End.glb" id="2_o6y6w"]
+[ext_resource type="Texture2D" uid="uid://db5q655sy8dnt" path="res://sprites/pixel_plants/bergenia.png" id="2_qbspn"]
+[ext_resource type="Resource" uid="uid://c5q5lpaqbtjik" path="res://custom_resources/plants/bergenia/bergenia_perfect_stats.tres" id="3_3irey"]
+[ext_resource type="PackedScene" uid="uid://cual8t7ule677" path="res://3DPlants/Bergenia_Crassifolia/Bergenia_Good/Bergenia_Good_End.glb" id="3_dwcqq"]
+[ext_resource type="PackedScene" uid="uid://sraml2qt2w01" path="res://3DPlants/Bergenia_Crassifolia/Bergenia_Neutral/Bergenia_Neutral_End.glb" id="4_avtqp"]
+[ext_resource type="PackedScene" uid="uid://bkevv1nrl3jyf" path="res://3DPlants/Bergenia_Crassifolia/Bergenia_Bad/Bergenia_Bad_End.glb" id="5_3irey"]
+[ext_resource type="PackedScene" uid="uid://e6iuuupswd86" path="res://3DPlants/Bergenia_Crassifolia/Bergenia_Horrible/Bergenia_Horrible_End.glb" id="6_4343b"]
+[ext_resource type="PackedScene" uid="uid://bx03wqm847jrt" path="res://3DPlants/Bergenia_Crassifolia/Bergenia_Dead/Bergenia_Dead_End.glb" id="7_tisrk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3irey"]
+size = Vector2(18, 20)
+
+[node name="BergeniaCrassoifolia" type="Node2D" groups=["game_events", "plant", "plant_room_events"]]
+script = ExtResource("1_vermt")
+acceptable_stats = ExtResource("2_avtqp")
+perfect_stats = ExtResource("3_3irey")
+plant_states = Array[PackedScene]([ExtResource("2_o6y6w"), ExtResource("3_dwcqq"), ExtResource("4_avtqp"), ExtResource("5_3irey"), ExtResource("6_4343b"), ExtResource("7_tisrk")])
+
+[node name="DraggableItem" parent="." instance=ExtResource("1_qbspn")]
+
+[node name="DraggableCollision" parent="DraggableItem" index="0"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_3irey")
+
+[node name="DropableCollision" parent="DraggableItem/DraggableCollision/DropableArea" index="0"]
+position = Vector2(0.5, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+texture = ExtResource("2_qbspn")
+
+[node name="PlantButton" type="TextureButton" parent="."]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 9.0
+offset_bottom = 6.0
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="PlantButton" to="DraggableItem" method="_on_plant_button_down"]
+[connection signal="button_up" from="PlantButton" to="DraggableItem" method="_on_plant_button_up"]
+
+[editable path="DraggableItem"]

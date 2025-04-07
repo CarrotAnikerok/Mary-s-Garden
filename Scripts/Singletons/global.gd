@@ -13,6 +13,7 @@ var day_count = 0
 #PlantWindow
 var info_check = false
 var desc_check = true
+var pract_check = false #лучше сделать это явно подругому
 
 func _ready():
 	add_to_group("global_world")
