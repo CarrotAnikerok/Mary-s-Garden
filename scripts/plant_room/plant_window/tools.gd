@@ -7,9 +7,10 @@ extends Control
 @onready var ground_time_bar = $GroundButton/TextureProgressBar
 @onready var ground_button_texture = $GroundButton/TextureRect
 
-var ground_timer: Timer
-var ground_timer_on := false
+var plant_tools: Plant_Tools
 
+var ground_timer: Timer
+var ground_check_plant: Plant
 
 @export var ground_icons: Dictionary[String, Texture]
 
@@ -17,12 +18,11 @@ signal worked_with_plant()
 
 func _ready():
 	ground_time_bar.visible = false
-	upfate_info()
-	ground_timer.timeout.connect(ground_check)
+	update_info()
 
 
 func _process(delta):
-	if ground_timer_on:
+	if plant_tools.ground_timer_state == plant_tools.GROUND_TIMER_ON:
 		ground_time_bar.value = 100 - (ground_timer.time_left) * 20
 	
 
@@ -54,46 +54,56 @@ func _on_light_button_pressed():
 
 
 func _on_ground_button_pressed():
-	active_plant.check_ground(5)
-	ground_timer_on = true
-	if ground_timer_on:
+	ground_check_plant = active_plant
+	plant_tools.start_check_ground(5)
+	if plant_tools.ground_timer_state == plant_tools.GROUND_TIMER_ON:
+		ground_time_bar.visible = true
+	else:
 		ground_time_bar.visible = false
-		ground_timer_on = false
-	else:
-		ground_timer_on = true
-		ground_time_bar.visible = true
+
+#то есть мне нужно запоминать, на каком растении началась работа. то есть СИГНАЛ пусть дает
+#мне об этом информацию
+func on_ground_check_end(plant):
+	add_ground_note(plant)
+	worked_with_plant.emit()
+	if plant_tools.ground_timer.time_left == 0:
+		ground_time_bar.visible = false
+		change_tothspick_icon()
 
 
-func ground_check():
-	ground_timer_on = false
-	ground_time_bar.visible = false
-	print("Print actual water " + str(active_plant.actual_water_coefficent))
-	if active_plant.actual_water_coefficent > 0.7:
-		ground_button_texture.texture = ground_icons["full_water"]
-		active_plant.ground_check = 2
-	elif active_plant.actual_water_coefficent > 0.4:
-		ground_button_texture.texture = ground_icons["half_water"]
-		active_plant.ground_check = 1
-	else:
-		ground_button_texture.texture = ground_icons["no_water"]
-		active_plant.ground_check = 0
-
-func upfate_info():
-	ground_timer = active_plant.ground_timer
-	if ground_timer.time_left == 0:
-			ground_timer_on = false
-			ground_time_bar.visible = false
-	else:
-		ground_timer_on = true
-		ground_time_bar.visible = true
+func update_info():
+	active_plant = $"..".active_plant
+	plant_tools = active_plant.plant_tools
+	ground_timer = plant_tools.ground_timer
+	if plant_tools.on_timeout.is_connected(on_ground_check_end):
+			plant_tools.on_timeout.disconnect(on_ground_check_end)
+	plant_tools.on_timeout.connect(on_ground_check_end)
+	change_tothspick_icon()
 	
-		
-	match active_plant.ground_check:
+	if plant_tools.ground_timer_state == plant_tools.GROUND_TIMER_OFF:
+		ground_time_bar.visible = false
+	else:
+		ground_time_bar.visible = true
+		print("update info?")
+
+
+func change_tothspick_icon():
+	match plant_tools.ground_check:
 		0:
 			ground_button_texture.texture = ground_icons["no_water"]
 		1:
 			ground_button_texture.texture = ground_icons["half_water"]
 		2:
 			ground_button_texture.texture = ground_icons["full_water"]
+
+
+func add_ground_note(plant):
+	match plant.plant_tools.ground_check:
+		0:
+			HandbookInfo.add_note("plant_action", plant.plant_name, "Палочка для " + plant.name + " совсем сухая")
+		1:
+			HandbookInfo.add_note("plant_action", plant.plant_name, "Палочка для " + plant.name + " полувлажная")
+		2:
+			HandbookInfo.add_note("plant_action", plant.plant_name, "Палочка для " + plant.name + " очень влажная")
 		
 	

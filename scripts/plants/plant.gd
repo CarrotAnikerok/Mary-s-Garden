@@ -3,9 +3,9 @@ extends Node
 
 @export var acceptable_stats: AcceptableStats
 @export var perfect_stats: PerfectStats
-
 #var states = ["Perfect", "Good", "Neutral", "Bad", "Horrible", "Dead"]
 @export var plant_states: Array[PackedScene]
+@export var plant_tools: Plant_Tools
 
 
 var plant_window = load("res://scenes/plant_room/plant_window.tscn")

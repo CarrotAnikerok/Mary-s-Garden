@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://4um7sgslreot"]
+[gd_scene load_steps=14 format=3 uid="uid://4um7sgslreot"]
 
 [ext_resource type="Script" uid="uid://blgjsk3v2apkr" path="res://scripts/plants/types/pelargonium_graveolens.gd" id="1_m6nw8"]
 [ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://scenes/plant_room/draggable_item.tscn" id="2_44ip3"]
@@ -11,15 +11,19 @@
 [ext_resource type="PackedScene" uid="uid://dc7imsa1l8eox" path="res://3DPlants/Pelargonium_Graveolenus/pelargonium_horrible/Pelargonium_Horrible_End.glb" id="6_xk4ha"]
 [ext_resource type="PackedScene" uid="uid://cwutmd5cc4iwr" path="res://3DPlants/Pelargonium_Graveolenus/pelargonium_dead/Pelargonium_Dead_End.glb" id="7_pib7c"]
 [ext_resource type="Texture2D" uid="uid://n6imjrxwklb4" path="res://sprites/pixel_plants/pelargonia.png" id="9_c40d5"]
+[ext_resource type="PackedScene" uid="uid://c7kan4kwivb4j" path="res://scenes/plant_tools.tscn" id="10_xk4ha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aj4iq"]
 size = Vector2(18, 22)
 
-[node name="PelargoniumGraveolens" type="Node2D" groups=["game_events", "plant", "plant_room_events"]]
+[node name="PelargoniumGraveolens" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
 script = ExtResource("1_m6nw8")
 acceptable_stats = ExtResource("2_in4bu")
 perfect_stats = ExtResource("3_xk4ha")
 plant_states = Array[PackedScene]([ExtResource("2_brbxr"), ExtResource("3_c40d5"), ExtResource("4_5rpyh"), ExtResource("5_in4bu"), ExtResource("6_xk4ha"), ExtResource("7_pib7c")])
+plant_tools = NodePath("PlantTools")
+
+[node name="PlantTools" parent="." instance=ExtResource("10_xk4ha")]
 
 [node name="DraggableItem" parent="." instance=ExtResource("2_44ip3")]
 

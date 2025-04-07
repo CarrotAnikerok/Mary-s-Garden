@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctororhwgysd7"]
+[gd_scene load_steps=12 format=3 uid="uid://ctororhwgysd7"]
 
 [ext_resource type="Script" uid="uid://bn24r68bvj50s" path="res://scripts/plants/types/aloe_vera.gd" id="1_8b0w6"]
 [ext_resource type="Resource" uid="uid://c32qxcudibp2l" path="res://custom_resources/plants/aloe/aloe_acceptable_stats.tres" id="2_4r8di"]
@@ -8,18 +8,22 @@
 [ext_resource type="PackedScene" uid="uid://d4cqv1yo1navd" path="res://3DPlants/Aloe_Vera/aloe_vera_bad/aloevera_bad_end.glb" id="5_6dxjm"]
 [ext_resource type="PackedScene" uid="uid://dhinluiweylrg" path="res://3DPlants/Aloe_Vera/aloe_vera_horrible/aloevera_horrible_end.glb" id="6_rh4co"]
 [ext_resource type="PackedScene" uid="uid://cxps05hj3uox4" path="res://3DPlants/Aloe_Vera/aloe_vera_dead/aloevera_dead_end.glb" id="7_u6o7v"]
+[ext_resource type="PackedScene" uid="uid://c7kan4kwivb4j" path="res://scenes/plant_tools.tscn" id="8_y5k1y"]
 [ext_resource type="Texture2D" uid="uid://c63nifnt7s54n" path="res://sprites/pixel_plants/aloe_vera3.png" id="9_ruqj4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvj8c"]
 size = Vector2(18, 22)
 
-[node name="AloeVera" type="Node2D" groups=["game_events", "plant", "plant_room_events"]]
+[node name="AloeVera" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
 script = ExtResource("1_8b0w6")
 acceptable_stats = ExtResource("2_4r8di")
 perfect_stats = ExtResource("3_hvj8c")
 plant_states = Array[PackedScene]([ExtResource("2_efrt1"), ExtResource("2_efrt1"), ExtResource("2_efrt1"), ExtResource("5_6dxjm"), ExtResource("6_rh4co"), ExtResource("7_u6o7v")])
+plant_tools = NodePath("PlantTools")
 metadata/_edit_horizontal_guides_ = [-16.0, 6.0]
 metadata/_edit_vertical_guides_ = [-10.0, 10.0]
+
+[node name="PlantTools" parent="." instance=ExtResource("8_y5k1y")]
 
 [node name="DraggableItem" parent="." instance=ExtResource("3_1s1gn")]
 

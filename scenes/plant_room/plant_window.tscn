@@ -65,8 +65,6 @@ func update_info():
 	$PlantInfo/TemperatureInt.text = str(active_plant.actual_temperature)
 	
 	$PlantDescription.active_plant = active_plant
-	$ToolsButtons.active_plant = active_plant
-	$ToolsButtons.upfate_info()
 	$Navigation.active_plant = active_plant
 	$SliderMenu.active_plant = active_plant
 	$InfoIcons.active_plant = active_plant

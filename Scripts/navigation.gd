@@ -24,6 +24,7 @@ func _on_onward_button_pressed():
 		$"..".active_plant = sorted_plants[current_i + 1]
 	$"..".update_info()
 	$"../PlantDescription".update_info()
+	$"../ToolsButtons".update_info()
 	
 
 
@@ -35,4 +36,4 @@ func _on_back_button_pressed():
 		$"..".active_plant = sorted_plants[current_i - 1]
 	$"..".update_info()
 	$"../PlantDescription".update_info()
-	pass # Replace with function body.
+	$"../ToolsButtons".update_info()

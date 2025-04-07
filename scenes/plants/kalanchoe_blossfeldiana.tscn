@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qi51764v7mh7"]
+[gd_scene load_steps=14 format=3 uid="uid://qi51764v7mh7"]
 
 [ext_resource type="Script" uid="uid://bbmht06uvjaof" path="res://scripts/plants/types/kalanchoe_blossfeldiana.gd" id="1_f2sa8"]
 [ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://scenes/plant_room/draggable_item.tscn" id="1_qy24j"]
@@ -11,16 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://b88y0nooqeqlt" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalanchoe_Horrible/Kalanchoe_Horrible_End.glb" id="6_o65k8"]
 [ext_resource type="PackedScene" uid="uid://d1trhmyocaj5c" path="res://3DPlants/Kalanchoe_Blossfeldiana/Kalacnhoe_Dead/Kalanchoe_Dead_End.glb" id="7_y2gir"]
 [ext_resource type="Texture2D" uid="uid://c26bil8bu76of" path="res://sprites/pixel_plants/kalanchoe.png" id="9_3ykcs"]
+[ext_resource type="PackedScene" uid="uid://c7kan4kwivb4j" path="res://scenes/plant_tools.tscn" id="10_bahtu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a3gp"]
 size = Vector2(17, 22)
 
-[node name="KalanchoeBlossfeldiana" type="Node2D" groups=["game_events", "plant", "plant_room_events"]]
+[node name="KalanchoeBlossfeldiana" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
 light_mask = 3
 script = ExtResource("1_f2sa8")
 acceptable_stats = ExtResource("2_yw3hb")
 perfect_stats = ExtResource("3_bahtu")
 plant_states = Array[PackedScene]([ExtResource("2_dahl0"), ExtResource("3_rgyke"), ExtResource("4_uauvx"), ExtResource("5_crbfn"), ExtResource("6_o65k8"), ExtResource("7_y2gir")])
+plant_tools = NodePath("PlantTools")
+
+[node name="PlantTools" parent="." instance=ExtResource("10_bahtu")]
 
 [node name="DraggableItem" parent="." instance=ExtResource("1_qy24j")]
 position = Vector2(1, -5)

@@ -9,62 +9,39 @@
 [sub_resource type="Resource" id="Resource_1xn6o"]
 script = ExtResource("2_rhb7w")
 phase_of_day = 0
-day_count = 2
+day_count = 0
 current_scene = 1
 scene_path = ""
 
 [sub_resource type="Resource" id="Resource_pbl23"]
 script = ExtResource("3_ijs44")
 notes = Array[Dictionary]([{
-"title": "Прошлый вечер",
-"type": "phase_change"
-}, {
-"description": "Aloe Vera походу засыхает.",
-"name": "Aloe Vera",
-"type": "plant_after"
-}, {
-"description": "Aloe Vera совсем не отдохнуло за ночь",
-"name": "Aloe Vera",
-"type": "plant_after"
-}, {
-"description": "Chlorophytum Comosum походу засыхает.",
-"name": "Chlorophytum Comosum",
-"type": "plant_after"
-}, {
-"description": "Chlorophytum Comosum чувствует себя некомфортно в этой влажности",
-"name": "Chlorophytum Comosum",
-"type": "plant_after"
-}, {
-"description": "Chlorophytum Comosum совсем не отдохнуло за ночь",
-"name": "Chlorophytum Comosum",
-"type": "plant_after"
-}, {
-"description": "Pelargonium Grabeolens походу засыхает.",
-"name": "Pelargonium Grabeolens",
-"type": "plant_after"
-}, {
-"description": "Pelargonium Grabeolens совсем не отдохнуло за ночь",
-"name": "Pelargonium Grabeolens",
-"type": "plant_after"
-}, {
-"description": "Kalanchoe Blossfeldiana походу засыхает.",
-"name": "Kalanchoe Blossfeldiana",
-"type": "plant_after"
-}, {
-"description": "Kalanchoe Blossfeldiana чувствует себя некомфортно в этой влажности",
-"name": "Kalanchoe Blossfeldiana",
-"type": "plant_after"
-}, {
-"description": "Bergenia Crassoifolia походу засыхает.",
-"name": "Bergenia Crassoifolia",
-"type": "plant_after"
-}, {
-"description": "Bergenia Crassoifolia чувствует себя некомфортно в этой влажности",
-"name": "Bergenia Crassoifolia",
-"type": "plant_after"
-}, {
 "title": "Утро",
 "type": "phase_change"
+}, {
+"description": "Палочка для BergeniaCrassoifolia совсем сухая",
+"name": "Bergenia Crassoifolia",
+"type": "plant_action"
+}, {
+"description": "Палочка для BergeniaCrassoifolia совсем сухая",
+"name": "Bergenia Crassoifolia",
+"type": "plant_action"
+}, {
+"description": "BergeniaCrassoifolia было полито на 299.0мл",
+"name": "Bergenia Crassoifolia",
+"type": "plant_action"
+}, {
+"description": "Палочка для BergeniaCrassoifolia совсем сухая",
+"name": "Bergenia Crassoifolia",
+"type": "plant_action"
+}, {
+"description": "Палочка для BergeniaCrassoifolia очень влажная",
+"name": "Bergenia Crassoifolia",
+"type": "plant_action"
+}, {
+"description": "Палочка для BergeniaCrassoifolia совсем сухая",
+"name": "Bergenia Crassoifolia",
+"type": "plant_action"
 }])
 scene_path = ""
 
@@ -76,79 +53,19 @@ normal_water_amount = 300
 actual_water_coefficent = 0.0
 actual_light_amount = 3000
 actual_light_time = 0
-actual_humidity = 0.621753
+actual_humidity = 0.7
 actual_temperature = 25
-plant_state = 5
+plant_state = 2
 is_alive = true
 light_on = false
 is_overpoured = false
 is_first_pour = true
 deadly_bad_for_too_long = false
-bad_parameters = [6, 2, 0, 0]
+bad_parameters = [0, 0, 0, 0]
 parent_path = "/root/PlantRoom/GardenSlots/GardenSlot"
 scene_path = "res://scenes/plants/aloe_vera.tscn"
 
 [sub_resource type="Resource" id="Resource_ipaky"]
-script = ExtResource("4_5f4ar")
-id = 0
-plant_name = "Pelargonium Grabeolens"
-normal_water_amount = 300
-actual_water_coefficent = 0.0
-actual_light_amount = 3000
-actual_light_time = 0
-actual_humidity = 0.617662
-actual_temperature = 25
-plant_state = 5
-is_alive = true
-light_on = false
-is_overpoured = false
-is_first_pour = true
-deadly_bad_for_too_long = false
-bad_parameters = [6, 2, 2, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot3"
-scene_path = "res://scenes/plants/pelargonium_graveolens.tscn"
-
-[sub_resource type="Resource" id="Resource_ps5qk"]
-script = ExtResource("4_5f4ar")
-id = 0
-plant_name = "Kalanchoe Blossfeldiana"
-normal_water_amount = 300
-actual_water_coefficent = 0.0
-actual_light_amount = 3000
-actual_light_time = 9
-actual_humidity = 0.696048
-actual_temperature = 25
-plant_state = 5
-is_alive = true
-light_on = false
-is_overpoured = false
-is_first_pour = true
-deadly_bad_for_too_long = false
-bad_parameters = [6, 0, 6, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot4"
-scene_path = "res://scenes/plants/kalanchoe_blossfeldiana.tscn"
-
-[sub_resource type="Resource" id="Resource_rf602"]
-script = ExtResource("4_5f4ar")
-id = 0
-plant_name = "Bergenia Crassoifolia"
-normal_water_amount = 300
-actual_water_coefficent = 0.0
-actual_light_amount = 3000
-actual_light_time = 9
-actual_humidity = 0.748856
-actual_temperature = 25
-plant_state = 5
-is_alive = true
-light_on = false
-is_overpoured = false
-is_first_pour = true
-deadly_bad_for_too_long = false
-bad_parameters = [5, 0, 6, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot12"
-scene_path = "res://scenes/plants/bergenia_crassoifolia.tscn"
-
-[sub_resource type="Resource" id="Resource_ltmyr"]
 script = ExtResource("4_5f4ar")
 id = 0
 plant_name = "Chlorophytum Comosum"
@@ -156,17 +73,77 @@ normal_water_amount = 300
 actual_water_coefficent = 0.0
 actual_light_amount = 3000
 actual_light_time = 0
-actual_humidity = 0.45233
+actual_humidity = 0.7
 actual_temperature = 25
-plant_state = 5
+plant_state = 2
 is_alive = true
 light_on = false
 is_overpoured = false
 is_first_pour = true
 deadly_bad_for_too_long = false
-bad_parameters = [6, 2, 6, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot13"
+bad_parameters = [0, 0, 0, 0]
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot2"
 scene_path = "res://scenes/plants/chlorophytum_comosum.tscn"
+
+[sub_resource type="Resource" id="Resource_ps5qk"]
+script = ExtResource("4_5f4ar")
+id = 0
+plant_name = "Pelargonium Grabeolens"
+normal_water_amount = 300
+actual_water_coefficent = 0.0
+actual_light_amount = 3000
+actual_light_time = 0
+actual_humidity = 0.7
+actual_temperature = 25
+plant_state = 2
+is_alive = true
+light_on = false
+is_overpoured = false
+is_first_pour = true
+deadly_bad_for_too_long = false
+bad_parameters = [0, 0, 0, 0]
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot3"
+scene_path = "res://scenes/plants/pelargonium_graveolens.tscn"
+
+[sub_resource type="Resource" id="Resource_rf602"]
+script = ExtResource("4_5f4ar")
+id = 0
+plant_name = "Kalanchoe Blossfeldiana"
+normal_water_amount = 300
+actual_water_coefficent = 0.0
+actual_light_amount = 3000
+actual_light_time = 0
+actual_humidity = 0.7
+actual_temperature = 25
+plant_state = 2
+is_alive = true
+light_on = false
+is_overpoured = false
+is_first_pour = true
+deadly_bad_for_too_long = false
+bad_parameters = [0, 0, 0, 0]
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot4"
+scene_path = "res://scenes/plants/kalanchoe_blossfeldiana.tscn"
+
+[sub_resource type="Resource" id="Resource_ltmyr"]
+script = ExtResource("4_5f4ar")
+id = 0
+plant_name = "Bergenia Crassoifolia"
+normal_water_amount = 300
+actual_water_coefficent = 0.996667
+actual_light_amount = 3000
+actual_light_time = 0
+actual_humidity = 0.7
+actual_temperature = 25
+plant_state = 2
+is_alive = true
+light_on = false
+is_overpoured = false
+is_first_pour = false
+deadly_bad_for_too_long = false
+bad_parameters = [0, 0, 0, 0]
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot12"
+scene_path = "res://scenes/plants/bergenia_crassoifolia.tscn"
 
 [resource]
 script = ExtResource("5_o42qe")

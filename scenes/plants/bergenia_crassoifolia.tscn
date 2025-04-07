@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cti7uh2emmyxi"]
+[gd_scene load_steps=14 format=3 uid="uid://cti7uh2emmyxi"]
 
 [ext_resource type="PackedScene" uid="uid://cpflb23uml7rn" path="res://scenes/plant_room/draggable_item.tscn" id="1_qbspn"]
 [ext_resource type="Script" uid="uid://cjq6btvb718gf" path="res://scripts/plants/types/bergenia_crassoifolia.gd" id="1_vermt"]
@@ -11,15 +11,19 @@
 [ext_resource type="PackedScene" uid="uid://bkevv1nrl3jyf" path="res://3DPlants/Bergenia_Crassifolia/Bergenia_Bad/Bergenia_Bad_End.glb" id="5_3irey"]
 [ext_resource type="PackedScene" uid="uid://e6iuuupswd86" path="res://3DPlants/Bergenia_Crassifolia/Bergenia_Horrible/Bergenia_Horrible_End.glb" id="6_4343b"]
 [ext_resource type="PackedScene" uid="uid://bx03wqm847jrt" path="res://3DPlants/Bergenia_Crassifolia/Bergenia_Dead/Bergenia_Dead_End.glb" id="7_tisrk"]
+[ext_resource type="PackedScene" uid="uid://c7kan4kwivb4j" path="res://scenes/plant_tools.tscn" id="10_3irey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3irey"]
 size = Vector2(18, 20)
 
-[node name="BergeniaCrassoifolia" type="Node2D" groups=["game_events", "plant", "plant_room_events"]]
+[node name="BergeniaCrassoifolia" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
 script = ExtResource("1_vermt")
 acceptable_stats = ExtResource("2_avtqp")
 perfect_stats = ExtResource("3_3irey")
 plant_states = Array[PackedScene]([ExtResource("2_o6y6w"), ExtResource("3_dwcqq"), ExtResource("4_avtqp"), ExtResource("5_3irey"), ExtResource("6_4343b"), ExtResource("7_tisrk")])
+plant_tools = NodePath("PlantTools")
+
+[node name="PlantTools" parent="." instance=ExtResource("10_3irey")]
 
 [node name="DraggableItem" parent="." instance=ExtResource("1_qbspn")]
 

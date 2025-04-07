@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7kan4kwivb4j"]
+
+[ext_resource type="Script" uid="uid://dad330axf4j05" path="res://scripts/plants/plant_tools.gd" id="1_1oj2f"]
+
+[node name="PlantTools" type="Node" node_paths=PackedStringArray("ground_timer")]
+script = ExtResource("1_1oj2f")
+ground_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
