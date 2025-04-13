@@ -6,6 +6,7 @@ extends Node
 
 var parent_plant: Plant
 
+
 @export var ground_timer: Timer
 var ground_check := 0
 var ground_timer_state := GROUND_TIMER_OFF
@@ -42,8 +43,10 @@ func check_ground(water_coefficent: float):
 	else:
 		ground_check = 0
 	on_timeout.emit(parent_plant)
-	print("Ground check " + str(ground_check))
-	print("Water coeff " + str(water_coefficent))
+	#print("Ground check " + str(ground_check))
+	#print("Water coeff " + str(water_coefficent))
+	
+	
 	
 	
 

@@ -22,6 +22,8 @@ SignulBus="*res://scripts/singletons/signul_bus.gd"
 SceneManager="*res://scripts/singletons/scene_manager.gd"
 HandbookInfo="*res://scripts/singletons/handbook_info.gd"
 GlobalTimer="*res://scenes/global/global_timer.tscn"
+GameWallet="*res://scripts/singletons/game_wallet.gd"
+PlantProductInfo="*res://scripts/singletons/plant_product_info.gd"
 
 [debug]
 

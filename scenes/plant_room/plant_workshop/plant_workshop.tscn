@@ -1,0 +1,238 @@
+[gd_scene load_steps=10 format=3 uid="uid://0a0uwtmsvtni"]
+
+[ext_resource type="Texture2D" uid="uid://dmf2o65jufnqc" path="res://sprites/plant_workshop/background.png" id="1_275ys"]
+[ext_resource type="Texture2D" uid="uid://irf5ixrw27uj" path="res://sprites/plant_workshop/bouquet_button.png" id="2_xwf63"]
+[ext_resource type="Texture2D" uid="uid://54d0jhsmo36l" path="res://sprites/plant_workshop/perfume_button.png" id="3_5jelh"]
+[ext_resource type="Texture2D" uid="uid://dmpty2502336w" path="res://sprites/plant_workshop/tea_button.png" id="4_y84d1"]
+[ext_resource type="Texture2D" uid="uid://bmqgmcpfcn0pn" path="res://sprites/plant_workshop/create_perfume_button.png" id="5_wc6h4"]
+[ext_resource type="Texture2D" uid="uid://b5am54eaaqdty" path="res://sprites/plant_workshop/inventory.png" id="6_h53si"]
+[ext_resource type="PackedScene" uid="uid://cf44rpn6il8f0" path="res://draggable_element.tscn" id="7_275ys"]
+[ext_resource type="Texture2D" uid="uid://c2gddv1qgbho6" path="res://sprites/slot.png" id="8_xwf63"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_275ys"]
+bg_color = Color(0.942698, 0.472689, 0.446421, 1)
+
+[node name="PlantWorkshop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 17.0
+offset_right = 283.737
+offset_bottom = 155.0
+mouse_filter = 2
+texture = ExtResource("1_275ys")
+expand_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="PlantInventory" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="PlantInventory"]
+layout_mode = 0
+offset_left = -149.0
+offset_top = 23.0
+offset_right = 97.0
+offset_bottom = 161.0
+scale = Vector2(0.99429, 1)
+texture = ExtResource("6_h53si")
+expand_mode = 1
+
+[node name="ModeButtons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BouquetButton" type="Button" parent="ModeButtons"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 52.0
+offset_right = 184.0
+offset_bottom = 76.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="ModeButtons/BouquetButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -12.5
+offset_right = 27.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xwf63")
+expand_mode = 3
+
+[node name="PerfumeButton" type="Button" parent="ModeButtons"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 52.0
+offset_right = 269.0
+offset_bottom = 76.0
+
+[node name="TextureRect" type="TextureRect" parent="ModeButtons/PerfumeButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.6699
+offset_top = -11.0
+offset_right = 24.6699
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5jelh")
+expand_mode = 3
+
+[node name="TeaButton" type="Button" parent="ModeButtons"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 55.0
+offset_right = 99.0
+offset_bottom = 72.0
+
+[node name="TextureRect" type="TextureRect" parent="ModeButtons/TeaButton"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -4.0
+offset_right = 55.0
+offset_bottom = 19.0
+texture = ExtResource("4_y84d1")
+expand_mode = 3
+
+[node name="CreateEssentialButton" type="Button" parent="ModeButtons"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 81.0
+offset_right = 269.0
+offset_bottom = 104.0
+
+[node name="TextureRect" type="TextureRect" parent="ModeButtons/CreateEssentialButton"]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("5_wc6h4")
+expand_mode = 2
+
+[node name="Modes" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TeaMode" type="Control" parent="Modes"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BouquetMode" type="Control" parent="Modes"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PerfumeMode" type="Control" parent="Modes"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CreateEssentialMode" type="Control" parent="Modes"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 180.0
+offset_top = 87.0
+offset_right = 224.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+columns = 3
+
+[node name="Panel8" type="Panel" parent="GridContainer" groups=["zone"]]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Element" type="Control" parent="GridContainer/Panel8"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DraggableElement" parent="GridContainer/Panel8/Element" instance=ExtResource("7_275ys")]
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer/Panel8/Element"]
+texture = ExtResource("8_xwf63")
+
+[node name="Panel9" type="Panel" parent="GridContainer" groups=["zone"]]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Panel10" type="Panel" parent="GridContainer" groups=["zone"]]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Panel11" type="Panel" parent="GridContainer" groups=["zone"]]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Panel12" type="Panel" parent="GridContainer" groups=["zone"]]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Panel13" type="Panel" parent="GridContainer" groups=["zone"]]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Panel14" type="Panel" parent="GridContainer" groups=["zone"]]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Panel15" type="Panel" parent="GridContainer" groups=["zone"]]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")

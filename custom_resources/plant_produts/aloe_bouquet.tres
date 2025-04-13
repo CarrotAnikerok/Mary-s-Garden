@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Bouquet" load_steps=2 format=3 uid="uid://b36excesthkf"]
+
+[ext_resource type="Script" uid="uid://c56cxj2l5kao4" path="res://scripts/plant_products/bouquet.gd" id="1_xlw5c"]
+
+[resource]
+script = ExtResource("1_xlw5c")
+product_name = "aloe_bouquet"
+price = 40
+metadata/_custom_type_script = "uid://c56cxj2l5kao4"

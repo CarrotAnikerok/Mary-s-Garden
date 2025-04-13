@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SavedGame" load_steps=13 format=3]
+[gd_resource type="Resource" script_class="SavedGame" load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/saving/saved_data.gd" id="1_1pgu4"]
 [ext_resource type="Script" path="res://scripts/resources/saving/saved_global_data.gd" id="2_rhb7w"]
@@ -18,30 +18,6 @@ script = ExtResource("3_ijs44")
 notes = Array[Dictionary]([{
 "title": "Утро",
 "type": "phase_change"
-}, {
-"description": "Палочка для BergeniaCrassoifolia совсем сухая",
-"name": "Bergenia Crassoifolia",
-"type": "plant_action"
-}, {
-"description": "Палочка для BergeniaCrassoifolia совсем сухая",
-"name": "Bergenia Crassoifolia",
-"type": "plant_action"
-}, {
-"description": "BergeniaCrassoifolia было полито на 299.0мл",
-"name": "Bergenia Crassoifolia",
-"type": "plant_action"
-}, {
-"description": "Палочка для BergeniaCrassoifolia совсем сухая",
-"name": "Bergenia Crassoifolia",
-"type": "plant_action"
-}, {
-"description": "Палочка для BergeniaCrassoifolia очень влажная",
-"name": "Bergenia Crassoifolia",
-"type": "plant_action"
-}, {
-"description": "Палочка для BergeniaCrassoifolia совсем сухая",
-"name": "Bergenia Crassoifolia",
-"type": "plant_action"
 }])
 scene_path = ""
 
@@ -53,7 +29,7 @@ normal_water_amount = 300
 actual_water_coefficent = 0.0
 actual_light_amount = 3000
 actual_light_time = 0
-actual_humidity = 0.7
+actual_humidity = 0.6
 actual_temperature = 25
 plant_state = 2
 is_alive = true
@@ -62,92 +38,12 @@ is_overpoured = false
 is_first_pour = true
 deadly_bad_for_too_long = false
 bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot"
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot20"
 scene_path = "res://scenes/plants/aloe_vera.tscn"
-
-[sub_resource type="Resource" id="Resource_ipaky"]
-script = ExtResource("4_5f4ar")
-id = 0
-plant_name = "Chlorophytum Comosum"
-normal_water_amount = 300
-actual_water_coefficent = 0.0
-actual_light_amount = 3000
-actual_light_time = 0
-actual_humidity = 0.7
-actual_temperature = 25
-plant_state = 2
-is_alive = true
-light_on = false
-is_overpoured = false
-is_first_pour = true
-deadly_bad_for_too_long = false
-bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot2"
-scene_path = "res://scenes/plants/chlorophytum_comosum.tscn"
-
-[sub_resource type="Resource" id="Resource_ps5qk"]
-script = ExtResource("4_5f4ar")
-id = 0
-plant_name = "Pelargonium Grabeolens"
-normal_water_amount = 300
-actual_water_coefficent = 0.0
-actual_light_amount = 3000
-actual_light_time = 0
-actual_humidity = 0.7
-actual_temperature = 25
-plant_state = 2
-is_alive = true
-light_on = false
-is_overpoured = false
-is_first_pour = true
-deadly_bad_for_too_long = false
-bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot3"
-scene_path = "res://scenes/plants/pelargonium_graveolens.tscn"
-
-[sub_resource type="Resource" id="Resource_rf602"]
-script = ExtResource("4_5f4ar")
-id = 0
-plant_name = "Kalanchoe Blossfeldiana"
-normal_water_amount = 300
-actual_water_coefficent = 0.0
-actual_light_amount = 3000
-actual_light_time = 0
-actual_humidity = 0.7
-actual_temperature = 25
-plant_state = 2
-is_alive = true
-light_on = false
-is_overpoured = false
-is_first_pour = true
-deadly_bad_for_too_long = false
-bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot4"
-scene_path = "res://scenes/plants/kalanchoe_blossfeldiana.tscn"
-
-[sub_resource type="Resource" id="Resource_ltmyr"]
-script = ExtResource("4_5f4ar")
-id = 0
-plant_name = "Bergenia Crassoifolia"
-normal_water_amount = 300
-actual_water_coefficent = 0.996667
-actual_light_amount = 3000
-actual_light_time = 0
-actual_humidity = 0.7
-actual_temperature = 25
-plant_state = 2
-is_alive = true
-light_on = false
-is_overpoured = false
-is_first_pour = false
-deadly_bad_for_too_long = false
-bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot12"
-scene_path = "res://scenes/plants/bergenia_crassoifolia.tscn"
 
 [resource]
 script = ExtResource("5_o42qe")
-plant_room = Array[ExtResource("1_1pgu4")]([SubResource("Resource_f4ck5"), SubResource("Resource_ipaky"), SubResource("Resource_ps5qk"), SubResource("Resource_rf602"), SubResource("Resource_ltmyr")])
+plant_room = Array[ExtResource("1_1pgu4")]([SubResource("Resource_f4ck5")])
 notes = Array[ExtResource("1_1pgu4")]([SubResource("Resource_pbl23")])
 hall = Array[ExtResource("1_1pgu4")]([])
 global_world = Array[ExtResource("1_1pgu4")]([SubResource("Resource_1xn6o")])

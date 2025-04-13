@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b20sqxrpc7sei"]
+[gd_scene load_steps=54 format=3 uid="uid://b20sqxrpc7sei"]
 
 [ext_resource type="Texture2D" uid="uid://bnpwevpnq26fl" path="res://sprites/plant_menu.png" id="1_egp2q"]
 [ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://pixel_shader/camera.tscn" id="2_8y0bb"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://uxwa8622mbr6" path="res://sprites/plant_menu/tools/ground_full.png" id="17_rq1v5"]
 [ext_resource type="Texture2D" uid="uid://b5unpofvst738" path="res://sprites/plant_menu/tools/ground_half.png" id="18_toce5"]
 [ext_resource type="Texture2D" uid="uid://1yn4mxslbxlh" path="res://sprites/plant_menu/tools/ground.png" id="20_deuju"]
+[ext_resource type="Texture2D" uid="uid://cutvw16gylwub" path="res://sprites/plant_menu/tools/light_on.png" id="20_myes0"]
+[ext_resource type="Texture2D" uid="uid://dxwxowlhns7wc" path="res://sprites/plant_menu/tools/light_off.png" id="21_fucjw"]
 [ext_resource type="Theme" uid="uid://b4uu16ao6kfi0" path="res://themes/new_theme.tres" id="23_8ncot"]
 [ext_resource type="Texture2D" uid="uid://cplpg4s1grxg" path="res://sprites/plant_menu/tools/clock_text.png" id="23_toce5"]
 
@@ -127,6 +129,12 @@ turbulence_influence_max = 0.233
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o7elc"]
 light_mode = 1
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_myes0"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fucjw"]
+light_mode = 1
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m44sr"]
 light_mode = 1
 
@@ -137,6 +145,9 @@ light_mode = 1
 light_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mycsc"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_coobd"]
 light_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_l4uh7"]
@@ -383,6 +394,7 @@ light_icons = Dictionary[String, Resource]({
 state_icons = Array[Resource]([ExtResource("15_8ncot"), ExtResource("14_toce5"), ExtResource("13_rq1v5"), ExtResource("12_57xuv"), ExtResource("11_deuju"), ExtResource("10_bl0pt")])
 
 [node name="LightIcon" type="TextureRect" parent="InfoIcons"]
+material = SubResource("CanvasItemMaterial_myes0")
 layout_mode = 0
 offset_right = 15.0
 offset_bottom = 15.0
@@ -390,6 +402,7 @@ texture = ExtResource("7_05lj3")
 expand_mode = 2
 
 [node name="StateIcon" type="TextureRect" parent="InfoIcons"]
+material = SubResource("CanvasItemMaterial_fucjw")
 layout_mode = 0
 offset_left = 1.0
 offset_top = -82.0
@@ -409,6 +422,10 @@ ground_icons = Dictionary[String, Texture]({
 "full_water": ExtResource("17_rq1v5"),
 "half_water": ExtResource("18_toce5"),
 "no_water": ExtResource("20_deuju")
+})
+light_icons = Dictionary[String, Texture]({
+"light_off": ExtResource("21_fucjw"),
+"light_on": ExtResource("20_myes0")
 })
 
 [node name="WateringCanButton" type="Button" parent="ToolsButtons"]
@@ -434,14 +451,31 @@ theme_override_font_sizes/font_size = 5
 [node name="LightButton" type="Button" parent="ToolsButtons"]
 material = SubResource("CanvasItemMaterial_mycsc")
 layout_mode = 0
-offset_left = 144.0
-offset_top = 136.0
-offset_right = 169.0
+offset_left = 150.0
+offset_top = 137.0
+offset_right = 162.0
 offset_bottom = 161.0
 theme = ExtResource("9_mycsc")
 theme_override_font_sizes/font_size = 5
 text = "
 "
+
+[node name="LightTexture" type="TextureRect" parent="ToolsButtons/LightButton"]
+material = SubResource("CanvasItemMaterial_coobd")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 28.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("21_fucjw")
 
 [node name="GroundButton" type="Button" parent="ToolsButtons"]
 layout_mode = 0

@@ -1,13 +1,11 @@
-[gd_scene load_steps=80 format=3 uid="uid://gao1je8jpkpk"]
+[gd_scene load_steps=84 format=3 uid="uid://gao1je8jpkpk"]
 
 [ext_resource type="Texture2D" uid="uid://hk7ole3fkrbf" path="res://sprites/plant_room/windows.png" id="2_7ntu0"]
 [ext_resource type="Texture2D" uid="uid://7uxnhq6khcex" path="res://sprites/plant_room/bgPlantRoomMarUI.png" id="2_bhw56"]
 [ext_resource type="PackedScene" uid="uid://bf65ywlrwh3hp" path="res://scenes/plant_room/garden_slot.tscn" id="2_vglss"]
-[ext_resource type="PackedScene" uid="uid://bwqsvc17c5c5j" path="res://scenes/plants/chlorophytum_comosum.tscn" id="3_hq6iw"]
 [ext_resource type="Theme" uid="uid://b4uu16ao6kfi0" path="res://themes/new_theme.tres" id="4_6rbcv"]
 [ext_resource type="Texture2D" uid="uid://brw672mg4askh" path="res://sprites/plant_room/room.png" id="4_k66hf"]
 [ext_resource type="Script" uid="uid://cbkysea36ql0x" path="res://scenes/plant_room/plant_room.ui.gd" id="4_l1uuk"]
-[ext_resource type="PackedScene" uid="uid://qi51764v7mh7" path="res://scenes/plants/kalanchoe_blossfeldiana.tscn" id="5_jgt6p"]
 [ext_resource type="PackedScene" uid="uid://ctororhwgysd7" path="res://scenes/plants/aloe_vera.tscn" id="5_pstx4"]
 [ext_resource type="Texture2D" uid="uid://dcs5h6fr8gkt2" path="res://sprites/plant_room/UI/handbook.png" id="5_tbtck"]
 [ext_resource type="Texture2D" uid="uid://pkiaopwi015v" path="res://sprites/plant_room/bgPlantRoomMary_n_5.png" id="5_ytfrs"]
@@ -28,9 +26,14 @@
 [ext_resource type="Texture2D" uid="uid://qeixo8fu55sn" path="res://sprites/plant_room/UI/clock_phase/clock_phase_3.png" id="13_7ntu0"]
 [ext_resource type="Texture2D" uid="uid://d32v2ylnyg07f" path="res://sprites/plant_room/UI/point.png" id="18_34jyk"]
 [ext_resource type="FontFile" uid="uid://b6q0wvaf10l3g" path="res://fonts/Micro_5/Micro5-Regular.ttf" id="18_f5rt3"]
-[ext_resource type="PackedScene" uid="uid://4um7sgslreot" path="res://scenes/plants/pelargonium_graveolens.tscn" id="27_k66hf"]
+[ext_resource type="Script" uid="uid://c1mu4sgebqw3e" path="res://scripts/plant_room/garden_slot.gd" id="23_tmx1f"]
 [ext_resource type="Script" uid="uid://dwsm1qsvjsd86" path="res://scenes/plant_room/light.gd" id="28_4tg3j"]
-[ext_resource type="PackedScene" uid="uid://cti7uh2emmyxi" path="res://scenes/plants/bergenia_crassoifolia.tscn" id="29_ytfrs"]
+[ext_resource type="Script" uid="uid://dgxv3o6dngs1" path="res://scenes/plant_room/plantroom_products.gd" id="28_i121n"]
+[ext_resource type="Script" uid="uid://c56cxj2l5kao4" path="res://scripts/plant_products/bouquet.gd" id="30_7ntu0"]
+[ext_resource type="Resource" uid="uid://c5skltycgh245" path="res://custom_resources/plant_produts/roses.tres" id="30_k66hf"]
+[ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="31_k66hf"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="32_23luj"]
+[ext_resource type="Resource" uid="uid://cvdts6nygq6o8" path="res://custom_resources/recipies/aloe_bouquet_recipe.tres" id="33_tmx1f"]
 
 [sub_resource type="Gradient" id="Gradient_7ntu0"]
 offsets = PackedFloat32Array(0.05, 0.56, 1)
@@ -395,6 +398,12 @@ fill_to = Vector2(0.497835, 0)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_34jyk"]
 polygon = PackedVector2Array(63, 41, 78, 41, 78, 62, 64, 61)
 
+[sub_resource type="Resource" id="Resource_i121n"]
+script = ExtResource("30_7ntu0")
+product_name = "roses"
+price = 30
+metadata/_custom_type_script = "uid://c56cxj2l5kao4"
+
 [node name="PlantRoom" type="Node2D"]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -552,7 +561,8 @@ mouse_filter = 1
 texture_normal = ExtResource("6_fv2ki")
 
 [node name="GardenSlots" type="Node2D" parent="."]
-position = Vector2(1.52588e-05, -2)
+position = Vector2(0, -2)
+script = ExtResource("23_tmx1f")
 
 [node name="GardenSlot" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(31, 43)
@@ -563,19 +573,11 @@ light_mask = 3
 [node name="GardenSlot2" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(55, 43)
 
-[node name="ChlorophytumComosum" parent="GardenSlots/GardenSlot2" instance=ExtResource("3_hq6iw")]
-light_mask = 3
-
 [node name="GardenSlot3" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
-z_index = -1
 position = Vector2(80, 43)
-
-[node name="PelargoniumGraveolens" parent="GardenSlots/GardenSlot3" instance=ExtResource("27_k66hf")]
 
 [node name="GardenSlot4" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(104, 43)
-
-[node name="KalanchoeBlossfeldiana" parent="GardenSlots/GardenSlot4" instance=ExtResource("5_jgt6p")]
 
 [node name="GardenSlot5" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
 position = Vector2(155, 34)
@@ -584,7 +586,6 @@ position = Vector2(155, 34)
 position = Vector2(179, 34)
 
 [node name="GardenSlot7" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
-z_index = -1
 position = Vector2(204, 34)
 
 [node name="GardenSlot8" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
@@ -597,13 +598,10 @@ position = Vector2(27, 80)
 position = Vector2(51, 80)
 
 [node name="GardenSlot11" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
-z_index = -1
 position = Vector2(76, 80)
 
 [node name="GardenSlot12" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(100, 80)
-
-[node name="BergeniaCrassoifolia" parent="GardenSlots/GardenSlot12" instance=ExtResource("29_ytfrs")]
 
 [node name="GardenSlot13" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
 position = Vector2(154, 83)
@@ -612,7 +610,6 @@ position = Vector2(154, 83)
 position = Vector2(178, 83)
 
 [node name="GardenSlot15" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
-z_index = -1
 position = Vector2(203, 83)
 
 [node name="GardenSlot16" parent="GardenSlots" groups=["high_sunlight"] instance=ExtResource("2_vglss")]
@@ -625,7 +622,6 @@ position = Vector2(27, 114)
 position = Vector2(51, 114)
 
 [node name="GardenSlot19" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
-z_index = -1
 position = Vector2(76, 114)
 
 [node name="GardenSlot20" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
@@ -638,7 +634,6 @@ position = Vector2(154, 121)
 position = Vector2(178, 121)
 
 [node name="GardenSlot23" parent="GardenSlots" instance=ExtResource("2_vglss")]
-z_index = -1
 position = Vector2(203, 121)
 
 [node name="GardenSlot24" parent="GardenSlots" instance=ExtResource("2_vglss")]
@@ -651,7 +646,6 @@ position = Vector2(27, 161)
 position = Vector2(51, 161)
 
 [node name="GardenSlot27" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
-z_index = -1
 position = Vector2(76, 161)
 
 [node name="GardenSlot28" parent="GardenSlots" groups=["humid"] instance=ExtResource("2_vglss")]
@@ -664,7 +658,6 @@ position = Vector2(155, 145)
 position = Vector2(179, 145)
 
 [node name="GardenSlot31" parent="GardenSlots" instance=ExtResource("2_vglss")]
-z_index = -1
 position = Vector2(204, 145)
 
 [node name="GardenSlot32" parent="GardenSlots" instance=ExtResource("2_vglss")]
@@ -802,12 +795,41 @@ occluder = SubResource("OccluderPolygon2D_34jyk")
 [node name="PlantRoomSceneNavigator" type="Node" parent="Utilities"]
 script = ExtResource("9_gngg7")
 
+[node name="Node" type="Node" parent="Utilities"]
+script = ExtResource("28_i121n")
+bouquets = Dictionary[String, Resource]({
+"roses": SubResource("Resource_i121n"),
+"tulips": ExtResource("30_k66hf")
+})
+inventory = Dictionary[String, Resource]({
+"aloe_leaves": ExtResource("31_k66hf")
+})
+recipies = Dictionary[String, ExtResource("32_23luj")]({
+"aloe bouquet": ExtResource("33_tmx1f")
+})
+
 [node name="Button" type="Button" parent="."]
 offset_left = 227.0
 offset_top = 148.0
 offset_right = 321.0
 offset_bottom = 179.0
 text = "next phase"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 275.0
+offset_top = 85.0
+offset_right = 321.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 5
+text = "create bouquet"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 275.0
+offset_top = 68.0
+offset_right = 318.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 5
+text = "add aloe leave"
 
 [connection signal="animation_finished" from="UI/DateButton/TimePhaseSprite/TimePhaseAnimated" to="UI/DateButton/TimePhaseSprite" method="_on_time_phase_animated_animation_finished"]
 [connection signal="mouse_entered" from="UI/Panel" to="UI" method="_on_panel_mouse_entered"]
@@ -819,3 +841,5 @@ text = "next phase"
 [connection signal="mouse_exited" from="UI/Panel/DoorButton" to="UI" method="_on_door_button_mouse_exited"]
 [connection signal="pressed" from="UI/Panel/DoorButton" to="Utilities/PlantRoomSceneNavigator" method="_on_door_button_pressed"]
 [connection signal="pressed" from="Button" to="UI" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="Utilities/Node" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="Utilities/Node" method="_on_button_3_pressed"]

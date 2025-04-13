@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bpjvu017wuxg4"]
+
+[node name="DraggablePlant" type="Node2D"]

@@ -11,9 +11,9 @@ func _ready():
 	
 func sort_plants():
 	for slot in garden_slots:
-		if slot.get_child_count() > 2:
-			print(str(slot) + " found a child " + slot.get_child(2).name)
-			sorted_plants.append(slot.get_child(2))
+		if slot.get_child_count() > 0:
+			print(str(slot) + " found a child " + slot.get_child(0).name)
+			sorted_plants.append(slot.get_child(0))
 
 
 func _on_onward_button_pressed():

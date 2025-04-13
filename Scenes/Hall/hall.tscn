@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://c6mo7fj5a4yvd"]
+[gd_scene load_steps=81 format=3 uid="uid://c6mo7fj5a4yvd"]
 
 [ext_resource type="PackedScene" uid="uid://b5neg873g5wfk" path="res://scenes/hall/dialog_player.tscn" id="1_wkokc"]
 [ext_resource type="Texture2D" uid="uid://do4iu333ej1k2" path="res://sprites/novel_part/Arin/arin_angry.png" id="2_7awf8"]
@@ -43,6 +43,7 @@
 [ext_resource type="Script" uid="uid://c6kfyig1o3ce6" path="res://scripts/hall/hall_scene_navigator.gd" id="39_ofr0x"]
 [ext_resource type="PackedScene" uid="uid://c8j40uul4amh1" path="res://scenes/hall/characters/arin.tscn" id="42_4qh33"]
 [ext_resource type="Script" uid="uid://cykmq6n7emplc" path="res://scripts/command_pattern/ai_controller.gd" id="42_vdr2x"]
+[ext_resource type="Script" uid="uid://d28jl8ju6j7co" path="res://scripts/hall/hall_products.gd" id="44_vdr2x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlbdb"]
 atlas = ExtResource("39_bdgvf")
@@ -394,6 +395,12 @@ texture = ExtResource("4_vg36q")
 [node name="Arin" parent="." instance=ExtResource("42_4qh33")]
 position = Vector2(143, 109)
 
+[node name="Mary" parent="." instance=ExtResource("6_6dx4x")]
+position = Vector2(100, 108)
+
+[node name="Scarlett" parent="." instance=ExtResource("9_cbiwe")]
+position = Vector2(508, 109)
+
 [node name="Lights" type="Node2D" parent="."]
 visible = false
 
@@ -592,12 +599,6 @@ libraries = {
 }
 autoplay = "light_moving_hall"
 
-[node name="Mary" parent="." instance=ExtResource("6_6dx4x")]
-position = Vector2(100, 108)
-
-[node name="Scarlett" parent="." instance=ExtResource("9_cbiwe")]
-position = Vector2(508, 109)
-
 [node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
 layer = -2
 
@@ -692,5 +693,17 @@ scarlett = NodePath("../../Scarlett")
 [node name="HallSceneNavigator" type="Node" parent="Utilities"]
 script = ExtResource("39_ofr0x")
 
+[node name="Products" type="Node" parent="Utilities"]
+script = ExtResource("44_vdr2x")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 200.0
+offset_top = 91.0
+offset_right = 236.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 8
+text = "sell boquet"
+
 [connection signal="area_entered" from="ToPlantRoomArea" to="Utilities/HallSceneNavigator" method="_on_to_plant_room_area_entered"]
 [connection signal="area_exited" from="ToPlantRoomArea" to="Utilities/HallSceneNavigator" method="_on_to_plant_room_area_exited"]
+[connection signal="pressed" from="Button" to="Utilities/Products" method="_on_button_pressed"]

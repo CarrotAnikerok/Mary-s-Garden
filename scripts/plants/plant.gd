@@ -64,7 +64,7 @@ var bad_parameters = [0, 0, 0, 0] #вода, свет, влажность, те�
 func _enter_tree():
 	add_child(Timer.new())
 	ground_timer = get_child(-1)
-	print("Ground timer! " + str(ground_timer))
+	#print("Ground timer! " + str(ground_timer))
 	add_to_group("game_events", true)
 
 
@@ -80,9 +80,9 @@ func place_update():
 		base_temperature = 20
 		
 	if get_parent().is_in_group("humid"):
-		base_humidity = 0.7
+		base_humidity = 0.6
 	else:
-		base_humidity = 0.4
+		base_humidity = 0.3
 		
 	actual_light_amount = actual_light_amount - prev_light + base_light_amount
 	actual_humidity = actual_humidity - prev_humidity + change_humidity(0.1) 
@@ -133,15 +133,15 @@ func can_be_perfect_logic():
 				and actual_humidity > perfect_humidity[0]))
 		print("temperature " + plant_name + " " + str(actual_temperature < perfect_temperature[1]
 				and actual_temperature > perfect_temperature[0]))
-		print("light_amount " + plant_name + " " + str(actual_light_amount < acceptable_light_amount[1]
-				and actual_light_amount > acceptable_light_amount[0]))
-		print("i overpoured? " + plant_name + " " + str(is_overpoured))
+		print("light_amount " + plant_name + " " + str(actual_light_amount < perfect_light_amount[1]
+				and actual_light_amount > perfect_light_amount[0]))
+		print("i overpoured? " + plant_name + " " + str(!is_overpoured))
 				
 		can_become_perfect = (actual_water_coefficent < perfect_water_coefficent[1]
 				and actual_water_coefficent > perfect_water_coefficent[0]) and (actual_humidity < perfect_humidity[1]
 				and actual_humidity > perfect_humidity[0]) and (actual_temperature < perfect_temperature[1]
-				and actual_temperature > perfect_temperature[0]) and (actual_light_amount < acceptable_light_amount[1]
-				and actual_light_amount > acceptable_light_amount[0]) and !is_overpoured
+				and actual_temperature > perfect_temperature[0]) and (actual_light_amount < perfect_light_amount[1]
+				and actual_light_amount > perfect_light_amount[0]) and !is_overpoured
 		print("Can become perfect?? " + str(can_become_perfect))
 	return can_become_perfect
 
@@ -251,6 +251,8 @@ func change_light_amount():
 
 func change_humidity(random_range: float):
 	actual_humidity = base_humidity + randf_range(-random_range, random_range)
+	if actual_humidity >= 1:
+		actual_humidity = 1
 	return actual_humidity
 
 

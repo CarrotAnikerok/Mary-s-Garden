@@ -109,8 +109,8 @@ script = ExtResource("1_r6d4t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6kfe4")
-animation = &"stay"
-frame_progress = 0.971393
+animation = &"walk"
+frame_progress = 0.997823
 
 [node name="DialogInterationArea" type="Area2D" parent="."]
 collision_layer = 3

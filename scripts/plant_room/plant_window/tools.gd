@@ -6,6 +6,7 @@ extends Control
 @onready var ground_tool = $GroundButton
 @onready var ground_time_bar = $GroundButton/TextureProgressBar
 @onready var ground_button_texture = $GroundButton/TextureRect
+@onready var light_button_texture = $LightButton/LightTexture
 
 var plant_tools: Plant_Tools
 
@@ -13,6 +14,7 @@ var ground_timer: Timer
 var ground_check_plant: Plant
 
 @export var ground_icons: Dictionary[String, Texture]
+@export var light_icons: Dictionary[String, Texture]
 
 signal worked_with_plant()
 
@@ -50,6 +52,7 @@ func _on_spray_button_pressed():
 
 func _on_light_button_pressed():
 	active_plant.switch_light(3000)
+	change_light_icon()
 	$"../PlantInfo/LightInt".text = str(active_plant.actual_light_amount)
 
 
@@ -79,6 +82,7 @@ func update_info():
 			plant_tools.on_timeout.disconnect(on_ground_check_end)
 	plant_tools.on_timeout.connect(on_ground_check_end)
 	change_tothspick_icon()
+	change_light_icon()
 	
 	if plant_tools.ground_timer_state == plant_tools.GROUND_TIMER_OFF:
 		ground_time_bar.visible = false
@@ -95,6 +99,13 @@ func change_tothspick_icon():
 			ground_button_texture.texture = ground_icons["half_water"]
 		2:
 			ground_button_texture.texture = ground_icons["full_water"]
+
+
+func change_light_icon():
+	if active_plant.light_on:
+		light_button_texture.texture = light_icons["light_on"]
+	else:
+		light_button_texture.texture = light_icons["light_off"]
 
 
 func add_ground_note(plant):
