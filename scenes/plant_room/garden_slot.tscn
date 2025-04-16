@@ -5,7 +5,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5l5pa"]
 light_mode = 1
 
-[node name="Sprite2D" type="Sprite2D" groups=["zone"]]
+[node name="Sprite2D" type="Sprite2D" groups=["plant_cell"]]
 self_modulate = Color(1, 1, 1, 0.490196)
 z_index = -1
 material = SubResource("CanvasItemMaterial_5l5pa")

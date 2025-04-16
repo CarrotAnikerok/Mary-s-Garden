@@ -7,6 +7,6 @@
 
 [resource]
 script = ExtResource("2_h6f1w")
-ingridients = Array[ExtResource("1_m01ii")]([ExtResource("2_m01ii"), null])
+ingridients = Array[ExtResource("1_m01ii")]([ExtResource("2_m01ii"), ExtResource("2_m01ii")])
 output = ExtResource("3_hkfap")
 metadata/_custom_type_script = "uid://b4hv1pqh58m6c"

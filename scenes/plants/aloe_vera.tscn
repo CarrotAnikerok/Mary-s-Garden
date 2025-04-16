@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cxps05hj3uox4" path="res://3DPlants/Aloe_Vera/aloe_vera_dead/aloevera_dead_end.glb" id="7_u6o7v"]
 [ext_resource type="PackedScene" uid="uid://c7kan4kwivb4j" path="res://scenes/plant_tools.tscn" id="8_y5k1y"]
 [ext_resource type="Texture2D" uid="uid://c63nifnt7s54n" path="res://sprites/pixel_plants/aloe_vera3.png" id="9_ruqj4"]
-[ext_resource type="PackedScene" uid="uid://cf44rpn6il8f0" path="res://draggable_element.tscn" id="10_e5hvw"]
+[ext_resource type="PackedScene" uid="uid://bpjvu017wuxg4" path="res://scenes/plant_room/draggable_plant.tscn" id="10_e5hvw"]
 
 [node name="AloeVera" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
 script = ExtResource("1_8b0w6")
@@ -22,13 +22,8 @@ plant_tools = NodePath("PlantTools")
 metadata/_edit_horizontal_guides_ = [-16.0, 6.0]
 metadata/_edit_vertical_guides_ = [-10.0, 10.0]
 
-[node name="DraggableElement" parent="." instance=ExtResource("10_e5hvw")]
-position = Vector2(0, -3)
-
-[node name="Button" parent="DraggableElement" index="0"]
-offset_left = -10.0
-offset_top = -13.0
-offset_right = 10.0
+[node name="DraggablePlant" parent="." node_paths=PackedStringArray("draggable_parent") instance=ExtResource("10_e5hvw")]
+draggable_parent = NodePath("..")
 
 [node name="PlantTools" parent="." instance=ExtResource("8_y5k1y")]
 
@@ -36,5 +31,3 @@ offset_right = 10.0
 light_mask = 3
 position = Vector2(0, -10)
 texture = ExtResource("9_ruqj4")
-
-[editable path="DraggableElement"]

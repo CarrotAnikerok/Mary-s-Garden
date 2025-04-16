@@ -1,6 +1,6 @@
 extends Control
 
-@onready var active_plant = $"..".active_plant as Plant
+@onready var active_plant = $"../..".active_plant as Plant
 @onready var watering_slider_menu = $"../SliderMenu"
 @onready var slider = $"../SliderMenu/ColorRect2/WaterAmountHSlider"
 @onready var ground_tool = $GroundButton
@@ -75,7 +75,7 @@ func on_ground_check_end(plant):
 
 
 func update_info():
-	active_plant = $"..".active_plant
+	active_plant = $"../..".active_plant as Plant
 	plant_tools = active_plant.plant_tools
 	ground_timer = plant_tools.ground_timer
 	if plant_tools.on_timeout.is_connected(on_ground_check_end):

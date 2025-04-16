@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfmag2cya7b1u"]
+
+[ext_resource type="PackedScene" uid="uid://cf44rpn6il8f0" path="res://draggable_element.tscn" id="1_fwrng"]
+[ext_resource type="Script" uid="uid://c3331h82nes8h" path="res://scenes/plant_workshop/ingridient_node.gd" id="1_gmdmy"]
+[ext_resource type="Texture2D" uid="uid://c2gddv1qgbho6" path="res://sprites/slot.png" id="2_gmdmy"]
+[ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="2_wgnyv"]
+
+[node name="Ingridient" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = -160.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_gmdmy")
+ingridient_res = ExtResource("2_wgnyv")
+
+[node name="DraggableElement" parent="." instance=ExtResource("1_fwrng")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gmdmy")

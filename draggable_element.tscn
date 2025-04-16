@@ -14,11 +14,6 @@ offset_bottom = 9.0
 mouse_filter = 1
 theme = ExtResource("2_yhjsv")
 
-[node name="ClickTimer" type="Timer" parent="."]
-one_shot = true
-
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
-[connection signal="timeout" from="ClickTimer" to="." method="_on_click_timer_timeout"]

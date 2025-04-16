@@ -5,7 +5,7 @@ var slots: Array[Node]
 func _ready():
 	slots = get_children(false)
 	for slot in slots:
-		slot.add_to_group("zone")
+		slot.add_to_group("plant_cell")
 
 
 func _process(_delta):

@@ -3,7 +3,7 @@ extends Resource
 
 @export var product_name: String
 @export var price: int
-@export var sprite: Texture2D
+@export var texture: Texture2D
 
 
 func create():

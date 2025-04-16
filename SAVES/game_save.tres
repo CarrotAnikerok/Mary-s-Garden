@@ -38,7 +38,7 @@ is_overpoured = false
 is_first_pour = true
 deadly_bad_for_too_long = false
 bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/GardenSlots/GardenSlot20"
+parent_path = "/root/PlantRoom/GardenSlots/GardenSlot"
 scene_path = "res://scenes/plants/aloe_vera.tscn"
 
 [resource]

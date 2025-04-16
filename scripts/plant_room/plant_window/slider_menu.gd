@@ -1,6 +1,6 @@
 extends Control
 
-@onready var active_plant = $"..".active_plant
+@onready var active_plant = $"../..".active_plant as Plant
 @onready var slider = $ColorRect2/WaterAmountHSlider
 @onready var slider_label = $ColorRect2/SliderLabel
 

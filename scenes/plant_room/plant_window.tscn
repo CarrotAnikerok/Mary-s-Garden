@@ -1,13 +1,14 @@
-[gd_scene load_steps=54 format=3 uid="uid://b20sqxrpc7sei"]
+[gd_scene load_steps=56 format=3 uid="uid://b20sqxrpc7sei"]
 
-[ext_resource type="Texture2D" uid="uid://bnpwevpnq26fl" path="res://sprites/plant_menu.png" id="1_egp2q"]
 [ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://pixel_shader/camera.tscn" id="2_8y0bb"]
 [ext_resource type="Script" uid="uid://b2svmituwfk4i" path="res://scripts/plant_room/plant_window/rotate_block.gd" id="3_4t3go"]
 [ext_resource type="Texture2D" uid="uid://dfytjd2qgrog7" path="res://sprites/plant_menu/wood_planmenu.png" id="4_05lj3"]
+[ext_resource type="Texture2D" uid="uid://pknk4n2jiqej" path="res://sprites/plant_menu/plant_menu_bg.png" id="5_myes0"]
 [ext_resource type="Texture2D" uid="uid://doojx73d1sd0r" path="res://sprites/plant_menu/bg_plantmenu.png" id="5_o7elc"]
 [ext_resource type="Script" uid="uid://b40dnuoew176g" path="res://scripts/plant_room/info_icons.gd" id="6_4t3go"]
 [ext_resource type="Script" uid="uid://nw4iaevdf216" path="res://scripts/plant_room/plant_window/tools.gd" id="6_m44sr"]
 [ext_resource type="Texture2D" uid="uid://di1rncheuoh41" path="res://sprites/plant_menu/icons/LightIcons/mid.png" id="7_05lj3"]
+[ext_resource type="Texture2D" uid="uid://cxlm4at3lce8p" path="res://sprites/plant_menu/buttons/exit_button.png" id="7_fucjw"]
 [ext_resource type="Texture2D" uid="uid://b6j52v0ck0sls" path="res://sprites/plant_menu/icons/LightIcons/shadow.png" id="7_o7elc"]
 [ext_resource type="Theme" uid="uid://c5hj2gg0bpnnj" path="res://sprites/plant_menu/button_themes/button.tres" id="7_rswos"]
 [ext_resource type="Theme" uid="uid://bxj03pbbshigq" path="res://sprites/plant_menu/button_themes/spray.tres" id="8_mbhs4"]
@@ -61,26 +62,20 @@ func update_info():
 	#print(\"Plant model \" + str(plant_model))
 	plant_model.position = Vector3.ZERO
 	
-	$PlantInfo/SoilHumidityInt.text = \"%0.2f%%\" % active_plant.actual_water_coefficent
-	$PlantInfo/LightInt.text = str(active_plant.actual_light_amount)
-	$PlantInfo/HumidityInt.text = \"%0.2f%%\" % active_plant.actual_humidity
-	$PlantInfo/TemperatureInt.text = str(active_plant.actual_temperature)
+	$TextureRect/PlantInfo/SoilHumidity.text = \"%0.2f%%\" % active_plant.actual_water_coefficent
+	$TextureRect/PlantInfo/LightInt.text = str(active_plant.actual_light_amount)
+	$TextureRect/PlantInfo/HumidityInt.text = \"%0.2f%%\" % active_plant.actual_humidity
+	$TextureRect/PlantInfo/TemperatureInt.text = str(active_plant.actual_temperature)
 	
-	$PlantDescription.active_plant = active_plant
-	$Navigation.active_plant = active_plant
-	$SliderMenu.active_plant = active_plant
-	$InfoIcons.active_plant = active_plant
+	$TextureRect/PlantDescription.active_plant = active_plant
+	$TextureRect/Navigation.active_plant = active_plant
+	$TextureRect/SliderMenu.active_plant = active_plant
+	$TextureRect/InfoIcons.active_plant = active_plant
 	
 	
 "
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_egp2q"]
-light_mode = 1
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4t3go"]
-light_mode = 1
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_05lj3"]
 light_mode = 1
 
 [sub_resource type="Environment" id="Environment_yf8wi"]
@@ -125,6 +120,15 @@ turbulence_enabled = true
 turbulence_noise_strength = 9.86
 turbulence_noise_scale = 3.602
 turbulence_influence_max = 0.233
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4t3go"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_05lj3"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2v1e0"]
+light_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o7elc"]
 light_mode = 1
@@ -171,52 +175,46 @@ light_mode = 1
 light_mask = 0
 material = SubResource("CanvasItemMaterial_8y0bb")
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
 script = SubResource("GDScript_d7kgb")
 
 [node name="PlantWindowBg" type="ColorRect" parent="."]
 light_mask = 0
+z_index = -1
 material = SubResource("CanvasItemMaterial_egp2q")
-layout_mode = 0
-offset_left = -1.0
-offset_right = 321.0
-offset_bottom = 181.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -90.5
+offset_right = 161.0
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.172833, 0.172833, 0.172833, 0.333333)
-
-[node name="TextureRect" type="TextureRect" parent="."]
-light_mask = 0
-material = SubResource("CanvasItemMaterial_4t3go")
-layout_mode = 0
-offset_left = 46.0
-offset_top = 10.0
-offset_right = 274.0
-offset_bottom = 162.0
-texture = ExtResource("1_egp2q")
-expand_mode = 3
-
-[node name="ExitButton" type="Button" parent="."]
-material = SubResource("CanvasItemMaterial_05lj3")
-layout_mode = 0
-offset_left = 275.0
-offset_top = 4.0
-offset_right = 300.0
-offset_bottom = 21.0
-theme_override_font_sizes/font_size = 6
-text = "Leave
-"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 13.0
-offset_right = 170.0
-offset_bottom = 136.0
+offset_left = -113.0
+offset_top = -72.0
+offset_right = 13.0
+offset_bottom = 51.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(121, 123)
+size = Vector2i(126, 123)
 render_target_update_mode = 4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
@@ -299,24 +297,65 @@ spot_attenuation = -0.91
 spot_angle = 34.35
 spot_angle_attenuation = 6.72712
 
-[node name="PlantInfo" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_4t3go")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.533
+offset_top = -76.0
+offset_right = 116.533
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("23_8ncot")
+texture = ExtResource("5_myes0")
+expand_mode = 3
+
+[node name="ExitButton" type="Button" parent="TextureRect"]
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_05lj3")
+layout_mode = 0
+offset_left = 220.533
+offset_top = 6.0
+offset_right = 252.533
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 6
+text = "Leave
+"
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/ExitButton"]
+material = SubResource("CanvasItemMaterial_2v1e0")
+layout_mode = 0
+offset_left = -3.46667
+offset_top = -6.0
+offset_right = 36.5333
+offset_bottom = 19.0
+texture = ExtResource("7_fucjw")
+metadata/_edit_lock_ = true
+
+[node name="PlantInfo" type="ColorRect" parent="TextureRect"]
 material = SubResource("CanvasItemMaterial_o7elc")
 layout_mode = 0
-offset_left = 272.0
-offset_top = 120.0
-offset_right = 321.0
-offset_bottom = 160.0
+offset_left = 231.533
+offset_top = 111.0
+offset_right = 280.533
+offset_bottom = 151.0
 color = Color(0.101961, 0.239216, 0.266667, 0.34902)
 metadata/_edit_group_ = true
 
-[node name="SoilHumidity" type="Label" parent="PlantInfo"]
+[node name="SoilHumidity" type="Label" parent="TextureRect/PlantInfo"]
 layout_mode = 0
 offset_right = 41.0
 offset_bottom = 6.0
 theme_override_font_sizes/font_size = 4
 text = "Мокрость кома:"
 
-[node name="SoilHumidityInt" type="Label" parent="PlantInfo"]
+[node name="SoilHumidityInt" type="Label" parent="TextureRect/PlantInfo"]
 layout_mode = 0
 offset_left = 34.0
 offset_right = 40.0
@@ -325,7 +364,7 @@ theme_override_font_sizes/font_size = 4
 text = "0
 "
 
-[node name="Light" type="Label" parent="PlantInfo"]
+[node name="Light" type="Label" parent="TextureRect/PlantInfo"]
 layout_mode = 0
 offset_top = 9.0
 offset_right = 41.0
@@ -333,7 +372,7 @@ offset_bottom = 15.0
 theme_override_font_sizes/font_size = 4
 text = "Освещенность:"
 
-[node name="LightInt" type="Label" parent="PlantInfo"]
+[node name="LightInt" type="Label" parent="TextureRect/PlantInfo"]
 layout_mode = 0
 offset_left = 34.0
 offset_top = 9.0
@@ -343,7 +382,7 @@ theme_override_font_sizes/font_size = 4
 text = "0
 "
 
-[node name="Humidity" type="Label" parent="PlantInfo"]
+[node name="Humidity" type="Label" parent="TextureRect/PlantInfo"]
 layout_mode = 0
 offset_top = 19.0
 offset_right = 41.0
@@ -351,7 +390,7 @@ offset_bottom = 25.0
 theme_override_font_sizes/font_size = 4
 text = "Влажность:"
 
-[node name="HumidityInt" type="Label" parent="PlantInfo"]
+[node name="HumidityInt" type="Label" parent="TextureRect/PlantInfo"]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 19.0
@@ -361,7 +400,7 @@ theme_override_font_sizes/font_size = 4
 text = "0
 "
 
-[node name="Temperature" type="Label" parent="PlantInfo"]
+[node name="Temperature" type="Label" parent="TextureRect/PlantInfo"]
 layout_mode = 0
 offset_top = 28.0
 offset_right = 41.0
@@ -369,7 +408,7 @@ offset_bottom = 34.0
 theme_override_font_sizes/font_size = 4
 text = "Температура:"
 
-[node name="TemperatureInt" type="Label" parent="PlantInfo"]
+[node name="TemperatureInt" type="Label" parent="TextureRect/PlantInfo"]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 28.0
@@ -379,12 +418,12 @@ theme_override_font_sizes/font_size = 4
 text = "0
 "
 
-[node name="InfoIcons" type="Control" parent="."]
+[node name="InfoIcons" type="Control" parent="TextureRect"]
 anchors_preset = 0
-offset_left = 49.0
-offset_top = 96.0
-offset_right = 69.0
-offset_bottom = 136.0
+offset_left = 3.53333
+offset_top = 87.0
+offset_right = 23.5333
+offset_bottom = 127.0
 script = ExtResource("6_4t3go")
 light_icons = Dictionary[String, Resource]({
 "hight": ExtResource("9_o7elc"),
@@ -393,7 +432,7 @@ light_icons = Dictionary[String, Resource]({
 })
 state_icons = Array[Resource]([ExtResource("15_8ncot"), ExtResource("14_toce5"), ExtResource("13_rq1v5"), ExtResource("12_57xuv"), ExtResource("11_deuju"), ExtResource("10_bl0pt")])
 
-[node name="LightIcon" type="TextureRect" parent="InfoIcons"]
+[node name="LightIcon" type="TextureRect" parent="TextureRect/InfoIcons"]
 material = SubResource("CanvasItemMaterial_myes0")
 layout_mode = 0
 offset_right = 15.0
@@ -401,7 +440,7 @@ offset_bottom = 15.0
 texture = ExtResource("7_05lj3")
 expand_mode = 2
 
-[node name="StateIcon" type="TextureRect" parent="InfoIcons"]
+[node name="StateIcon" type="TextureRect" parent="TextureRect/InfoIcons"]
 material = SubResource("CanvasItemMaterial_fucjw")
 layout_mode = 0
 offset_left = 1.0
@@ -411,12 +450,16 @@ offset_bottom = -69.0
 texture = ExtResource("15_8ncot")
 expand_mode = 2
 
-[node name="ToolsButtons" type="Control" parent="."]
+[node name="ToolsButtons" type="Control" parent="TextureRect"]
 material = SubResource("CanvasItemMaterial_m44sr")
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("6_m44sr")
 ground_icons = Dictionary[String, Texture]({
 "full_water": ExtResource("17_rq1v5"),
@@ -428,39 +471,69 @@ light_icons = Dictionary[String, Texture]({
 "light_on": ExtResource("20_myes0")
 })
 
-[node name="WateringCanButton" type="Button" parent="ToolsButtons"]
+[node name="WateringCanButton" type="Button" parent="TextureRect/ToolsButtons"]
 material = SubResource("CanvasItemMaterial_rswos")
 layout_mode = 0
-offset_left = 55.0
-offset_top = 135.0
-offset_right = 85.0
-offset_bottom = 165.0
+offset_left = -109.0
+offset_top = 49.0
+offset_right = -79.0
+offset_bottom = 79.0
 theme = ExtResource("7_rswos")
 theme_override_font_sizes/font_size = 5
 
-[node name="SprayButton" type="Button" parent="ToolsButtons"]
+[node name="SprayButton" type="Button" parent="TextureRect/ToolsButtons"]
 material = SubResource("CanvasItemMaterial_mbhs4")
 layout_mode = 0
-offset_left = 120.0
-offset_top = 136.0
-offset_right = 145.0
-offset_bottom = 161.0
+offset_left = -70.0
+offset_top = 51.0
+offset_right = -45.0
+offset_bottom = 76.0
 theme = ExtResource("8_mbhs4")
 theme_override_font_sizes/font_size = 5
 
-[node name="LightButton" type="Button" parent="ToolsButtons"]
+[node name="GroundButton" type="Button" parent="TextureRect/ToolsButtons"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = 53.0
+offset_right = -14.0
+offset_bottom = 72.0
+theme = ExtResource("23_8ncot")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/ToolsButtons/GroundButton"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 20.0
+offset_bottom = 19.0
+texture = ExtResource("20_deuju")
+expand_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="TextureRect/ToolsButtons/GroundButton"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 231.0
+offset_bottom = 225.0
+scale = Vector2(0.08, 0.08)
+value = 1.0
+fill_mode = 4
+texture_under = ExtResource("23_toce5")
+texture_progress = ExtResource("23_toce5")
+tint_under = Color(0.43, 0.43, 0.43, 1)
+tint_progress = Color(0.4131, 0.81, 0.538785, 1)
+
+[node name="LightButton" type="Button" parent="TextureRect/ToolsButtons"]
 material = SubResource("CanvasItemMaterial_mycsc")
 layout_mode = 0
-offset_left = 150.0
-offset_top = 137.0
-offset_right = 162.0
-offset_bottom = 161.0
+offset_left = -5.0
+offset_top = 53.0
+offset_right = 7.0
+offset_bottom = 77.0
 theme = ExtResource("9_mycsc")
 theme_override_font_sizes/font_size = 5
 text = "
 "
 
-[node name="LightTexture" type="TextureRect" parent="ToolsButtons/LightButton"]
+[node name="LightTexture" type="TextureRect" parent="TextureRect/ToolsButtons/LightButton"]
 material = SubResource("CanvasItemMaterial_coobd")
 layout_mode = 1
 anchors_preset = 8
@@ -477,183 +550,177 @@ grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("21_fucjw")
 
-[node name="GroundButton" type="Button" parent="ToolsButtons"]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 139.0
-offset_right = 114.0
-offset_bottom = 158.0
-theme = ExtResource("23_8ncot")
-
-[node name="TextureRect" type="TextureRect" parent="ToolsButtons/GroundButton"]
-layout_mode = 0
-offset_left = -1.0
-offset_right = 20.0
-offset_bottom = 19.0
-texture = ExtResource("20_deuju")
-expand_mode = 2
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="ToolsButtons/GroundButton"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 231.0
-offset_bottom = 225.0
-scale = Vector2(0.08, 0.08)
-value = 1.0
-fill_mode = 4
-texture_under = ExtResource("23_toce5")
-texture_progress = ExtResource("23_toce5")
-tint_under = Color(0.43, 0.43, 0.43, 1)
-tint_progress = Color(0.4131, 0.81, 0.538785, 1)
-
-[node name="PlantDescription" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="PlantDescription" type="Control" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("10_5uixt")
 plant_description_file = "res://Json/plant_descriptions.json"
 
-[node name="DescButton" type="Button" parent="PlantDescription"]
+[node name="DescButton" type="Button" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 273.0
-offset_top = 24.0
-offset_right = 302.0
-offset_bottom = 39.0
+offset_left = 112.0
+offset_top = -51.0
+offset_right = 141.0
+offset_bottom = -36.0
 theme_override_font_sizes/font_size = 4
 text = "Описание"
 
-[node name="PractDescButton" type="Button" parent="PlantDescription"]
+[node name="PractDescButton" type="Button" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 275.0
-offset_top = 42.0
-offset_right = 309.0
-offset_bottom = 57.0
+offset_left = 112.0
+offset_top = -36.0
+offset_right = 146.0
+offset_bottom = -21.0
 theme_override_font_sizes/font_size = 4
 text = "Руководство"
 
-[node name="InfoButton" type="Button" parent="PlantDescription"]
+[node name="InfoButton" type="Button" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 275.0
-offset_top = 59.0
-offset_right = 297.0
-offset_bottom = 74.0
+offset_left = 112.0
+offset_top = -19.0
+offset_right = 134.0
+offset_bottom = -4.0
 theme_override_font_sizes/font_size = 5
 text = "Инфа"
 
-[node name="PlantName" type="Label" parent="PlantDescription"]
+[node name="PlantName" type="Label" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 173.0
-offset_top = 14.0
-offset_right = 270.0
-offset_bottom = 41.0
+offset_left = 19.0
+offset_top = -65.0
+offset_right = 106.0
+offset_bottom = -38.0
 text = "Хлорофитум Хохлатый"
 label_settings = SubResource("LabelSettings_l4uh7")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Description" type="RichTextLabel" parent="PlantDescription"]
+[node name="Description" type="RichTextLabel" parent="TextureRect/PlantDescription"]
 modulate = Color(0.631373, 0.603922, 0.431373, 1)
 layout_mode = 0
-offset_left = 174.0
-offset_top = 42.0
-offset_right = 270.0
-offset_bottom = 156.0
+offset_left = 15.0
+offset_top = -39.0
+offset_right = 112.0
+offset_bottom = 50.0
 theme_override_font_sizes/normal_font_size = 5
 bbcode_enabled = true
 text = "Хлорофитум Хохлатый — это многолетняя вечнозеленая трава. Его линейные, ярко-зеленые листья формируют плотную прикорневую розетку. Соцветие возникает из центра растения и достигает длины до 1 метра. Его отдельные цветки звездчатой формы, белые, диаметров до 2 сантиметров. Хлорофитум является одним из самых популярных комнатных растений во всём мире."
 
-[node name="NextButton" type="Button" parent="PlantDescription"]
+[node name="NextButton" type="Button" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 257.0
-offset_top = 144.0
-offset_right = 270.0
-offset_bottom = 159.0
+offset_left = 74.0
+offset_top = 53.0
+offset_right = 87.0
+offset_bottom = 68.0
 theme_override_font_sizes/font_size = 5
 text = "->"
 
-[node name="PrevButton" type="Button" parent="PlantDescription"]
+[node name="PrevButton" type="Button" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 173.0
-offset_top = 144.0
-offset_right = 186.0
-offset_bottom = 159.0
+offset_left = 58.0
+offset_top = 53.0
+offset_right = 71.0
+offset_bottom = 68.0
 theme_override_font_sizes/font_size = 5
 text = "<-"
 
-[node name="PageCount" type="Label" parent="PlantDescription"]
+[node name="PageCount" type="Label" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 146.0
-offset_right = 255.0
-offset_bottom = 191.0
+offset_left = 51.0
+offset_top = 54.0
+offset_right = 90.0
+offset_bottom = 99.0
 theme_override_colors/font_color = Color(0.631373, 0.603922, 0.431373, 1)
 theme_override_font_sizes/font_size = 10
 text = "1"
 
-[node name="Navigation" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_top = -3.0
-offset_right = 41.0
-offset_bottom = 37.0
+[node name="Navigation" type="Control" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("12_deuju")
 
-[node name="OnwardButton" type="Button" parent="Navigation"]
+[node name="OnwardButton" type="Button" parent="TextureRect/Navigation"]
 material = SubResource("CanvasItemMaterial_5uixt")
 layout_mode = 0
-offset_left = 275.0
-offset_top = 81.0
-offset_right = 298.0
-offset_bottom = 112.0
+offset_left = 113.0
+offset_top = -2.0
+offset_right = 136.0
+offset_bottom = 29.0
 text = "->"
 
-[node name="BackButton" type="Button" parent="Navigation"]
+[node name="BackButton" type="Button" parent="TextureRect/Navigation"]
 material = SubResource("CanvasItemMaterial_bl0pt")
 layout_mode = 0
-offset_left = 22.0
-offset_top = 81.0
-offset_right = 45.0
-offset_bottom = 112.0
+offset_left = -138.0
+offset_top = -2.0
+offset_right = -115.0
+offset_bottom = 29.0
 text = "<-"
 
-[node name="SliderMenu" type="Control" parent="."]
+[node name="SliderMenu" type="Control" parent="TextureRect"]
 visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("13_57xuv")
 
-[node name="SliderBG" type="ColorRect" parent="SliderMenu"]
+[node name="SliderBG" type="ColorRect" parent="TextureRect/SliderMenu"]
 material = SubResource("CanvasItemMaterial_deuju")
-layout_mode = 0
-offset_left = 46.0
-offset_top = 10.0
-offset_right = 273.0
-offset_bottom = 162.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -76.0
+offset_right = 113.5
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.172833, 0.172833, 0.172833, 0.333333)
 
-[node name="ColorRect2" type="ColorRect" parent="SliderMenu"]
+[node name="ColorRect2" type="ColorRect" parent="TextureRect/SliderMenu"]
 material = SubResource("CanvasItemMaterial_57xuv")
-layout_mode = 0
-offset_left = 90.0
-offset_top = 58.0
-offset_right = 235.0
-offset_bottom = 115.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -28.5
+offset_right = 72.5
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.342875, 0.735886, 0.550254, 1)
 
-[node name="WaterAmountHSlider" type="HSlider" parent="SliderMenu/ColorRect2"]
+[node name="WaterAmountHSlider" type="HSlider" parent="TextureRect/SliderMenu/ColorRect2"]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 20.0
 offset_right = 133.0
 offset_bottom = 36.0
 
-[node name="PourButton" type="Button" parent="SliderMenu/ColorRect2"]
+[node name="PourButton" type="Button" parent="TextureRect/SliderMenu/ColorRect2"]
 layout_mode = 0
 offset_left = 61.0
 offset_top = 36.0
@@ -663,7 +730,7 @@ theme_override_font_sizes/font_size = 6
 text = "Pour
 "
 
-[node name="SliderLabel" type="Label" parent="SliderMenu/ColorRect2"]
+[node name="SliderLabel" type="Label" parent="TextureRect/SliderMenu/ColorRect2"]
 layout_mode = 0
 offset_left = 54.0
 offset_top = 1.0
@@ -673,19 +740,19 @@ text = "0"
 horizontal_alignment = 1
 
 [connection signal="gui_input" from="PlantWindowBg" to="." method="_on_slider_bg_gui_input"]
-[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="gui_input" from="SubViewportContainer" to="SubViewportContainer/SubViewport/Plant3D" method="_on_sub_viewport_container_gui_input"]
-[connection signal="pressed" from="ToolsButtons/WateringCanButton" to="ToolsButtons" method="_on_watering_can_button_pressed"]
-[connection signal="pressed" from="ToolsButtons/SprayButton" to="ToolsButtons" method="_on_spray_button_pressed"]
-[connection signal="pressed" from="ToolsButtons/LightButton" to="ToolsButtons" method="_on_light_button_pressed"]
-[connection signal="pressed" from="ToolsButtons/GroundButton" to="ToolsButtons" method="_on_ground_button_pressed"]
-[connection signal="pressed" from="PlantDescription/DescButton" to="PlantDescription" method="_on_desc_button_pressed"]
-[connection signal="pressed" from="PlantDescription/PractDescButton" to="PlantDescription" method="_on_pract_desc_button_pressed"]
-[connection signal="pressed" from="PlantDescription/InfoButton" to="PlantDescription" method="_on_info_button_pressed"]
-[connection signal="pressed" from="PlantDescription/NextButton" to="PlantDescription" method="_on_next_button_pressed"]
-[connection signal="pressed" from="PlantDescription/PrevButton" to="PlantDescription" method="_on_prev_button_pressed"]
-[connection signal="pressed" from="Navigation/OnwardButton" to="Navigation" method="_on_onward_button_pressed"]
-[connection signal="pressed" from="Navigation/BackButton" to="Navigation" method="_on_back_button_pressed"]
-[connection signal="gui_input" from="SliderMenu/SliderBG" to="SliderMenu" method="_on_slider_bg_gui_input"]
-[connection signal="value_changed" from="SliderMenu/ColorRect2/WaterAmountHSlider" to="SliderMenu" method="_on_water_amount_h_slider_value_changed"]
-[connection signal="pressed" from="SliderMenu/ColorRect2/PourButton" to="ToolsButtons" method="_on_pour_button_pressed"]
+[connection signal="pressed" from="TextureRect/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TextureRect/ToolsButtons/WateringCanButton" to="TextureRect/ToolsButtons" method="_on_watering_can_button_pressed"]
+[connection signal="pressed" from="TextureRect/ToolsButtons/SprayButton" to="TextureRect/ToolsButtons" method="_on_spray_button_pressed"]
+[connection signal="pressed" from="TextureRect/ToolsButtons/GroundButton" to="TextureRect/ToolsButtons" method="_on_ground_button_pressed"]
+[connection signal="pressed" from="TextureRect/ToolsButtons/LightButton" to="TextureRect/ToolsButtons" method="_on_light_button_pressed"]
+[connection signal="pressed" from="TextureRect/PlantDescription/DescButton" to="TextureRect/PlantDescription" method="_on_desc_button_pressed"]
+[connection signal="pressed" from="TextureRect/PlantDescription/PractDescButton" to="TextureRect/PlantDescription" method="_on_pract_desc_button_pressed"]
+[connection signal="pressed" from="TextureRect/PlantDescription/InfoButton" to="TextureRect/PlantDescription" method="_on_info_button_pressed"]
+[connection signal="pressed" from="TextureRect/PlantDescription/NextButton" to="TextureRect/PlantDescription" method="_on_next_button_pressed"]
+[connection signal="pressed" from="TextureRect/PlantDescription/PrevButton" to="TextureRect/PlantDescription" method="_on_prev_button_pressed"]
+[connection signal="pressed" from="TextureRect/Navigation/OnwardButton" to="TextureRect/Navigation" method="_on_onward_button_pressed"]
+[connection signal="pressed" from="TextureRect/Navigation/BackButton" to="TextureRect/Navigation" method="_on_back_button_pressed"]
+[connection signal="gui_input" from="TextureRect/SliderMenu/SliderBG" to="TextureRect/SliderMenu" method="_on_slider_bg_gui_input"]
+[connection signal="value_changed" from="TextureRect/SliderMenu/ColorRect2/WaterAmountHSlider" to="TextureRect/SliderMenu" method="_on_water_amount_h_slider_value_changed"]
+[connection signal="pressed" from="TextureRect/SliderMenu/ColorRect2/PourButton" to="TextureRect/ToolsButtons" method="_on_pour_button_pressed"]

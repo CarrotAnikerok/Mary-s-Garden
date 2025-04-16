@@ -1,6 +1,6 @@
 extends Control
 
-@onready var active_plant = $"..".active_plant as Plant
+@onready var active_plant = $"../..".active_plant as Plant
 @export_file("*json") var plant_description_file: String
 
 @onready var label_name = $PlantName

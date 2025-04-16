@@ -823,6 +823,14 @@ offset_bottom = 107.0
 theme_override_font_sizes/font_size = 5
 text = "create bouquet"
 
+[node name="Button4" type="Button" parent="."]
+offset_left = 277.0
+offset_top = 107.0
+offset_right = 320.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 5
+text = "мастерская"
+
 [node name="Button3" type="Button" parent="."]
 offset_left = 275.0
 offset_top = 68.0
@@ -842,4 +850,5 @@ text = "add aloe leave"
 [connection signal="pressed" from="UI/Panel/DoorButton" to="Utilities/PlantRoomSceneNavigator" method="_on_door_button_pressed"]
 [connection signal="pressed" from="Button" to="UI" method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="Utilities/Node" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button4" to="Utilities/Node" method="_on_button_4_pressed"]
 [connection signal="pressed" from="Button3" to="Utilities/Node" method="_on_button_3_pressed"]

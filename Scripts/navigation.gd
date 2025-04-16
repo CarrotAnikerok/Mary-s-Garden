@@ -17,23 +17,23 @@ func sort_plants():
 
 
 func _on_onward_button_pressed():
-	var current_i = sorted_plants.find($"..".active_plant)
+	var current_i = sorted_plants.find($"../..".active_plant)
 	if current_i + 1 == sorted_plants.size():
-		$"..".active_plant = sorted_plants[0]
+		$"../..".active_plant = sorted_plants[0]
 	else:
-		$"..".active_plant = sorted_plants[current_i + 1]
-	$"..".update_info()
+		$"../..".active_plant = sorted_plants[current_i + 1]
+	$"../..".update_info()
 	$"../PlantDescription".update_info()
 	$"../ToolsButtons".update_info()
 	
 
 
 func _on_back_button_pressed():
-	var current_i = sorted_plants.find($"..".active_plant)
+	var current_i = sorted_plants.find($"../..".active_plant)
 	if current_i  == 0:
-		$"..".active_plant = sorted_plants[sorted_plants.size() - 1]
+		$"../..".active_plant = sorted_plants[sorted_plants.size() - 1]
 	else:
-		$"..".active_plant = sorted_plants[current_i - 1]
-	$"..".update_info()
+		$"../..".active_plant = sorted_plants[current_i - 1]
+	$"../..".update_info()
 	$"../PlantDescription".update_info()
 	$"../ToolsButtons".update_info()

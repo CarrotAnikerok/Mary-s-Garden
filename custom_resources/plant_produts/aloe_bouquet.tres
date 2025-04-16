@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Bouquet" load_steps=2 format=3 uid="uid://b36excesthkf"]
+[gd_resource type="Resource" script_class="Bouquet" load_steps=3 format=3 uid="uid://b36excesthkf"]
 
 [ext_resource type="Script" uid="uid://c56cxj2l5kao4" path="res://scripts/plant_products/bouquet.gd" id="1_xlw5c"]
+[ext_resource type="Texture2D" uid="uid://db4dqwmbai1fr" path="res://sprites/test_normals_n.png" id="2_t8kmw"]
 
 [resource]
 script = ExtResource("1_xlw5c")
 product_name = "aloe_bouquet"
 price = 40
+texture = ExtResource("2_t8kmw")
 metadata/_custom_type_script = "uid://c56cxj2l5kao4"

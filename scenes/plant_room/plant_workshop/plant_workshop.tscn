@@ -1,20 +1,46 @@
-[gd_scene load_steps=10 format=3 uid="uid://0a0uwtmsvtni"]
+[gd_scene load_steps=14 format=3 uid="uid://0a0uwtmsvtni"]
 
+[ext_resource type="Script" uid="uid://dl7jmpbuxwuss" path="res://scripts/plant_products/plant_workshop.gd" id="1_5jelh"]
 [ext_resource type="Texture2D" uid="uid://dmf2o65jufnqc" path="res://sprites/plant_workshop/background.png" id="1_275ys"]
 [ext_resource type="Texture2D" uid="uid://irf5ixrw27uj" path="res://sprites/plant_workshop/bouquet_button.png" id="2_xwf63"]
 [ext_resource type="Texture2D" uid="uid://54d0jhsmo36l" path="res://sprites/plant_workshop/perfume_button.png" id="3_5jelh"]
 [ext_resource type="Texture2D" uid="uid://dmpty2502336w" path="res://sprites/plant_workshop/tea_button.png" id="4_y84d1"]
 [ext_resource type="Texture2D" uid="uid://bmqgmcpfcn0pn" path="res://sprites/plant_workshop/create_perfume_button.png" id="5_wc6h4"]
 [ext_resource type="Texture2D" uid="uid://b5am54eaaqdty" path="res://sprites/plant_workshop/inventory.png" id="6_h53si"]
-[ext_resource type="PackedScene" uid="uid://cf44rpn6il8f0" path="res://draggable_element.tscn" id="7_275ys"]
-[ext_resource type="Texture2D" uid="uid://c2gddv1qgbho6" path="res://sprites/slot.png" id="8_xwf63"]
+[ext_resource type="PackedScene" uid="uid://biahdsgbo4gyo" path="res://scenes/plant_workshop/plant_inventary.tscn" id="7_5jelh"]
+[ext_resource type="Script" uid="uid://blh44sypobx3e" path="res://scripts/plant_products/crafting.gd" id="9_y84d1"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="10_h53si"]
+[ext_resource type="Resource" uid="uid://cvdts6nygq6o8" path="res://custom_resources/recipies/aloe_bouquet_recipe.tres" id="11_bcndi"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xwf63"]
+light_mode = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_275ys"]
-bg_color = Color(0.942698, 0.472689, 0.446421, 1)
+bg_color = Color(0.66202, 0.79, 0.6478, 0.298039)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.738133, 0.336, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
 
 [node name="PlantWorkshop" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_5jelh")
+
+[node name="PlantWorkshopBg" type="ColorRect" parent="."]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_xwf63")
+layout_mode = 0
+offset_left = -1.0
+offset_right = 321.0
+offset_bottom = 181.0
+color = Color(0.172833, 0.172833, 0.172833, 0.333333)
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -46,8 +72,10 @@ expand_mode = 1
 [node name="ModeButtons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_top = -6.0
+offset_right = 41.0
+offset_bottom = 34.0
 
 [node name="BouquetButton" type="Button" parent="ModeButtons"]
 layout_mode = 0
@@ -142,6 +170,68 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="PlantInventary" parent="Modes/BouquetMode" instance=ExtResource("7_5jelh")]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 106.0
+offset_right = 268.0
+offset_bottom = 146.0
+
+[node name="BouquetCraftingCells" type="Control" parent="Modes/BouquetMode"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_y84d1")
+crafting_recipies = Array[ExtResource("10_h53si")]([ExtResource("11_bcndi")])
+
+[node name="Panel1" type="Panel" parent="Modes/BouquetMode/BouquetCraftingCells" groups=["zone"]]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 123.0
+offset_top = 129.0
+offset_right = 133.0
+offset_bottom = 139.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Panel2" type="Panel" parent="Modes/BouquetMode/BouquetCraftingCells" groups=["zone"]]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 139.0
+offset_top = 129.0
+offset_right = 149.0
+offset_bottom = 139.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Panel3" type="Panel" parent="Modes/BouquetMode/BouquetCraftingCells" groups=["zone"]]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 155.0
+offset_top = 129.0
+offset_right = 165.0
+offset_bottom = 139.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Result" type="Panel" parent="Modes/BouquetMode/BouquetCraftingCells"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 185.0
+offset_top = 129.0
+offset_right = 195.0
+offset_bottom = 139.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
 [node name="PerfumeMode" type="Control" parent="Modes"]
 anchors_preset = 0
 offset_right = 40.0
@@ -152,87 +242,21 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 180.0
-offset_top = 87.0
-offset_right = 224.0
-offset_bottom = 131.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-columns = 3
+[node name="PlantInventary" parent="." instance=ExtResource("7_5jelh")]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 106.0
+offset_right = 94.0
+offset_bottom = 146.0
 
-[node name="Panel8" type="Panel" parent="GridContainer" groups=["zone"]]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 17.0
+offset_right = 292.0
+offset_bottom = 25.0
 
-[node name="Element" type="Control" parent="GridContainer/Panel8"]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = -6.0
-offset_bottom = 6.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 
-[node name="DraggableElement" parent="GridContainer/Panel8/Element" instance=ExtResource("7_275ys")]
-
-[node name="Sprite2D" type="Sprite2D" parent="GridContainer/Panel8/Element"]
-texture = ExtResource("8_xwf63")
-
-[node name="Panel9" type="Panel" parent="GridContainer" groups=["zone"]]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
-
-[node name="Panel10" type="Panel" parent="GridContainer" groups=["zone"]]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
-
-[node name="Panel11" type="Panel" parent="GridContainer" groups=["zone"]]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
-
-[node name="Panel12" type="Panel" parent="GridContainer" groups=["zone"]]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
-
-[node name="Panel13" type="Panel" parent="GridContainer" groups=["zone"]]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
-
-[node name="Panel14" type="Panel" parent="GridContainer" groups=["zone"]]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
-
-[node name="Panel15" type="Panel" parent="GridContainer" groups=["zone"]]
-custom_minimum_size = Vector2(12, 12)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+[editable path="Modes/BouquetMode/PlantInventary"]
+[editable path="PlantInventary"]

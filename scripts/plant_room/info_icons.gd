@@ -4,7 +4,7 @@ extends Control
 @export var light_icons: Dictionary[String, Resource]
 @export var state_icons: Array[Resource]
 
-@onready var active_plant = $"..".active_plant as Plant
+@onready var active_plant = $"../..".active_plant as Plant
 @onready var light_icon = $LightIcon
 @onready var state_icon = $StateIcon
 
