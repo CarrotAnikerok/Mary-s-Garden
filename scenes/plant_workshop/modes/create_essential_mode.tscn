@@ -1,0 +1,132 @@
+[gd_scene load_steps=19 format=3 uid="uid://bihet01ibaj2n"]
+
+[ext_resource type="Script" uid="uid://c8vru87ewhn66" path="res://scripts/plant_workshop/create_essential.gd" id="1_ulnd6"]
+[ext_resource type="Script" uid="uid://bei0kravl4k3c" path="res://scripts/resources/crafting/essential_recipe.gd" id="2_a655n"]
+[ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="3_mldo6"]
+[ext_resource type="Resource" uid="uid://tky518sv2mvi" path="res://custom_resources/other_ingridients/aloe_oil.tres" id="4_wh32o"]
+[ext_resource type="Resource" uid="uid://th6rjt4ehfku" path="res://custom_resources/plant_ingridients/pelargonium_leaves.tres" id="5_ajmm4"]
+[ext_resource type="Texture2D" uid="uid://cplpg4s1grxg" path="res://sprites/plant_menu/tools/clock_text.png" id="5_oi6t4"]
+[ext_resource type="Resource" uid="uid://b6uex5v5rgpom" path="res://custom_resources/other_ingridients/pelargonium_oil.tres" id="6_s5nyx"]
+[ext_resource type="Resource" uid="uid://dy5gneckb4ikb" path="res://custom_resources/plant_ingridients/viola_leaves.tres" id="7_p0qqh"]
+[ext_resource type="Resource" uid="uid://dpe5oaaw4tq2i" path="res://custom_resources/other_ingridients/viola_oil.tres" id="8_0843p"]
+[ext_resource type="Resource" uid="uid://du54pwmsblwyh" path="res://custom_resources/plant_ingridients/lilium_flowers.tres" id="9_oxlrw"]
+[ext_resource type="Resource" uid="uid://ceq1e7blrcmj7" path="res://custom_resources/other_ingridients/lilium_oil.tres" id="10_qg5fr"]
+[ext_resource type="Texture2D" uid="uid://cwdmd3n5dhhew" path="res://sprites/plant_workshop/workshop_spritesheet.png" id="11_fohhn"]
+
+[sub_resource type="Resource" id="Resource_b3er1"]
+script = ExtResource("2_a655n")
+ingridient = ExtResource("3_mldo6")
+oil = ExtResource("4_wh32o")
+metadata/_custom_type_script = "uid://bei0kravl4k3c"
+
+[sub_resource type="Resource" id="Resource_i2nj6"]
+script = ExtResource("2_a655n")
+ingridient = ExtResource("5_ajmm4")
+oil = ExtResource("6_s5nyx")
+metadata/_custom_type_script = "uid://bei0kravl4k3c"
+
+[sub_resource type="Resource" id="Resource_a1yup"]
+script = ExtResource("2_a655n")
+ingridient = ExtResource("7_p0qqh")
+oil = ExtResource("8_0843p")
+metadata/_custom_type_script = "uid://bei0kravl4k3c"
+
+[sub_resource type="Resource" id="Resource_y06jt"]
+script = ExtResource("2_a655n")
+ingridient = ExtResource("9_oxlrw")
+oil = ExtResource("10_qg5fr")
+metadata/_custom_type_script = "uid://bei0kravl4k3c"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_275ys"]
+bg_color = Color(0.4425, 0.75, 0.488625, 0.34902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.187, 0.55, 0.41085, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a655n"]
+atlas = ExtResource("11_fohhn")
+region = Rect2(241, 56, 31, 25)
+
+[node name="CreateEssentialMode" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ulnd6")
+essential_recipies = Array[ExtResource("2_a655n")]([SubResource("Resource_b3er1"), SubResource("Resource_i2nj6"), SubResource("Resource_a1yup"), SubResource("Resource_y06jt")])
+
+[node name="EssentialCraftingCells" type="Control" parent="."]
+anchors_preset = 0
+offset_top = -11.0
+offset_bottom = -11.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EssentialCraftingCells"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 22.0
+offset_right = 17.0
+offset_bottom = 37.0
+
+[node name="Input" type="Panel" parent="EssentialCraftingCells/HBoxContainer" groups=["zone"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="Output" type="Panel" parent="EssentialCraftingCells/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -26.0
+offset_right = 21.16
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_a655n")
+expand_mode = 3
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.08
+offset_top = -8.0
+offset_right = 218.92
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+value = 1.0
+fill_mode = 4
+texture_under = ExtResource("5_oi6t4")
+texture_progress = ExtResource("5_oi6t4")
+tint_under = Color(0.43, 0.43, 0.43, 1)
+tint_progress = Color(0.4131, 0.81, 0.538785, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true

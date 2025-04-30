@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://dhgkxgw5bbfi8" path="res://scripts/plant_products/plant_inventary/plant_inventary.gd" id="1_75ooj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwf63"]
-bg_color = Color(0.35, 0.284667, 0.154, 0.466667)
+bg_color = Color(0.33, 0.323565, 0.2013, 0.498039)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.35, 0.266, 0.14, 1)
+border_color = Color(0.47, 0.269467, 0.1692, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -20,12 +20,8 @@ expand_margin_bottom = 5.0
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_275ys"]
-bg_color = Color(0.66202, 0.79, 0.6478, 0.298039)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8, 0.738133, 0.336, 1)
+bg_color = Color(0.79, 0.783153, 0.3792, 0.211765)
+border_color = Color(0.415686, 0.411765, 0.278431, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -55,7 +51,7 @@ grow_vertical = 2
 mouse_filter = 2
 columns = 3
 
-[node name="Panel8" type="Panel" parent="GridContainer" groups=["zone"]]
+[node name="Panel8" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -63,7 +59,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
 
-[node name="Panel16" type="Panel" parent="GridContainer" groups=["zone"]]
+[node name="Panel16" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -71,7 +67,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
 
-[node name="Panel17" type="Panel" parent="GridContainer" groups=["zone"]]
+[node name="Panel17" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -79,7 +75,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
 
-[node name="Panel9" type="Panel" parent="GridContainer" groups=["zone"]]
+[node name="Panel9" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -87,7 +83,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
 
-[node name="Panel10" type="Panel" parent="GridContainer" groups=["zone"]]
+[node name="Panel10" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -95,7 +91,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
 
-[node name="Panel11" type="Panel" parent="GridContainer" groups=["zone"]]
+[node name="Panel11" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -103,7 +99,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
 
-[node name="Panel12" type="Panel" parent="GridContainer" groups=["zone"]]
+[node name="Panel12" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -111,7 +107,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
 
-[node name="Panel20" type="Panel" parent="GridContainer" groups=["zone"]]
+[node name="Panel20" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -119,7 +115,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
 
-[node name="Panel23" type="Panel" parent="GridContainer" groups=["zone"]]
+[node name="Panel23" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4

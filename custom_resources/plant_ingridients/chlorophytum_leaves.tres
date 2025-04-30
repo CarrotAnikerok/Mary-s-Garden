@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://lrirgbguyabm"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_5oj4y"]
+[ext_resource type="Texture2D" uid="uid://d1sr044imx8io" path="res://sprites/pixel_plants/plant_ingridients/chlorophytum_leaves.png" id="2_y5eek"]
+
+[resource]
+script = ExtResource("1_5oj4y")
+ingridietn_name = "chlorophytum leaves"
+texture = ExtResource("2_y5eek")
+type = 1
+metadata/_custom_type_script = "uid://m3kb60dhifs4"

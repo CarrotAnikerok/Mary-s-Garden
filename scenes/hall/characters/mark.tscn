@@ -109,17 +109,17 @@ size = Vector2(29, 58)
 script = ExtResource("1_x0m0d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(83, 64)
+position = Vector2(-1, -1)
 sprite_frames = SubResource("SpriteFrames_5cln4")
-animation = &"walk"
+animation = &"stay"
 autoplay = "stay"
+frame_progress = 0.528859
 
 [node name="DialogInterationArea" type="Area2D" parent="."]
 script = ExtResource("3_ws62h")
 text_key = "first_dialog"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInterationArea"]
-position = Vector2(83, 65)
 shape = SubResource("RectangleShape2D_8jvn1")
 
 [node name="ControllerContainer" type="Node" parent="."]

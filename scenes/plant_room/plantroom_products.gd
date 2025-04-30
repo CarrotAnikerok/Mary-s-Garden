@@ -22,6 +22,8 @@ func _on_button_2_pressed():
 func _on_button_3_pressed():
 	PlantProductInfo.add_ingridient(inventory["aloe_leaves"])
 	print("aloe leaves was added")
+	PlantProductInfo.add_ingridient(inventory["aloe_flowers"])
+	print("aloe flowers was added")
 	print(PlantProductInfo.inventory)
 
 

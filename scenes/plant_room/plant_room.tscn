@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://gao1je8jpkpk"]
+[gd_scene load_steps=86 format=3 uid="uid://gao1je8jpkpk"]
 
 [ext_resource type="Texture2D" uid="uid://hk7ole3fkrbf" path="res://sprites/plant_room/windows.png" id="2_7ntu0"]
 [ext_resource type="Texture2D" uid="uid://7uxnhq6khcex" path="res://sprites/plant_room/bgPlantRoomMarUI.png" id="2_bhw56"]
@@ -11,13 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://pkiaopwi015v" path="res://sprites/plant_room/bgPlantRoomMary_n_5.png" id="5_ytfrs"]
 [ext_resource type="Texture2D" uid="uid://dsolnq53gnw6e" path="res://sprites/plant_room/UI/door.png" id="6_fv2ki"]
 [ext_resource type="Texture2D" uid="uid://cga7up24vw41p" path="res://sprites/plant_room/UI/clock_phase/clock_phase_2.png" id="6_gxb4b"]
-[ext_resource type="Script" uid="uid://iutq522h1jjy" path="res://scripts/plant_room/time_count.gd" id="7_1gmqi"]
 [ext_resource type="Script" uid="uid://b32rmceec1j3s" path="res://scripts/plant_room/UI/time_phase_sprite.gd" id="7_f5rt3"]
 [ext_resource type="Texture2D" uid="uid://jf3wp03c3x04" path="res://sprites/plant_room/UI/calendar.png" id="7_fv2ki"]
 [ext_resource type="Texture2D" uid="uid://dbme5d2q75mf2" path="res://sprites/plant_room/UI/clock_phase/clock_phase_4.png" id="8_6rbcv"]
 [ext_resource type="Texture2D" uid="uid://di0yw08o6dxnj" path="res://sprites/pixel_sprites/mary/mary_garden_anim.png" id="8_vwt8o"]
 [ext_resource type="Texture2D" uid="uid://cpp5wvkxthenm" path="res://sprites/plant_room/UI/clock_phase/clock_phase_5.png" id="9_34jyk"]
 [ext_resource type="Script" uid="uid://d21o7gpdc68jr" path="res://scenes/plant_room/plant_room_scene_navigator.gd" id="9_gngg7"]
+[ext_resource type="PackedScene" uid="uid://bwqsvc17c5c5j" path="res://scenes/plants/chlorophytum_comosum.tscn" id="10_bqpbp"]
 [ext_resource type="Texture2D" uid="uid://d0xy37k81apml" path="res://sprites/plant_room/UI/clock_phase/clock_phase_1.png" id="10_cedpl"]
 [ext_resource type="Texture2D" uid="uid://55jyrf7cq87h" path="res://sprites/plant_room/UI/clock_phase/clock_phase_6.png" id="10_mkj6r"]
 [ext_resource type="Texture2D" uid="uid://cgrnnrh6sta8n" path="res://sprites/plant_room/UI/clock_time.png" id="10_sngjb"]
@@ -27,13 +27,16 @@
 [ext_resource type="Texture2D" uid="uid://d32v2ylnyg07f" path="res://sprites/plant_room/UI/point.png" id="18_34jyk"]
 [ext_resource type="FontFile" uid="uid://b6q0wvaf10l3g" path="res://fonts/Micro_5/Micro5-Regular.ttf" id="18_f5rt3"]
 [ext_resource type="Script" uid="uid://c1mu4sgebqw3e" path="res://scripts/plant_room/garden_slot.gd" id="23_tmx1f"]
+[ext_resource type="PackedScene" uid="uid://cti7uh2emmyxi" path="res://scenes/plants/bergenia_crassoifolia.tscn" id="26_tcsdn"]
 [ext_resource type="Script" uid="uid://dwsm1qsvjsd86" path="res://scenes/plant_room/light.gd" id="28_4tg3j"]
 [ext_resource type="Script" uid="uid://dgxv3o6dngs1" path="res://scenes/plant_room/plantroom_products.gd" id="28_i121n"]
 [ext_resource type="Script" uid="uid://c56cxj2l5kao4" path="res://scripts/plant_products/bouquet.gd" id="30_7ntu0"]
 [ext_resource type="Resource" uid="uid://c5skltycgh245" path="res://custom_resources/plant_produts/roses.tres" id="30_k66hf"]
 [ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="31_k66hf"]
 [ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="32_23luj"]
+[ext_resource type="Resource" uid="uid://nkbxffdbc66k" path="res://custom_resources/plant_ingridients/aloe_flowers.tres" id="33_02e7d"]
 [ext_resource type="Resource" uid="uid://cvdts6nygq6o8" path="res://custom_resources/recipies/aloe_bouquet_recipe.tres" id="33_tmx1f"]
+[ext_resource type="Script" uid="uid://bwnfyrfw6j4g5" path="res://scripts/money_label.gd" id="37_bqpbp"]
 
 [sub_resource type="Gradient" id="Gradient_7ntu0"]
 offsets = PackedFloat32Array(0.05, 0.56, 1)
@@ -48,144 +51,6 @@ fill_to = Vector2(0.426829, 1)
 [sub_resource type="CanvasTexture" id="CanvasTexture_4tg3j"]
 diffuse_texture = ExtResource("4_k66hf")
 normal_texture = ExtResource("5_ytfrs")
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mkj6r"]
-light_mode = 1
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4tg3j"]
-light_mode = 1
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i121n"]
-light_mode = 1
-
-[sub_resource type="Animation" id="Animation_f5rt3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_mkj6r"]
-resource_name = "arrow_round"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_gxb4b"]
-resource_name = "line_rotate"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6rbcv"]
-_data = {
-&"RESET": SubResource("Animation_f5rt3"),
-&"arrow_round": SubResource("Animation_mkj6r"),
-&"line_rotate": SubResource("Animation_gxb4b")
-}
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7ntu0"]
-light_mode = 1
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_23luj"]
-light_mode = 1
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_k66hf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_6rbcv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_34jyk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_mkj6r")
-}],
-"loop": false,
-"name": &"day_to_evenenig",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_mkj6r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_4tg3j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_i121n")
-}],
-"loop": false,
-"name": &"evening_to_night",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_gxb4b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_7ntu0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_6rbcv")
-}],
-"loop": false,
-"name": &"morning_to_day",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_i121n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_cedpl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_gxb4b")
-}],
-"loop": false,
-"name": &"night_to_morning",
-"speed": 5.0
-}]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ytfrs"]
-light_mode = 1
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ntu0"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tmx1f"]
-light_mode = 1
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_02e7d"]
-light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dybbd"]
 atlas = ExtResource("8_vwt8o")
@@ -404,6 +269,141 @@ product_name = "roses"
 price = 30
 metadata/_custom_type_script = "uid://c56cxj2l5kao4"
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mkj6r"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i121n"]
+light_mode = 1
+
+[sub_resource type="Animation" id="Animation_f5rt3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mkj6r"]
+resource_name = "arrow_round"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_gxb4b"]
+resource_name = "line_rotate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6rbcv"]
+_data = {
+&"RESET": SubResource("Animation_f5rt3"),
+&"arrow_round": SubResource("Animation_mkj6r"),
+&"line_rotate": SubResource("Animation_gxb4b")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7ntu0"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_23luj"]
+light_mode = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k66hf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6rbcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_34jyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mkj6r")
+}],
+"loop": false,
+"name": &"day_to_evenenig",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_mkj6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4tg3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_i121n")
+}],
+"loop": false,
+"name": &"evening_to_night",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gxb4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7ntu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6rbcv")
+}],
+"loop": false,
+"name": &"morning_to_day",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_i121n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cedpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gxb4b")
+}],
+"loop": false,
+"name": &"night_to_morning",
+"speed": 5.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ytfrs"]
+light_mode = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ntu0"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tmx1f"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_02e7d"]
+light_mode = 1
+
 [node name="PlantRoom" type="Node2D"]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -433,133 +433,6 @@ z_index = -1
 position = Vector2(161, 90)
 texture = SubResource("CanvasTexture_4tg3j")
 
-[node name="TimeCount" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 42.0
-offset_bottom = 14.0
-script = ExtResource("7_1gmqi")
-metadata/_edit_use_anchors_ = true
-
-[node name="Day" type="Label" parent="TimeCount"]
-layout_mode = 0
-offset_left = 35.0
-offset_right = 75.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.392157, 0.509804, 0, 1)
-theme_override_font_sizes/font_size = 10
-text = "день 1"
-metadata/_edit_use_anchors_ = true
-
-[node name="Phase" type="Label" parent="TimeCount"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.391, 0.51, 0, 1)
-theme_override_font_sizes/font_size = 10
-text = "Утро"
-metadata/_edit_use_anchors_ = true
-
-[node name="UI" type="Control" parent="."]
-light_mask = 0
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = ExtResource("4_6rbcv")
-script = ExtResource("4_l1uuk")
-
-[node name="DateButton" type="Button" parent="UI"]
-material = SubResource("CanvasItemMaterial_mkj6r")
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 40.0
-theme_type_variation = &"blank_button"
-
-[node name="TImeClock" type="Sprite2D" parent="UI/DateButton"]
-modulate = Color(0.82, 0.51824, 0.4264, 1)
-material = SubResource("CanvasItemMaterial_4tg3j")
-position = Vector2(19, 15)
-texture = ExtResource("10_sngjb")
-
-[node name="Arrow" type="Sprite2D" parent="UI/DateButton/TImeClock"]
-modulate = Color(0.650128, 0.650128, 0.650128, 1)
-z_index = 1
-material = SubResource("CanvasItemMaterial_i121n")
-position = Vector2(-0.5, -0.5)
-texture = ExtResource("18_34jyk")
-offset = Vector2(0, -4)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/DateButton/TImeClock/Arrow"]
-libraries = {
-&"": SubResource("AnimationLibrary_6rbcv")
-}
-autoplay = "line_rotate"
-
-[node name="TimePhaseSprite" type="Sprite2D" parent="UI/DateButton"]
-material = SubResource("CanvasItemMaterial_7ntu0")
-position = Vector2(33, 9)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_gxb4b")
-script = ExtResource("7_f5rt3")
-
-[node name="TimePhaseAnimated" type="AnimatedSprite2D" parent="UI/DateButton/TimePhaseSprite"]
-material = SubResource("CanvasItemMaterial_23luj")
-sprite_frames = SubResource("SpriteFrames_k66hf")
-animation = &"morning_to_day"
-
-[node name="Calendar" type="Sprite2D" parent="UI/DateButton"]
-material = SubResource("CanvasItemMaterial_ytfrs")
-position = Vector2(6, 7)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_fv2ki")
-
-[node name="CalendarLabel" type="Label" parent="UI/DateButton/Calendar"]
-offset_left = -6.0
-offset_top = -12.0
-offset_right = 1.0
-offset_bottom = -1.0
-scale = Vector2(2, 2)
-theme_override_colors/font_color = Color(0.75, 0.2625, 0.286875, 1)
-theme_override_fonts/font = ExtResource("18_f5rt3")
-theme_override_font_sizes/font_size = 10
-text = "20"
-horizontal_alignment = 1
-
-[node name="Panel" type="Panel" parent="UI"]
-z_index = -1
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_7ntu0")
-
-[node name="HandbookButton" type="TextureButton" parent="UI/Panel"]
-material = SubResource("CanvasItemMaterial_tmx1f")
-layout_mode = 2
-offset_left = 4.0
-offset_right = 36.0
-offset_bottom = 32.0
-scale = Vector2(0.8, 0.8)
-size_flags_horizontal = 0
-mouse_filter = 1
-texture_normal = ExtResource("5_tbtck")
-
-[node name="DoorButton" type="TextureButton" parent="UI/Panel"]
-material = SubResource("CanvasItemMaterial_02e7d")
-layout_mode = 0
-offset_left = 7.0
-offset_top = -2.0
-offset_right = 39.0
-offset_bottom = 38.0
-scale = Vector2(0.8, 0.8)
-mouse_filter = 1
-texture_normal = ExtResource("6_fv2ki")
-
 [node name="GardenSlots" type="Node2D" parent="."]
 position = Vector2(0, -2)
 script = ExtResource("23_tmx1f")
@@ -569,12 +442,19 @@ position = Vector2(31, 43)
 
 [node name="AloeVera" parent="GardenSlots/GardenSlot" instance=ExtResource("5_pstx4")]
 light_mask = 3
+position = Vector2(31, 41)
 
 [node name="GardenSlot2" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(55, 43)
 
+[node name="BergeniaCrassoifolia" parent="GardenSlots/GardenSlot2" instance=ExtResource("26_tcsdn")]
+position = Vector2(55, 41)
+
 [node name="GardenSlot3" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(80, 43)
+
+[node name="ChlorophytumComosum" parent="GardenSlots/GardenSlot3" instance=ExtResource("10_bqpbp")]
+position = Vector2(80, 41)
 
 [node name="GardenSlot4" parent="GardenSlots" groups=["high_sunlight", "humid"] instance=ExtResource("2_vglss")]
 position = Vector2(104, 43)
@@ -666,11 +546,11 @@ position = Vector2(228, 145)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.96, 0.864, 0.9136, 1)
 light_mask = 8
-position = Vector2(283, 32)
+position = Vector2(277, 32)
 sprite_frames = SubResource("SpriteFrames_c7t48")
 autoplay = "default"
-frame = 15
-frame_progress = 0.0906181
+frame = 1
+frame_progress = 0.331973
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(158, 92)
@@ -802,6 +682,7 @@ bouquets = Dictionary[String, Resource]({
 "tulips": ExtResource("30_k66hf")
 })
 inventory = Dictionary[String, Resource]({
+"aloe_flowers": ExtResource("33_02e7d"),
 "aloe_leaves": ExtResource("31_k66hf")
 })
 recipies = Dictionary[String, ExtResource("32_23luj")]({
@@ -839,16 +720,125 @@ offset_bottom = 85.0
 theme_override_font_sizes/font_size = 5
 text = "add aloe leave"
 
-[connection signal="animation_finished" from="UI/DateButton/TimePhaseSprite/TimePhaseAnimated" to="UI/DateButton/TimePhaseSprite" method="_on_time_phase_animated_animation_finished"]
-[connection signal="mouse_entered" from="UI/Panel" to="UI" method="_on_panel_mouse_entered"]
-[connection signal="mouse_exited" from="UI/Panel" to="UI" method="_on_panel_mouse_exited"]
-[connection signal="mouse_entered" from="UI/Panel/HandbookButton" to="UI" method="_on_handbook_button_mouse_entered"]
-[connection signal="mouse_exited" from="UI/Panel/HandbookButton" to="UI" method="_on_handbook_button_mouse_exited"]
-[connection signal="pressed" from="UI/Panel/HandbookButton" to="UI" method="_on_handbook_button_pressed"]
-[connection signal="mouse_entered" from="UI/Panel/DoorButton" to="UI" method="_on_door_button_mouse_entered"]
-[connection signal="mouse_exited" from="UI/Panel/DoorButton" to="UI" method="_on_door_button_mouse_exited"]
-[connection signal="pressed" from="UI/Panel/DoorButton" to="Utilities/PlantRoomSceneNavigator" method="_on_door_button_pressed"]
-[connection signal="pressed" from="Button" to="UI" method="_on_button_pressed"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+light_mask = 0
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 28.0
+theme = ExtResource("4_6rbcv")
+script = ExtResource("4_l1uuk")
+
+[node name="DateButton" type="Button" parent="CanvasLayer/UI"]
+material = SubResource("CanvasItemMaterial_mkj6r")
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_type_variation = &"blank_button"
+
+[node name="TImeClock" type="Sprite2D" parent="CanvasLayer/UI/DateButton"]
+modulate = Color(0.82, 0.51824, 0.4264, 1)
+position = Vector2(19, 15)
+texture = ExtResource("10_sngjb")
+
+[node name="Arrow" type="Sprite2D" parent="CanvasLayer/UI/DateButton/TImeClock"]
+modulate = Color(0.650128, 0.650128, 0.650128, 1)
+z_index = 1
+material = SubResource("CanvasItemMaterial_i121n")
+position = Vector2(-0.5, -0.5)
+texture = ExtResource("18_34jyk")
+offset = Vector2(0, -4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/UI/DateButton/TImeClock/Arrow"]
+libraries = {
+&"": SubResource("AnimationLibrary_6rbcv")
+}
+autoplay = "line_rotate"
+
+[node name="TimePhaseSprite" type="Sprite2D" parent="CanvasLayer/UI/DateButton"]
+material = SubResource("CanvasItemMaterial_7ntu0")
+position = Vector2(33, 9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gxb4b")
+script = ExtResource("7_f5rt3")
+
+[node name="TimePhaseAnimated" type="AnimatedSprite2D" parent="CanvasLayer/UI/DateButton/TimePhaseSprite"]
+material = SubResource("CanvasItemMaterial_23luj")
+sprite_frames = SubResource("SpriteFrames_k66hf")
+animation = &"morning_to_day"
+
+[node name="Calendar" type="Sprite2D" parent="CanvasLayer/UI/DateButton"]
+material = SubResource("CanvasItemMaterial_ytfrs")
+position = Vector2(6, 7)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_fv2ki")
+
+[node name="CalendarLabel" type="Label" parent="CanvasLayer/UI/DateButton/Calendar"]
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 1.0
+offset_bottom = -1.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.75, 0.2625, 0.286875, 1)
+theme_override_fonts/font = ExtResource("18_f5rt3")
+theme_override_font_sizes/font_size = 10
+text = "20"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UI"]
+z_index = -1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7ntu0")
+
+[node name="HandbookButton" type="TextureButton" parent="CanvasLayer/UI/Panel"]
+material = SubResource("CanvasItemMaterial_tmx1f")
+layout_mode = 2
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 32.0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 0
+mouse_filter = 1
+texture_normal = ExtResource("5_tbtck")
+
+[node name="DoorButton" type="TextureButton" parent="CanvasLayer/UI/Panel"]
+material = SubResource("CanvasItemMaterial_02e7d")
+layout_mode = 0
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 39.0
+offset_bottom = 38.0
+scale = Vector2(0.8, 0.8)
+mouse_filter = 1
+texture_normal = ExtResource("6_fv2ki")
+
+[node name="MoneyLabel" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 1.0
+offset_right = 320.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0.650708, 0.97, 0.2037, 1)
+theme_override_fonts/font = ExtResource("18_f5rt3")
+theme_override_font_sizes/font_size = 11
+text = "1000€"
+script = ExtResource("37_bqpbp")
+
+[connection signal="pressed" from="Button" to="CanvasLayer/UI" method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="Utilities/Node" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button4" to="Utilities/Node" method="_on_button_4_pressed"]
 [connection signal="pressed" from="Button3" to="Utilities/Node" method="_on_button_3_pressed"]
+[connection signal="animation_finished" from="CanvasLayer/UI/DateButton/TimePhaseSprite/TimePhaseAnimated" to="CanvasLayer/UI/DateButton/TimePhaseSprite" method="_on_time_phase_animated_animation_finished"]
+[connection signal="mouse_entered" from="CanvasLayer/UI/Panel" to="CanvasLayer/UI" method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UI/Panel" to="CanvasLayer/UI" method="_on_panel_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/UI/Panel/HandbookButton" to="CanvasLayer/UI" method="_on_handbook_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UI/Panel/HandbookButton" to="CanvasLayer/UI" method="_on_handbook_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/UI/Panel/HandbookButton" to="CanvasLayer/UI" method="_on_handbook_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/UI/Panel/DoorButton" to="CanvasLayer/UI" method="_on_door_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/UI/Panel/DoorButton" to="CanvasLayer/UI" method="_on_door_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/UI/Panel/DoorButton" to="Utilities/PlantRoomSceneNavigator" method="_on_door_button_pressed"]

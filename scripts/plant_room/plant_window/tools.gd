@@ -63,6 +63,29 @@ func _on_ground_button_pressed():
 		ground_time_bar.visible = true
 	else:
 		ground_time_bar.visible = false
+		
+
+func _on_scissors_button_pressed():
+	print("scissors pressed")
+	print(active_plant)
+	print(active_plant.can_give_leaves)
+	print(active_plant.plant_ingridient_leaves)
+	if active_plant.can_give_flowers == true:
+		if active_plant.plant_ingridient_flower != null:
+			print("ingidient added")
+			PlantProductInfo.add_ingridient(active_plant.plant_ingridient_flower)
+			HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " дал цветок")
+			active_plant.can_give_flowers = false
+	else:
+		print("ingidient not added")
+		HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " не цветет")
+	if active_plant.can_give_leaves == true:
+		if active_plant.plant_ingridient_leaves != null:
+			PlantProductInfo.add_ingridient(active_plant.plant_ingridient_leaves)
+			HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " дал листья")
+			active_plant.can_give_leaves = false
+	else:
+		HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " листьев недостаточно")
 
 #то есть мне нужно запоминать, на каком растении началась работа. то есть СИГНАЛ пусть дает
 #мне об этом информацию

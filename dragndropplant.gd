@@ -4,6 +4,7 @@ extends Draggable
 func _ready():
 	start("plant_cell")
 	rest_point = current_rest.global_position
+	draggable_fell.connect(draggable_parent.place_update)
 
 
 func _on_button_button_down():

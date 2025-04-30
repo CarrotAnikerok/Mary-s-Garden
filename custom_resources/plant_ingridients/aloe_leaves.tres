@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://mneldd1yyiy0"]
 
 [ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_q8vce"]
-[ext_resource type="Texture2D" uid="uid://b0ieijdolrd8l" path="res://sprites/test_normals.png" id="2_4vo4w"]
+[ext_resource type="Texture2D" uid="uid://bqnxvvhurcikl" path="res://sprites/pixel_plants/plant_ingridients/aloe_leaves.png" id="2_4vo4w"]
 
 [resource]
 script = ExtResource("1_q8vce")
-ingridient_name = "aloe_leaves"
+ingridietn_name = "aloe leaves"
 texture = ExtResource("2_4vo4w")
 type = 1
 metadata/_custom_type_script = "uid://m3kb60dhifs4"

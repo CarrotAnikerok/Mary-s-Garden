@@ -12,12 +12,16 @@ var plant_menu
 signal draggable_fell
 
 
-func start(cell_group: String):
+func start(cell_group_1: String, cell_group_2: String = ""):
 	if draggable_parent == null:
 		draggable_parent = get_parent()
 	current_rest = draggable_parent.get_parent()
-	rest_nodes = get_tree().get_nodes_in_group(cell_group)
+	rest_nodes = get_tree().get_nodes_in_group(cell_group_1)
+	if cell_group_2 != "":
+		rest_nodes.append_array(get_tree().get_nodes_in_group(cell_group_2))
 	rest_point = current_rest.global_position
+	
+
 
 
 func _physics_process(delta):
@@ -36,21 +40,22 @@ func _input(event):
 				global.is_dragging = false
 				var shortest_dist  = 14
 				for child in rest_nodes:
-					var distance  = global_position.distance_to(child.global_position)
-					if distance < shortest_dist and child.get_child_count() == 0:
-						if draggable_parent is Plant:
-							rest_point = child.global_position
-						else:
-							rest_point = child.global_position + Vector2(5, 5)
-						current_rest.remove_child(draggable_parent)
-						draggable_parent.global_position = Vector2(0, 0)
-						current_rest = child
-						shortest_dist = distance
-						child.add_child(draggable_parent)
-						#print("rest point: "  + str(rest_point))
-						#print("current rest: "  + str(current_rest.global_position))
-						draggable_parent.global_position = mouse_pos
-						draggable_fell.emit()
+					if child.visible == true:
+						var distance  = global_position.distance_to(child.global_position)
+						if distance < shortest_dist and child.get_child_count() == 0:
+							if draggable_parent is Plant:
+								rest_point = child.global_position
+							else:
+								rest_point = child.global_position + Vector2(5, 5)
+							current_rest.remove_child(draggable_parent)
+							draggable_parent.global_position = Vector2(0, 0)
+							current_rest = child
+							shortest_dist = distance
+							child.add_child(draggable_parent)
+							#print("rest point: "  + str(rest_point))
+							#print("current rest: "  + str(current_rest.global_position))
+							draggable_parent.global_position = mouse_pos
+							draggable_fell.emit()
 						
 
 

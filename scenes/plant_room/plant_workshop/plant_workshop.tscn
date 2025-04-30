@@ -1,262 +1,257 @@
-[gd_scene load_steps=14 format=3 uid="uid://0a0uwtmsvtni"]
+[gd_scene load_steps=22 format=3 uid="uid://0a0uwtmsvtni"]
 
-[ext_resource type="Script" uid="uid://dl7jmpbuxwuss" path="res://scripts/plant_products/plant_workshop.gd" id="1_5jelh"]
+[ext_resource type="Script" uid="uid://dl7jmpbuxwuss" path="res://scripts/plant_products/workshop_modes.gd" id="1_5jelh"]
 [ext_resource type="Texture2D" uid="uid://dmf2o65jufnqc" path="res://sprites/plant_workshop/background.png" id="1_275ys"]
-[ext_resource type="Texture2D" uid="uid://irf5ixrw27uj" path="res://sprites/plant_workshop/bouquet_button.png" id="2_xwf63"]
-[ext_resource type="Texture2D" uid="uid://54d0jhsmo36l" path="res://sprites/plant_workshop/perfume_button.png" id="3_5jelh"]
-[ext_resource type="Texture2D" uid="uid://dmpty2502336w" path="res://sprites/plant_workshop/tea_button.png" id="4_y84d1"]
-[ext_resource type="Texture2D" uid="uid://bmqgmcpfcn0pn" path="res://sprites/plant_workshop/create_perfume_button.png" id="5_wc6h4"]
-[ext_resource type="Texture2D" uid="uid://b5am54eaaqdty" path="res://sprites/plant_workshop/inventory.png" id="6_h53si"]
+[ext_resource type="Script" uid="uid://bogb4406he2t6" path="res://scripts/plant_workshop.gd" id="1_bcndi"]
+[ext_resource type="Texture2D" uid="uid://cwdmd3n5dhhew" path="res://sprites/plant_workshop/workshop_spritesheet.png" id="5_y84d1"]
 [ext_resource type="PackedScene" uid="uid://biahdsgbo4gyo" path="res://scenes/plant_workshop/plant_inventary.tscn" id="7_5jelh"]
-[ext_resource type="Script" uid="uid://blh44sypobx3e" path="res://scripts/plant_products/crafting.gd" id="9_y84d1"]
-[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="10_h53si"]
-[ext_resource type="Resource" uid="uid://cvdts6nygq6o8" path="res://custom_resources/recipies/aloe_bouquet_recipe.tres" id="11_bcndi"]
+[ext_resource type="PackedScene" uid="uid://bihet01ibaj2n" path="res://scenes/plant_workshop/modes/create_essential_mode.tscn" id="8_h53si"]
+[ext_resource type="PackedScene" uid="uid://dashrok7jnhe0" path="res://scenes/plant_workshop/modes/perfume_mode.tscn" id="11_nwhbl"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xwf63"]
 light_mode = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_275ys"]
-bg_color = Color(0.66202, 0.79, 0.6478, 0.298039)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8, 0.738133, 0.336, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwf63"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(82, 1, 73, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcndi"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(81, 76, 73, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jelh"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(167, 0, 70, 40)
+margin = Rect2(0, 2, 0, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc6h4"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(166, 73, 70, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h53si"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(2, 7, 70, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y84d1"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(1, 82, 70, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_275ys"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(175, 40, 35, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwhbl"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(174, 115, 35, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiolo"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(0, 144, 60, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj360"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(128, 145, 61, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xx13"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(193, 145, 61, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jns7i"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(64, 145, 61, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr6vu"]
+atlas = ExtResource("5_y84d1")
+region = Rect2(0, 145, 61, 14)
 
 [node name="PlantWorkshop" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_5jelh")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_bcndi")
 
 [node name="PlantWorkshopBg" type="ColorRect" parent="."]
 light_mask = 0
 material = SubResource("CanvasItemMaterial_xwf63")
-layout_mode = 0
-offset_left = -1.0
-offset_right = 321.0
-offset_bottom = 181.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -90.5
+offset_right = 161.0
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.172833, 0.172833, 0.172833, 0.333333)
+metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 17.0
-offset_right = 283.737
-offset_bottom = 155.0
+custom_minimum_size = Vector2(273, 153)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -74.5
+offset_right = 137.0
+offset_bottom = 78.5
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("1_275ys")
 expand_mode = 3
-metadata/_edit_lock_ = true
-
-[node name="PlantInventory" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="PlantInventory"]
-layout_mode = 0
-offset_left = -149.0
-offset_top = 23.0
-offset_right = 97.0
-offset_bottom = 161.0
-scale = Vector2(0.99429, 1)
-texture = ExtResource("6_h53si")
-expand_mode = 1
 
 [node name="ModeButtons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1.0
-offset_top = -6.0
-offset_right = 41.0
-offset_bottom = 34.0
+offset_left = 0.5
+offset_top = 2.0
+offset_right = 0.5
+offset_bottom = 2.0
 
-[node name="BouquetButton" type="Button" parent="ModeButtons"]
+[node name="BouquetButton" type="TextureButton" parent="ModeButtons"]
 layout_mode = 0
-offset_left = 132.0
-offset_top = 52.0
-offset_right = 184.0
-offset_bottom = 76.0
+offset_left = -39.0
+offset_top = -44.0
+offset_right = 34.0
+offset_bottom = 14.0
 mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_xwf63")
+texture_pressed = SubResource("AtlasTexture_bcndi")
+texture_hover = SubResource("AtlasTexture_bcndi")
+texture_disabled = SubResource("AtlasTexture_xwf63")
+texture_focused = SubResource("AtlasTexture_bcndi")
 
-[node name="TextureRect" type="TextureRect" parent="ModeButtons/BouquetButton"]
+[node name="PerfumeButton" type="TextureButton" parent="ModeButtons"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -45.0
+offset_right = 111.0
+offset_bottom = -5.0
+texture_normal = SubResource("AtlasTexture_5jelh")
+texture_pressed = SubResource("AtlasTexture_wc6h4")
+texture_hover = SubResource("AtlasTexture_wc6h4")
+texture_disabled = SubResource("AtlasTexture_5jelh")
+texture_focused = SubResource("AtlasTexture_wc6h4")
+stretch_mode = 3
+
+[node name="TeaButton" type="TextureButton" parent="ModeButtons"]
+layout_mode = 0
+offset_left = -114.0
+offset_top = -36.0
+offset_right = -47.0
+offset_bottom = -6.0
+pivot_offset = Vector2(35, 16)
+texture_normal = SubResource("AtlasTexture_h53si")
+texture_pressed = SubResource("AtlasTexture_y84d1")
+texture_hover = SubResource("AtlasTexture_y84d1")
+texture_disabled = SubResource("AtlasTexture_h53si")
+texture_focused = SubResource("AtlasTexture_y84d1")
+stretch_mode = 3
+
+[node name="CreateEssentialButton" type="TextureButton" parent="ModeButtons"]
+layout_mode = 0
+offset_left = 29.5
+offset_top = -3.0
+offset_right = 64.5
+offset_bottom = 26.0
+texture_normal = SubResource("AtlasTexture_275ys")
+texture_pressed = SubResource("AtlasTexture_nwhbl")
+texture_hover = SubResource("AtlasTexture_nwhbl")
+texture_disabled = SubResource("AtlasTexture_275ys")
+texture_focused = SubResource("AtlasTexture_nwhbl")
+
+[node name="IngridientInventary" parent="." instance=ExtResource("7_5jelh")]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.5
-offset_top = -12.5
-offset_right = 27.5
-offset_bottom = 12.5
+offset_left = 71.0
+offset_top = 26.0
+offset_right = 111.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_xwf63")
-expand_mode = 3
-
-[node name="PerfumeButton" type="Button" parent="ModeButtons"]
-layout_mode = 0
-offset_left = 221.0
-offset_top = 52.0
-offset_right = 269.0
-offset_bottom = 76.0
-
-[node name="TextureRect" type="TextureRect" parent="ModeButtons/PerfumeButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.6699
-offset_top = -11.0
-offset_right = 24.6699
-offset_bottom = 11.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_5jelh")
-expand_mode = 3
-
-[node name="TeaButton" type="Button" parent="ModeButtons"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 55.0
-offset_right = 99.0
-offset_bottom = 72.0
-
-[node name="TextureRect" type="TextureRect" parent="ModeButtons/TeaButton"]
-layout_mode = 0
-offset_left = -3.0
-offset_top = -4.0
-offset_right = 55.0
-offset_bottom = 19.0
-texture = ExtResource("4_y84d1")
-expand_mode = 3
-
-[node name="CreateEssentialButton" type="Button" parent="ModeButtons"]
-layout_mode = 0
-offset_left = 245.0
-offset_top = 81.0
-offset_right = 269.0
-offset_bottom = 104.0
-
-[node name="TextureRect" type="TextureRect" parent="ModeButtons/CreateEssentialButton"]
-layout_mode = 0
-offset_right = 24.0
-offset_bottom = 24.0
-texture = ExtResource("5_wc6h4")
-expand_mode = 2
-
-[node name="Modes" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TeaMode" type="Control" parent="Modes"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BouquetMode" type="Control" parent="Modes"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PlantInventary" parent="Modes/BouquetMode" instance=ExtResource("7_5jelh")]
-layout_mode = 0
-offset_left = 228.0
-offset_top = 106.0
-offset_right = 268.0
-offset_bottom = 146.0
-
-[node name="BouquetCraftingCells" type="Control" parent="Modes/BouquetMode"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("9_y84d1")
-crafting_recipies = Array[ExtResource("10_h53si")]([ExtResource("11_bcndi")])
-
-[node name="Panel1" type="Panel" parent="Modes/BouquetMode/BouquetCraftingCells" groups=["zone"]]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 0
-offset_left = 123.0
-offset_top = 129.0
-offset_right = 133.0
-offset_bottom = 139.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
-
-[node name="Panel2" type="Panel" parent="Modes/BouquetMode/BouquetCraftingCells" groups=["zone"]]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 0
-offset_left = 139.0
-offset_top = 129.0
-offset_right = 149.0
-offset_bottom = 139.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
-
-[node name="Panel3" type="Panel" parent="Modes/BouquetMode/BouquetCraftingCells" groups=["zone"]]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 0
-offset_left = 155.0
-offset_top = 129.0
-offset_right = 165.0
-offset_bottom = 139.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
-
-[node name="Result" type="Panel" parent="Modes/BouquetMode/BouquetCraftingCells"]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 0
-offset_left = 185.0
-offset_top = 129.0
-offset_right = 195.0
-offset_bottom = 139.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_275ys")
-
-[node name="PerfumeMode" type="Control" parent="Modes"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CreateEssentialMode" type="Control" parent="Modes"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+cell_group_name = "flower inventory"
 
 [node name="PlantInventary" parent="." instance=ExtResource("7_5jelh")]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 54.0
-offset_top = 106.0
-offset_right = 94.0
-offset_bottom = 146.0
+offset_left = -107.0
+offset_top = 26.0
+offset_right = -67.0
+offset_bottom = 66.0
+cell_group_name = "inventory"
+ingridient_type = 1
+leave_and_flowers = true
+
+[node name="ModesInd" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.5
+offset_top = -89.0
+offset_right = 30.5
+offset_bottom = -74.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_eiolo")
+
+[node name="Modes" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -3.5
+offset_top = 36.0
+offset_right = -3.5
+offset_bottom = 36.0
+script = ExtResource("1_5jelh")
+modes_pict = Dictionary[int, AtlasTexture]({
+0: SubResource("AtlasTexture_uj360"),
+1: SubResource("AtlasTexture_1xx13"),
+2: SubResource("AtlasTexture_jns7i"),
+3: SubResource("AtlasTexture_sr6vu")
+})
+
+[node name="CreateEssentialMode" parent="Modes" instance=ExtResource("8_h53si")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PerfumeMode" parent="Modes" instance=ExtResource("11_nwhbl")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
 
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 284.0
-offset_top = 17.0
-offset_right = 292.0
-offset_bottom = 25.0
+offset_left = 137.5
+offset_top = -73.0
+offset_right = 145.5
+offset_bottom = -65.0
 
+[connection signal="pressed" from="ModeButtons/BouquetButton" to="Modes" method="_on_bouquet_button_pressed"]
+[connection signal="pressed" from="ModeButtons/PerfumeButton" to="Modes" method="_on_perfume_button_pressed"]
+[connection signal="pressed" from="ModeButtons/TeaButton" to="Modes" method="_on_tea_button_pressed"]
+[connection signal="pressed" from="ModeButtons/CreateEssentialButton" to="Modes" method="_on_create_essential_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 
-[editable path="Modes/BouquetMode/PlantInventary"]
 [editable path="PlantInventary"]

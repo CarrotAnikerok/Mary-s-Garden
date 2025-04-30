@@ -5,6 +5,8 @@ extends Node
 @export var arin: Character
 @export var mary: Character
 @export var scarlett: Character
+@export var mark: Character
+@export var kris: Character
 
 var timer: SceneTreeTimer
 
@@ -57,8 +59,8 @@ func return_control():
 	
 func scenary_1():
 	move_camera(330)
-	await move_right(mary, 1)
-	await move_left(mary, 1)
+	await move_right(mary, 2)
+	await move_left(mary, 2)
 	await move_right(mary, 1)
 	await move_left(mary, 1)
 	move_right(mary, 1)

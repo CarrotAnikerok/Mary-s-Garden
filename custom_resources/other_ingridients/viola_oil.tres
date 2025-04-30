@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://dpe5oaaw4tq2i"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_w1eo6"]
+[ext_resource type="Texture2D" uid="uid://chhmsv2cg0d3r" path="res://sprites/cactus.png" id="2_xent4"]
+
+[resource]
+script = ExtResource("1_w1eo6")
+ingridietn_name = "viola oil"
+texture = ExtResource("2_xent4")
+type = 2
+metadata/_custom_type_script = "uid://m3kb60dhifs4"

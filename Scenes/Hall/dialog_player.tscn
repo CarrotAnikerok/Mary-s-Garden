@@ -44,6 +44,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextBoxBg" type="TextureRect" parent="TextBox"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 125.0
 offset_right = 320.0
@@ -53,6 +54,7 @@ expand_mode = 5
 
 [node name="TextBoxPretty" type="TextureRect" parent="TextBox"]
 modulate = Color(0.459182, 0.313503, 0.504087, 1)
+layout_mode = 0
 offset_left = 2.0
 offset_top = 125.0
 offset_right = 320.0
@@ -70,6 +72,7 @@ label_settings = SubResource("LabelSettings_mxfw7")
 autowrap_mode = 3
 
 [node name="NameLabel" type="Label" parent="TextBox"]
+layout_mode = 0
 offset_left = 60.0
 offset_top = 129.0
 offset_right = 102.0

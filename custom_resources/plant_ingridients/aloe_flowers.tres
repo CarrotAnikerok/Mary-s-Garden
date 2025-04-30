@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://nkbxffdbc66k"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_wr177"]
+[ext_resource type="Texture2D" uid="uid://c2gddv1qgbho6" path="res://sprites/slot.png" id="2_0qn7x"]
+
+[resource]
+script = ExtResource("1_wr177")
+ingridietn_name = "aloe flowers"
+texture = ExtResource("2_0qn7x")
+type = 0
+metadata/_custom_type_script = "uid://m3kb60dhifs4"

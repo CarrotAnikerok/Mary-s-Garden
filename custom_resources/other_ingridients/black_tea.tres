@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://cbesj5v232eby"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_3rtps"]
+[ext_resource type="Texture2D" uid="uid://ddivs06tnltor" path="res://sprites/plant_workshop/black_tea.png" id="2_u6yx4"]
+
+[resource]
+script = ExtResource("1_3rtps")
+ingridietn_name = "black tea"
+texture = ExtResource("2_u6yx4")
+type = 3
+metadata/_custom_type_script = "uid://m3kb60dhifs4"

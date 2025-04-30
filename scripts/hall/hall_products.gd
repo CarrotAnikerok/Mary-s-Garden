@@ -5,6 +5,8 @@ var bouquets: Array[Bouquet]
 var teas: Array[Tea]
 var perfume: Array[Perfume]
 
+signal bouquet_sold(bouquet_name)
+
 func _ready():
 	bouquets = PlantProductInfo.bouquets
 	teas = PlantProductInfo.teas
@@ -23,6 +25,8 @@ func sell_bouquet(bouquet_name: String):
 
 
 func _on_button_pressed():
+	var bouquet_name = "aloe_bouquet"
 	print(GameWallet.get_current_sum())
-	sell_bouquet("roses")
+	sell_bouquet(bouquet_name)
 	print(GameWallet.get_current_sum())
+	bouquet_sold.emit(bouquet_name)

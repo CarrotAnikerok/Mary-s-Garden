@@ -1,8 +1,10 @@
 extends Draggable
 
 
+
 func _ready():
-	start("zone")
+	var cell_group =$"..".cell_group
+	start("zone", cell_group)
 	rest_point = current_rest.global_position + Vector2(5, 5)
 
 

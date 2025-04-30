@@ -45,6 +45,21 @@ project/assembly_name="Mary-s Garden"
 
 movie_writer/movie_file="D:/veshi/godotgames/MyRecordings/MyRecordings.avi"
 
+[file_customization]
+
+folder_colors={
+"res://3DPlants/": "purple",
+"res://scenes/": "yellow",
+"res://scripts/": "blue",
+"res://sprites/": "green",
+"res://sprites/pixel_sprites/arin/": "blue",
+"res://sprites/pixel_sprites/arin/arin_walkcicle_right-Sheet.png": "blue",
+"res://sprites/pixel_sprites/kris/": "pink",
+"res://sprites/pixel_sprites/mark/": "purple",
+"res://sprites/pixel_sprites/mary/": "red",
+"res://sprites/pixel_sprites/scarlett/": "gray"
+}
+
 [filesystem]
 
 import/blender/enabled=false

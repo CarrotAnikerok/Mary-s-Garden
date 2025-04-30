@@ -6,6 +6,8 @@ extends Node
 #var states = ["Perfect", "Good", "Neutral", "Bad", "Horrible", "Dead"]
 @export var plant_states: Array[PackedScene]
 @export var plant_tools: Plant_Tools
+@export var plant_ingridient_leaves: Ingridient
+@export var plant_ingridient_flower: Ingridient 
 
 
 var plant_window = load("res://scenes/plant_room/plant_window.tscn")
@@ -43,6 +45,8 @@ var is_first_pour = true
 var deadly_bad_for_too_long = false
 var plant_state = 2
 var bad_parameters = [0, 0, 0, 0] #вода, свет, влажность, температура
+var can_give_flowers: bool = false
+var can_give_leaves: bool = false
 
 
 #acceptable Plant Parameters
@@ -117,6 +121,14 @@ func change_state_logic():
 			change_state_up()
 			print(plant_name + " goes up")
 			break
+	
+	#чек на подачу материала. явно должен быть где-то еще
+	if plant_state == 0 or plant_state == 1:
+		can_give_flowers = true
+		can_give_leaves = true
+	else:
+		can_give_flowers = false
+		can_give_flowers = false
 			
 	if can_be_perfect_logic() and how_bad_is_it == 0:
 		change_state_up()

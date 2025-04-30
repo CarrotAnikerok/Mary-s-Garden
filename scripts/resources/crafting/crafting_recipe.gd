@@ -10,6 +10,13 @@ func craft() -> void:
 		PlantProductInfo.remove_ingridient(ingridient)
 		
 	PlantProductInfo.add_product(output)
+	
+	
+func craft_chaotic(chaotic_ingridients: Array[Ingridient]) -> void:
+	for ingridient in chaotic_ingridients:
+		PlantProductInfo.remove_ingridient(ingridient)
+
+	PlantProductInfo.add_product(output)
 
 
 func can_craft_global():
@@ -30,11 +37,15 @@ func can_craft_local(elements: Array[Ingridient]):
 	var inventory = elements.duplicate()
 	for ingridient in ingridients:
 		if inventory.has(ingridient):
-			#здесь что ли что-то не так?? почему кристаллик не кристаллится
+			print_debug(ingridient._to_string())
 			inventory.erase(ingridient)
 		else:
 			valid = false
 			break
+	
+	#проверка на то, что инвентарь и рецепт абсолютно совпадают
+	if inventory.size() != 0:
+		valid = false
 	
 	return valid
 	

@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsyd7upqug16k"]
+
+[ext_resource type="Script" uid="uid://blh44sypobx3e" path="res://scripts/plant_products/crafting.gd" id="1_x7y21"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="2_v2g5i"]
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="3_ir1wm"]
+[ext_resource type="Script" uid="uid://dt34o5taao3yg" path="res://scripts/plant_products/tea.gd" id="4_knb67"]
+[ext_resource type="Texture2D" uid="uid://n6imjrxwklb4" path="res://sprites/pixel_plants/pelargonia.png" id="5_c70n2"]
+
+[sub_resource type="Resource" id="Resource_7525v"]
+script = ExtResource("4_knb67")
+product_name = "chaotic_tea_small"
+price = 0
+texture = ExtResource("5_c70n2")
+metadata/_custom_type_script = "uid://dt34o5taao3yg"
+
+[sub_resource type="Resource" id="Resource_i1nfi"]
+script = ExtResource("2_v2g5i")
+ingridients = Array[ExtResource("3_ir1wm")]([])
+output = SubResource("Resource_7525v")
+metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys1ov"]
+bg_color = Color(0.4425, 0.75, 0.488625, 0.34902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.187, 0.55, 0.41085, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing = false
+
+[node name="TeaMode" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_x7y21")
+chaotic_recipies = Array[ExtResource("2_v2g5i")]([SubResource("Resource_i1nfi")])
+
+[node name="CraftingCells" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 8.0
+offset_bottom = 10.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CraftingCells"]
+layout_mode = 0
+offset_left = -53.0
+offset_top = -8.0
+offset_bottom = 7.0
+
+[node name="Panel1" type="Panel" parent="CraftingCells/HBoxContainer" groups=["zone"]]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1ov")
+
+[node name="Panel2" type="Panel" parent="CraftingCells/HBoxContainer" groups=["zone"]]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1ov")
+
+[node name="Panel3" type="Panel" parent="CraftingCells/HBoxContainer" groups=["zone"]]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1ov")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CraftingCells"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -8.0
+offset_right = 44.0
+offset_bottom = 7.0
+
+[node name="Result" type="Panel" parent="CraftingCells/HBoxContainer2"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1ov")
+
+[node name="ToHall" type="Panel" parent="CraftingCells/HBoxContainer2" groups=["toHall", "zone"]]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys1ov")

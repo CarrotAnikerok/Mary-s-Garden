@@ -7,6 +7,16 @@ var perfume: Array[Perfume]
 
 var inventory: Array[Ingridient]
 
+func _ready():
+	var black_tea = load("res://custom_resources/other_ingridients/black_tea.tres")
+	var viola_oil = load("res://custom_resources/other_ingridients/viola_oil.tres")
+	add_ingridient(black_tea)
+	add_ingridient(black_tea)
+	add_ingridient(viola_oil)
+	add_ingridient(viola_oil)
+	
+
+
 
 func add_ingridient(ingridient: Ingridient):
 	inventory.append(ingridient)

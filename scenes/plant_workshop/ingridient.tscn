@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cf44rpn6il8f0" path="res://draggable_element.tscn" id="1_fwrng"]
 [ext_resource type="Script" uid="uid://c3331h82nes8h" path="res://scenes/plant_workshop/ingridient_node.gd" id="1_gmdmy"]
-[ext_resource type="Texture2D" uid="uid://c2gddv1qgbho6" path="res://sprites/slot.png" id="2_gmdmy"]
 [ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="2_wgnyv"]
+[ext_resource type="Texture2D" uid="uid://bqnxvvhurcikl" path="res://sprites/pixel_plants/plant_ingridients/aloe_leaves.png" id="4_wgnyv"]
 
 [node name="Ingridient" type="Control"]
 z_index = 1
@@ -26,4 +26,4 @@ ingridient_res = ExtResource("2_wgnyv")
 [node name="DraggableElement" parent="." instance=ExtResource("1_fwrng")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gmdmy")
+texture = ExtResource("4_wgnyv")

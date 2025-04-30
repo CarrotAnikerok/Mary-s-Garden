@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=2 format=3 uid="uid://du54pwmsblwyh"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_ex5ll"]
+
+[resource]
+script = ExtResource("1_ex5ll")
+ingridietn_name = "lilium flowers"
+type = 0
+metadata/_custom_type_script = "uid://m3kb60dhifs4"
