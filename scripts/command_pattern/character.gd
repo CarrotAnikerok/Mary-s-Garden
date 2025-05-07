@@ -2,6 +2,8 @@ class_name Character
 extends Node2D
 
 @export var speed = 120
+@export var animated_sprite: AnimatedSprite2D
+
 var _horizontal_input: float
 var dialog = false
 
@@ -16,6 +18,11 @@ func set_controller(controller: CharacterController) -> void:
 	
 	_controller = controller
 	_controller_container.add_child(_controller)
+
+
+func remove_controller() -> void:
+	for child in _controller_container.get_children():
+		child.queue_free()
 
 
 func _process(delta):

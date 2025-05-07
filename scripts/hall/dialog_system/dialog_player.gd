@@ -30,7 +30,7 @@ var text = ""
 @onready var mary_sprite = $MarySprite
 @onready var guest_sprite = $GuestSprite
 @onready var audio_player = $AudioStreamPlayer
-@onready var speech_sound = preload("res://Audio/high_bleep.wav")
+const speech_sound = preload("res://resources/audio/high_bleep.wav")
 
 func _ready():
 	background.visible = false #хочу поменять на вызывание схемы
@@ -135,6 +135,7 @@ func on_display_dialog(text_key):
 		show_text()
 		
 func on_start_dialog(text_key):
+	visible = true;
 	audio_player.stream = speech_sound
 	if !in_progress:
 		player.dialog = true

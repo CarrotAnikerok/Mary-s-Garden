@@ -5,22 +5,27 @@ extends Node2D
 @onready var perfume = %Perfume
 
 
-
-const INGRIDIENT = preload("res://scenes/plant_workshop/ingridient.tscn")
+const PLANT_PRODUCT = preload("res://scenes/plant_workshop/plant_product.tscn")
 
 func _ready():
+	PlantProductInfo.product_added.connect(fill_all)
+	fill_all()
+	
+	
+
+func fill_all():
 	fill_storage(PlantProductInfo.bouquets, bouquets)
 	fill_storage(PlantProductInfo.perfume, perfume)
 	fill_storage(PlantProductInfo.teas, tea)
-	
+
 
 func fill_storage(products, storage: Node2D):
 	var slots = storage.get_children()
 	var slot_count = 0;
 	for product in products:
 		if slot_count < slots.size():
-			var product_node_instance = INGRIDIENT.instantiate()
-			product_node_instance.ingridient_res = product
+			var product_node_instance = PLANT_PRODUCT.instantiate()
+			product_node_instance.plant_product_res = product
 			
 			slots[slot_count].add_child(product_node_instance)
 			product_node_instance.global_position = slots[slot_count].global_position

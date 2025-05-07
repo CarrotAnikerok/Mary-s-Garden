@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://xdbv6elocc2w"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_01k1o"]
+[ext_resource type="Texture2D" uid="uid://b1qehs14gbyvx" path="res://sprites/pixel_plants/plant_ingridients/bergenia_flowers.png" id="2_8unq8"]
+
+[resource]
+script = ExtResource("1_01k1o")
+ingridietn_name = "bergenia flowers"
+texture = ExtResource("2_8unq8")
+type = 0
+metadata/_custom_type_script = "uid://m3kb60dhifs4"

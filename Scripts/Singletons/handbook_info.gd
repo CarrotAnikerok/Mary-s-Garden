@@ -20,9 +20,6 @@ func _ready():
 	add_title(phases[global.phase_of_day])
 
 
-func _process(delta):
-	pass
-	
 	
 func add_note(type, plant_name="", description=""):
 	var dict = {
@@ -42,7 +39,7 @@ func add_title(title):
 	
 	
 func change_phase_title():
-	var i = global.phase_of_day + 1
+	var i = global.phase_of_day - 1
 	if (i == 3):
 		i = 0
 		change_day()

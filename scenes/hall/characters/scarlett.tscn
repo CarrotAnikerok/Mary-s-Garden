@@ -1,25 +1,25 @@
 [gd_scene load_steps=19 format=3 uid="uid://hhpxwqm7546x"]
 
-[ext_resource type="Script" uid="uid://cfcmspip7v2vi" path="res://scenes/hall/characters/npc.gd" id="1_411ge"]
+[ext_resource type="Script" uid="uid://cfcmspip7v2vi" path="res://scripts/command_pattern/npc.gd" id="1_411ge"]
 [ext_resource type="Script" uid="uid://bcqlyi0fojkld" path="res://scripts/hall/dialog_system/dialog_area.gd" id="1_ydaag"]
 [ext_resource type="Texture2D" uid="uid://cjn08ees1l78b" path="res://sprites/pixel_sprites/scarlett/scarlett_static_anim-Sheet.png" id="2_411ge"]
 [ext_resource type="Texture2D" uid="uid://do626jnc3bgm1" path="res://sprites/pixel_sprites/scarlett/scarlett_walkcicle-Sheet.png" id="3_8bjtk"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bjtk"]
+atlas = ExtResource("2_411ge")
+region = Rect2(0, 0, 32, 62)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_f303s"]
 atlas = ExtResource("2_411ge")
-region = Rect2(0, 0, 32, 64)
+region = Rect2(32, 0, 32, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egcps"]
 atlas = ExtResource("2_411ge")
-region = Rect2(32, 0, 32, 64)
+region = Rect2(64, 0, 32, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1cre"]
 atlas = ExtResource("2_411ge")
-region = Rect2(64, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uvb4c"]
-atlas = ExtResource("2_411ge")
-region = Rect2(96, 0, 32, 64)
+region = Rect2(96, 0, 32, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_er27h"]
 atlas = ExtResource("3_8bjtk")
@@ -57,6 +57,9 @@ region = Rect2(224, 0, 32, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8bjtk")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_f303s")
 }, {
 "duration": 1.0,
@@ -64,9 +67,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t1cre")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uvb4c")
 }],
 "loop": true,
 "name": &"stay",
@@ -105,13 +105,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bjtk"]
 size = Vector2(31, 58)
 
-[node name="Scarlett" type="Node2D"]
+[node name="Scarlett" type="Node2D" node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("1_411ge")
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_er27h")
 animation = &"walk"
-frame_progress = 0.245308
 flip_h = true
 
 [node name="DialogInterationArea" type="Area2D" parent="."]

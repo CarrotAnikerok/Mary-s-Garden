@@ -1,0 +1,84 @@
+[gd_resource type="BehaviorTree" load_steps=26 format=3 uid="uid://bpf0o8uvwjgbq"]
+
+[ext_resource type="Script" uid="uid://dbqlubiaib33w" path="res://ai/tasks/move_arin.gd" id="1_jrpkl"]
+[ext_resource type="Script" uid="uid://b6xcuprr7ql6u" path="res://ai/tasks/move_scarlett.gd" id="2_7rxww"]
+[ext_resource type="PackedScene" uid="uid://bhh6skkcrw85j" path="res://scenes/hall/characters/mark.tscn" id="3_dhpow"]
+[ext_resource type="Script" uid="uid://dbf8dgrovgp0n" path="res://ai/tasks/scenary_end.gd" id="3_i4qb2"]
+[ext_resource type="Script" uid="uid://c2k8c34noe8a8" path="res://ai/tasks/add_character.gd" id="4_kqc8t"]
+[ext_resource type="Script" uid="uid://cb7nc8gy35ox3" path="res://ai/tasks/move_character.gd" id="5_vfwj6"]
+[ext_resource type="Script" uid="uid://bh7ntfyqckekd" path="res://ai/tasks/clear_character.gd" id="6_gnv6q"]
+[ext_resource type="PackedScene" uid="uid://bdnt7pdc142cy" path="res://scenes/hall/characters/kris.tscn" id="7_gnv6q"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_43hkt"]
+var/start_scenary/name = &"start_scenary"
+var/start_scenary/type = 1
+var/start_scenary/value = true
+var/start_scenary/hint = 0
+var/start_scenary/hint_string = ""
+
+[sub_resource type="BBVariant" id="BBVariant_7rxww"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_i4qb2"]
+variable = &"start_scenary"
+value = SubResource("BBVariant_7rxww")
+
+[sub_resource type="BTAction" id="BTAction_u3n5p"]
+script = ExtResource("1_jrpkl")
+move_to = Vector2(100, 109)
+speed = 100.0
+
+[sub_resource type="BTAction" id="BTAction_dhpow"]
+script = ExtResource("2_7rxww")
+move_to = Vector2(100, 109)
+speed = 100.0
+
+[sub_resource type="BTParallel" id="BTParallel_7rxww"]
+num_successes_required = 2
+children = [SubResource("BTAction_u3n5p"), SubResource("BTAction_dhpow")]
+
+[sub_resource type="BTAction" id="BTAction_vfwj6"]
+script = ExtResource("4_kqc8t")
+character = ExtResource("3_dhpow")
+place = Vector2(200, 108)
+
+[sub_resource type="BTWait" id="BTWait_kqc8t"]
+
+[sub_resource type="BTAction" id="BTAction_gnv6q"]
+script = ExtResource("5_vfwj6")
+move_to = Vector2(80, 109)
+speed = 100.0
+character = "Mark"
+
+[sub_resource type="BTWait" id="BTWait_ttkm7"]
+
+[sub_resource type="BTAction" id="BTAction_wtydl"]
+script = ExtResource("6_gnv6q")
+character = "Mark"
+
+[sub_resource type="BTWait" id="BTWait_wtydl"]
+
+[sub_resource type="BTAction" id="BTAction_h5028"]
+script = ExtResource("4_kqc8t")
+character = ExtResource("7_gnv6q")
+place = Vector2(120, 108)
+
+[sub_resource type="BTWait" id="BTWait_22dgu"]
+
+[sub_resource type="BTAction" id="BTAction_wm7yj"]
+script = ExtResource("5_vfwj6")
+move_to = Vector2(200, 109)
+speed = 100.0
+character = "Kris"
+
+[sub_resource type="BTAction" id="BTAction_kqc8t"]
+script = ExtResource("3_i4qb2")
+
+[sub_resource type="BTSequence" id="BTSequence_gnv6q"]
+children = [SubResource("BTCheckVar_i4qb2"), SubResource("BTParallel_7rxww"), SubResource("BTAction_vfwj6"), SubResource("BTWait_kqc8t"), SubResource("BTAction_gnv6q"), SubResource("BTWait_ttkm7"), SubResource("BTAction_wtydl"), SubResource("BTWait_wtydl"), SubResource("BTAction_h5028"), SubResource("BTWait_22dgu"), SubResource("BTAction_wm7yj"), SubResource("BTAction_kqc8t")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_43hkt")
+root_task = SubResource("BTSequence_gnv6q")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://413wp1kyvtvd"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_0smx1"]
+[ext_resource type="Texture2D" uid="uid://bisvwjkxbwyhk" path="res://sprites/pixel_plants/plant_ingridients/heranuim_flowers.png" id="2_tjo4x"]
+
+[resource]
+script = ExtResource("1_0smx1")
+ingridietn_name = "pelargonium flowers"
+texture = ExtResource("2_tjo4x")
+type = 0
+metadata/_custom_type_script = "uid://m3kb60dhifs4"

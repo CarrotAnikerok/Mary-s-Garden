@@ -104,13 +104,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkgxl"]
 size = Vector2(25, 58)
 
-[node name="Mary" type="Node2D"]
+[node name="Mary" type="Node2D" node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("1_r6d4t")
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6kfe4")
-animation = &"walk"
-frame_progress = 0.997823
+animation = &"stay"
+autoplay = "stay"
 
 [node name="DialogInterationArea" type="Area2D" parent="."]
 collision_layer = 3

@@ -40,12 +40,10 @@ func _on_pour_button_pressed():
 	worked_with_plant.emit()
 	slider.value = 0
 	watering_slider_menu.visible = false
-	$"../PlantInfo/SoilHumidityInt".text = "%0.2f%%" % active_plant.actual_water_coefficent
 
 
 func _on_spray_button_pressed():
 	active_plant.spray();
-	$"../PlantInfo/HumidityInt".text = "%0.2f%%" % active_plant.actual_humidity
 	HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " было опрыснуто")
 	worked_with_plant.emit()
 
@@ -53,7 +51,7 @@ func _on_spray_button_pressed():
 func _on_light_button_pressed():
 	active_plant.switch_light(3000)
 	change_light_icon()
-	$"../PlantInfo/LightInt".text = str(active_plant.actual_light_amount)
+	worked_with_plant.emit()
 
 
 func _on_ground_button_pressed():
@@ -67,9 +65,6 @@ func _on_ground_button_pressed():
 
 func _on_scissors_button_pressed():
 	print("scissors pressed")
-	print(active_plant)
-	print(active_plant.can_give_leaves)
-	print(active_plant.plant_ingridient_leaves)
 	if active_plant.can_give_flowers == true:
 		if active_plant.plant_ingridient_flower != null:
 			print("ingidient added")

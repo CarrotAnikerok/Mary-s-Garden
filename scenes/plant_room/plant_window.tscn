@@ -1,11 +1,11 @@
 [gd_scene load_steps=57 format=3 uid="uid://b20sqxrpc7sei"]
 
-[ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://pixel_shader/camera.tscn" id="2_8y0bb"]
+[ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://addons/pixel_shader/camera.tscn" id="2_8y0bb"]
 [ext_resource type="Script" uid="uid://b2svmituwfk4i" path="res://scripts/plant_room/plant_window/rotate_block.gd" id="3_4t3go"]
 [ext_resource type="Texture2D" uid="uid://dfytjd2qgrog7" path="res://sprites/plant_menu/wood_planmenu.png" id="4_05lj3"]
 [ext_resource type="Texture2D" uid="uid://pknk4n2jiqej" path="res://sprites/plant_menu/plant_menu_bg.png" id="5_myes0"]
 [ext_resource type="Texture2D" uid="uid://doojx73d1sd0r" path="res://sprites/plant_menu/bg_plantmenu.png" id="5_o7elc"]
-[ext_resource type="Script" uid="uid://b40dnuoew176g" path="res://scripts/plant_room/info_icons.gd" id="6_4t3go"]
+[ext_resource type="Script" uid="uid://b40dnuoew176g" path="res://scripts/plant_room/UI/info_icons.gd" id="6_4t3go"]
 [ext_resource type="Script" uid="uid://nw4iaevdf216" path="res://scripts/plant_room/plant_window/tools.gd" id="6_m44sr"]
 [ext_resource type="Texture2D" uid="uid://di1rncheuoh41" path="res://sprites/plant_menu/icons/LightIcons/mid.png" id="7_05lj3"]
 [ext_resource type="Texture2D" uid="uid://cxlm4at3lce8p" path="res://sprites/plant_menu/buttons/exit_button.png" id="7_fucjw"]
@@ -16,10 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://g45ay1t3h6q4" path="res://sprites/plant_menu/icons/LightIcons/high.png" id="9_o7elc"]
 [ext_resource type="Script" uid="uid://b3fll7hfmu8t4" path="res://scripts/plant_room/plant_window/plant_description.gd" id="10_5uixt"]
 [ext_resource type="Texture2D" uid="uid://bm73nr03rudbu" path="res://sprites/plant_menu/icons/StateIcons/dead.png" id="10_bl0pt"]
-[ext_resource type="FontFile" uid="uid://cvl8arghtgpyj" path="res://fonts/Balsamiq_Sans/BalsamiqSans-BoldItalic.ttf" id="11_bl0pt"]
+[ext_resource type="FontFile" uid="uid://cvl8arghtgpyj" path="res://resources/fonts/Balsamiq_Sans/BalsamiqSans-BoldItalic.ttf" id="11_bl0pt"]
 [ext_resource type="Texture2D" uid="uid://dbxs6lkumqlsh" path="res://sprites/plant_menu/icons/StateIcons/horrible.png" id="11_deuju"]
 [ext_resource type="Texture2D" uid="uid://cef61hylsajvl" path="res://sprites/plant_menu/icons/StateIcons/bad.png" id="12_57xuv"]
-[ext_resource type="Script" uid="uid://cyilwmt6tl5k8" path="res://scripts/navigation.gd" id="12_deuju"]
+[ext_resource type="Script" uid="uid://cyilwmt6tl5k8" path="res://scripts/ui/navigation.gd" id="12_deuju"]
 [ext_resource type="Script" uid="uid://djrrwin8nn733" path="res://scripts/plant_room/plant_window/slider_menu.gd" id="13_57xuv"]
 [ext_resource type="Texture2D" uid="uid://5qiccvl2n0yg" path="res://sprites/plant_menu/icons/StateIcons/neutral.png" id="13_rq1v5"]
 [ext_resource type="Texture2D" uid="uid://bswya8dal5drr" path="res://sprites/plant_menu/icons/StateIcons/good.png" id="14_toce5"]
@@ -39,14 +39,18 @@ light_mode = 1
 [sub_resource type="GDScript" id="GDScript_d7kgb"]
 script/source = "extends Control
 
+var garden_slots: Node2D
+var plant_model
 @export var active_plant: Plant
-var plant_model;
+@onready var tools_buttons = %ToolsButtons
+
 
 func _ready():
 	update_info()
+	tools_buttons.worked_with_plant.connect(update_info)
 	
-func _process(_delta):
-	update_info() #а можно я буду это из таймера как-то делть а...
+#func _process(_delta):
+	#update_info() #а можно я буду это из таймера как-то делть а...
 	
 func _on_exit_button_pressed():
 	queue_free()
@@ -341,6 +345,7 @@ texture = ExtResource("7_fucjw")
 metadata/_edit_lock_ = true
 
 [node name="PlantInfo" type="ColorRect" parent="TextureRect"]
+visible = false
 material = SubResource("CanvasItemMaterial_o7elc")
 layout_mode = 0
 offset_left = 231.533
@@ -453,6 +458,7 @@ texture = ExtResource("15_8ncot")
 expand_mode = 2
 
 [node name="ToolsButtons" type="Control" parent="TextureRect"]
+unique_name_in_owner = true
 material = SubResource("CanvasItemMaterial_m44sr")
 layout_mode = 1
 anchors_preset = 8
@@ -593,7 +599,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("10_5uixt")
-plant_description_file = "res://Json/plant_descriptions.json"
+plant_description_file = "res://resources/json/plant_descriptions.json"
 
 [node name="DescButton" type="Button" parent="TextureRect/PlantDescription"]
 layout_mode = 0

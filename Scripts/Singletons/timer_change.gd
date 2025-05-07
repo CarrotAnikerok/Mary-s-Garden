@@ -1,6 +1,7 @@
 extends Timer
 
 var all_plants: Array
+const END_DAY_MENU = preload("res://scenes/game_menu/end_day_menu.tscn") as PackedScene
 
 signal changed_phase()
 signal changed_day()
@@ -14,8 +15,9 @@ func _ready():
 func change_phase():
 	global.phase_of_day += 1
 	if (global.phase_of_day == global.NUMBER_OF_PHASES):
-		change_day()
 		changed_phase.emit()
+		get_parent().add_child(END_DAY_MENU.instantiate())
+		END_DAY_MENU.instantiate()
 	else:
 		changed_phase.emit()
 

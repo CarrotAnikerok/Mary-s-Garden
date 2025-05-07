@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpy66xpcfhq0p"]
+
+[ext_resource type="Script" uid="uid://b1vgaxr3agocr" path="res://scripts/plant_workshop/plant_product.gd" id="1_w77sw"]
+
+[node name="PlantProduct" type="Node2D"]
+script = ExtResource("1_w77sw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

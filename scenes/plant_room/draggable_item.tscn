@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpflb23uml7rn"]
 
-[ext_resource type="Script" uid="uid://fe86pnajci8c" path="res://scenes/plant_room/draggable_item.gd" id="1_s47fc"]
+[ext_resource type="Script" uid="uid://fe86pnajci8c" path="res://scripts/ui/draggable_item.gd" id="1_s47fc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqocf"]
 size = Vector2(8, 11)

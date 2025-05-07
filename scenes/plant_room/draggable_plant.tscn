@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpjvu017wuxg4"]
 
-[ext_resource type="Script" uid="uid://biid2h72hjo8y" path="res://dragndropplant.gd" id="1_2vcdm"]
+[ext_resource type="Script" uid="uid://biid2h72hjo8y" path="res://scripts/ui/dragndropplant.gd" id="1_2vcdm"]
 [ext_resource type="Theme" uid="uid://b4uu16ao6kfi0" path="res://themes/new_theme.tres" id="2_8amn5"]
 
 [node name="DraggablePlant" type="Node2D"]

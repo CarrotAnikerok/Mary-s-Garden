@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://sprites/novel_part/Mary/mary_worried.png" id="3_17y02"]
 [ext_resource type="Texture2D" uid="uid://ve4jpk7g24g2" path="res://sprites/novel_part/Arin/arin_chill_1.png" id="3_ompeb"]
 [ext_resource type="Texture2D" uid="uid://b8rv4j3cugocc" path="res://sprites/novel_part/text_box/text_box.png" id="5_fvtql"]
-[ext_resource type="FontFile" uid="uid://b8pvdi5csuer8" path="res://fonts/Blogger/Blogger_Sans-Medium.otf" id="6_dhbxe"]
-[ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://fonts/Neucha/Neucha-Regular.ttf" id="6_p3hlc"]
+[ext_resource type="FontFile" uid="uid://b8pvdi5csuer8" path="res://resources/fonts/Blogger/Blogger_Sans-Medium.otf" id="6_dhbxe"]
+[ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://resources/fonts/Neucha/Neucha-Regular.ttf" id="6_p3hlc"]
 [ext_resource type="Texture2D" uid="uid://btl1pe1644drn" path="res://sprites/novel_part/text_box/text_box_pretty.png" id="6_rfoa3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mxfw7"]
@@ -22,6 +22,7 @@ font_size = 9
 [node name="DialogPlayer" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_4aop0")
+scene_text_file = "res://resources/json/dialog_text.json"
 mary_moods = {
 "mary_chill": ExtResource("2_judwd"),
 "mary_worried": ExtResource("3_17y02")

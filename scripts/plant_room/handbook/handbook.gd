@@ -78,7 +78,8 @@ func add_title(note: Dictionary):
 
 func _on_exit_button_pressed():
 	queue_free()
-	
+
+
 func check_capacity(label: RichTextLabel):
 	if label.get_content_height() + 15 >= paper.size.y:
 		return false

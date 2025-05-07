@@ -1,28 +1,11 @@
-[gd_resource type="Resource" script_class="SavedGame" load_steps=7 format=3]
+[gd_resource type="Resource" script_class="SavedGame" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_data.gd" id="1_d4v2n"]
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_global_data.gd" id="2_1pgu4"]
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_notebook_data.gd" id="3_rhb7w"]
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_game.gd" id="4_ijs44"]
-
-[sub_resource type="Resource" id="Resource_5f4ar"]
-script = ExtResource("2_1pgu4")
-phase_of_day = 0
-day_count = 0
-current_scene = 1
-scene_path = ""
-
-[sub_resource type="Resource" id="Resource_o42qe"]
-script = ExtResource("3_rhb7w")
-notes = Array[Dictionary]([{
-"title": "Утро",
-"type": "phase_change"
-}])
-scene_path = ""
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_data.gd" id="1_w3a04"]
+[ext_resource type="Script" path="res://scripts/resources/saving/saved_game.gd" id="2_fwbdc"]
 
 [resource]
-script = ExtResource("4_ijs44")
-plant_room = Array[ExtResource("1_d4v2n")]([])
-notes = Array[ExtResource("1_d4v2n")]([SubResource("Resource_o42qe")])
-hall = Array[ExtResource("1_d4v2n")]([])
-global_world = Array[ExtResource("1_d4v2n")]([SubResource("Resource_5f4ar")])
+script = ExtResource("2_fwbdc")
+plant_room = Array[ExtResource("1_w3a04")]([])
+notes = Array[ExtResource("1_w3a04")]([])
+hall = Array[ExtResource("1_w3a04")]([])
+global_world = Array[ExtResource("1_w3a04")]([])

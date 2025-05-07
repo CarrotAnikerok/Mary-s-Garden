@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Ingridient" load_steps=2 format=3 uid="uid://dy5gneckb4ikb"]
+[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://dy5gneckb4ikb"]
 
 [ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_31k7j"]
+[ext_resource type="Texture2D" uid="uid://bnb8pxkrki0k0" path="res://sprites/pixel_plants/plant_ingridients/viola_flowers.png" id="2_pwequ"]
 
 [resource]
 script = ExtResource("1_31k7j")
 ingridietn_name = "viola leaves"
+texture = ExtResource("2_pwequ")
 type = 1
 metadata/_custom_type_script = "uid://m3kb60dhifs4"

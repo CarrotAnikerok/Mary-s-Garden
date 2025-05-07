@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Bouquet" load_steps=3 format=3 uid="uid://blsuy5uore2ph"]
+
+[ext_resource type="Script" uid="uid://c56cxj2l5kao4" path="res://scripts/plant_products/bouquet.gd" id="1_8s8ln"]
+[ext_resource type="Texture2D" uid="uid://myy7xrxxuesm" path="res://sprites/pixel_plants/plant_products/field_miracle.1.png" id="2_guu2t"]
+
+[resource]
+script = ExtResource("1_8s8ln")
+product_name = "Field Miracle"
+price = 80
+texture = ExtResource("2_guu2t")
+metadata/_custom_type_script = "uid://c56cxj2l5kao4"

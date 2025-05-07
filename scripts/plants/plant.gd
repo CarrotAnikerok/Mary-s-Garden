@@ -364,7 +364,9 @@ func bad_too_long():
 func show_plant_menu():
 	var plantwindow_instance = plant_window.instantiate()
 	plantwindow_instance.active_plant = self
+	plantwindow_instance.garden_slots = get_parent().get_parent()
 	get_tree().get_root().add_child(plantwindow_instance)
+	
 
 
 func on_save_game(saved_data:Array[SavedData]):

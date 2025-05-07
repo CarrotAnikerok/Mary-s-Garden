@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://ddrog6ayej6vj"]
 
-[ext_resource type="FontFile" uid="uid://dcb3mlo4injv4" path="res://fonts/Balsamiq_Sans/BalsamiqSans-Bold.ttf" id="1_ttqpc"]
+[ext_resource type="FontFile" uid="uid://dcb3mlo4injv4" path="res://resources/fonts/Balsamiq_Sans/BalsamiqSans-Bold.ttf" id="1_ttqpc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttqpc"]
 content_margin_top = 5.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfmag2cya7b1u"]
 
-[ext_resource type="PackedScene" uid="uid://cf44rpn6il8f0" path="res://draggable_element.tscn" id="1_fwrng"]
-[ext_resource type="Script" uid="uid://c3331h82nes8h" path="res://scenes/plant_workshop/ingridient_node.gd" id="1_gmdmy"]
+[ext_resource type="PackedScene" uid="uid://cf44rpn6il8f0" path="res://scenes/plant_room/draggable_element.tscn" id="1_fwrng"]
+[ext_resource type="Script" uid="uid://c3331h82nes8h" path="res://scripts/plant_workshop/ingridient_node.gd" id="1_gmdmy"]
 [ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="2_wgnyv"]
 [ext_resource type="Texture2D" uid="uid://bqnxvvhurcikl" path="res://sprites/pixel_plants/plant_ingridients/aloe_leaves.png" id="4_wgnyv"]
 

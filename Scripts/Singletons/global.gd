@@ -2,13 +2,14 @@ extends Node2D
 
 var save = load("res://custom_resources/plant_saves.tres") as SavedGame
 var is_dragging = false
+var goal_sums: Array[int] = [0, 100, 200, 300]
 
 const TIME_OF_PERIOD = 3
 const NUMBER_OF_PHASES = 3
 
 var current_scene = 1
 var phase_of_day = 0
-var day_count = 0
+var day_count = 1
 
 #PlantWindow
 var info_check = false
@@ -17,6 +18,9 @@ var pract_check = false #лучше сделать это явно подруг�
 
 func _ready():
 	add_to_group("global_world")
+	
+func get_today_goal_sum():
+	return goal_sums[day_count]
 
 func on_save_game(saved_data:Array[SavedData]):
 	print("AM I SAVING??????")

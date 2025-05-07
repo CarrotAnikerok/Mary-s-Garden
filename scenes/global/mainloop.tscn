@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://crmdg250cdhnv"]
+
+[ext_resource type="PackedScene" uid="uid://gao1je8jpkpk" path="res://scenes/plant_room/plant_room.tscn" id="1_14sti"]
+[ext_resource type="Script" uid="uid://eb7tkgvyk7kc" path="res://scripts/mainloop.gd" id="1_bygr3"]
+[ext_resource type="PackedScene" uid="uid://c6mo7fj5a4yvd" path="res://scenes/hall/hall.tscn" id="2_bygr3"]
+
+[node name="MainLoop" type="Node2D"]
+script = ExtResource("1_bygr3")
+
+[node name="PlantRoom" parent="." instance=ExtResource("1_14sti")]
+position = Vector2(-1, -1)
+
+[node name="CanvasLayer" parent="PlantRoom" index="0"]
+layer = -5
+
+[node name="DirectionalLight2D" parent="PlantRoom/CanvasLayer/Light" index="2"]
+range_layer_max = -6
+
+[node name="CanvasLayerUI" parent="PlantRoom" index="1"]
+visible = false
+
+[node name="Hall" parent="." instance=ExtResource("2_bygr3")]
+visible = false
+
+[node name="ParallaxBackground" parent="Hall/Parallaxes" index="0"]
+visible = false
+
+[node name="ParallaxPlant2" parent="Hall/Parallaxes" index="1"]
+visible = false
+
+[node name="ParallaxPlant1" parent="Hall/Parallaxes" index="2"]
+visible = false
+
+[editable path="PlantRoom"]
+[editable path="Hall"]

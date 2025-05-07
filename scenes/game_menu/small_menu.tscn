@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dob0uu8t71x6r"]
 
-[ext_resource type="Script" uid="uid://lxw5a6d8w0r4" path="res://scripts/small_menu.gd" id="1_883kt"]
+[ext_resource type="Script" uid="uid://lxw5a6d8w0r4" path="res://scripts/ui/small_menu.gd" id="1_883kt"]
 [ext_resource type="Theme" uid="uid://ddrog6ayej6vj" path="res://themes/ui_menu_theme.tres" id="1_giqw2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_giqw2"]

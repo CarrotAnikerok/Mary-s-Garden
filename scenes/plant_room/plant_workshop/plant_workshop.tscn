@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl7jmpbuxwuss" path="res://scripts/plant_products/workshop_modes.gd" id="1_5jelh"]
 [ext_resource type="Texture2D" uid="uid://dmf2o65jufnqc" path="res://sprites/plant_workshop/background.png" id="1_275ys"]
-[ext_resource type="Script" uid="uid://bogb4406he2t6" path="res://scripts/plant_workshop.gd" id="1_bcndi"]
+[ext_resource type="Script" uid="uid://bogb4406he2t6" path="res://scripts/plant_workshop/plant_workshop.gd" id="1_bcndi"]
 [ext_resource type="Texture2D" uid="uid://cwdmd3n5dhhew" path="res://sprites/plant_workshop/workshop_spritesheet.png" id="5_y84d1"]
 [ext_resource type="PackedScene" uid="uid://biahdsgbo4gyo" path="res://scenes/plant_workshop/plant_inventary.tscn" id="7_5jelh"]
 [ext_resource type="PackedScene" uid="uid://bihet01ibaj2n" path="res://scenes/plant_workshop/modes/create_essential_mode.tscn" id="8_h53si"]
@@ -228,6 +228,7 @@ modes_pict = Dictionary[int, AtlasTexture]({
 
 [node name="CreateEssentialMode" parent="Modes" instance=ExtResource("8_h53si")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -237,7 +238,6 @@ grow_vertical = 2
 
 [node name="PerfumeMode" parent="Modes" instance=ExtResource("11_nwhbl")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = -1
 

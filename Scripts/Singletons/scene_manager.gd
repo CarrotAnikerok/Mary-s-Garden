@@ -17,6 +17,7 @@ func _ready():
 	current_scene = root.get_child(-1)
 	#load_game()
 	
+
 	
 func start_scene():
 	match global.current_scene:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bdnt7pdc142cy"]
 
-[ext_resource type="Script" uid="uid://hexvp0pk2n8s" path="res://scripts/hall/mary.gd" id="1_ksajm"]
+[ext_resource type="Script" uid="uid://cfcmspip7v2vi" path="res://scripts/command_pattern/npc.gd" id="1_ksajm"]
 [ext_resource type="Texture2D" uid="uid://bf58r51ilhhra" path="res://sprites/pixel_sprites/kris/kris_static_anim-Sheet.png" id="1_ssepj"]
 [ext_resource type="Texture2D" uid="uid://yamq3iajdcqt" path="res://sprites/pixel_sprites/kris/kris_walkcicle-Sheet.png" id="2_ksajm"]
 [ext_resource type="Script" uid="uid://bcqlyi0fojkld" path="res://scripts/hall/dialog_system/dialog_area.gd" id="3_a5ybn"]
@@ -105,17 +105,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuajk"]
 size = Vector2(29, 58)
 
-[node name="Kris" type="Node2D"]
+[node name="Kris" type="Node2D" node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("1_ksajm")
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_j7mhv")
 animation = &"walk"
 autoplay = "stay"
-frame_progress = 0.769762
+frame = 5
+frame_progress = 0.379649
 
 [node name="DialogInterationArea" type="Area2D" parent="."]
+position = Vector2(0, 1)
 script = ExtResource("3_a5ybn")
 text_key = "first_dialog"
 
