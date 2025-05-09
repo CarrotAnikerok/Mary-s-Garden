@@ -2,7 +2,7 @@ class_name PelargoniumGraveolens
 extends Plant
 
 func _ready():
-	plant_name = "Pelargonium Grabeolens"
+	plant_name = "Pelargonium Graveolens"
 	place_update()
 	normal_water_amount = 300
 	actual_water_coefficent = 0

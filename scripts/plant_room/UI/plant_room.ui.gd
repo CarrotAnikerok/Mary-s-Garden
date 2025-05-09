@@ -1,6 +1,7 @@
 extends Control
 
 var handbook = preload("res://scenes/plant_room/handbook.tscn") as PackedScene
+const PLANT_WORKSHOP = preload("res://scenes/plant_room/plant_workshop/plant_workshop.tscn") as PackedScene
 @onready var time_animation = $DateButton/TImeClock/Arrow/AnimationPlayer
 @onready var date_button = $DateButton
 @onready var handbook_button = $Panel/HandbookButton
@@ -73,3 +74,7 @@ func _on_door_button_mouse_exited():
 
 func _on_button_pressed():
 	GlobalTimer._on_timeout()
+
+
+func _on_workshop_button_pressed():
+	get_parent().add_child(PLANT_WORKSHOP.instantiate())

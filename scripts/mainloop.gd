@@ -3,6 +3,7 @@ extends Node2D
 @onready var plant_room = $PlantRoom
 @onready var hall = $Hall
 
+
 func _ready():
 	change_scene_to_hall()
 	plant_room.change_scene.connect(change_scene_to_hall)

@@ -10,26 +10,4 @@ script = ExtResource("1_bygr3")
 [node name="PlantRoom" parent="." instance=ExtResource("1_14sti")]
 position = Vector2(-1, -1)
 
-[node name="CanvasLayer" parent="PlantRoom" index="0"]
-layer = -5
-
-[node name="DirectionalLight2D" parent="PlantRoom/CanvasLayer/Light" index="2"]
-range_layer_max = -6
-
-[node name="CanvasLayerUI" parent="PlantRoom" index="1"]
-visible = false
-
 [node name="Hall" parent="." instance=ExtResource("2_bygr3")]
-visible = false
-
-[node name="ParallaxBackground" parent="Hall/Parallaxes" index="0"]
-visible = false
-
-[node name="ParallaxPlant2" parent="Hall/Parallaxes" index="1"]
-visible = false
-
-[node name="ParallaxPlant1" parent="Hall/Parallaxes" index="2"]
-visible = false
-
-[editable path="PlantRoom"]
-[editable path="Hall"]

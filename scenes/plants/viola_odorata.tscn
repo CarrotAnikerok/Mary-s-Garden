@@ -1,0 +1,36 @@
+[gd_scene load_steps=15 format=3 uid="uid://daq8dsycavxmg"]
+
+[ext_resource type="Script" uid="uid://b1jdpx7gup6pb" path="res://scripts/plants/types/viola_odorata.gd" id="1_uvvio"]
+[ext_resource type="PackedScene" uid="uid://bpjvu017wuxg4" path="res://scenes/plant_room/draggable_plant.tscn" id="2_arbxx"]
+[ext_resource type="Resource" uid="uid://dm836eudhpnvb" path="res://custom_resources/plants/viola/viola_acceptable_stats.tres" id="2_k2poa"]
+[ext_resource type="PackedScene" uid="uid://c7kan4kwivb4j" path="res://scenes/plant_tools.tscn" id="3_1d426"]
+[ext_resource type="Resource" uid="uid://cmyiwfy57okhr" path="res://custom_resources/plants/viola/viola_perfect_stats.tres" id="3_8xdki"]
+[ext_resource type="PackedScene" uid="uid://uw6p3qnkf10h" path="res://resources/3DPlants/Viola_Odorata/Viola_Perfect/Viola_Perfect_End.glb" id="4_n24tn"]
+[ext_resource type="PackedScene" uid="uid://7rusjg4f7euj" path="res://resources/3DPlants/Viola_Odorata/Viola_Good/Viola_Good_End.glb" id="5_i3few"]
+[ext_resource type="PackedScene" uid="uid://cbptfaioowmtt" path="res://resources/3DPlants/Viola_Odorata/Viola_Neutral/Viola_Neutral_End.glb" id="6_aaink"]
+[ext_resource type="PackedScene" uid="uid://beyf3jeh7vh82" path="res://resources/3DPlants/Viola_Odorata/Viola_Bad/Viola_Bad_End.glb" id="7_wwmpw"]
+[ext_resource type="PackedScene" uid="uid://cxllu842piv0n" path="res://resources/3DPlants/Viola_Odorata/Viola_Horrible/Viola_Horrible_End.glb" id="8_ejlwg"]
+[ext_resource type="PackedScene" uid="uid://dd5dhnqtfhosg" path="res://resources/3DPlants/Viola_Odorata/Viola_Dead/Viola_Dead_End.glb" id="9_mq0og"]
+[ext_resource type="Resource" uid="uid://dy5gneckb4ikb" path="res://custom_resources/plant_ingridients/viola_leaves.tres" id="10_jqktv"]
+[ext_resource type="Resource" uid="uid://c6xsckunsk32q" path="res://custom_resources/plant_ingridients/viola_flowers.tres" id="11_aygw1"]
+[ext_resource type="Texture2D" uid="uid://cluwpyvv0dd8a" path="res://sprites/pixel_plants/viola.png" id="14_k2poa"]
+
+[node name="ViolaOdorata" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
+script = ExtResource("1_uvvio")
+public_name = "Фиалка"
+acceptable_stats = ExtResource("2_k2poa")
+perfect_stats = ExtResource("3_8xdki")
+plant_states = Array[PackedScene]([ExtResource("4_n24tn"), ExtResource("5_i3few"), ExtResource("6_aaink"), ExtResource("7_wwmpw"), ExtResource("8_ejlwg"), ExtResource("9_mq0og")])
+plant_tools = NodePath("PlantTools")
+plant_ingridient_leaves = ExtResource("10_jqktv")
+plant_ingridient_flower = ExtResource("11_aygw1")
+
+[node name="DraggablePlant" parent="." node_paths=PackedStringArray("draggable_parent") instance=ExtResource("2_arbxx")]
+draggable_parent = NodePath("..")
+
+[node name="PlantTools" parent="." instance=ExtResource("3_1d426")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
+position = Vector2(0, -10)
+texture = ExtResource("14_k2poa")

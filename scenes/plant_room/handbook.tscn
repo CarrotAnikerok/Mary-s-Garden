@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://db4i6ehyxfhi6"]
+[gd_scene load_steps=9 format=3 uid="uid://db4i6ehyxfhi6"]
 
 [ext_resource type="Script" uid="uid://u5a6y352fgjt" path="res://scripts/plant_room/handbook/handbook.gd" id="1_805rs"]
+[ext_resource type="Texture2D" uid="uid://bg0o1bk0uxvbu" path="res://sprites/handbook/handbook_bg.png" id="2_805rs"]
+[ext_resource type="Texture2D" uid="uid://kx0xafoc11s1" path="res://sprites/handbook/ui_handbook.png" id="3_muvuh"]
+[ext_resource type="FontFile" uid="uid://b6q0wvaf10l3g" path="res://resources/fonts/Micro_5/Micro5-Regular.ttf" id="4_muvuh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6lt1"]
+atlas = ExtResource("3_muvuh")
+region = Rect2(54, 9, 14, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me5a8"]
+atlas = ExtResource("3_muvuh")
+region = Rect2(0, 0, 29, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhx5y"]
+atlas = ExtResource("3_muvuh")
+region = Rect2(0, 27, 29, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfisd"]
+atlas = ExtResource("3_muvuh")
+region = Rect2(32, 9, 16, 30)
 
 [node name="Handbook" type="Control"]
 light_mask = 0
@@ -13,80 +32,109 @@ grow_vertical = 2
 script = ExtResource("1_805rs")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Paper" type="TextureRect" parent="."]
+unique_name_in_owner = true
 light_mask = 0
-layout_mode = 0
-offset_left = 28.0
-offset_top = 11.0
-offset_right = 281.0
-offset_bottom = 162.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -78.5
+offset_right = 144.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_805rs")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-light_mask = 0
-layout_mode = 0
-offset_left = 33.0
-offset_top = 15.0
-offset_right = 284.0
-offset_bottom = 161.0
-color = Color(1, 0.996167, 0.77, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Paper"]
 modulate = Color(0.58, 0.564437, 0.4466, 1)
 layout_mode = 1
 anchors_preset = -1
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 133.0
+offset_bottom = 131.0
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Paper"]
+modulate = Color(0.58, 0.564437, 0.4466, 1)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 158.0
+offset_top = 17.0
+offset_right = 259.0
+offset_bottom = 132.0
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+scroll_active = false
+
+[node name="ExitButton" type="TextureButton" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 270.0
+offset_top = 3.0
+offset_right = 284.0
+offset_bottom = 33.0
+texture_normal = SubResource("AtlasTexture_u6lt1")
+
+[node name="PrevButton" type="TextureButton" parent="."]
+z_index = -1
+layout_mode = 0
 offset_left = 4.0
-offset_top = 6.0
-offset_right = 123.0
-offset_bottom = 138.0
-theme_override_font_sizes/normal_font_size = 6
-bbcode_enabled = true
-scroll_active = false
+offset_top = 94.0
+offset_right = 33.0
+offset_bottom = 125.0
+texture_normal = SubResource("AtlasTexture_me5a8")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="ColorRect"]
-modulate = Color(0.58, 0.564437, 0.4466, 1)
-layout_mode = 1
-anchors_preset = -1
-offset_left = 135.0
-offset_top = 7.0
-offset_right = 246.0
-offset_bottom = 140.0
-theme_override_font_sizes/normal_font_size = 6
-bbcode_enabled = true
-scroll_active = false
-
-[node name="ExitButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 15.0
-offset_right = 284.0
-offset_bottom = 32.0
-theme_override_font_sizes/font_size = 6
-text = "Закрыть"
-
-[node name="PrevButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 74.0
-offset_right = 31.0
-offset_bottom = 105.0
-text = "<-"
-
-[node name="NextButton" type="Button" parent="."]
+[node name="NextButton" type="TextureButton" parent="."]
 light_mask = 0
+z_index = -1
 layout_mode = 0
-offset_left = 286.0
-offset_top = 73.0
-offset_right = 309.0
-offset_bottom = 104.0
-text = "->"
+offset_left = 288.0
+offset_top = 94.0
+offset_right = 317.0
+offset_bottom = 125.0
+texture_normal = SubResource("AtlasTexture_dhx5y")
 
-[node name="PageCount" type="Label" parent="."]
+[node name="TextureButton" type="TextureButton" parent="."]
+z_index = -1
 layout_mode = 0
-offset_left = 157.0
-offset_top = 141.0
-offset_right = 192.0
-offset_bottom = 163.333
-theme_override_colors/font_color = Color(0.3266, 0.71, 0.51191, 1)
+offset_left = 251.0
+offset_top = 5.0
+offset_right = 267.0
+offset_bottom = 35.0
+texture_normal = SubResource("AtlasTexture_nfisd")
+
+[node name="PageCounts" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PageCount1" type="Label" parent="PageCounts"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 139.0
+offset_right = 47.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0.792157, 0.658824, 0.509804, 1)
+theme_override_fonts/font = ExtResource("4_muvuh")
+theme_override_font_sizes/font_size = 15
+text = "1"
+
+[node name="PageCount2" type="Label" parent="PageCounts"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 139.0
+offset_right = 281.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0.792157, 0.658824, 0.509804, 1)
+theme_override_fonts/font = ExtResource("4_muvuh")
+theme_override_font_sizes/font_size = 15
 text = "1"
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

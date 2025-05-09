@@ -34,12 +34,13 @@ func start_new_day_light():
 		ray.scale.x = randf_range(0.05, 0.25)
 		create_moving_tween(ray)
 		create_sizing_tween(ray)
+		#что-то здесь вызывает ошибку
 	start_morning_light()
 
 func start_morning_light():
 	Color(1.0, 0.706, 0.02)
 	tween_canvas = create_tween()
-	tween_canvas.tween_property(canvas, "color", Color(0.734, 0.638, 0.648), 1)
+	tween_canvas.tween_property(canvas, "color", Color(0.497, 0.549, 0.72), 1)
 	for evray in rays_arr:
 		tween_light_color = create_tween()
 		tween_rotate = create_tween()
@@ -50,7 +51,7 @@ func start_morning_light():
 #можте лучше заставить лучи исчезнуть и снова появится?
 func start_day_light():
 	tween_canvas = create_tween()
-	tween_canvas.tween_property(canvas, "color", Color(0.975, 1.0, 0.85), 1)
+	tween_canvas.tween_property(canvas, "color", Color(0.78, 0.748, 0.538), 1)
 	for evray in rays_arr:
 		tween_rotate = create_tween()
 		var ray = evray as Light2D
@@ -60,7 +61,7 @@ func start_day_light():
 func start_evening_light():
 	Color(0.281, 0.02, 1.0)
 	tween_canvas = create_tween()
-	tween_canvas.tween_property(canvas, "color", Color(0.73, 0.987, 1.0), 1)
+	tween_canvas.tween_property(canvas, "color", Color(0.517, 0.308, 0.7), 1)
 	for evray in rays_arr:
 		tween_rotate = create_tween()
 		tween_light_color = create_tween()

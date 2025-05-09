@@ -1,6 +1,7 @@
 class_name Plant
 extends Node
 
+@export var public_name: String
 @export var acceptable_stats: AcceptableStats
 @export var perfect_stats: PerfectStats
 #var states = ["Perfect", "Good", "Neutral", "Bad", "Horrible", "Dead"]
@@ -8,6 +9,7 @@ extends Node
 @export var plant_tools: Plant_Tools
 @export var plant_ingridient_leaves: Ingridient
 @export var plant_ingridient_flower: Ingridient 
+
 
 
 var plant_window = load("res://scenes/plant_room/plant_window.tscn")
@@ -21,8 +23,8 @@ var base_temperature: int
 
 
 #not changing individual plant parameters
-var plant_id := -1
 var plant_name: String
+var plant_id := -1
 var normal_water_amount: int
 var dry_amount: float
 
@@ -365,7 +367,9 @@ func show_plant_menu():
 	var plantwindow_instance = plant_window.instantiate()
 	plantwindow_instance.active_plant = self
 	plantwindow_instance.garden_slots = get_parent().get_parent()
-	get_tree().get_root().add_child(plantwindow_instance)
+	print_debug(owner)
+	owner.get_node("CanvasLayerUI").add_child(plantwindow_instance)
+	#вот это я закауплил
 	
 
 

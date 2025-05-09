@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="IndividualPlantParameters" load_steps=3 format=3 uid="uid://26ee4rbe5i1b"]
+
+[ext_resource type="Script" uid="uid://78oeb2js20de" path="res://scripts/resources/individual_plant_parameters.gd" id="1_ing0a"]
+[ext_resource type="Texture2D" uid="uid://db5q655sy8dnt" path="res://sprites/pixel_plants/bergenia.png" id="2_53gtn"]
+
+[resource]
+script = ExtResource("1_ing0a")
+public_name = "Бадан"
+sprite = ExtResource("2_53gtn")
+metadata/_custom_type_script = "uid://78oeb2js20de"

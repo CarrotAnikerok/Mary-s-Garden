@@ -18,6 +18,7 @@
 [node name="ChlorophytumComosum" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
 top_level = true
 script = ExtResource("1_bho8o")
+public_name = "Хлорофитум"
 acceptable_stats = ExtResource("2_yr3hv")
 perfect_stats = ExtResource("3_8pgxj")
 plant_states = Array[PackedScene]([ExtResource("2_b2h10"), ExtResource("3_1rr35"), ExtResource("4_1l3b4"), ExtResource("5_6lnys"), ExtResource("6_2gfv4"), ExtResource("7_1tdep")])

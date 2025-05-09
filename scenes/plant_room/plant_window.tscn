@@ -1,5 +1,6 @@
-[gd_scene load_steps=57 format=3 uid="uid://b20sqxrpc7sei"]
+[gd_scene load_steps=71 format=3 uid="uid://b20sqxrpc7sei"]
 
+[ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://resources/fonts/Neucha/Neucha-Regular.ttf" id="1_2v1e0"]
 [ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://addons/pixel_shader/camera.tscn" id="2_8y0bb"]
 [ext_resource type="Script" uid="uid://b2svmituwfk4i" path="res://scripts/plant_room/plant_window/rotate_block.gd" id="3_4t3go"]
 [ext_resource type="Texture2D" uid="uid://dfytjd2qgrog7" path="res://sprites/plant_menu/wood_planmenu.png" id="4_05lj3"]
@@ -10,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://di1rncheuoh41" path="res://sprites/plant_menu/icons/LightIcons/mid.png" id="7_05lj3"]
 [ext_resource type="Texture2D" uid="uid://cxlm4at3lce8p" path="res://sprites/plant_menu/buttons/exit_button.png" id="7_fucjw"]
 [ext_resource type="Texture2D" uid="uid://b6j52v0ck0sls" path="res://sprites/plant_menu/icons/LightIcons/shadow.png" id="7_o7elc"]
-[ext_resource type="Theme" uid="uid://c5hj2gg0bpnnj" path="res://sprites/plant_menu/button_themes/button.tres" id="7_rswos"]
 [ext_resource type="Theme" uid="uid://bxj03pbbshigq" path="res://sprites/plant_menu/button_themes/spray.tres" id="8_mbhs4"]
 [ext_resource type="Theme" uid="uid://cfkmw81av5jt8" path="res://sprites/plant_menu/button_themes/light.tres" id="9_mycsc"]
 [ext_resource type="Texture2D" uid="uid://g45ay1t3h6q4" path="res://sprites/plant_menu/icons/LightIcons/high.png" id="9_o7elc"]
@@ -24,17 +24,22 @@
 [ext_resource type="Texture2D" uid="uid://5qiccvl2n0yg" path="res://sprites/plant_menu/icons/StateIcons/neutral.png" id="13_rq1v5"]
 [ext_resource type="Texture2D" uid="uid://bswya8dal5drr" path="res://sprites/plant_menu/icons/StateIcons/good.png" id="14_toce5"]
 [ext_resource type="Texture2D" uid="uid://cvyhk7i5rogan" path="res://sprites/plant_menu/icons/StateIcons/perfect.png" id="15_8ncot"]
-[ext_resource type="Texture2D" uid="uid://uxwa8622mbr6" path="res://sprites/plant_menu/tools/ground_full.png" id="17_rq1v5"]
-[ext_resource type="Texture2D" uid="uid://b5unpofvst738" path="res://sprites/plant_menu/tools/ground_half.png" id="18_toce5"]
-[ext_resource type="Texture2D" uid="uid://1yn4mxslbxlh" path="res://sprites/plant_menu/tools/ground.png" id="20_deuju"]
-[ext_resource type="Texture2D" uid="uid://cutvw16gylwub" path="res://sprites/plant_menu/tools/light_on.png" id="20_myes0"]
-[ext_resource type="Texture2D" uid="uid://dxwxowlhns7wc" path="res://sprites/plant_menu/tools/light_off.png" id="21_fucjw"]
+[ext_resource type="Texture2D" uid="uid://clq1eq3ekgh1m" path="res://sprites/plant_menu/tools/instriments.png" id="19_fucjw"]
 [ext_resource type="Theme" uid="uid://b4uu16ao6kfi0" path="res://themes/new_theme.tres" id="23_8ncot"]
 [ext_resource type="Texture2D" uid="uid://cplpg4s1grxg" path="res://sprites/plant_menu/tools/clock_text.png" id="23_toce5"]
-[ext_resource type="Texture2D" uid="uid://s5pd7o0ayt2h" path="res://sprites/plant_menu/tools/scissors.png" id="28_coobd"]
+[ext_resource type="Texture2D" uid="uid://6ygkb6lr3ylx" path="res://sprites/plant_menu/buttons/book_button.png" id="30_o1ltb"]
+[ext_resource type="Texture2D" uid="uid://kq40eg4f3sxn" path="res://sprites/plant_menu/buttons/pract_book_button.png" id="31_kvucr"]
+[ext_resource type="Texture2D" uid="uid://dhfraavdgkql6" path="res://sprites/plant_menu/buttons/plant_info_button.png" id="32_emvj8"]
+[ext_resource type="Texture2D" uid="uid://bk2s74ptuw72w" path="res://sprites/plant_menu/slider_menu/water_menu.png" id="33_3ckwq"]
+[ext_resource type="Texture2D" uid="uid://dhgddcev1sb3t" path="res://sprites/plant_menu/buttons/next_dsc_button.png" id="34_o4v8h"]
+[ext_resource type="Texture2D" uid="uid://bda6guale0ubi" path="res://sprites/plant_menu/buttons/next_plant_button.png" id="36_tvups"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8y0bb"]
 light_mode = 1
+
+[sub_resource type="Theme" id="Theme_1jc8f"]
+Label/colors/font_color = Color(0.843137, 0.784314, 0.572549, 1)
+Label/fonts/font = ExtResource("1_2v1e0")
 
 [sub_resource type="GDScript" id="GDScript_d7kgb"]
 script/source = "extends Control
@@ -132,9 +137,6 @@ light_mode = 1
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_05lj3"]
 light_mode = 1
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2v1e0"]
-light_mode = 1
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o7elc"]
 light_mode = 1
 
@@ -147,17 +149,57 @@ light_mode = 1
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m44sr"]
 light_mode = 1
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_coobd"]
+atlas = ExtResource("19_fucjw")
+region = Rect2(35, 39, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v1e0"]
+atlas = ExtResource("19_fucjw")
+region = Rect2(19, 39, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ckwq"]
+atlas = ExtResource("19_fucjw")
+region = Rect2(3, 39, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jc8f"]
+atlas = ExtResource("19_fucjw")
+region = Rect2(38, 20, 11, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxtn8"]
+atlas = ExtResource("19_fucjw")
+region = Rect2(37, 1, 13, 17)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rswos"]
 light_mode = 1
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1ltb"]
+atlas = ExtResource("19_fucjw")
+region = Rect2(10, 0, 24, 16)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mbhs4"]
 light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvucr"]
+atlas = ExtResource("19_fucjw")
+region = Rect2(22, 21, 9, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emvj8"]
+atlas = ExtResource("19_fucjw")
+region = Rect2(3, 39, 16, 16)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mycsc"]
 light_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_coobd"]
 light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4v8h"]
+atlas = ExtResource("19_fucjw")
+region = Rect2(38, 20, 11, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvups"]
+atlas = ExtResource("19_fucjw")
+region = Rect2(0, 21, 16, 16)
 
 [sub_resource type="LabelSettings" id="LabelSettings_l4uh7"]
 font = ExtResource("11_bl0pt")
@@ -176,6 +218,18 @@ light_mode = 1
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_57xuv"]
 light_mode = 1
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fip26"]
+atlas = ExtResource("33_3ckwq")
+region = Rect2(0, 0, 128, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okc20"]
+atlas = ExtResource("33_3ckwq")
+region = Rect2(5, 54, 37, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eml03"]
+atlas = ExtResource("33_3ckwq")
+region = Rect2(51, 54, 37, 10)
+
 [node name="PlantWindow" type="Control"]
 light_mask = 0
 material = SubResource("CanvasItemMaterial_8y0bb")
@@ -188,6 +242,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
+theme = SubResource("Theme_1jc8f")
 script = SubResource("GDScript_d7kgb")
 
 [node name="PlantWindowBg" type="ColorRect" parent="."]
@@ -322,27 +377,19 @@ theme = ExtResource("23_8ncot")
 texture = ExtResource("5_myes0")
 expand_mode = 3
 
-[node name="ExitButton" type="Button" parent="TextureRect"]
+[node name="ExitButton" type="TextureButton" parent="TextureRect"]
 show_behind_parent = true
 material = SubResource("CanvasItemMaterial_05lj3")
 layout_mode = 0
-offset_left = 220.533
-offset_top = 6.0
-offset_right = 252.533
-offset_bottom = 21.0
-theme_override_font_sizes/font_size = 6
-text = "Leave
-"
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect/ExitButton"]
-material = SubResource("CanvasItemMaterial_2v1e0")
-layout_mode = 0
-offset_left = -3.46667
-offset_top = -6.0
-offset_right = 36.5333
-offset_bottom = 19.0
-texture = ExtResource("7_fucjw")
-metadata/_edit_lock_ = true
+offset_left = 216.533
+offset_top = -2.0
+offset_right = 256.533
+offset_bottom = 23.0
+texture_normal = ExtResource("7_fucjw")
+texture_pressed = ExtResource("7_fucjw")
+texture_hover = ExtResource("7_fucjw")
+texture_disabled = ExtResource("7_fucjw")
+texture_focused = ExtResource("7_fucjw")
 
 [node name="PlantInfo" type="ColorRect" parent="TextureRect"]
 visible = false
@@ -470,34 +517,37 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_m44sr")
 ground_icons = Dictionary[String, Texture]({
-"full_water": ExtResource("17_rq1v5"),
-"half_water": ExtResource("18_toce5"),
-"no_water": ExtResource("20_deuju")
+"full_water": SubResource("AtlasTexture_coobd"),
+"half_water": SubResource("AtlasTexture_2v1e0"),
+"no_water": SubResource("AtlasTexture_3ckwq")
 })
 light_icons = Dictionary[String, Texture]({
-"light_off": ExtResource("21_fucjw"),
-"light_on": ExtResource("20_myes0")
+"light_off": SubResource("AtlasTexture_1jc8f"),
+"light_on": SubResource("AtlasTexture_uxtn8")
 })
 
-[node name="WateringCanButton" type="Button" parent="TextureRect/ToolsButtons"]
+[node name="WateringCanButton" type="TextureButton" parent="TextureRect/ToolsButtons"]
 material = SubResource("CanvasItemMaterial_rswos")
 layout_mode = 0
-offset_left = -110.0
-offset_top = 49.0
-offset_right = -80.0
-offset_bottom = 79.0
-theme = ExtResource("7_rswos")
-theme_override_font_sizes/font_size = 5
+offset_left = -107.0
+offset_top = 55.0
+offset_right = -83.0
+offset_bottom = 71.0
+texture_normal = SubResource("AtlasTexture_o1ltb")
+texture_pressed = SubResource("AtlasTexture_o1ltb")
+texture_hover = SubResource("AtlasTexture_o1ltb")
+texture_disabled = SubResource("AtlasTexture_o1ltb")
+texture_focused = SubResource("AtlasTexture_o1ltb")
 
-[node name="SprayButton" type="Button" parent="TextureRect/ToolsButtons"]
+[node name="SprayButton" type="TextureButton" parent="TextureRect/ToolsButtons"]
 material = SubResource("CanvasItemMaterial_mbhs4")
 layout_mode = 0
-offset_left = -82.0
-offset_top = 50.0
-offset_right = -57.0
-offset_bottom = 75.0
+offset_left = -75.0
+offset_top = 55.0
+offset_right = -66.0
+offset_bottom = 71.0
 theme = ExtResource("8_mbhs4")
-theme_override_font_sizes/font_size = 5
+texture_normal = SubResource("AtlasTexture_kvucr")
 
 [node name="GroundButton" type="Button" parent="TextureRect/ToolsButtons"]
 layout_mode = 0
@@ -508,11 +558,13 @@ offset_bottom = 71.0
 theme = ExtResource("23_8ncot")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/ToolsButtons/GroundButton"]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 0
-offset_left = -1.0
-offset_right = 20.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 18.0
 offset_bottom = 19.0
-texture = ExtResource("20_deuju")
+texture = SubResource("AtlasTexture_emvj8")
 expand_mode = 2
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="TextureRect/ToolsButtons/GroundButton"]
@@ -532,10 +584,10 @@ tint_progress = Color(0.4131, 0.81, 0.538785, 1)
 [node name="LightButton" type="Button" parent="TextureRect/ToolsButtons"]
 material = SubResource("CanvasItemMaterial_mycsc")
 layout_mode = 0
-offset_left = -36.0
-offset_top = 51.0
-offset_right = -24.0
-offset_bottom = 75.0
+offset_left = -33.0
+offset_top = 54.0
+offset_right = -22.0
+offset_bottom = 71.0
 theme = ExtResource("9_mycsc")
 theme_override_font_sizes/font_size = 5
 text = "
@@ -549,45 +601,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -12.0
-offset_top = -13.0
-offset_right = 28.0
-offset_bottom = 27.0
+offset_left = -5.5
+offset_top = -8.5
+offset_right = 5.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("21_fucjw")
+texture = SubResource("AtlasTexture_o4v8h")
 
-[node name="ScissorsButton" type="Button" parent="TextureRect/ToolsButtons"]
+[node name="ScissorsButton" type="TextureButton" parent="TextureRect/ToolsButtons"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 49.0
-offset_right = 1.0
-offset_bottom = 74.0
+offset_left = -14.0
+offset_top = 55.0
+offset_right = 2.0
+offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect/ToolsButtons/ScissorsButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -12.0
-offset_top = -12.0
-offset_right = 12.0
-offset_bottom = 12.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("28_coobd")
-expand_mode = 2
-metadata/_edit_lock_ = true
+texture_normal = SubResource("AtlasTexture_tvups")
 
 [node name="PlantDescription" type="Control" parent="TextureRect"]
 layout_mode = 1
@@ -601,32 +636,44 @@ grow_vertical = 2
 script = ExtResource("10_5uixt")
 plant_description_file = "res://resources/json/plant_descriptions.json"
 
-[node name="DescButton" type="Button" parent="TextureRect/PlantDescription"]
+[node name="DescButton" type="TextureButton" parent="TextureRect/PlantDescription"]
+z_index = -1
 layout_mode = 0
-offset_left = 112.0
-offset_top = -51.0
-offset_right = 141.0
-offset_bottom = -36.0
-theme_override_font_sizes/font_size = 4
-text = "Описание"
+offset_left = 99.0
+offset_top = -55.0
+offset_right = 139.0
+offset_bottom = -30.0
+texture_normal = ExtResource("30_o1ltb")
+texture_pressed = ExtResource("30_o1ltb")
+texture_hover = ExtResource("30_o1ltb")
+texture_disabled = ExtResource("30_o1ltb")
+texture_focused = ExtResource("30_o1ltb")
 
-[node name="PractDescButton" type="Button" parent="TextureRect/PlantDescription"]
+[node name="PractDescButton" type="TextureButton" parent="TextureRect/PlantDescription"]
+z_index = -1
 layout_mode = 0
-offset_left = 112.0
-offset_top = -36.0
-offset_right = 146.0
-offset_bottom = -21.0
-theme_override_font_sizes/font_size = 4
-text = "Руководство"
+offset_left = 100.0
+offset_top = -38.0
+offset_right = 140.0
+offset_bottom = -13.0
+texture_normal = ExtResource("31_kvucr")
+texture_pressed = ExtResource("31_kvucr")
+texture_hover = ExtResource("31_kvucr")
+texture_disabled = ExtResource("31_kvucr")
+texture_focused = ExtResource("31_kvucr")
 
-[node name="InfoButton" type="Button" parent="TextureRect/PlantDescription"]
+[node name="InfoButton" type="TextureButton" parent="TextureRect/PlantDescription"]
+z_index = -1
 layout_mode = 0
-offset_left = 112.0
-offset_top = -19.0
-offset_right = 134.0
-offset_bottom = -4.0
-theme_override_font_sizes/font_size = 5
-text = "Инфа"
+offset_left = 100.0
+offset_top = -20.0
+offset_right = 140.0
+offset_bottom = 5.0
+texture_normal = ExtResource("32_emvj8")
+texture_pressed = ExtResource("32_emvj8")
+texture_hover = ExtResource("32_emvj8")
+texture_disabled = ExtResource("32_emvj8")
+texture_focused = ExtResource("32_emvj8")
 
 [node name="PlantName" type="Label" parent="TextureRect/PlantDescription"]
 layout_mode = 0
@@ -651,33 +698,41 @@ theme_override_font_sizes/normal_font_size = 5
 bbcode_enabled = true
 text = "Хлорофитум Хохлатый — это многолетняя вечнозеленая трава. Его линейные, ярко-зеленые листья формируют плотную прикорневую розетку. Соцветие возникает из центра растения и достигает длины до 1 метра. Его отдельные цветки звездчатой формы, белые, диаметров до 2 сантиметров. Хлорофитум является одним из самых популярных комнатных растений во всём мире."
 
-[node name="NextButton" type="Button" parent="TextureRect/PlantDescription"]
+[node name="NextButton" type="TextureButton" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 74.0
+offset_left = 70.0
 offset_top = 53.0
-offset_right = 87.0
+offset_right = 83.0
 offset_bottom = 68.0
-theme_override_font_sizes/font_size = 5
-text = "->"
+texture_normal = ExtResource("34_o4v8h")
+texture_pressed = ExtResource("34_o4v8h")
+texture_hover = ExtResource("34_o4v8h")
+texture_disabled = ExtResource("34_o4v8h")
+texture_focused = ExtResource("34_o4v8h")
 
-[node name="PrevButton" type="Button" parent="TextureRect/PlantDescription"]
+[node name="PrevButton" type="TextureButton" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 58.0
+offset_left = 45.0
 offset_top = 53.0
-offset_right = 71.0
+offset_right = 58.0
 offset_bottom = 68.0
-theme_override_font_sizes/font_size = 5
-text = "<-"
+texture_normal = ExtResource("34_o4v8h")
+texture_pressed = ExtResource("34_o4v8h")
+texture_hover = ExtResource("34_o4v8h")
+texture_disabled = ExtResource("34_o4v8h")
+texture_focused = ExtResource("34_o4v8h")
+flip_h = true
 
 [node name="PageCount" type="Label" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 54.0
-offset_right = 90.0
-offset_bottom = 99.0
+offset_left = 58.0
+offset_top = 53.0
+offset_right = 64.0
+offset_bottom = 66.9583
 theme_override_colors/font_color = Color(0.631373, 0.603922, 0.431373, 1)
 theme_override_font_sizes/font_size = 10
 text = "1"
+horizontal_alignment = 1
 
 [node name="Navigation" type="Control" parent="TextureRect"]
 layout_mode = 1
@@ -686,27 +741,40 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_top = 9.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("12_deuju")
 
-[node name="OnwardButton" type="Button" parent="TextureRect/Navigation"]
+[node name="OnwardButton" type="TextureButton" parent="TextureRect/Navigation"]
+z_index = -1
 material = SubResource("CanvasItemMaterial_5uixt")
 layout_mode = 0
-offset_left = 113.0
-offset_top = -2.0
-offset_right = 136.0
-offset_bottom = 29.0
-text = "->"
+offset_left = 100.0
+offset_top = -5.0
+offset_right = 140.0
+offset_bottom = 20.0
+texture_normal = ExtResource("36_tvups")
+texture_pressed = ExtResource("36_tvups")
+texture_hover = ExtResource("36_tvups")
+texture_disabled = ExtResource("36_tvups")
+texture_focused = ExtResource("36_tvups")
 
-[node name="BackButton" type="Button" parent="TextureRect/Navigation"]
+[node name="BackButton" type="TextureButton" parent="TextureRect/Navigation"]
+z_index = -1
 material = SubResource("CanvasItemMaterial_bl0pt")
 layout_mode = 0
-offset_left = -138.0
-offset_top = -2.0
-offset_right = -115.0
-offset_bottom = 29.0
-text = "<-"
+offset_left = -141.0
+offset_top = -5.0
+offset_right = -101.0
+offset_bottom = 26.0
+texture_normal = ExtResource("36_tvups")
+texture_pressed = ExtResource("36_tvups")
+texture_hover = ExtResource("36_tvups")
+texture_disabled = ExtResource("36_tvups")
+texture_focused = ExtResource("36_tvups")
+flip_h = true
 
 [node name="SliderMenu" type="Control" parent="TextureRect"]
 visible = false
@@ -728,15 +796,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -113.5
+offset_left = -117.0
 offset_top = -76.0
-offset_right = 113.5
+offset_right = 116.0
 offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.172833, 0.172833, 0.172833, 0.333333)
 
-[node name="ColorRect2" type="ColorRect" parent="TextureRect/SliderMenu"]
+[node name="ColorRect2" type="TextureRect" parent="TextureRect/SliderMenu"]
 material = SubResource("CanvasItemMaterial_57xuv")
 layout_mode = 1
 anchors_preset = 8
@@ -750,31 +818,41 @@ offset_right = 72.5
 offset_bottom = 28.5
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.342875, 0.735886, 0.550254, 1)
+texture = SubResource("AtlasTexture_fip26")
 
 [node name="WaterAmountHSlider" type="HSlider" parent="TextureRect/SliderMenu/ColorRect2"]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 20.0
-offset_right = 133.0
-offset_bottom = 36.0
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 127.0
+offset_bottom = 37.0
 
-[node name="PourButton" type="Button" parent="TextureRect/SliderMenu/ColorRect2"]
+[node name="PourButton" type="TextureButton" parent="TextureRect/SliderMenu/ColorRect2"]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 36.0
-offset_right = 83.0
-offset_bottom = 53.0
-theme_override_font_sizes/font_size = 6
-text = "Pour
-"
+offset_left = 54.5
+offset_top = 37.5
+offset_right = 92.5
+offset_bottom = 47.5
+texture_normal = SubResource("AtlasTexture_okc20")
+texture_pressed = SubResource("AtlasTexture_eml03")
+texture_hover = SubResource("AtlasTexture_okc20")
+texture_disabled = SubResource("AtlasTexture_okc20")
+
+[node name="Label" type="Label" parent="TextureRect/SliderMenu/ColorRect2/PourButton"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 51.0
+offset_bottom = 23.3333
+theme_override_font_sizes/font_size = 8
+text = "Полить"
 
 [node name="SliderLabel" type="Label" parent="TextureRect/SliderMenu/ColorRect2"]
 layout_mode = 0
-offset_left = 54.0
-offset_top = 1.0
-offset_right = 94.0
-offset_bottom = 23.3333
+offset_left = 54.5
+offset_top = 7.5
+offset_right = 94.5
+offset_bottom = 29.8333
 text = "0"
 horizontal_alignment = 1
 

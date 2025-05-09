@@ -1,0 +1,34 @@
+[gd_scene load_steps=14 format=3 uid="uid://caewdw8oos7ly"]
+
+[ext_resource type="Script" uid="uid://cmlqhm51tbpbt" path="res://scripts/plants/types/lilium_candinum.gd" id="1_asb1b"]
+[ext_resource type="PackedScene" uid="uid://bpjvu017wuxg4" path="res://scenes/plant_room/draggable_plant.tscn" id="2_fgirn"]
+[ext_resource type="Resource" uid="uid://ybmxa1xlu85t" path="res://custom_resources/plants/lilium/lilium_acceptable_stats.tres" id="2_gjdxq"]
+[ext_resource type="Resource" uid="uid://cut345eh173pt" path="res://custom_resources/plants/lilium/lilium_perfect_stats.tres" id="3_8te1c"]
+[ext_resource type="PackedScene" uid="uid://c7kan4kwivb4j" path="res://scenes/plant_tools.tscn" id="3_86jdq"]
+[ext_resource type="PackedScene" uid="uid://uub1nifet5wt" path="res://resources/3DPlants/Lilium_Candidum/Lilium_Perfect/Lilium_Perfect_End.glb" id="4_lmyou"]
+[ext_resource type="PackedScene" uid="uid://blld2xsqcqwib" path="res://resources/3DPlants/Lilium_Candidum/Lilium_Good/Lilium_Good_End.glb" id="5_1oyuw"]
+[ext_resource type="PackedScene" uid="uid://brtg5uke47jin" path="res://resources/3DPlants/Lilium_Candidum/Lilium_Neutral/Lilium_Neutral_End.glb" id="6_kaj0l"]
+[ext_resource type="PackedScene" uid="uid://ds8fjmrmpcucg" path="res://resources/3DPlants/Lilium_Candidum/Lilium_Bad/Lilium_Bad_End.glb" id="7_srbav"]
+[ext_resource type="PackedScene" uid="uid://bhd0y7perrpet" path="res://resources/3DPlants/Lilium_Candidum/Lilium_Horrible/Lilium_Horrible_End.glb" id="8_gwhf1"]
+[ext_resource type="PackedScene" uid="uid://hta6h8cnmvgp" path="res://resources/3DPlants/Lilium_Candidum/Lilium_Dead/Lilium_Dead_End.glb" id="9_gu1x3"]
+[ext_resource type="Resource" uid="uid://du54pwmsblwyh" path="res://custom_resources/plant_ingridients/lilium_flowers.tres" id="10_qigsd"]
+[ext_resource type="Texture2D" uid="uid://g8hnp6bc03od" path="res://sprites/pixel_plants/lilium.png" id="13_gjdxq"]
+
+[node name="LiliumCandinum" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
+script = ExtResource("1_asb1b")
+public_name = "Лилия"
+acceptable_stats = ExtResource("2_gjdxq")
+perfect_stats = ExtResource("3_8te1c")
+plant_states = Array[PackedScene]([ExtResource("4_lmyou"), ExtResource("5_1oyuw"), ExtResource("6_kaj0l"), ExtResource("7_srbav"), ExtResource("8_gwhf1"), ExtResource("9_gu1x3")])
+plant_tools = NodePath("PlantTools")
+plant_ingridient_flower = ExtResource("10_qigsd")
+
+[node name="DraggablePlant" parent="." node_paths=PackedStringArray("draggable_parent") instance=ExtResource("2_fgirn")]
+draggable_parent = NodePath("..")
+
+[node name="PlantTools" parent="." instance=ExtResource("3_86jdq")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
+position = Vector2(0, -10)
+texture = ExtResource("13_gjdxq")

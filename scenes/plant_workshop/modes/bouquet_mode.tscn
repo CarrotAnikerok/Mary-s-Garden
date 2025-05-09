@@ -15,9 +15,9 @@
 [ext_resource type="Resource" uid="uid://cv68jamvf8p31" path="res://custom_resources/plant_ingridients/bergenia_leaves.tres" id="13_0p0n0"]
 [ext_resource type="Resource" uid="uid://du54pwmsblwyh" path="res://custom_resources/plant_ingridients/lilium_flowers.tres" id="14_f0qmk"]
 [ext_resource type="Resource" uid="uid://bw715puh83xia" path="res://custom_resources/plant_ingridients/phaleonopsis_flowers.tres" id="15_t3h2c"]
-[ext_resource type="Texture2D" uid="uid://b0ieijdolrd8l" path="res://sprites/test_normals.png" id="16_c7whr"]
 [ext_resource type="Resource" uid="uid://btiljgxvahovf" path="res://custom_resources/plant_produts/evening_buety.tres" id="16_dtspp"]
-[ext_resource type="Texture2D" uid="uid://db4dqwmbai1fr" path="res://sprites/test_normals_n.png" id="17_t3h2c"]
+[ext_resource type="Texture2D" uid="uid://bn55dqkf8mt7n" path="res://sprites/pixel_plants/plant_products/small_chaotic_bouquet.png" id="17_t3h2c"]
+[ext_resource type="Texture2D" uid="uid://b5sohbtxleskr" path="res://sprites/pixel_plants/plant_products/big_chaotic_bouquet.png" id="18_dtspp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6ksa"]
 atlas = ExtResource("7_i7021")
@@ -57,7 +57,7 @@ metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
 script = ExtResource("4_47cjb")
 product_name = "small chaotic bouquet"
 price = 40
-texture = ExtResource("16_c7whr")
+texture = ExtResource("17_t3h2c")
 metadata/_custom_type_script = "uid://c56cxj2l5kao4"
 
 [sub_resource type="Resource" id="Resource_rcttf"]
@@ -70,7 +70,7 @@ metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
 script = ExtResource("4_47cjb")
 product_name = "big chaotic bouquet"
 price = 60
-texture = ExtResource("17_t3h2c")
+texture = ExtResource("18_dtspp")
 metadata/_custom_type_script = "uid://c56cxj2l5kao4"
 
 [sub_resource type="Resource" id="Resource_u7elm"]

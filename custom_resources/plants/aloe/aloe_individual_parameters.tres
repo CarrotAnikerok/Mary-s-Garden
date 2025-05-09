@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="IndividualPlantParameters" load_steps=2 format=3 uid="uid://dcsffftqn4tj2"]
+
+[ext_resource type="Script" uid="uid://78oeb2js20de" path="res://scripts/resources/individual_plant_parameters.gd" id="1_2span"]
+
+[resource]
+script = ExtResource("1_2span")
+public_name = ""
+metadata/_custom_type_script = "uid://78oeb2js20de"

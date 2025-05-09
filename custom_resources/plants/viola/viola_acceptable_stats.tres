@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AcceptableStats" load_steps=2 format=3 uid="uid://dm836eudhpnvb"]
+
+[ext_resource type="Script" uid="uid://cy8u0hscf6ef1" path="res://scripts/resources/acceptable_stats.gd" id="1_joama"]
+
+[resource]
+script = ExtResource("1_joama")
+acceptable_water_coefficent = Vector2(0.5, 0.8)
+acceptable_light_time = Vector2(3, 9)
+acceptable_light_amount = Vector2(3000, 5000)
+acceptable_humidity = Vector2(0.4, 0.6)
+acceptable_temperature = Vector2(15, 35)
+metadata/_custom_type_script = "uid://cy8u0hscf6ef1"

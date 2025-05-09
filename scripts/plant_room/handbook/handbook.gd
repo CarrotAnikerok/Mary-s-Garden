@@ -1,7 +1,6 @@
 extends Control
 
-@onready var paper = $ColorRect
-@onready var testing = $TextureRect
+@onready var paper = %Paper
 @onready var paper1 = paper.get_child(0) as RichTextLabel
 @onready var paper2 = paper.get_child(1) as RichTextLabel
 
@@ -12,6 +11,7 @@ func _ready():
 	#делает странные вещи
 	GlobalTimer.changed_phase.connect(add_notes_from_hb)
 	add_notes_from_hb()
+	update_page_count()
 	
 	#check_for_override.call_deferred()
 	#add_text("hiiii")
@@ -111,7 +111,8 @@ func _on_prev_button_pressed():
 
 
 func update_page_count():
-	$PageCount.text = str(page_number + 1)
+	$PageCounts/PageCount1.text = str(page_number * 2 + 1)
+	$PageCounts/PageCount2.text = str(page_number * 2 + 2)
 	
 	
 func change_page(from_line, to_line):

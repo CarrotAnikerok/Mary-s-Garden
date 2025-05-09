@@ -16,6 +16,7 @@
 [node name="BergeniaCrassoifolia" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
 top_level = true
 script = ExtResource("1_vermt")
+public_name = "Бадаг"
 acceptable_stats = ExtResource("2_avtqp")
 perfect_stats = ExtResource("3_3irey")
 plant_states = Array[PackedScene]([ExtResource("2_o6y6w"), ExtResource("5_4343b"), ExtResource("6_tisrk"), ExtResource("5_3irey"), ExtResource("6_4343b"), ExtResource("7_tisrk")])

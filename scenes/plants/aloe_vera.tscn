@@ -18,6 +18,7 @@
 [node name="AloeVera" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
 top_level = true
 script = ExtResource("1_8b0w6")
+public_name = "Алое"
 acceptable_stats = ExtResource("2_4r8di")
 perfect_stats = ExtResource("3_hvj8c")
 plant_states = Array[PackedScene]([ExtResource("2_efrt1"), ExtResource("5_e5hvw"), ExtResource("6_qg0o5"), ExtResource("5_6dxjm"), ExtResource("6_rh4co"), ExtResource("7_u6o7v")])

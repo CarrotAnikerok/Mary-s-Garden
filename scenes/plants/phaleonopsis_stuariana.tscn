@@ -1,0 +1,36 @@
+[gd_scene load_steps=15 format=3 uid="uid://07ruaduj1qx0"]
+
+[ext_resource type="Script" uid="uid://c5p40i4da1llo" path="res://scripts/plants/types/phaleonopsis_stuariana.gd" id="1_xj702"]
+[ext_resource type="PackedScene" uid="uid://bpjvu017wuxg4" path="res://scenes/plant_room/draggable_plant.tscn" id="2_23low"]
+[ext_resource type="Resource" uid="uid://cr4unmasme3em" path="res://custom_resources/plants/phaleonopsis/phaleonopsis_acceptable_stats.tres" id="2_gdffp"]
+[ext_resource type="Resource" uid="uid://dtn2g7s8ucc7q" path="res://custom_resources/plants/phaleonopsis/phaleonopsis_perfect_stats.tres" id="3_m0tsd"]
+[ext_resource type="PackedScene" uid="uid://c7kan4kwivb4j" path="res://scenes/plant_tools.tscn" id="3_yrb15"]
+[ext_resource type="PackedScene" uid="uid://bqsnkcbf246c4" path="res://resources/3DPlants/Phaleonopsis_Stuartiana/Plaheolonpsis_Perfect/Phalaenopsis_Perfect_End.glb" id="4_syn1s"]
+[ext_resource type="PackedScene" uid="uid://cb01jg74f3svm" path="res://resources/3DPlants/Phaleonopsis_Stuartiana/Phaleonopsis_Good/Good_1/Phalaenopsis_Good_End.glb" id="5_lkl2d"]
+[ext_resource type="PackedScene" uid="uid://ctrufd7n1j3j3" path="res://resources/3DPlants/Phaleonopsis_Stuartiana/Phaleonopsis_Neutral/Phalaenopsis_Neutral_End.glb" id="6_m0rbl"]
+[ext_resource type="PackedScene" uid="uid://trdliskvvdys" path="res://resources/3DPlants/Phaleonopsis_Stuartiana/Phaleonopsis_Bad/Phalaenopsis_Bad_End.glb" id="7_3jew7"]
+[ext_resource type="PackedScene" uid="uid://ut2m2p2xccp1" path="res://resources/3DPlants/Phaleonopsis_Stuartiana/Phaleonopsis_Horrible/Phalaenopsis_Horrible_End.glb" id="8_33jv2"]
+[ext_resource type="PackedScene" uid="uid://uu0ke4ygiivp" path="res://resources/3DPlants/Phaleonopsis_Stuartiana/Phaleonopsis_Dead/Phalaenopsis_Dead_End.glb" id="9_pd1yo"]
+[ext_resource type="Resource" uid="uid://th6rjt4ehfku" path="res://custom_resources/plant_ingridients/pelargonium_leaves.tres" id="10_sv0nd"]
+[ext_resource type="Resource" uid="uid://bw715puh83xia" path="res://custom_resources/plant_ingridients/phaleonopsis_flowers.tres" id="11_lwa04"]
+[ext_resource type="Texture2D" uid="uid://c0q3totdhpcke" path="res://sprites/pixel_plants/phaleonopsis.png" id="14_gdffp"]
+
+[node name="PhaleonopsisStuariana" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
+script = ExtResource("1_xj702")
+public_name = "Фалеонопсис"
+acceptable_stats = ExtResource("2_gdffp")
+perfect_stats = ExtResource("3_m0tsd")
+plant_states = Array[PackedScene]([ExtResource("4_syn1s"), ExtResource("5_lkl2d"), ExtResource("6_m0rbl"), ExtResource("7_3jew7"), ExtResource("8_33jv2"), ExtResource("9_pd1yo")])
+plant_tools = NodePath("PlantTools")
+plant_ingridient_leaves = ExtResource("10_sv0nd")
+plant_ingridient_flower = ExtResource("11_lwa04")
+
+[node name="DraggablePlant" parent="." node_paths=PackedStringArray("draggable_parent") instance=ExtResource("2_23low")]
+draggable_parent = NodePath("..")
+
+[node name="PlantTools" parent="." instance=ExtResource("3_yrb15")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
+position = Vector2(0, -10)
+texture = ExtResource("14_gdffp")

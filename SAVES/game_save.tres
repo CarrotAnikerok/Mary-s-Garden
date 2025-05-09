@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="SavedGame" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="SavedGame" load_steps=3 format=3 uid="uid://clr01npe6whoy"]
 
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_data.gd" id="1_w3a04"]
-[ext_resource type="Script" path="res://scripts/resources/saving/saved_game.gd" id="2_fwbdc"]
+[ext_resource type="Script" uid="uid://d1ujkav5o313i" path="res://scripts/resources/saving/saved_data.gd" id="1_w3a04"]
+[ext_resource type="Script" uid="uid://b02y5ac6fekdd" path="res://scripts/resources/saving/saved_game.gd" id="2_fwbdc"]
 
 [resource]
 script = ExtResource("2_fwbdc")

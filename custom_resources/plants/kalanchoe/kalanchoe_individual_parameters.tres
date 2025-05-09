@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="IndividualPlantParameters" load_steps=3 format=3 uid="uid://ccfs37kqlv0tf"]
+
+[ext_resource type="Script" uid="uid://78oeb2js20de" path="res://scripts/resources/individual_plant_parameters.gd" id="1_ckh3m"]
+[ext_resource type="Texture2D" uid="uid://c63nifnt7s54n" path="res://sprites/pixel_plants/aloe_vera3.png" id="2_ckh3m"]
+
+[resource]
+script = ExtResource("1_ckh3m")
+public_name = "Алое "
+sprite = ExtResource("2_ckh3m")
+metadata/_custom_type_script = "uid://78oeb2js20de"

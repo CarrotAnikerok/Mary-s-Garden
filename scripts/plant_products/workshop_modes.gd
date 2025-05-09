@@ -23,8 +23,7 @@ var modes: Array[Control]
 
 func _ready():
 	modes = [perfume_mode, create_essential_mode];
-	await get_tree().create_timer(0.05).timeout
-	toggle_mode(Modes.BOUQUET)
+	toggle_mode.call_deferred(Modes.BOUQUET)
 	$"../ModeButtons/BouquetButton".grab_focus()
 
 

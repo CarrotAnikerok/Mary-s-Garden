@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://caydoqsse7hcl"]
+[gd_scene load_steps=6 format=3 uid="uid://caydoqsse7hcl"]
 
 [ext_resource type="Script" uid="uid://d5xtokt4n6hr" path="res://scripts/end_day_menu.gd" id="1_rseyi"]
+[ext_resource type="Script" uid="uid://78oeb2js20de" path="res://scripts/resources/individual_plant_parameters.gd" id="2_kr380"]
+[ext_resource type="Resource" uid="uid://dk5rk1siaxw22" path="res://custom_resources/plants/lilium/lilium_individual_parameters.tres" id="3_acpwt"]
+[ext_resource type="Resource" uid="uid://dblegp03hmnjg" path="res://custom_resources/plants/viola/viola_individual_parameters.tres" id="4_ip147"]
+[ext_resource type="Resource" uid="uid://b13v2fwij8qx5" path="res://custom_resources/plants/phaleonopsis/phaleonopsis_individual_parameters.tres" id="5_b0ge0"]
 
 [node name="EndDayMenu" type="Control"]
 process_mode = 2
@@ -14,6 +18,11 @@ grow_vertical = 2
 script = ExtResource("1_rseyi")
 advice_text_bad = "Это меньше  необходимой сегодняшней суммы, но вы можете отбить ее в следующие дни."
 advice_text_good = "Вы достигли необходимой сегодняшней суммы."
+plant_textures = Dictionary[String, ExtResource("2_kr380")]({
+"lilium": ExtResource("3_acpwt"),
+"phaleonopsis": ExtResource("5_b0ge0"),
+"viola": ExtResource("4_ip147")
+})
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -92,12 +101,21 @@ offset_bottom = 43.3333
 theme_override_font_sizes/font_size = 8
 text = "Вам пришло новое растение!"
 
-[node name="TextureRect" type="TextureRect" parent="NewPlant"]
+[node name="PlantTitle" type="Label" parent="NewPlant"]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 51.0
-offset_right = 184.0
-offset_bottom = 105.0
+offset_left = 139.0
+offset_top = 34.0
+offset_right = 179.0
+offset_bottom = 56.3333
+text = "Алое"
+
+[node name="PlantTexture" type="TextureRect" parent="NewPlant"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 133.0
+offset_top = 57.0
+offset_right = 186.0
+offset_bottom = 111.0
 
 [node name="AcceptPlant" type="Button" parent="NewPlant"]
 layout_mode = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://c6mo7fj5a4yvd"]
+[gd_scene load_steps=85 format=3 uid="uid://c6mo7fj5a4yvd"]
 
 [ext_resource type="PackedScene" uid="uid://b5neg873g5wfk" path="res://scenes/hall/dialog_player.tscn" id="1_wkokc"]
 [ext_resource type="Texture2D" uid="uid://do4iu333ej1k2" path="res://sprites/novel_part/Arin/arin_angry.png" id="2_7awf8"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cysiq70465pgn" path="res://sprites/hall/bgs/plant_bg.png" id="5_hboqj"]
 [ext_resource type="PackedScene" uid="uid://x1dx72vtbapt" path="res://scenes/hall/characters/mary.tscn" id="6_6dx4x"]
 [ext_resource type="Script" uid="uid://d4b1wji5imsun" path="res://scripts/hall/player_camera.gd" id="7_bob82"]
-[ext_resource type="Texture2D" uid="uid://bveivavue4ite" path="res://sprites/pixel_plants/plant_products/chlorophytum_bouquet-Sheet.png" id="8_gneps"]
 [ext_resource type="Texture2D" uid="uid://65anf5xqnu66" path="res://sprites/plant_room/bouquet_bottles.png" id="9_4pr67"]
 [ext_resource type="PackedScene" uid="uid://hhpxwqm7546x" path="res://scenes/hall/characters/scarlett.tscn" id="9_cbiwe"]
 [ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://sprites/novel_part/Mary/mary_chill.png" id="9_quuig"]
@@ -297,10 +296,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nrpb5"]
-atlas = ExtResource("8_gneps")
-region = Rect2(15, 2, 15, 16)
-
 [sub_resource type="Gradient" id="Gradient_nvc6w"]
 offsets = PackedFloat32Array(0, 0.73516)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -352,6 +347,11 @@ _data = {
 size = Vector2(25.5, 62.5)
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_poutj"]
+var/start_scenary/name = &"start_scenary"
+var/start_scenary/type = 1
+var/start_scenary/value = false
+var/start_scenary/hint = 0
+var/start_scenary/hint_string = ""
 
 [node name="Hall" type="Node2D" node_paths=PackedStringArray("parallaxes")]
 script = ExtResource("39_ofr0x")
@@ -449,9 +449,6 @@ position = Vector2(28, 108)
 
 [node name="Marker2D" type="Marker2D" parent="PlantProducts/Bouquets"]
 position = Vector2(84, -41)
-
-[node name="Sprite2D" type="Sprite2D" parent="PlantProducts/Bouquets/Marker2D"]
-texture = SubResource("AtlasTexture_nrpb5")
 
 [node name="Marker2D2" type="Marker2D" parent="PlantProducts/Bouquets"]
 position = Vector2(101, -41)

@@ -27,7 +27,7 @@ func _on_button_3_pressed():
 	print(PlantProductInfo.inventory)
 
 
-func _on_button_4_pressed():
+func _on_butto_4_pressed():
 	var plant_work_inst = plant_workshop.instantiate()
 	get_tree().get_root().add_child(plant_work_inst)
 	#$"../../Button3".add_child(plant_work_inst)

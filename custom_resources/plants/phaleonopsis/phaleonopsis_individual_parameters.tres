@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="IndividualPlantParameters" load_steps=3 format=3 uid="uid://b13v2fwij8qx5"]
+
+[ext_resource type="Script" uid="uid://78oeb2js20de" path="res://scripts/resources/individual_plant_parameters.gd" id="1_h1x0g"]
+[ext_resource type="Texture2D" uid="uid://c0q3totdhpcke" path="res://sprites/pixel_plants/phaleonopsis.png" id="2_h1x0g"]
+
+[resource]
+script = ExtResource("1_h1x0g")
+public_name = "Фалеонопсис"
+sprite = ExtResource("2_h1x0g")
+metadata/_custom_type_script = "uid://78oeb2js20de"

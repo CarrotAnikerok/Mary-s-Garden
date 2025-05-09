@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="IndividualPlantParameters" load_steps=3 format=3 uid="uid://dblegp03hmnjg"]
+
+[ext_resource type="Script" uid="uid://78oeb2js20de" path="res://scripts/resources/individual_plant_parameters.gd" id="1_rtr2v"]
+[ext_resource type="Texture2D" uid="uid://cluwpyvv0dd8a" path="res://sprites/pixel_plants/viola.png" id="2_8l23a"]
+
+[resource]
+script = ExtResource("1_rtr2v")
+public_name = "Фиалка"
+sprite = ExtResource("2_8l23a")
+metadata/_custom_type_script = "uid://78oeb2js20de"
