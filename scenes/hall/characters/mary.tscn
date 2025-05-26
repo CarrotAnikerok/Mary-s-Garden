@@ -101,8 +101,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkgxl"]
-size = Vector2(25, 58)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j5ksm"]
+radius = 16.0
+height = 56.0
 
 [node name="Mary" type="Node2D" node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("1_r6d4t")
@@ -118,7 +119,8 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInterationArea"]
-position = Vector2(1.5, 1)
-shape = SubResource("RectangleShape2D_jkgxl")
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_j5ksm")
+debug_color = Color(0.824769, 0.363191, 0.439382, 0.42)
 
 [node name="ControllerContainer" type="Node" parent="."]

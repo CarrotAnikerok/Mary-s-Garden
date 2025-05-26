@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://drvwlao2y6so4" path="res://scripts/singletons/timer_change.gd" id="1_vfdhw"]
 
 [node name="Timer" type="Timer"]
-wait_time = 60.0
+wait_time = 30.0
 autostart = true
 script = ExtResource("1_vfdhw")
+phase_time = 5
 
 [connection signal="timeout" from="." to="." method="_on_timeout"]

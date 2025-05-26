@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_0smx1")
-ingridietn_name = "pelargonium flowers"
+ingridient_name = "Цветы Пеларгонии"
 texture = ExtResource("2_tjo4x")
 type = 0
 metadata/_custom_type_script = "uid://m3kb60dhifs4"

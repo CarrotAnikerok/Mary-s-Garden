@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4lbn3qb8quya"]
+
+[ext_resource type="Script" uid="uid://dxlfplqcbbirx" path="res://scenes/plant_room/sliding_button.gd" id="1_idrdf"]
+
+[node name="SlidingButton" type="Node"]
+script = ExtResource("1_idrdf")

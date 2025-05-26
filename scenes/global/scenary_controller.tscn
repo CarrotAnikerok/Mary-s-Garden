@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbagyfxwtvg1u"]
+
+[ext_resource type="Script" uid="uid://kmx2hsflk8db" path="res://scripts/singletons/scenary_controller.gd" id="1_r701e"]
+[ext_resource type="Script" uid="uid://dlpso5tksrycg" path="res://scripts/resources/scenary_time.gd" id="2_0mqf7"]
+[ext_resource type="BehaviorTree" uid="uid://ccu3ptt047jm0" path="res://scenary/scenary_1.tres" id="3_qfdop"]
+
+[sub_resource type="Resource" id="Resource_pk3vg"]
+script = ExtResource("2_0mqf7")
+day = 1
+phase = 0
+time_in_seconds = 1.0
+scenary = ExtResource("3_qfdop")
+was_played = false
+metadata/_custom_type_script = "uid://dlpso5tksrycg"
+
+[node name="ScenaryController" type="Node"]
+script = ExtResource("1_r701e")
+scenary_dict = Array[ExtResource("2_0mqf7")]([SubResource("Resource_pk3vg")])

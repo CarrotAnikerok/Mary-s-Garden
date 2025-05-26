@@ -7,7 +7,6 @@ extends Control
 @onready var output = %Output
 
 
-
 @onready var timer: Timer = $Timer
 
 @onready var progress_bar = $TextureRect/TextureProgressBar
@@ -29,7 +28,7 @@ func _process(delta):
 
 func update_input(child):
 	if input.get_child_count() != 0:
-		ingridient = input.get_child(0).ingridient_res
+		ingridient = input.get_child(0).res
 	else:
 		ingridient = null
 		
@@ -56,7 +55,7 @@ func start_creating():
 		progress_bar.visible = false
 		
 		var ingridient_node_instance = ingridient_node.instantiate()
-		ingridient_node_instance.ingridient_res = current_recipe.oil
+		ingridient_node_instance.res = current_recipe.oil
 		ingridient_node_instance.cell_group = "oil inventory"
 		#нужно обновить инвентарь для масел вообще..
 		output.add_child(ingridient_node_instance)

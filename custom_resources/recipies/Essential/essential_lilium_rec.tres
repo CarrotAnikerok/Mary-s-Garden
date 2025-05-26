@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EssentialRecipe" load_steps=4 format=3 uid="uid://b5s8wa7n4xabn"]
+
+[ext_resource type="Resource" uid="uid://du54pwmsblwyh" path="res://custom_resources/plant_ingridients/lilium_flowers.tres" id="1_jn4pt"]
+[ext_resource type="Resource" uid="uid://ceq1e7blrcmj7" path="res://custom_resources/other_ingridients/lilium_oil.tres" id="2_3k4lf"]
+[ext_resource type="Script" uid="uid://bei0kravl4k3c" path="res://scripts/resources/crafting/essential_recipe.gd" id="3_qqvf7"]
+
+[resource]
+script = ExtResource("3_qqvf7")
+ingridient = ExtResource("1_jn4pt")
+oil = ExtResource("2_3k4lf")
+metadata/_custom_type_script = "uid://bei0kravl4k3c"

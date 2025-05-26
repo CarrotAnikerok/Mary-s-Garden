@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_wr177")
-ingridietn_name = "aloe flowers"
+ingridient_name = "Цветы Алое"
 texture = ExtResource("2_0qn7x")
 type = 0
 metadata/_custom_type_script = "uid://m3kb60dhifs4"

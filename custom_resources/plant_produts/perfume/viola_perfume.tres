@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Perfume" load_steps=4 format=3 uid="uid://dc4cjk3rj8i0u"]
+
+[ext_resource type="Script" uid="uid://8oy3b2144we3" path="res://scripts/plant_products/perfume.gd" id="1_5wsog"]
+[ext_resource type="Texture2D" uid="uid://cc7hvy7ac5upq" path="res://sprites/pixel_plants/plant_products/perfume_spritesheet.png" id="2_pmb5h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsymy"]
+atlas = ExtResource("2_pmb5h")
+region = Rect2(44, 0, 7, 9)
+
+[resource]
+script = ExtResource("1_5wsog")
+product_name = "Парфюм Фиалка"
+price = 30
+texture = SubResource("AtlasTexture_xsymy")
+metadata/_custom_type_script = "uid://8oy3b2144we3"

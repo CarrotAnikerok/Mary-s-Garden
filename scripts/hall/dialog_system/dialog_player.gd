@@ -116,8 +116,10 @@ func change_mood():
 			text_box_pretty.modulate = Color(0.494, 0.003, 0.847)
 		elif (name_label.text == "Марк"):
 			guest_sprite.texture = mark_moods[dialog_block["mood"]]
+			text_box_pretty.modulate = Color(0.048, 0.0, 0.638)
 		elif (name_label.text == "Крис"):
 			guest_sprite.texture = chris_moods[dialog_block["mood"]]
+			text_box_pretty.modulate = Color(1.0, 0.62, 0.905)
 
 
 func on_display_dialog(text_key):
@@ -134,7 +136,9 @@ func on_display_dialog(text_key):
 		selected_text = dialog_block["text"].duplicate()
 		show_text()
 		
-func on_start_dialog(text_key):
+func on_start_dialog(text_key: String):
+	if text_key.length() == 0:
+		return
 	visible = true;
 	audio_player.stream = speech_sound
 	if !in_progress:

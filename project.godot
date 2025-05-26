@@ -24,6 +24,7 @@ GlobalTimer="*res://scenes/global/global_timer.tscn"
 GameWallet="*res://scripts/singletons/game_wallet.gd"
 PlantProductInfo="*res://scripts/singletons/plant_product_info.gd"
 global="*res://scenes/global/global.tscn"
+ScenaryController="*res://scenes/global/scenary_controller.tscn"
 
 [debug]
 
@@ -45,7 +46,7 @@ project/assembly_name="Mary-s Garden"
 [editor]
 
 movie_writer/mjpeg_quality=0.9
-movie_writer/movie_file="D:/veshi/godotgames/MyRecordings/MyRecordings.avi"
+movie_writer/movie_file="D:/veshi/картииинкии/То, что я рисую/Mary's Garden/devblog/Mary.avi"
 
 [file_customization]
 

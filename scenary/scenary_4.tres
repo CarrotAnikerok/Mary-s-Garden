@@ -1,0 +1,131 @@
+[gd_resource type="BehaviorTree" load_steps=38 format=3 uid="uid://tsq6q5ydqx7b"]
+
+[ext_resource type="PackedScene" uid="uid://bhh6skkcrw85j" path="res://scenes/hall/characters/mark.tscn" id="1_76l86"]
+[ext_resource type="Script" uid="uid://dqy2c0expiuik" path="res://ai/tasks/move_camera.gd" id="1_yy0co"]
+[ext_resource type="Script" uid="uid://dx67rbfyhqfep" path="res://ai/tasks/move_mary.gd" id="2_1ffio"]
+[ext_resource type="Script" uid="uid://c2k8c34noe8a8" path="res://ai/tasks/add_character.gd" id="2_srqlb"]
+[ext_resource type="Script" uid="uid://cb7nc8gy35ox3" path="res://ai/tasks/move_character.gd" id="3_yy0co"]
+[ext_resource type="Script" uid="uid://bqcb8adlc6mkf" path="res://ai/tasks/start_dialog.gd" id="4_1ffio"]
+[ext_resource type="Script" uid="uid://dbf8dgrovgp0n" path="res://ai/tasks/scenary_end.gd" id="6_1ffio"]
+[ext_resource type="Script" uid="uid://b615j8j4nwqxs" path="res://ai/tasks/sell_product.gd" id="7_nmm0a"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_y4dve"]
+
+[sub_resource type="BBVariant" id="BBVariant_nmm0a"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_j81wh"]
+variable = &"start_scenary"
+value = SubResource("BBVariant_nmm0a")
+
+[sub_resource type="BTAction" id="BTAction_nmm0a"]
+script = ExtResource("1_yy0co")
+move_camera_to = 320.0
+speed = 1.0
+
+[sub_resource type="BTAction" id="BTAction_ivips"]
+script = ExtResource("2_1ffio")
+move_to = Vector2(40, 108)
+speed = 100.0
+
+[sub_resource type="BTParallel" id="BTParallel_vgva8"]
+num_successes_required = 2
+children = [SubResource("BTAction_nmm0a"), SubResource("BTAction_ivips")]
+
+[sub_resource type="BTAction" id="BTAction_tojef"]
+script = ExtResource("2_1ffio")
+move_to = Vector2(42, 108)
+speed = 100.0
+
+[sub_resource type="BTWait" id="BTWait_ivips"]
+
+[sub_resource type="BTAction" id="BTAction_vgva8"]
+script = ExtResource("2_srqlb")
+character = ExtResource("1_76l86")
+place = Vector2(500, 108)
+
+[sub_resource type="BTAction" id="BTAction_0blqv"]
+script = ExtResource("3_yy0co")
+move_to = Vector2(366, 108)
+speed = 120.0
+character = "Mark"
+
+[sub_resource type="BTWait" id="BTWait_e5lyv"]
+
+[sub_resource type="BTAction" id="BTAction_tj2cn"]
+script = ExtResource("4_1ffio")
+dialog_name = "dialog_2_1"
+
+[sub_resource type="BTWait" id="BTWait_ewu4k"]
+duration = 0.5
+
+[sub_resource type="BTAction" id="BTAction_vk8ed"]
+script = ExtResource("3_yy0co")
+move_to = Vector2(158, 108)
+speed = 120.0
+character = "Mark"
+
+[sub_resource type="BTAction" id="BTAction_j81wh"]
+script = ExtResource("1_yy0co")
+move_camera_to = 180.0
+speed = 2.0
+
+[sub_resource type="BTParallel" id="BTParallel_ivips"]
+children = [SubResource("BTAction_vk8ed"), SubResource("BTAction_j81wh")]
+
+[sub_resource type="BTWait" id="BTWait_focyc"]
+
+[sub_resource type="BTAction" id="BTAction_3lwh0"]
+script = ExtResource("4_1ffio")
+dialog_name = "dialog_2_2"
+
+[sub_resource type="BTWait" id="BTWait_j81wh"]
+duration = 0.8
+
+[sub_resource type="BTAction" id="BTAction_ewu4k"]
+script = ExtResource("3_yy0co")
+move_to = Vector2(104, 109)
+speed = 100.0
+character = "Mark"
+
+[sub_resource type="BTWait" id="BTWait_nmm0a"]
+duration = 0.8
+
+[sub_resource type="BTAction" id="BTAction_focyc"]
+script = ExtResource("4_1ffio")
+dialog_name = "dialog_2_3"
+
+[sub_resource type="BTAction" id="BTAction_crxq3"]
+script = ExtResource("7_nmm0a")
+product_name = "Вечерняя Роскошь"
+type = 0
+
+[sub_resource type="BTWait" id="BTWait_vgva8"]
+duration = 0.5
+
+[sub_resource type="BTAction" id="BTAction_7jtsf"]
+script = ExtResource("3_yy0co")
+move_to = Vector2(500, 109)
+speed = 150.0
+character = "Mark"
+
+[sub_resource type="BTAction" id="BTAction_22vnt"]
+script = ExtResource("4_1ffio")
+dialog_name = "dialog_2_4"
+
+[sub_resource type="BTParallel" id="BTParallel_tojef"]
+num_successes_required = 2
+children = [SubResource("BTAction_7jtsf"), SubResource("BTAction_22vnt")]
+
+[sub_resource type="BTAction" id="BTAction_e5lyv"]
+script = ExtResource("6_1ffio")
+time_spent = 10
+
+[sub_resource type="BTSequence" id="BTSequence_crxq3"]
+children = [SubResource("BTCheckVar_j81wh"), SubResource("BTParallel_vgva8"), SubResource("BTAction_tojef"), SubResource("BTWait_ivips"), SubResource("BTAction_vgva8"), SubResource("BTAction_0blqv"), SubResource("BTWait_e5lyv"), SubResource("BTAction_tj2cn"), SubResource("BTWait_ewu4k"), SubResource("BTParallel_ivips"), SubResource("BTWait_focyc"), SubResource("BTAction_3lwh0"), SubResource("BTWait_j81wh"), SubResource("BTAction_ewu4k"), SubResource("BTWait_nmm0a"), SubResource("BTAction_focyc"), SubResource("BTAction_crxq3"), SubResource("BTWait_vgva8"), SubResource("BTParallel_tojef"), SubResource("BTAction_e5lyv")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_y4dve")
+root_task = SubResource("BTSequence_crxq3")

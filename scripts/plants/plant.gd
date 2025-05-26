@@ -1,5 +1,5 @@
 class_name Plant
-extends Node
+extends Node2D
 
 @export var public_name: String
 @export var acceptable_stats: AcceptableStats
@@ -99,7 +99,7 @@ func place_update():
 
 
 func update_phase_logic():
-	change_light_time(global.TIME_OF_PERIOD)
+	change_light_time(GlobalTimer.phase_time)
 	is_first_pour = true
 
 
@@ -367,8 +367,9 @@ func show_plant_menu():
 	var plantwindow_instance = plant_window.instantiate()
 	plantwindow_instance.active_plant = self
 	plantwindow_instance.garden_slots = get_parent().get_parent()
+	
 	print_debug(owner)
-	owner.get_node("CanvasLayerUI").add_child(plantwindow_instance)
+	plantwindow_instance.garden_slots.owner.get_node("CanvasLayerUI").add_child(plantwindow_instance)
 	#вот это я закауплил
 	
 

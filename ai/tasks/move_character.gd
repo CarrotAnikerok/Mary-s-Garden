@@ -1,6 +1,6 @@
 extends BTAction
 
-@export var move_to: Vector2 = Vector2(100, 109)
+@export var move_to: Vector2 = Vector2(100, 108)
 @export var speed: float = 100
 @export var character: String
 

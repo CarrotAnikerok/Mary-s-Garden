@@ -1,83 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://bf1xapvxtwdwd"]
+[gd_scene load_steps=10 format=3 uid="uid://bf1xapvxtwdwd"]
 
 [ext_resource type="Script" uid="uid://blh44sypobx3e" path="res://scripts/plant_products/crafting.gd" id="2_n8hq7"]
 [ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="3_02p2b"]
-[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="3_imc77"]
-[ext_resource type="Script" uid="uid://c56cxj2l5kao4" path="res://scripts/plant_products/bouquet.gd" id="4_47cjb"]
-[ext_resource type="Resource" uid="uid://cvdts6nygq6o8" path="res://custom_resources/recipies/aloe_bouquet_recipe.tres" id="4_hoorm"]
-[ext_resource type="Resource" uid="uid://bujjowf0q2km" path="res://custom_resources/plant_ingridients/chlorophytum_flowers.tres" id="5_f7na0"]
-[ext_resource type="Resource" uid="uid://lrirgbguyabm" path="res://custom_resources/plant_ingridients/chlorophytum_leaves.tres" id="6_own2a"]
-[ext_resource type="Texture2D" uid="uid://bveivavue4ite" path="res://sprites/pixel_plants/plant_products/chlorophytum_bouquet-Sheet.png" id="7_i7021"]
-[ext_resource type="Resource" uid="uid://413wp1kyvtvd" path="res://custom_resources/plant_ingridients/pelargonium_flowers.tres" id="9_i7021"]
-[ext_resource type="Resource" uid="uid://c6xsckunsk32q" path="res://custom_resources/plant_ingridients/viola_flowers.tres" id="10_v6ksa"]
-[ext_resource type="Resource" uid="uid://xdbv6elocc2w" path="res://custom_resources/plant_ingridients/bergenia_flowers.tres" id="11_yhrew"]
-[ext_resource type="Resource" uid="uid://blsuy5uore2ph" path="res://custom_resources/plant_produts/field_miracle.tres" id="12_t3h2c"]
-[ext_resource type="Resource" uid="uid://cv68jamvf8p31" path="res://custom_resources/plant_ingridients/bergenia_leaves.tres" id="13_0p0n0"]
-[ext_resource type="Resource" uid="uid://du54pwmsblwyh" path="res://custom_resources/plant_ingridients/lilium_flowers.tres" id="14_f0qmk"]
-[ext_resource type="Resource" uid="uid://bw715puh83xia" path="res://custom_resources/plant_ingridients/phaleonopsis_flowers.tres" id="15_t3h2c"]
-[ext_resource type="Resource" uid="uid://btiljgxvahovf" path="res://custom_resources/plant_produts/evening_buety.tres" id="16_dtspp"]
-[ext_resource type="Texture2D" uid="uid://bn55dqkf8mt7n" path="res://sprites/pixel_plants/plant_products/small_chaotic_bouquet.png" id="17_t3h2c"]
-[ext_resource type="Texture2D" uid="uid://b5sohbtxleskr" path="res://sprites/pixel_plants/plant_products/big_chaotic_bouquet.png" id="18_dtspp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6ksa"]
-atlas = ExtResource("7_i7021")
-region = Rect2(1, 2, 13, 19)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yhrew"]
-atlas = ExtResource("7_i7021")
-region = Rect2(15, 2, 15, 16)
-
-[sub_resource type="Resource" id="Resource_0p0n0"]
-script = ExtResource("4_47cjb")
-bouquet_in_hall_texture = SubResource("AtlasTexture_v6ksa")
-product_name = "chlorophytum_bouquet"
-price = 50
-texture = SubResource("AtlasTexture_yhrew")
-metadata/_custom_type_script = "uid://c56cxj2l5kao4"
-
-[sub_resource type="Resource" id="Resource_f0qmk"]
-script = ExtResource("3_02p2b")
-ingridients = Array[ExtResource("3_imc77")]([ExtResource("5_f7na0"), ExtResource("6_own2a")])
-output = SubResource("Resource_0p0n0")
-metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
-
-[sub_resource type="Resource" id="Resource_t3h2c"]
-script = ExtResource("3_02p2b")
-ingridients = Array[ExtResource("3_imc77")]([ExtResource("9_i7021"), ExtResource("10_v6ksa"), ExtResource("11_yhrew")])
-output = ExtResource("12_t3h2c")
-metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
-
-[sub_resource type="Resource" id="Resource_en1lx"]
-script = ExtResource("3_02p2b")
-ingridients = Array[ExtResource("3_imc77")]([ExtResource("13_0p0n0"), ExtResource("14_f0qmk"), ExtResource("15_t3h2c")])
-output = ExtResource("16_dtspp")
-metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
-
-[sub_resource type="Resource" id="Resource_vqden"]
-script = ExtResource("4_47cjb")
-product_name = "small chaotic bouquet"
-price = 40
-texture = ExtResource("17_t3h2c")
-metadata/_custom_type_script = "uid://c56cxj2l5kao4"
-
-[sub_resource type="Resource" id="Resource_rcttf"]
-script = ExtResource("3_02p2b")
-ingridients = Array[ExtResource("3_imc77")]([])
-output = SubResource("Resource_vqden")
-metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
-
-[sub_resource type="Resource" id="Resource_eor7a"]
-script = ExtResource("4_47cjb")
-product_name = "big chaotic bouquet"
-price = 60
-texture = ExtResource("18_dtspp")
-metadata/_custom_type_script = "uid://c56cxj2l5kao4"
-
-[sub_resource type="Resource" id="Resource_u7elm"]
-script = ExtResource("3_02p2b")
-ingridients = Array[ExtResource("3_imc77")]([])
-output = SubResource("Resource_eor7a")
-metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
+[ext_resource type="Resource" uid="uid://cj4yiyw5h203s" path="res://custom_resources/recipies/bouquets/chlorophytum_bouquet_rec.tres" id="4_f7na0"]
+[ext_resource type="Resource" uid="uid://cvdts6nygq6o8" path="res://custom_resources/recipies/bouquets/aloe_bouquet_recipe.tres" id="4_hoorm"]
+[ext_resource type="Resource" uid="uid://br3yq72rsxmdc" path="res://custom_resources/recipies/bouquets/field_miracle_rec.tres" id="5_own2a"]
+[ext_resource type="Resource" uid="uid://beomagtbvjuy1" path="res://custom_resources/recipies/bouquets/evening_beauty_rec.tres" id="6_i7021"]
+[ext_resource type="Resource" uid="uid://d2h7rnabrivjo" path="res://custom_resources/recipies/bouquets/small_bouquet_rec.tres" id="7_wnugb"]
+[ext_resource type="Resource" uid="uid://ccu1qkh5afgph" path="res://custom_resources/recipies/big_bouquet.tres" id="8_e1kef"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scrth"]
 bg_color = Color(0.4425, 0.75, 0.488625, 0.34902)
@@ -96,8 +26,8 @@ anti_aliasing = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("2_n8hq7")
-crafting_recipies = Array[ExtResource("3_02p2b")]([ExtResource("4_hoorm"), SubResource("Resource_f0qmk"), SubResource("Resource_t3h2c"), SubResource("Resource_en1lx")])
-chaotic_recipies = Array[ExtResource("3_02p2b")]([SubResource("Resource_rcttf"), SubResource("Resource_u7elm")])
+crafting_recipies = Array[ExtResource("3_02p2b")]([ExtResource("4_hoorm"), ExtResource("4_f7na0"), ExtResource("5_own2a"), ExtResource("6_i7021")])
+chaotic_recipies = Array[ExtResource("3_02p2b")]([ExtResource("7_wnugb"), ExtResource("8_e1kef")])
 
 [node name="CraftingCells" type="Control" parent="."]
 anchors_preset = 0

@@ -4,6 +4,8 @@ extends Sprite2D
 @onready var calendar_label = $"../Calendar/CalendarLabel"
 @onready var time_clock = $"../TImeClock"
 
+var color_tween: Tween
+
 func _ready():
 	change_phase()
 	change_day()
@@ -13,7 +15,9 @@ func _ready():
 	
 
 func change_phase():
-	var color_tween = get_tree().create_tween()
+	if color_tween:
+		color_tween.kill()
+	color_tween = get_tree().create_tween()
 	match global.phase_of_day:
 		0: 
 			animation.play("evening_to_night")
@@ -31,6 +35,7 @@ func change_phase():
 		
 func change_day():
 	calendar_label.text = str(global.day_count)
+	change_phase()
 
 
 func _on_time_phase_animated_animation_finished():

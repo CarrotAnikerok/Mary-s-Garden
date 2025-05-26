@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Bouquet" load_steps=3 format=3 uid="uid://btiljgxvahovf"]
+
+[ext_resource type="Script" uid="uid://c56cxj2l5kao4" path="res://scripts/plant_products/bouquet.gd" id="1_5bjm4"]
+[ext_resource type="Texture2D" uid="uid://ctttdyqjlftoi" path="res://sprites/pixel_plants/plant_products/evening_beaty1.png" id="2_vo85c"]
+
+[resource]
+script = ExtResource("1_5bjm4")
+product_name = "Вечерняя Роскошь"
+price = 80
+texture = ExtResource("2_vo85c")
+metadata/_custom_type_script = "uid://c56cxj2l5kao4"

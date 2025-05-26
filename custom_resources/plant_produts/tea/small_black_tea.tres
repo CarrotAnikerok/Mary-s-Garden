@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Tea" load_steps=4 format=3 uid="uid://c640lufxxfsrx"]
+
+[ext_resource type="Script" uid="uid://dt34o5taao3yg" path="res://scripts/plant_products/tea.gd" id="1_0tma3"]
+[ext_resource type="Texture2D" uid="uid://bdwgevgj06nj6" path="res://sprites/pixel_plants/plant_products/teas.png" id="2_1ks7b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir1wm"]
+atlas = ExtResource("2_1ks7b")
+region = Rect2(10, 0, 7, 9)
+
+[resource]
+script = ExtResource("1_0tma3")
+product_name = "Маленький Черный Чай"
+price = 20
+texture = SubResource("AtlasTexture_ir1wm")
+metadata/_custom_type_script = "uid://dt34o5taao3yg"

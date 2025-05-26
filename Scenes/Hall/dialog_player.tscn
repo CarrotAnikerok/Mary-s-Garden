@@ -54,7 +54,7 @@ texture = ExtResource("5_fvtql")
 expand_mode = 5
 
 [node name="TextBoxPretty" type="TextureRect" parent="TextBox"]
-modulate = Color(0.459182, 0.313503, 0.504087, 1)
+modulate = Color(0.0483134, 0.000424128, 0.637681, 1)
 layout_mode = 0
 offset_left = 2.0
 offset_top = 125.0
@@ -85,5 +85,6 @@ horizontal_alignment = 1
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

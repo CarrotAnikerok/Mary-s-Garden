@@ -25,14 +25,14 @@ func fill_inventory(fill_with: Ingridient.Type = Ingridient.Type.LEAVES):
 			if (leave_and_flowers):
 				if (ingridient.type == Ingridient.Type.FLOWER or ingridient.type == Ingridient.Type.LEAVES):
 					var ingridient_node_instance = ingridient_node.instantiate()
-					ingridient_node_instance.ingridient_res = ingridient;
+					ingridient_node_instance.res = ingridient;
 					ingridient_node_instance.cell_group = cell_group_name
 					slots[count_i].add_child(ingridient_node_instance)
 					ingridient_node_instance.global_position = slots[count_i].global_position
 					count_i+=1
 			elif (ingridient.type == fill_with):
 				var ingridient_node_instance = ingridient_node.instantiate()
-				ingridient_node_instance.ingridient_res = ingridient;
+				ingridient_node_instance.res = ingridient;
 				ingridient_node_instance.cell_group = cell_group_name
 				slots[count_i].add_child(ingridient_node_instance)
 				ingridient_node_instance.global_position = slots[count_i].global_position
@@ -70,7 +70,7 @@ func update_inventory(cell_group: String, type: Ingridient.Type, leaves_flowers:
 			##print("Inv "+ str(plant_inv[count_i].type) + " fill width " + str(fill_with))
 			#if (plant_inv[count_i].type == fill_with):
 				#var ingridient_node_instance = ingridient_node.instantiate()
-				#ingridient_node_instance.ingridient_res = plant_inv[count_i];
+				#ingridient_node_instance.res = plant_inv[count_i];
 				#ingridient_node_instance.cell_group = cell_group_name
 				#slot.add_child(ingridient_node_instance)
 				#ingridient_node_instance.global_position = slot.global_position

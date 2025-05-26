@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=7 format=3 uid="uid://bycunnmnq0vay"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_cee4d"]
+[ext_resource type="Resource" uid="uid://ceq1e7blrcmj7" path="res://custom_resources/other_ingridients/lilium_oil.tres" id="2_w7eka"]
+[ext_resource type="Resource" uid="uid://b6uex5v5rgpom" path="res://custom_resources/other_ingridients/pelargonium_oil.tres" id="3_62nx3"]
+[ext_resource type="Resource" uid="uid://dpe5oaaw4tq2i" path="res://custom_resources/other_ingridients/viola_oil.tres" id="4_xoas0"]
+[ext_resource type="Resource" uid="uid://c3f4482v32an2" path="res://custom_resources/plant_produts/perfume/flower_blast.tres" id="5_t1g3j"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="6_6dnsu"]
+
+[resource]
+script = ExtResource("6_6dnsu")
+ingridients = Array[ExtResource("1_cee4d")]([ExtResource("2_w7eka"), ExtResource("3_62nx3"), ExtResource("4_xoas0")])
+output = ExtResource("5_t1g3j")
+metadata/_custom_type_script = "uid://b4hv1pqh58m6c"

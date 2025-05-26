@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://djukkjpwshclx"]
+
+[ext_resource type="Texture2D" uid="uid://cgrnnrh6sta8n" path="res://sprites/plant_room/UI/clock_time.png" id="1_drlu1"]
+[ext_resource type="Script" uid="uid://bx0n7oa7og658" path="res://scenes/clock_tween.gd" id="2_bevg5"]
+[ext_resource type="Texture2D" uid="uid://d32v2ylnyg07f" path="res://sprites/plant_room/UI/point.png" id="2_pcv06"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i121n"]
+light_mode = 1
+
+[node name="TImeClock" type="Sprite2D"]
+modulate = Color(0.82, 0.51824, 0.4264, 1)
+texture = ExtResource("1_drlu1")
+script = ExtResource("2_bevg5")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+modulate = Color(0.650128, 0.650128, 0.650128, 1)
+z_index = 1
+material = SubResource("CanvasItemMaterial_i121n")
+position = Vector2(-0.5, -0.5)
+texture = ExtResource("2_pcv06")
+offset = Vector2(0, -4)

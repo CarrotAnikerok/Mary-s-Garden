@@ -46,7 +46,7 @@ func _input(event):
 							if draggable_parent is Plant:
 								rest_point = child.global_position
 							else:
-								rest_point = child.global_position + Vector2(5, 5)
+								rest_point = child.global_position + (child as Panel).size / 2
 							current_rest.remove_child(draggable_parent)
 							draggable_parent.global_position = Vector2(0, 0)
 							current_rest = child

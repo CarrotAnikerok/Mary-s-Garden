@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=7 format=3 uid="uid://c6mrmwl04er5k"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_4o3xp"]
+[ext_resource type="Resource" uid="uid://bltrjmgjxmfaw" path="res://custom_resources/other_ingridients/green_tea.tres" id="2_6jwgv"]
+[ext_resource type="Resource" uid="uid://du54pwmsblwyh" path="res://custom_resources/plant_ingridients/lilium_flowers.tres" id="3_p734w"]
+[ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="4_0hm7s"]
+[ext_resource type="Resource" uid="uid://d1j0j205tdlsd" path="res://custom_resources/plant_produts/tea/sky_dew_tea.tres" id="5_7qcbl"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="6_q0yg3"]
+
+[resource]
+script = ExtResource("6_q0yg3")
+ingridients = Array[ExtResource("1_4o3xp")]([ExtResource("2_6jwgv"), ExtResource("3_p734w"), ExtResource("4_0hm7s")])
+output = ExtResource("5_7qcbl")
+metadata/_custom_type_script = "uid://b4hv1pqh58m6c"

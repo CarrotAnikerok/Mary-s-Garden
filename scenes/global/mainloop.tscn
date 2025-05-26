@@ -6,8 +6,12 @@
 
 [node name="MainLoop" type="Node2D"]
 script = ExtResource("1_bygr3")
+scene_wait = 15
 
 [node name="PlantRoom" parent="." instance=ExtResource("1_14sti")]
 position = Vector2(-1, -1)
 
 [node name="Hall" parent="." instance=ExtResource("2_bygr3")]
+
+[node name="ScenaryTimer" type="Timer" parent="."]
+one_shot = true

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EssentialRecipe" load_steps=4 format=3 uid="uid://cstmm7vqanxxj"]
+
+[ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="1_r587m"]
+[ext_resource type="Resource" uid="uid://tky518sv2mvi" path="res://custom_resources/other_ingridients/aloe_oil.tres" id="2_t5y0r"]
+[ext_resource type="Script" uid="uid://bei0kravl4k3c" path="res://scripts/resources/crafting/essential_recipe.gd" id="3_np82a"]
+
+[resource]
+script = ExtResource("3_np82a")
+ingridient = ExtResource("1_r587m")
+oil = ExtResource("2_t5y0r")
+metadata/_custom_type_script = "uid://bei0kravl4k3c"

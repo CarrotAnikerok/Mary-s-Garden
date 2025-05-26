@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_3rtps")
-ingridietn_name = "black tea"
+ingridient_name = ""
 texture = ExtResource("2_u6yx4")
 type = 3
 metadata/_custom_type_script = "uid://m3kb60dhifs4"

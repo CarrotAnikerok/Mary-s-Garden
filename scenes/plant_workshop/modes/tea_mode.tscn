@@ -1,22 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsyd7upqug16k"]
+[gd_scene load_steps=13 format=3 uid="uid://bsyd7upqug16k"]
 
 [ext_resource type="Script" uid="uid://blh44sypobx3e" path="res://scripts/plant_products/crafting.gd" id="1_x7y21"]
 [ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="2_v2g5i"]
+[ext_resource type="Resource" uid="uid://dm174qoar3o2r" path="res://custom_resources/recipies/tea/aloe_tea_rec.tres" id="3_7525v"]
 [ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="3_ir1wm"]
-[ext_resource type="Script" uid="uid://dt34o5taao3yg" path="res://scripts/plant_products/tea.gd" id="4_knb67"]
-[ext_resource type="Texture2D" uid="uid://n6imjrxwklb4" path="res://sprites/pixel_plants/pelargonia.png" id="5_c70n2"]
-
-[sub_resource type="Resource" id="Resource_7525v"]
-script = ExtResource("4_knb67")
-product_name = "chaotic_tea_small"
-price = 0
-texture = ExtResource("5_c70n2")
-metadata/_custom_type_script = "uid://dt34o5taao3yg"
+[ext_resource type="Resource" uid="uid://dsj6qvtqaabd0" path="res://custom_resources/recipies/tea/field_tea_rec.tres" id="4_i1nfi"]
+[ext_resource type="Resource" uid="uid://c6mrmwl04er5k" path="res://custom_resources/recipies/tea/sky_dew_tea_rec.tres" id="5_hpguq"]
+[ext_resource type="Resource" uid="uid://dylj7uum4ey48" path="res://custom_resources/recipies/tea/bergenia_tea_rec.tres" id="6_e2hac"]
+[ext_resource type="Resource" uid="uid://c640lufxxfsrx" path="res://custom_resources/plant_produts/tea/small_black_tea.tres" id="8_hqpjr"]
+[ext_resource type="Resource" uid="uid://b8qtu006787fw" path="res://scenes/plant_workshop/modes/big_black_tea.tres" id="9_8ihyn"]
 
 [sub_resource type="Resource" id="Resource_i1nfi"]
 script = ExtResource("2_v2g5i")
 ingridients = Array[ExtResource("3_ir1wm")]([])
-output = SubResource("Resource_7525v")
+output = ExtResource("8_hqpjr")
+metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
+
+[sub_resource type="Resource" id="Resource_hpguq"]
+script = ExtResource("2_v2g5i")
+ingridients = Array[ExtResource("3_ir1wm")]([])
+output = ExtResource("9_8ihyn")
 metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys1ov"]
@@ -36,7 +39,8 @@ anti_aliasing = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_x7y21")
-chaotic_recipies = Array[ExtResource("2_v2g5i")]([SubResource("Resource_i1nfi")])
+crafting_recipies = Array[ExtResource("2_v2g5i")]([ExtResource("3_7525v"), ExtResource("4_i1nfi"), ExtResource("5_hpguq"), ExtResource("6_e2hac")])
+chaotic_recipies = Array[ExtResource("2_v2g5i")]([SubResource("Resource_i1nfi"), SubResource("Resource_hpguq")])
 
 [node name="CraftingCells" type="Control" parent="."]
 anchors_preset = 0

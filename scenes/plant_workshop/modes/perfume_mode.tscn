@@ -1,22 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://dashrok7jnhe0"]
+[gd_scene load_steps=12 format=3 uid="uid://dashrok7jnhe0"]
 
 [ext_resource type="Script" uid="uid://blh44sypobx3e" path="res://scripts/plant_products/crafting.gd" id="1_iludp"]
 [ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="2_qkf17"]
+[ext_resource type="Resource" uid="uid://dbaqdpuuqtcry" path="res://custom_resources/recipies/perfume/aloe_perfume_rec.tres" id="3_3tnn7"]
 [ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="3_06bdp"]
-[ext_resource type="Script" uid="uid://8oy3b2144we3" path="res://scripts/plant_products/perfume.gd" id="4_3tnn7"]
-[ext_resource type="Texture2D" uid="uid://bmqgmcpfcn0pn" path="res://sprites/plant_workshop/create_perfume_button.png" id="5_hf06h"]
-
-[sub_resource type="Resource" id="Resource_5r0y1"]
-script = ExtResource("4_3tnn7")
-product_name = "chaotic_small_perfume"
-price = 20
-texture = ExtResource("5_hf06h")
-metadata/_custom_type_script = "uid://8oy3b2144we3"
+[ext_resource type="Resource" uid="uid://b0v3f4t7vegbt" path="res://custom_resources/recipies/perfume/pelargonium_perfume_rec.tres" id="4_5r0y1"]
+[ext_resource type="Resource" uid="uid://dkdpwmtwkpc6m" path="res://custom_resources/recipies/perfume/lilium_perfume_rec.tres" id="5_sbsa4"]
+[ext_resource type="Resource" uid="uid://b2rm0y4b5kush" path="res://custom_resources/recipies/perfume/viola_perfume_rec.tres" id="6_f1h7p"]
+[ext_resource type="Resource" uid="uid://bycunnmnq0vay" path="res://custom_resources/recipies/perfume/flower_blast_rec.tres" id="7_x35ws"]
+[ext_resource type="Resource" uid="uid://de2825t6s76mr" path="res://custom_resources/plant_produts/perfume/small_perfume.tres" id="9_x1txt"]
 
 [sub_resource type="Resource" id="Resource_sbsa4"]
 script = ExtResource("2_qkf17")
 ingridients = Array[ExtResource("3_06bdp")]([])
-output = SubResource("Resource_5r0y1")
+output = ExtResource("9_x1txt")
 metadata/_custom_type_script = "uid://b4hv1pqh58m6c"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppfjf"]
@@ -36,6 +33,7 @@ anti_aliasing = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_iludp")
+crafting_recipies = Array[ExtResource("2_qkf17")]([ExtResource("3_3tnn7"), ExtResource("4_5r0y1"), ExtResource("5_sbsa4"), ExtResource("6_f1h7p"), ExtResource("7_x35ws")])
 chaotic_recipies = Array[ExtResource("2_qkf17")]([SubResource("Resource_sbsa4")])
 
 [node name="CraftingCells" type="Control" parent="."]

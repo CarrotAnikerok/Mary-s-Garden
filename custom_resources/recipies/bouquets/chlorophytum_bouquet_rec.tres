@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=10 format=3 uid="uid://cj4yiyw5h203s"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_6s3k7"]
+[ext_resource type="Resource" uid="uid://bujjowf0q2km" path="res://custom_resources/plant_ingridients/chlorophytum_flowers.tres" id="2_lqkh7"]
+[ext_resource type="Resource" uid="uid://lrirgbguyabm" path="res://custom_resources/plant_ingridients/chlorophytum_leaves.tres" id="3_ia2ra"]
+[ext_resource type="Texture2D" uid="uid://bveivavue4ite" path="res://sprites/pixel_plants/plant_products/chlorophytum_bouquet-Sheet.png" id="4_wv8ht"]
+[ext_resource type="Script" uid="uid://c56cxj2l5kao4" path="res://scripts/plant_products/bouquet.gd" id="5_btek4"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="6_4a1id"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6ksa"]
+atlas = ExtResource("4_wv8ht")
+region = Rect2(1, 2, 13, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhrew"]
+atlas = ExtResource("4_wv8ht")
+region = Rect2(15, 2, 15, 16)
+
+[sub_resource type="Resource" id="Resource_0p0n0"]
+script = ExtResource("5_btek4")
+bouquet_in_hall_texture = SubResource("AtlasTexture_v6ksa")
+product_name = "Букет Хлорофитума"
+price = 50
+texture = SubResource("AtlasTexture_yhrew")
+metadata/_custom_type_script = "uid://c56cxj2l5kao4"
+
+[resource]
+script = ExtResource("6_4a1id")
+ingridients = Array[ExtResource("1_6s3k7")]([ExtResource("2_lqkh7"), ExtResource("3_ia2ra")])
+output = SubResource("Resource_0p0n0")
+metadata/_custom_type_script = "uid://b4hv1pqh58m6c"

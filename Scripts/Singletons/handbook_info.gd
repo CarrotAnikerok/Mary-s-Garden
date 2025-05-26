@@ -3,24 +3,21 @@ extends Node
 var notes: Array[Dictionary]
 var phases: Array = ["Утро", "День", "Вечер"]
 var notes_dict: Array[Dictionary]
-var json_notes: Dictionary = {}
-var json_phases = JSON.stringify(phases)
  
 
 func _ready():
 	add_to_group("handbook_info")
-	json_notes.type = "plant_action"
-	json_notes.name = "Aloe Vera"
-	json_notes.description = "Water for 5 ml"
-	notes_dict.append(json_notes)
-	notes_dict.append(json_notes)
-	var json = JSON.stringify(notes_dict)
-	save_to_file(json)
-	load_from("res://SAVES/file.json")
+	#json_notes.type = "plant_action"
+	#json_notes.name = "Aloe Vera"
+	#json_notes.description = "Water for 5 ml"
+	#notes_dict.append(json_notes)
+	#notes_dict.append(json_notes)
+	#var json = JSON.stringify(notes_dict)
+	#save_to_file(json)
+	#load_from("res://SAVES/file.json")
 	add_title(phases[global.phase_of_day])
 
 
-	
 func add_note(type, plant_name="", description=""):
 	var dict = {
 			"type": type,
@@ -39,7 +36,7 @@ func add_title(title):
 	
 	
 func change_phase_title():
-	var i = global.phase_of_day - 1
+	var i = global.phase_of_day + 1
 	if (i == 3):
 		i = 0
 		change_day()

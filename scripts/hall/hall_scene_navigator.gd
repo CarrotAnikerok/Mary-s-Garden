@@ -4,19 +4,18 @@ extends Node2D
 var SCENE_PLANT_ROOM = "res://scenes/plant_room/plant_room.tscn"
 var scene_plant = preload("res://scenes/plant_room/plant_room.tscn").instantiate()
 var area_to_plant_room_active
+@onready var ai_plot = %AiPlot
+
 
 signal change_scene()
 
-func _ready():
-	pass
-	#get_tree().root.add_child.call_deferred(scene_plant)
+
+func start_scenary(scenary):
+	ai_plot.start_scenary(scenary)
 
 
 func _input(event):
-	if area_to_plant_room_active and event.is_action_pressed("ui_accept"):
-		#print("gooo ro plant_romm!")
-		#global.current_scene = 0
-		#await SceneManager.goto_scene(SCENE_PLANT_ROOM)
+	if area_to_plant_room_active and event.is_action_pressed("ui_accept") and ai_plot.can_interact:
 		print("change scene active")
 		change_scene.emit()
 		
@@ -26,11 +25,13 @@ func _add_a_scene_manually():
 
 
 func _on_to_plant_room_area_entered(_area):
+	print(_area)
 	print("area to plant room entered!")
 	area_to_plant_room_active = true
 
 
 func _on_to_plant_room_area_area_exited(_area):
+	print(_area)
 	print("area to plant room leaved...")
 	area_to_plant_room_active = false
 

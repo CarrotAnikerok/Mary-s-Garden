@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://c6mo7fj5a4yvd"]
+[gd_scene load_steps=92 format=3 uid="uid://c6mo7fj5a4yvd"]
 
 [ext_resource type="PackedScene" uid="uid://b5neg873g5wfk" path="res://scenes/hall/dialog_player.tscn" id="1_wkokc"]
 [ext_resource type="Texture2D" uid="uid://do4iu333ej1k2" path="res://sprites/novel_part/Arin/arin_angry.png" id="2_7awf8"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://0bvlsgpp7h3h" path="res://sprites/novel_part/Mary/mary_fear.png" id="12_tk8qh"]
 [ext_resource type="Texture2D" uid="uid://db68wkty71otq" path="res://sprites/novel_part/Mary/mary_sad_1.png" id="13_vs4os"]
 [ext_resource type="Texture2D" uid="uid://cemyrxk5c85gw" path="res://sprites/novel_part/Mary/mary_sad_2.png" id="14_th5da"]
+[ext_resource type="PackedScene" uid="uid://bdnt7pdc142cy" path="res://scenes/hall/characters/kris.tscn" id="15_p8d5n"]
+[ext_resource type="PackedScene" uid="uid://bhh6skkcrw85j" path="res://scenes/hall/characters/mark.tscn" id="16_obkld"]
 [ext_resource type="Texture2D" uid="uid://ve4jpk7g24g2" path="res://sprites/novel_part/Arin/arin_chill_1.png" id="16_rllwe"]
 [ext_resource type="Texture2D" uid="uid://blbb6tph45cae" path="res://sprites/novel_part/Arin/arin_chill_2.png" id="17_3l4ws"]
 [ext_resource type="Texture2D" uid="uid://fg41lxgeu405" path="res://sprites/novel_part/Arin/arin_sad.png" id="18_e8l5j"]
@@ -42,11 +44,14 @@
 [ext_resource type="Texture2D" uid="uid://ctsjhty1bsnwv" path="res://sprites/novel_part/Chris/chris_worry_1.png" id="35_6ud4u"]
 [ext_resource type="Texture2D" uid="uid://c1x3mquh4oph3" path="res://sprites/hall/spritesheets/plant_1_spritesheet.png" id="39_bdgvf"]
 [ext_resource type="Script" uid="uid://c6kfyig1o3ce6" path="res://scripts/hall/hall_scene_navigator.gd" id="39_ofr0x"]
+[ext_resource type="Texture2D" uid="uid://coqh8mbns82ef" path="res://sprites/novel_part/Mark/mark_thinks_2.png" id="40_4pr67"]
 [ext_resource type="PackedScene" uid="uid://c8j40uul4amh1" path="res://scenes/hall/characters/arin.tscn" id="42_4qh33"]
 [ext_resource type="Script" uid="uid://calmlyhak4yx6" path="res://scripts/hall/plant_products_storage.gd" id="42_a6q06"]
 [ext_resource type="Script" uid="uid://cykmq6n7emplc" path="res://scripts/command_pattern/ai_controller.gd" id="42_vdr2x"]
 [ext_resource type="BehaviorTree" uid="uid://ccu3ptt047jm0" path="res://scenary/scenary_1.tres" id="44_43hkt"]
 [ext_resource type="Script" uid="uid://d28jl8ju6j7co" path="res://scripts/hall/hall_products.gd" id="44_vdr2x"]
+[ext_resource type="Texture2D" uid="uid://baeyp557t4le2" path="res://sprites/novel_part/Chris/chris_worry_2.png" id="46_ih215"]
+[ext_resource type="Script" uid="uid://j0g8nb0t7osq" path="res://scripts/hall/walls.gd" id="47_ih215"]
 
 [sub_resource type="Animation" id="Animation_a6q06"]
 length = 0.001
@@ -346,6 +351,12 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cilli"]
 size = Vector2(25.5, 62.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ih215"]
+size = Vector2(11, 208)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u80b0"]
+b = Vector2(0, 182)
+
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_poutj"]
 var/start_scenary/name = &"start_scenary"
 var/start_scenary/type = 1
@@ -430,7 +441,7 @@ autoplay = "default"
 frame_progress = 0.402536
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("main_object")]
-position = Vector2(107, 108)
+position = Vector2(70, 108)
 offset = Vector2(0, -18)
 limit_left = 0
 limit_right = 480
@@ -471,8 +482,21 @@ position = Vector2(119, -12)
 [node name="Marker2D8" type="Marker2D" parent="PlantProducts/Bouquets"]
 position = Vector2(137, -12)
 
+[node name="Marker2D9" type="Marker2D" parent="PlantProducts/Bouquets"]
+position = Vector2(84, 18)
+
+[node name="Marker2D10" type="Marker2D" parent="PlantProducts/Bouquets"]
+position = Vector2(101, 18)
+
+[node name="Marker2D11" type="Marker2D" parent="PlantProducts/Bouquets"]
+position = Vector2(119, 18)
+
+[node name="Marker2D12" type="Marker2D" parent="PlantProducts/Bouquets"]
+position = Vector2(137, 18)
+
 [node name="Tea" type="Node2D" parent="PlantProducts"]
 unique_name_in_owner = true
+position = Vector2(0, 1)
 
 [node name="Marker2D" type="Marker2D" parent="PlantProducts/Tea"]
 position = Vector2(198, 96)
@@ -500,6 +524,7 @@ position = Vector2(240, 110)
 
 [node name="Perfume" type="Node2D" parent="PlantProducts"]
 unique_name_in_owner = true
+position = Vector2(0, 1)
 
 [node name="Marker2D" type="Marker2D" parent="PlantProducts/Perfume"]
 position = Vector2(266, 96)
@@ -533,14 +558,20 @@ texture = ExtResource("9_4pr67")
 unique_name_in_owner = true
 
 [node name="Scarlett" parent="Characters" instance=ExtResource("9_cbiwe")]
-position = Vector2(502, 108)
+position = Vector2(511, 108)
 
 [node name="Arin" parent="Characters" instance=ExtResource("42_4qh33")]
-position = Vector2(223, 109)
+position = Vector2(147, 108)
 
 [node name="Mary" parent="Characters" instance=ExtResource("6_6dx4x")]
 z_index = 1
-position = Vector2(185, 108)
+position = Vector2(115, 108)
+
+[node name="Kris" parent="Characters" instance=ExtResource("15_p8d5n")]
+position = Vector2(544, 108)
+
+[node name="Mark" parent="Characters" instance=ExtResource("16_obkld")]
+position = Vector2(511, 108)
 
 [node name="Lights" type="Node2D" parent="."]
 visible = false
@@ -772,14 +803,16 @@ mark_moods = {
 "mark_evil": ExtResource("27_nrifc"),
 "mark_offended": ExtResource("28_x5evv"),
 "mark_positive": ExtResource("29_aynh0"),
-"mark_thinks_1": ExtResource("30_xmbh0")
+"mark_thinks_1": ExtResource("30_xmbh0"),
+"mark_thinks_2": ExtResource("40_4pr67")
 }
 chris_moods = {
 "chris_angry": ExtResource("31_arejo"),
 "chris_confidence": ExtResource("32_5bkkr"),
 "chris_oath": ExtResource("33_7cf3l"),
 "chris_thinks": ExtResource("34_idsjt"),
-"chris_worry_1": ExtResource("35_6ud4u")
+"chris_worry_1": ExtResource("35_6ud4u"),
+"chris_worry_2": ExtResource("46_ih215")
 }
 player = NodePath("../Characters/Mary")
 
@@ -789,9 +822,26 @@ player = NodePath("../Characters/Mary")
 position = Vector2(28.25, 107.25)
 shape = SubResource("RectangleShape2D_cilli")
 
+[node name="Walls" type="Node2D" parent="."]
+script = ExtResource("47_ih215")
+
+[node name="Wall1" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall1"]
+position = Vector2(-4.5, 94)
+shape = SubResource("RectangleShape2D_ih215")
+
+[node name="Wall2" type="Area2D" parent="Walls"]
+position = Vector2(479, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
+position = Vector2(-1, 0)
+shape = SubResource("SegmentShape2D_u80b0")
+
 [node name="Utilities" type="Node" parent="."]
 
 [node name="AiPlot" type="Node" parent="Utilities" node_paths=PackedStringArray("camera", "arin", "mary", "scarlett")]
+unique_name_in_owner = true
 script = ExtResource("42_vdr2x")
 camera = NodePath("../../Camera2D")
 arin = NodePath("../../Characters/Arin")
@@ -806,16 +856,9 @@ blackboard_plan = SubResource("BlackboardPlan_poutj")
 [node name="Products" type="Node" parent="Utilities"]
 script = ExtResource("44_vdr2x")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 60.0
-offset_top = 103.0
-offset_right = 85.0
-offset_bottom = 116.0
-theme_override_font_sizes/font_size = 3
-text = "sell boquet"
-
 [connection signal="area_entered" from="ToPlantRoomArea" to="." method="_on_to_plant_room_area_entered"]
-[connection signal="area_exited" from="ToPlantRoomArea" to="." method="_on_to_plant_room_area_exited"]
+[connection signal="area_exited" from="ToPlantRoomArea" to="." method="_on_to_plant_room_area_area_exited"]
+[connection signal="area_entered" from="Walls/Wall1" to="Walls" method="_on_wall_1_area_entered"]
+[connection signal="area_entered" from="Walls/Wall2" to="Walls" method="_on_wall_2_area_entered"]
+[connection signal="area_exited" from="Walls/Wall2" to="Walls" method="_on_wall_2_area_exited"]
 [connection signal="bouquet_sold" from="Utilities/Products" to="PlantProducts" method="_on_products_bouquet_sold"]
-[connection signal="pressed" from="Button" to="Utilities/AiPlot" method="_on_button_pressed"]
-[connection signal="pressed" from="Button" to="Utilities/Products" method="_on_button_pressed"]

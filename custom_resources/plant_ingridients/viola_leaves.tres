@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_31k7j")
-ingridietn_name = "viola leaves"
+ingridient_name = "Листья Фиалки"
 texture = ExtResource("2_pwequ")
 type = 1
 metadata/_custom_type_script = "uid://m3kb60dhifs4"

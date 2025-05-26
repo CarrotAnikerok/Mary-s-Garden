@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_ex5ll")
-ingridietn_name = "lilium flowers"
+ingridient_name = ""
 texture = ExtResource("2_aprk1")
 type = 0
 metadata/_custom_type_script = "uid://m3kb60dhifs4"

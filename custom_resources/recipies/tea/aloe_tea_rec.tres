@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=6 format=3 uid="uid://dm174qoar3o2r"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_yw66d"]
+[ext_resource type="Resource" uid="uid://bltrjmgjxmfaw" path="res://custom_resources/other_ingridients/green_tea.tres" id="2_n5r8o"]
+[ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="3_jm5dq"]
+[ext_resource type="Resource" uid="uid://blwbcb8bbahmj" path="res://custom_resources/plant_produts/tea/aloe_tea.tres" id="4_u5jaa"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="5_yi06x"]
+
+[resource]
+script = ExtResource("5_yi06x")
+ingridients = Array[ExtResource("1_yw66d")]([ExtResource("2_n5r8o"), ExtResource("3_jm5dq")])
+output = ExtResource("4_u5jaa")
+metadata/_custom_type_script = "uid://b4hv1pqh58m6c"

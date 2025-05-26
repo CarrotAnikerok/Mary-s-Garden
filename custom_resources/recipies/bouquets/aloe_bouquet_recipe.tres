@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=5 format=3 uid="uid://cvdts6nygq6o8"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_m01ii"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="2_h6f1w"]
+[ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="2_m01ii"]
+[ext_resource type="Resource" uid="uid://b36excesthkf" path="res://custom_resources/plant_produts/bouquets/aloe_bouquet.tres" id="3_hkfap"]
+
+[resource]
+script = ExtResource("2_h6f1w")
+ingridients = Array[ExtResource("1_m01ii")]([ExtResource("2_m01ii"), ExtResource("2_m01ii")])
+output = ExtResource("3_hkfap")
+metadata/_custom_type_script = "uid://b4hv1pqh58m6c"

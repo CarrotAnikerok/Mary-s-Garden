@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://gao1je8jpkpk"]
+[gd_scene load_steps=77 format=3 uid="uid://gao1je8jpkpk"]
 
 [ext_resource type="Texture2D" uid="uid://hk7ole3fkrbf" path="res://sprites/plant_room/windows.png" id="2_7ntu0"]
 [ext_resource type="PackedScene" uid="uid://qi51764v7mh7" path="res://scenes/plants/kalanchoe_blossfeldiana.tscn" id="2_r6sxj"]
@@ -24,12 +24,11 @@
 [ext_resource type="PackedScene" uid="uid://bwqsvc17c5c5j" path="res://scenes/plants/chlorophytum_comosum.tscn" id="10_bqpbp"]
 [ext_resource type="Texture2D" uid="uid://d0xy37k81apml" path="res://sprites/plant_room/UI/clock_phase/clock_phase_1.png" id="10_cedpl"]
 [ext_resource type="Texture2D" uid="uid://55jyrf7cq87h" path="res://sprites/plant_room/UI/clock_phase/clock_phase_6.png" id="10_mkj6r"]
-[ext_resource type="Texture2D" uid="uid://cgrnnrh6sta8n" path="res://sprites/plant_room/UI/clock_time.png" id="10_sngjb"]
 [ext_resource type="Texture2D" uid="uid://ricu78kl72fu" path="res://sprites/plant_room/UI/clock_phase/clock_phase_7.png" id="11_4tg3j"]
 [ext_resource type="Texture2D" uid="uid://xqp4rohkygc2" path="res://sprites/plant_room/UI/clock_phase/clock_phase_8.png" id="12_i121n"]
 [ext_resource type="Texture2D" uid="uid://qeixo8fu55sn" path="res://sprites/plant_room/UI/clock_phase/clock_phase_3.png" id="13_7ntu0"]
-[ext_resource type="Texture2D" uid="uid://d32v2ylnyg07f" path="res://sprites/plant_room/UI/point.png" id="18_34jyk"]
 [ext_resource type="FontFile" uid="uid://b6q0wvaf10l3g" path="res://resources/fonts/Micro_5/Micro5-Regular.ttf" id="18_f5rt3"]
+[ext_resource type="PackedScene" uid="uid://djukkjpwshclx" path="res://scenes/t_ime_clock.tscn" id="19_02e7d"]
 [ext_resource type="Script" uid="uid://c1mu4sgebqw3e" path="res://scripts/plant_room/UI/garden_slot.gd" id="23_tmx1f"]
 [ext_resource type="PackedScene" uid="uid://cti7uh2emmyxi" path="res://scenes/plants/bergenia_crassoifolia.tscn" id="26_tcsdn"]
 [ext_resource type="Script" uid="uid://dwsm1qsvjsd86" path="res://scripts/plant_room/light.gd" id="28_4tg3j"]
@@ -262,62 +261,6 @@ normal_texture = ExtResource("5_ytfrs")
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mkj6r"]
 light_mode = 1
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i121n"]
-light_mode = 1
-
-[sub_resource type="Animation" id="Animation_f5rt3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_mkj6r"]
-resource_name = "arrow_round"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_gxb4b"]
-resource_name = "line_rotate"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6rbcv"]
-_data = {
-&"RESET": SubResource("Animation_f5rt3"),
-&"arrow_round": SubResource("Animation_mkj6r"),
-&"line_rotate": SubResource("Animation_gxb4b")
-}
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7ntu0"]
 light_mode = 1
 
@@ -451,7 +394,7 @@ height = 55.0
 [node name="Ray2" type="PointLight2D" parent="CanvasLayer/Light/rays"]
 position = Vector2(-51.608, 10.352)
 scale = Vector2(0.231, 6.261)
-color = Color(1, 0.706, 0.02, 1)
+color = Color(1, 0.706, 0.02, 0)
 energy = 2.75
 range_layer_min = -10
 range_item_cull_mask = 2
@@ -555,14 +498,12 @@ light_mask = 4
 z_index = -3
 position = Vector2(160, 27.0002)
 texture = ExtResource("2_7ntu0")
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 light_mask = 2
 z_index = -1
 position = Vector2(160, 90.0002)
 texture = SubResource("CanvasTexture_4tg3j")
-metadata/_edit_lock_ = true
 
 [node name="GardenSlots" type="Node2D" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -680,6 +621,7 @@ position = Vector2(204, 145)
 position = Vector2(228, 145)
 
 [node name="CanvasLayerUI" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="UI" type="Control" parent="CanvasLayerUI"]
 light_mask = 0
@@ -698,24 +640,8 @@ offset_right = 32.0
 offset_bottom = 32.0
 theme_type_variation = &"blank_button"
 
-[node name="TImeClock" type="Sprite2D" parent="CanvasLayerUI/UI/DateButton"]
-modulate = Color(0.82, 0.51824, 0.4264, 1)
+[node name="TImeClock" parent="CanvasLayerUI/UI/DateButton" instance=ExtResource("19_02e7d")]
 position = Vector2(19, 15)
-texture = ExtResource("10_sngjb")
-
-[node name="Arrow" type="Sprite2D" parent="CanvasLayerUI/UI/DateButton/TImeClock"]
-modulate = Color(0.650128, 0.650128, 0.650128, 1)
-z_index = 1
-material = SubResource("CanvasItemMaterial_i121n")
-position = Vector2(-0.5, -0.5)
-texture = ExtResource("18_34jyk")
-offset = Vector2(0, -4)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayerUI/UI/DateButton/TImeClock/Arrow"]
-libraries = {
-&"": SubResource("AnimationLibrary_6rbcv")
-}
-autoplay = "line_rotate"
 
 [node name="TimePhaseSprite" type="Sprite2D" parent="CanvasLayerUI/UI/DateButton"]
 material = SubResource("CanvasItemMaterial_7ntu0")
@@ -789,6 +715,7 @@ text = "1000€"
 script = ExtResource("37_bqpbp")
 
 [node name="Button" type="Button" parent="CanvasLayerUI"]
+visible = false
 z_index = 9
 offset_left = 266.0
 offset_top = 164.0

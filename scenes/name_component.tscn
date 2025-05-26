@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckr0aj16ctwm0"]
+
+[ext_resource type="Script" uid="uid://bknmsduksorgf" path="res://scripts/ui/element_name.gd" id="1_q83ww"]
+[ext_resource type="FontFile" uid="uid://b5qsr55mbcu4p" path="res://resources/fonts/Blogger/Blogger_Sans-Light.otf" id="2_iv4iy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q83ww"]
+font = ExtResource("2_iv4iy")
+font_size = 7
+font_color = Color(0.737255, 0.937255, 0.72549, 1)
+outline_size = 2
+outline_color = Color(0.12549, 0.34902, 0.235294, 1)
+
+[node name="NameComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -7.0
+offset_top = -9.0
+offset_right = 7.0
+offset_bottom = 8.0
+mouse_filter = 1
+script = ExtResource("1_q83ww")
+
+[node name="ElementName" type="Label" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 54.0
+offset_bottom = 14.0
+mouse_filter = 1
+text = "Листья Алое"
+label_settings = SubResource("LabelSettings_q83ww")
+
+[node name="NameTimer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

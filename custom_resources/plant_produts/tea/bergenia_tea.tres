@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Tea" load_steps=4 format=3 uid="uid://kbrf4mx0k6xx"]
+
+[ext_resource type="Script" uid="uid://dt34o5taao3yg" path="res://scripts/plant_products/tea.gd" id="1_3galw"]
+[ext_resource type="Texture2D" uid="uid://bdwgevgj06nj6" path="res://sprites/pixel_plants/plant_products/teas.png" id="2_iycyb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b01n7"]
+atlas = ExtResource("2_iycyb")
+region = Rect2(32, 14, 7, 9)
+
+[resource]
+script = ExtResource("1_3galw")
+product_name = "Бадан Чай"
+price = 40
+texture = SubResource("AtlasTexture_b01n7")
+metadata/_custom_type_script = "uid://dt34o5taao3yg"

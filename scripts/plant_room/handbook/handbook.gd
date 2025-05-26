@@ -64,14 +64,14 @@ func add_title(note: Dictionary):
 	var text = note.title
 	if check_capacity(paper1):
 		if paper1.text == "":
-			paper1.text += "[center][color=#b1bf62]" + text + "[/color][/center]"
+			paper1.text += "[center][color=#819567]" + text + "[/color][/center]"
 		else: 
-			paper1.text += "\n" + "[center][color=#b1bf62]" + text + "[/color][/center]"
+			paper1.text += "\n" + "[center][color=#819567]" + text + "[/color][/center]"
 	elif check_capacity(paper2):
 		if paper2.text == "":
-			paper2.text += "[center][color=#b1bf62]" + text + "[/color][/center]"
+			paper2.text += "[center][color=#819567]" + text + "[/color][/center]"
 		else: 
-			paper2.text += "\n" + "[center][color=#b1bf62]" + text + "[/color][/center]"
+			paper2.text += "\n" + "[center][color=#819567]" + text + "[/color][/center]"
 	else:
 		push_error("All papers are full even for title")
 
@@ -81,7 +81,7 @@ func _on_exit_button_pressed():
 
 
 func check_capacity(label: RichTextLabel):
-	if label.get_content_height() + 15 >= paper.size.y:
+	if label.get_content_height() + 70 >= paper.size.y:
 		return false
 	else:
 		return true

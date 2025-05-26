@@ -1,4 +1,6 @@
+class_name PlantDescription
 extends Control
+
 
 @onready var active_plant = $"../..".active_plant as Plant
 @export_file("*json") var plant_description_file: String
@@ -11,6 +13,7 @@ var pages: Array[Vector2]
 var page_number: int = 0
 
 var descriptions: Dictionary
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -97,9 +100,9 @@ func add_page(first_index, last_index):
 func add_note(note):
 	if note.type == "phase_change":
 		if label_description.text == "":
-			label_description.text += "[center][color=#b1bf62]" + note.title + "[/color][/center]"
+			label_description.text += "[center][color=#819567]" + note.title + "[/color][/center]"
 		else:
-			label_description.text += "\n" + "[center][color=#b1bf62]" + note.title + "[/color][/center]"
+			label_description.text += "\n" + "[center][color=#819567]" + note.title + "[/color][/center]"
 	elif note.name == active_plant.plant_name:
 		if label_description.text == "":
 			label_description.text += note.description
@@ -122,16 +125,32 @@ func check_capacity(paper):
 
 func update_info():
 	var plant_name = active_plant.plant_name
-	var plant_description = descriptions[plant_name].duplicate()
+	var plant_description = descriptions[plant_name].duplicate() as Array[String]
 	label_name.text = plant_description[0]
 	if global.desc_check:
 		hide_info_stuff()
-		label_description.text = plant_description[1]
+		label_description.text = plant_description[1] as String
 	elif global.info_check:
 		label_description.text = ""
 		add_plant_notes()
 	elif global.pract_check:
 		label_description.text = plant_description[2]
+	print("pRINTIN UPDATE INFO")
+	print(label_description.get_visible_line_count())
+	print(label_description.get_total_character_count())
+	print(label_description.get_line_count())
+
+		
+#добавить перелистывание страниц обычных штучек
+#func add_description(description: String):
+	#var first_index = -1
+	#var last_index = -1
+	#page_number = 0
+	#pages.clear()
+	#if description.length() / 32 > label_description.get_visible_line_count():
+		#label_description.get_visible_line_count() * 32
+		
+
 
 
 func change_check_to(state):
@@ -151,6 +170,13 @@ func change_check_to(state):
 		_:
 			push_error("not right check")
 
+
+func return_to_position(button: Control):
+	var tween = get_tree().create_tween()
+	tween.tween_property($DescButton, "position", Vector2(100, $DescButton.position.y), 0.2)
+	tween.tween_property($PractDescButton, "position", Vector2(100, $PractDescButton.position.y), 0.2)
+	tween.tween_property($InfoButton, "position", Vector2(100, $InfoButton.position.y), 0.2)
+	tween.tween_property(button, "position", Vector2(95, button.position.y), 0.2)
 
 func toggle_moving_buttons():
 	if page_number == 0:

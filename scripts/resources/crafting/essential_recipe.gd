@@ -12,7 +12,7 @@ func create() -> void:
 	
 
 func can_create_local(element: Ingridient):
-	if ingridient.ingridietn_name == element.ingridietn_name:
+	if ingridient.ingridient_name == element.ingridient_name:
 		return true
 	else:
 		return false

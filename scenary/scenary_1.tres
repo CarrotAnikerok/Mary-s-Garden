@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=28 format=3 uid="uid://ccu3ptt047jm0"]
+[gd_resource type="BehaviorTree" load_steps=29 format=3 uid="uid://ccu3ptt047jm0"]
 
 [ext_resource type="Script" uid="uid://dx67rbfyhqfep" path="res://ai/tasks/move_mary.gd" id="1_kaihp"]
 [ext_resource type="Script" uid="uid://dbqlubiaib33w" path="res://ai/tasks/move_arin.gd" id="1_q14pj"]
@@ -25,12 +25,12 @@ value = SubResource("BBVariant_nk15e")
 
 [sub_resource type="BTAction" id="BTAction_ewcsl"]
 script = ExtResource("1_kaihp")
-move_to = Vector2(160, 109)
+move_to = Vector2(160, 108)
 speed = 100.0
 
 [sub_resource type="BTAction" id="BTAction_2y7hp"]
 script = ExtResource("1_kaihp")
-move_to = Vector2(260, 109)
+move_to = Vector2(260, 108)
 speed = 100.0
 
 [sub_resource type="BTSequence" id="BTSequence_oyq3i"]
@@ -55,7 +55,7 @@ speed = 100.0
 
 [sub_resource type="BTAction" id="BTAction_oyq3i"]
 script = ExtResource("1_kaihp")
-move_to = Vector2(260, 109)
+move_to = Vector2(265, 108)
 speed = 100.0
 
 [sub_resource type="BTParallel" id="BTParallel_xdwn8"]
@@ -66,12 +66,12 @@ children = [SubResource("BTAction_jifd5"), SubResource("BTAction_oyq3i")]
 
 [sub_resource type="BTAction" id="BTAction_3d4of"]
 script = ExtResource("1_kaihp")
-move_to = Vector2(350, 109)
+move_to = Vector2(350, 108)
 speed = 100.0
 
 [sub_resource type="BTAction" id="BTAction_qxsrd"]
 script = ExtResource("1_q14pj")
-move_to = Vector2(330, 109)
+move_to = Vector2(320, 109)
 speed = 100.0
 
 [sub_resource type="BTParallel" id="BTParallel_w3sew"]
@@ -80,20 +80,23 @@ children = [SubResource("BTAction_3d4of"), SubResource("BTAction_qxsrd")]
 
 [sub_resource type="BTAction" id="BTAction_dfwgb"]
 script = ExtResource("2_8p7tg")
-dialog_name = "first_dialog"
+dialog_name = "dialog_1_1"
 
 [sub_resource type="BTWait" id="BTWait_y4va5"]
+duration = 2.0
 
-[sub_resource type="BTAction" id="BTAction_v5xrr"]
-script = ExtResource("1_kaihp")
-move_to = Vector2(220, 109)
-speed = 100.0
+[sub_resource type="BTAction" id="BTAction_nk15e"]
+script = ExtResource("2_8p7tg")
+dialog_name = "dialog_1_2"
+
+[sub_resource type="BTWait" id="BTWait_jifd5"]
 
 [sub_resource type="BTAction" id="BTAction_cyerv"]
 script = ExtResource("3_im8xg")
+time_spent = 5
 
 [sub_resource type="BTSequence" id="BTSequence_qxsrd"]
-children = [SubResource("BTCheckVar_jifd5"), SubResource("BTParallel_3d4of"), SubResource("BTParallel_xdwn8"), SubResource("BTWait_ylxa4"), SubResource("BTParallel_w3sew"), SubResource("BTAction_dfwgb"), SubResource("BTWait_y4va5"), SubResource("BTAction_v5xrr"), SubResource("BTAction_cyerv")]
+children = [SubResource("BTCheckVar_jifd5"), SubResource("BTParallel_3d4of"), SubResource("BTParallel_xdwn8"), SubResource("BTWait_ylxa4"), SubResource("BTParallel_w3sew"), SubResource("BTAction_dfwgb"), SubResource("BTWait_y4va5"), SubResource("BTAction_nk15e"), SubResource("BTWait_jifd5"), SubResource("BTAction_cyerv")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_43hkt")

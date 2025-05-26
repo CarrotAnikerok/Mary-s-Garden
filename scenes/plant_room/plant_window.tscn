@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://b20sqxrpc7sei"]
+[gd_scene load_steps=75 format=3 uid="uid://b20sqxrpc7sei"]
 
 [ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://resources/fonts/Neucha/Neucha-Regular.ttf" id="1_2v1e0"]
 [ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://addons/pixel_shader/camera.tscn" id="2_8y0bb"]
@@ -12,11 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://cxlm4at3lce8p" path="res://sprites/plant_menu/buttons/exit_button.png" id="7_fucjw"]
 [ext_resource type="Texture2D" uid="uid://b6j52v0ck0sls" path="res://sprites/plant_menu/icons/LightIcons/shadow.png" id="7_o7elc"]
 [ext_resource type="Theme" uid="uid://bxj03pbbshigq" path="res://sprites/plant_menu/button_themes/spray.tres" id="8_mbhs4"]
+[ext_resource type="PackedScene" uid="uid://c4lbn3qb8quya" path="res://scripts/ui/sliding_button.tscn" id="9_1jc8f"]
 [ext_resource type="Theme" uid="uid://cfkmw81av5jt8" path="res://sprites/plant_menu/button_themes/light.tres" id="9_mycsc"]
 [ext_resource type="Texture2D" uid="uid://g45ay1t3h6q4" path="res://sprites/plant_menu/icons/LightIcons/high.png" id="9_o7elc"]
 [ext_resource type="Script" uid="uid://b3fll7hfmu8t4" path="res://scripts/plant_room/plant_window/plant_description.gd" id="10_5uixt"]
 [ext_resource type="Texture2D" uid="uid://bm73nr03rudbu" path="res://sprites/plant_menu/icons/StateIcons/dead.png" id="10_bl0pt"]
-[ext_resource type="FontFile" uid="uid://cvl8arghtgpyj" path="res://resources/fonts/Balsamiq_Sans/BalsamiqSans-BoldItalic.ttf" id="11_bl0pt"]
 [ext_resource type="Texture2D" uid="uid://dbxs6lkumqlsh" path="res://sprites/plant_menu/icons/StateIcons/horrible.png" id="11_deuju"]
 [ext_resource type="Texture2D" uid="uid://cef61hylsajvl" path="res://sprites/plant_menu/icons/StateIcons/bad.png" id="12_57xuv"]
 [ext_resource type="Script" uid="uid://cyilwmt6tl5k8" path="res://scripts/ui/navigation.gd" id="12_deuju"]
@@ -25,12 +25,16 @@
 [ext_resource type="Texture2D" uid="uid://bswya8dal5drr" path="res://sprites/plant_menu/icons/StateIcons/good.png" id="14_toce5"]
 [ext_resource type="Texture2D" uid="uid://cvyhk7i5rogan" path="res://sprites/plant_menu/icons/StateIcons/perfect.png" id="15_8ncot"]
 [ext_resource type="Texture2D" uid="uid://clq1eq3ekgh1m" path="res://sprites/plant_menu/tools/instriments.png" id="19_fucjw"]
+[ext_resource type="PackedScene" uid="uid://b8m8og1wmqxwp" path="res://scripts/ui/scale_button.tscn" id="21_3ckwq"]
 [ext_resource type="Theme" uid="uid://b4uu16ao6kfi0" path="res://themes/new_theme.tres" id="23_8ncot"]
 [ext_resource type="Texture2D" uid="uid://cplpg4s1grxg" path="res://sprites/plant_menu/tools/clock_text.png" id="23_toce5"]
+[ext_resource type="FontFile" uid="uid://cctjwlh0005si" path="res://resources/fonts/Sofia Sans/static/SofiaSansSemiCondensed-Medium.ttf" id="30_kvucr"]
 [ext_resource type="Texture2D" uid="uid://6ygkb6lr3ylx" path="res://sprites/plant_menu/buttons/book_button.png" id="30_o1ltb"]
 [ext_resource type="Texture2D" uid="uid://kq40eg4f3sxn" path="res://sprites/plant_menu/buttons/pract_book_button.png" id="31_kvucr"]
 [ext_resource type="Texture2D" uid="uid://dhfraavdgkql6" path="res://sprites/plant_menu/buttons/plant_info_button.png" id="32_emvj8"]
+[ext_resource type="Texture2D" uid="uid://b6ypnjieka153" path="res://sprites/plant_menu/buttons/next_dsc_button_press.png" id="32_o1ltb"]
 [ext_resource type="Texture2D" uid="uid://bk2s74ptuw72w" path="res://sprites/plant_menu/slider_menu/water_menu.png" id="33_3ckwq"]
+[ext_resource type="Texture2D" uid="uid://dauguqhhoapip" path="res://sprites/plant_menu/buttons/next_dsc_button_hover.png" id="33_kvucr"]
 [ext_resource type="Texture2D" uid="uid://dhgddcev1sb3t" path="res://sprites/plant_menu/buttons/next_dsc_button.png" id="34_o4v8h"]
 [ext_resource type="Texture2D" uid="uid://bda6guale0ubi" path="res://sprites/plant_menu/buttons/next_plant_button.png" id="36_tvups"]
 
@@ -53,11 +57,23 @@ var plant_model
 func _ready():
 	update_info()
 	tools_buttons.worked_with_plant.connect(update_info)
+	global_position = active_plant.global_position
+	scale = Vector2(0.1, 0.1)
+	var tween = get_tree().create_tween().set_parallel()
+	tween.tween_property(self, \"global_position\", Vector2(160, 90), 0.2)
+	tween.tween_property(self, \"scale\", Vector2(1, 1), 0.2)
+	#с тобой надо что-то делать
+	#tween.tween_property($PlantWindowBg, \"modulate\", \"ffffff\", 0.2)
+	print(active_plant.global_position)
 	
 #func _process(_delta):
 	#update_info() #а можно я буду это из таймера как-то делть а...
 	
 func _on_exit_button_pressed():
+	var tween = get_tree().create_tween().set_parallel()
+	tween.tween_property(self, \"global_position\", active_plant.global_position, 0.2)
+	tween.tween_property(self, \"scale\", Vector2(0.1, 0.1), 0.2)
+	await tween.finished
 	queue_free()
 		
 func update_info():
@@ -202,9 +218,9 @@ atlas = ExtResource("19_fucjw")
 region = Rect2(0, 21, 16, 16)
 
 [sub_resource type="LabelSettings" id="LabelSettings_l4uh7"]
-font = ExtResource("11_bl0pt")
+font = ExtResource("1_2v1e0")
 font_size = 9
-font_color = Color(0.694875, 0.75, 0.3825, 1)
+font_color = Color(0.49909, 0.58, 0.4002, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5uixt"]
 light_mode = 1
@@ -246,6 +262,8 @@ theme = SubResource("Theme_1jc8f")
 script = SubResource("GDScript_d7kgb")
 
 [node name="PlantWindowBg" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
 light_mask = 0
 z_index = -1
 material = SubResource("CanvasItemMaterial_egp2q")
@@ -391,6 +409,11 @@ texture_hover = ExtResource("7_fucjw")
 texture_disabled = ExtResource("7_fucjw")
 texture_focused = ExtResource("7_fucjw")
 
+[node name="SlidingButton" parent="TextureRect/ExitButton" node_paths=PackedStringArray("button") instance=ExtResource("9_1jc8f")]
+button = NodePath("..")
+to_position = Vector2(7, 0)
+time = 0.2
+
 [node name="PlantInfo" type="ColorRect" parent="TextureRect"]
 visible = false
 material = SubResource("CanvasItemMaterial_o7elc")
@@ -533,11 +556,15 @@ offset_left = -107.0
 offset_top = 55.0
 offset_right = -83.0
 offset_bottom = 71.0
+pivot_offset = Vector2(12, 8)
 texture_normal = SubResource("AtlasTexture_o1ltb")
 texture_pressed = SubResource("AtlasTexture_o1ltb")
 texture_hover = SubResource("AtlasTexture_o1ltb")
 texture_disabled = SubResource("AtlasTexture_o1ltb")
 texture_focused = SubResource("AtlasTexture_o1ltb")
+
+[node name="Node" parent="TextureRect/ToolsButtons/WateringCanButton" node_paths=PackedStringArray("parent") instance=ExtResource("21_3ckwq")]
+parent = NodePath("..")
 
 [node name="SprayButton" type="TextureButton" parent="TextureRect/ToolsButtons"]
 material = SubResource("CanvasItemMaterial_mbhs4")
@@ -546,8 +573,12 @@ offset_left = -75.0
 offset_top = 55.0
 offset_right = -66.0
 offset_bottom = 71.0
+pivot_offset = Vector2(4.5, 8)
 theme = ExtResource("8_mbhs4")
 texture_normal = SubResource("AtlasTexture_kvucr")
+
+[node name="Node" parent="TextureRect/ToolsButtons/SprayButton" node_paths=PackedStringArray("parent") instance=ExtResource("21_3ckwq")]
+parent = NodePath("..")
 
 [node name="GroundButton" type="Button" parent="TextureRect/ToolsButtons"]
 layout_mode = 0
@@ -555,6 +586,7 @@ offset_left = -58.0
 offset_top = 52.0
 offset_right = -39.0
 offset_bottom = 71.0
+pivot_offset = Vector2(9.5, 9.5)
 theme = ExtResource("23_8ncot")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/ToolsButtons/GroundButton"]
@@ -581,6 +613,9 @@ texture_progress = ExtResource("23_toce5")
 tint_under = Color(0.43, 0.43, 0.43, 1)
 tint_progress = Color(0.4131, 0.81, 0.538785, 1)
 
+[node name="Node" parent="TextureRect/ToolsButtons/GroundButton" node_paths=PackedStringArray("parent") instance=ExtResource("21_3ckwq")]
+parent = NodePath("..")
+
 [node name="LightButton" type="Button" parent="TextureRect/ToolsButtons"]
 material = SubResource("CanvasItemMaterial_mycsc")
 layout_mode = 0
@@ -588,6 +623,7 @@ offset_left = -33.0
 offset_top = 54.0
 offset_right = -22.0
 offset_bottom = 71.0
+pivot_offset = Vector2(5.5, 8.5)
 theme = ExtResource("9_mycsc")
 theme_override_font_sizes/font_size = 5
 text = "
@@ -609,6 +645,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_o4v8h")
 
+[node name="Node" parent="TextureRect/ToolsButtons/LightButton" node_paths=PackedStringArray("parent") instance=ExtResource("21_3ckwq")]
+parent = NodePath("..")
+
 [node name="ScissorsButton" type="TextureButton" parent="TextureRect/ToolsButtons"]
 layout_mode = 1
 anchors_preset = 8
@@ -622,7 +661,11 @@ offset_right = 2.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_tvups")
+
+[node name="Node" parent="TextureRect/ToolsButtons/ScissorsButton" node_paths=PackedStringArray("parent") instance=ExtResource("21_3ckwq")]
+parent = NodePath("..")
 
 [node name="PlantDescription" type="Control" parent="TextureRect"]
 layout_mode = 1
@@ -649,6 +692,11 @@ texture_hover = ExtResource("30_o1ltb")
 texture_disabled = ExtResource("30_o1ltb")
 texture_focused = ExtResource("30_o1ltb")
 
+[node name="SlidingButton" parent="TextureRect/PlantDescription/DescButton" node_paths=PackedStringArray("button") instance=ExtResource("9_1jc8f")]
+button = NodePath("..")
+to_position = Vector2(7, 0)
+time = 0.2
+
 [node name="PractDescButton" type="TextureButton" parent="TextureRect/PlantDescription"]
 z_index = -1
 layout_mode = 0
@@ -661,6 +709,11 @@ texture_pressed = ExtResource("31_kvucr")
 texture_hover = ExtResource("31_kvucr")
 texture_disabled = ExtResource("31_kvucr")
 texture_focused = ExtResource("31_kvucr")
+
+[node name="SlidingButton" parent="TextureRect/PlantDescription/PractDescButton" node_paths=PackedStringArray("button") instance=ExtResource("9_1jc8f")]
+button = NodePath("..")
+to_position = Vector2(7, 0)
+time = 0.2
 
 [node name="InfoButton" type="TextureButton" parent="TextureRect/PlantDescription"]
 z_index = -1
@@ -675,12 +728,17 @@ texture_hover = ExtResource("32_emvj8")
 texture_disabled = ExtResource("32_emvj8")
 texture_focused = ExtResource("32_emvj8")
 
+[node name="SlidingButton" parent="TextureRect/PlantDescription/InfoButton" node_paths=PackedStringArray("button") instance=ExtResource("9_1jc8f")]
+button = NodePath("..")
+to_position = Vector2(7, 0)
+time = 0.2
+
 [node name="PlantName" type="Label" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 19.0
-offset_top = -65.0
-offset_right = 106.0
-offset_bottom = -38.0
+offset_left = 29.0003
+offset_top = -66.0
+offset_right = 96.0003
+offset_bottom = -39.0
 text = "Хлорофитум Хохлатый"
 label_settings = SubResource("LabelSettings_l4uh7")
 horizontal_alignment = 1
@@ -690,10 +748,11 @@ autowrap_mode = 3
 [node name="Description" type="RichTextLabel" parent="TextureRect/PlantDescription"]
 modulate = Color(0.631373, 0.603922, 0.431373, 1)
 layout_mode = 0
-offset_left = 15.0
+offset_left = 19.0
 offset_top = -39.0
-offset_right = 112.0
-offset_bottom = 50.0
+offset_right = 108.0
+offset_bottom = 49.0
+theme_override_fonts/normal_font = ExtResource("30_kvucr")
 theme_override_font_sizes/normal_font_size = 5
 bbcode_enabled = true
 text = "Хлорофитум Хохлатый — это многолетняя вечнозеленая трава. Его линейные, ярко-зеленые листья формируют плотную прикорневую розетку. Соцветие возникает из центра растения и достигает длины до 1 метра. Его отдельные цветки звездчатой формы, белые, диаметров до 2 сантиметров. Хлорофитум является одним из самых популярных комнатных растений во всём мире."
@@ -705,10 +764,9 @@ offset_top = 53.0
 offset_right = 83.0
 offset_bottom = 68.0
 texture_normal = ExtResource("34_o4v8h")
-texture_pressed = ExtResource("34_o4v8h")
-texture_hover = ExtResource("34_o4v8h")
+texture_pressed = ExtResource("32_o1ltb")
+texture_hover = ExtResource("33_kvucr")
 texture_disabled = ExtResource("34_o4v8h")
-texture_focused = ExtResource("34_o4v8h")
 
 [node name="PrevButton" type="TextureButton" parent="TextureRect/PlantDescription"]
 layout_mode = 0
@@ -717,18 +775,17 @@ offset_top = 53.0
 offset_right = 58.0
 offset_bottom = 68.0
 texture_normal = ExtResource("34_o4v8h")
-texture_pressed = ExtResource("34_o4v8h")
-texture_hover = ExtResource("34_o4v8h")
+texture_pressed = ExtResource("32_o1ltb")
+texture_hover = ExtResource("33_kvucr")
 texture_disabled = ExtResource("34_o4v8h")
-texture_focused = ExtResource("34_o4v8h")
 flip_h = true
 
 [node name="PageCount" type="Label" parent="TextureRect/PlantDescription"]
 layout_mode = 0
-offset_left = 58.0
-offset_top = 53.0
-offset_right = 64.0
-offset_bottom = 66.9583
+offset_left = 59.0
+offset_top = 55.0
+offset_right = 65.0
+offset_bottom = 68.9583
 theme_override_colors/font_color = Color(0.631373, 0.603922, 0.431373, 1)
 theme_override_font_sizes/font_size = 10
 text = "1"
@@ -761,6 +818,11 @@ texture_hover = ExtResource("36_tvups")
 texture_disabled = ExtResource("36_tvups")
 texture_focused = ExtResource("36_tvups")
 
+[node name="SlidingButton" parent="TextureRect/Navigation/OnwardButton" node_paths=PackedStringArray("button") instance=ExtResource("9_1jc8f")]
+button = NodePath("..")
+to_position = Vector2(7, 0)
+time = 0.2
+
 [node name="BackButton" type="TextureButton" parent="TextureRect/Navigation"]
 z_index = -1
 material = SubResource("CanvasItemMaterial_bl0pt")
@@ -775,6 +837,11 @@ texture_hover = ExtResource("36_tvups")
 texture_disabled = ExtResource("36_tvups")
 texture_focused = ExtResource("36_tvups")
 flip_h = true
+
+[node name="SlidingButton" parent="TextureRect/Navigation/BackButton" node_paths=PackedStringArray("button") instance=ExtResource("9_1jc8f")]
+button = NodePath("..")
+to_position = Vector2(-7, 0)
+time = 0.2
 
 [node name="SliderMenu" type="Control" parent="TextureRect"]
 visible = false

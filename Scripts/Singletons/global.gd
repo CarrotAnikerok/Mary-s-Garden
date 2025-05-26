@@ -37,6 +37,7 @@ func choose_random_plant_to_add():
 func get_today_goal_sum():
 	return goal_sums[day_count]
 
+
 func on_save_game(saved_data:Array[SavedData]):
 	print("AM I SAVING??????")
 	var my_data = SavedGlobalData.new()

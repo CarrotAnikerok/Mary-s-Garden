@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=7 format=3 uid="uid://br3yq72rsxmdc"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_75sj2"]
+[ext_resource type="Resource" uid="uid://413wp1kyvtvd" path="res://custom_resources/plant_ingridients/pelargonium_flowers.tres" id="2_1rb3j"]
+[ext_resource type="Resource" uid="uid://c6xsckunsk32q" path="res://custom_resources/plant_ingridients/viola_flowers.tres" id="3_hemnc"]
+[ext_resource type="Resource" uid="uid://xdbv6elocc2w" path="res://custom_resources/plant_ingridients/bergenia_flowers.tres" id="4_14ruj"]
+[ext_resource type="Resource" uid="uid://blsuy5uore2ph" path="res://custom_resources/plant_produts/bouquets/field_miracle.tres" id="5_2bevu"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="6_mw86a"]
+
+[resource]
+script = ExtResource("6_mw86a")
+ingridients = Array[ExtResource("1_75sj2")]([ExtResource("2_1rb3j"), ExtResource("3_hemnc"), ExtResource("4_14ruj")])
+output = ExtResource("5_2bevu")
+metadata/_custom_type_script = "uid://b4hv1pqh58m6c"

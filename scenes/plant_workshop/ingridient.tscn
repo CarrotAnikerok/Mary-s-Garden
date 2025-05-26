@@ -2,28 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://cf44rpn6il8f0" path="res://scenes/plant_room/draggable_element.tscn" id="1_fwrng"]
 [ext_resource type="Script" uid="uid://c3331h82nes8h" path="res://scripts/plant_workshop/ingridient_node.gd" id="1_gmdmy"]
-[ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="2_wgnyv"]
+[ext_resource type="PackedScene" uid="uid://ckr0aj16ctwm0" path="res://scenes/name_component.tscn" id="2_wgnyv"]
 [ext_resource type="Texture2D" uid="uid://bqnxvvhurcikl" path="res://sprites/pixel_plants/plant_ingridients/aloe_leaves.png" id="4_wgnyv"]
 
-[node name="Ingridient" type="Control"]
+[node name="Ingridient" type="Node2D"]
 z_index = 1
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -90.0
-offset_right = -160.0
-offset_bottom = -90.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 script = ExtResource("1_gmdmy")
-ingridient_res = ExtResource("2_wgnyv")
 
-[node name="DraggableElement" parent="." instance=ExtResource("1_fwrng")]
+[node name="NameComponent" parent="." node_paths=PackedStringArray("element") instance=ExtResource("2_wgnyv")]
+element = NodePath("..")
+
+[node name="DraggableElement" parent="NameComponent" node_paths=PackedStringArray("draggable_parent") instance=ExtResource("1_fwrng")]
+position = Vector2(7, 9)
+draggable_parent = NodePath("../..")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("4_wgnyv")

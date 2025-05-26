@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=7 format=3 uid="uid://beomagtbvjuy1"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_sdy6g"]
+[ext_resource type="Resource" uid="uid://cv68jamvf8p31" path="res://custom_resources/plant_ingridients/bergenia_leaves.tres" id="2_o7non"]
+[ext_resource type="Resource" uid="uid://du54pwmsblwyh" path="res://custom_resources/plant_ingridients/lilium_flowers.tres" id="3_u6y7k"]
+[ext_resource type="Resource" uid="uid://bw715puh83xia" path="res://custom_resources/plant_ingridients/phaleonopsis_flowers.tres" id="4_o6mmc"]
+[ext_resource type="Resource" uid="uid://btiljgxvahovf" path="res://custom_resources/plant_produts/bouquets/evening_beaty.tres" id="5_yvsg3"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="6_xxo5f"]
+
+[resource]
+script = ExtResource("6_xxo5f")
+ingridients = Array[ExtResource("1_sdy6g")]([ExtResource("2_o7non"), ExtResource("3_u6y7k"), ExtResource("4_o6mmc")])
+output = ExtResource("5_yvsg3")
+metadata/_custom_type_script = "uid://b4hv1pqh58m6c"

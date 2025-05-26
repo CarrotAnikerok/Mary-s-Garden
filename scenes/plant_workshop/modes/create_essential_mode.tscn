@@ -1,41 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://bihet01ibaj2n"]
+[gd_scene load_steps=11 format=3 uid="uid://bihet01ibaj2n"]
 
 [ext_resource type="Script" uid="uid://c8vru87ewhn66" path="res://scripts/plant_workshop/create_essential.gd" id="1_ulnd6"]
 [ext_resource type="Script" uid="uid://bei0kravl4k3c" path="res://scripts/resources/crafting/essential_recipe.gd" id="2_a655n"]
-[ext_resource type="Resource" uid="uid://mneldd1yyiy0" path="res://custom_resources/plant_ingridients/aloe_leaves.tres" id="3_mldo6"]
-[ext_resource type="Resource" uid="uid://tky518sv2mvi" path="res://custom_resources/other_ingridients/aloe_oil.tres" id="4_wh32o"]
-[ext_resource type="Resource" uid="uid://th6rjt4ehfku" path="res://custom_resources/plant_ingridients/pelargonium_leaves.tres" id="5_ajmm4"]
+[ext_resource type="Resource" uid="uid://cstmm7vqanxxj" path="res://custom_resources/recipies/Essential/essential_aloe_rec.tres" id="3_ltksu"]
+[ext_resource type="Resource" uid="uid://ci760p046eufs" path="res://custom_resources/recipies/Essential/essential_pelargonia_rec.tres" id="4_tea8x"]
 [ext_resource type="Texture2D" uid="uid://cplpg4s1grxg" path="res://sprites/plant_menu/tools/clock_text.png" id="5_oi6t4"]
-[ext_resource type="Resource" uid="uid://b6uex5v5rgpom" path="res://custom_resources/other_ingridients/pelargonium_oil.tres" id="6_s5nyx"]
-[ext_resource type="Resource" uid="uid://dy5gneckb4ikb" path="res://custom_resources/plant_ingridients/viola_leaves.tres" id="7_p0qqh"]
-[ext_resource type="Resource" uid="uid://dpe5oaaw4tq2i" path="res://custom_resources/other_ingridients/viola_oil.tres" id="8_0843p"]
-[ext_resource type="Resource" uid="uid://du54pwmsblwyh" path="res://custom_resources/plant_ingridients/lilium_flowers.tres" id="9_oxlrw"]
-[ext_resource type="Resource" uid="uid://ceq1e7blrcmj7" path="res://custom_resources/other_ingridients/lilium_oil.tres" id="10_qg5fr"]
+[ext_resource type="Resource" uid="uid://2d28qlhiq686" path="res://custom_resources/recipies/Essential/essential_viola_rec.tres" id="5_sjj6a"]
+[ext_resource type="Resource" uid="uid://b5s8wa7n4xabn" path="res://custom_resources/recipies/Essential/essential_lilium_rec.tres" id="6_ltksu"]
 [ext_resource type="Texture2D" uid="uid://cwdmd3n5dhhew" path="res://sprites/plant_workshop/workshop_spritesheet.png" id="11_fohhn"]
-
-[sub_resource type="Resource" id="Resource_b3er1"]
-script = ExtResource("2_a655n")
-ingridient = ExtResource("3_mldo6")
-oil = ExtResource("4_wh32o")
-metadata/_custom_type_script = "uid://bei0kravl4k3c"
-
-[sub_resource type="Resource" id="Resource_i2nj6"]
-script = ExtResource("2_a655n")
-ingridient = ExtResource("5_ajmm4")
-oil = ExtResource("6_s5nyx")
-metadata/_custom_type_script = "uid://bei0kravl4k3c"
-
-[sub_resource type="Resource" id="Resource_a1yup"]
-script = ExtResource("2_a655n")
-ingridient = ExtResource("7_p0qqh")
-oil = ExtResource("8_0843p")
-metadata/_custom_type_script = "uid://bei0kravl4k3c"
-
-[sub_resource type="Resource" id="Resource_y06jt"]
-script = ExtResource("2_a655n")
-ingridient = ExtResource("9_oxlrw")
-oil = ExtResource("10_qg5fr")
-metadata/_custom_type_script = "uid://bei0kravl4k3c"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_275ys"]
 bg_color = Color(0.4425, 0.75, 0.488625, 0.34902)
@@ -58,7 +30,7 @@ region = Rect2(241, 56, 31, 25)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ulnd6")
-essential_recipies = Array[ExtResource("2_a655n")]([SubResource("Resource_b3er1"), SubResource("Resource_i2nj6"), SubResource("Resource_a1yup"), SubResource("Resource_y06jt")])
+essential_recipies = Array[ExtResource("2_a655n")]([ExtResource("3_ltksu"), ExtResource("4_tea8x"), ExtResource("5_sjj6a"), ExtResource("6_ltksu")])
 
 [node name="EssentialCraftingCells" type="Control" parent="."]
 anchors_preset = 0

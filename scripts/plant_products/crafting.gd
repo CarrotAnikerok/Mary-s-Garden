@@ -33,11 +33,11 @@ func _ready():
 
 func update_ingridient(child, regime: String):
 	if regime == "enter":
-		ingridients.append(child.ingridient_res)
-		#ingridients[i] = child.ingridient_res
+		ingridients.append(child.res)
+		#ingridients[i] = child.res
 		ingridient_sum +=1
 	elif regime == "exit":
-		ingridients.erase(child.ingridient_res)
+		ingridients.erase(child.res)
 		ingridient_sum -=1
 	else:
 		ingridients.erase(child)
@@ -62,7 +62,7 @@ func have_recipe() -> CraftingRecipe:
 	if ingridient_sum == 2:
 		print("have chaotic recipe small")
 		return chaotic_recipies[0]
-	elif ingridient_sum == 3:
+	elif ingridient_sum == 3 and chaotic_recipies.size() > 1:
 		print("have chaotic recipe big")
 		return chaotic_recipies[1]
 	else:
@@ -76,13 +76,13 @@ func show_recipe():
 		showing_recipe = true
 		to_hall.visible = true
 		var ingridient_node_instance = ingridient_node.instantiate()
-		ingridient_node_instance.ingridient_res = current_recipe.output
+		ingridient_node_instance.res = current_recipe.output
 		result.add_child(ingridient_node_instance)
 		ingridient_node_instance.global_position = result.global_position
 	elif current_recipe != null and showing_recipe:
 		destroy_recipe()
 		var ingridient_node_instance = ingridient_node.instantiate()
-		ingridient_node_instance.ingridient_res = current_recipe.output
+		ingridient_node_instance.res = current_recipe.output
 		result.add_child(ingridient_node_instance)
 		ingridient_node_instance.global_position = result.global_position
 	elif current_recipe == null:

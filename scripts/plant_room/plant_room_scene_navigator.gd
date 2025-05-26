@@ -7,6 +7,15 @@ var current_plants: Array[Plant]
 
 signal change_scene
 
+func scenary_waiting_on():
+	print_debug("STARTED WAITING FOR SCENARY")
+
+
+func scenary_waiting_off():
+	print_debug("STOPPED WAITING FOR SCENARY")
+
+
+
 func _ready():
 	sort_plants()
 	SceneManager.exit.connect(save_plant_room)

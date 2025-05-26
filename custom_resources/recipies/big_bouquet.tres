@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=4 format=3 uid="uid://ccu1qkh5afgph"]
+
+[ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_kqvil"]
+[ext_resource type="Resource" uid="uid://cug8gcq2kf6j" path="res://custom_resources/plant_produts/bouquets/big_bouquet.tres" id="2_5r03m"]
+[ext_resource type="Script" uid="uid://b4hv1pqh58m6c" path="res://scripts/resources/crafting/crafting_recipe.gd" id="4_nipi3"]
+
+[resource]
+script = ExtResource("4_nipi3")
+ingridients = Array[ExtResource("1_kqvil")]([])
+output = ExtResource("2_5r03m")
+metadata/_custom_type_script = "uid://b4hv1pqh58m6c"

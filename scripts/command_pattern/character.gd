@@ -11,7 +11,6 @@ var dialog = false
 var _controller: CharacterController
 @onready var _controller_container = $ControllerContainer
 
-
 func set_controller(controller: CharacterController) -> void:
 	for child in _controller_container.get_children():
 		child.queue_free()
@@ -37,6 +36,8 @@ func move_character(delta):
 		velocity = velocity * speed
 		
 	position += velocity * delta
+
+	
 
 
 func move(value: float) -> void:

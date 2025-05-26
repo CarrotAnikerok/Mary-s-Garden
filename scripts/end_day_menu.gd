@@ -5,13 +5,12 @@ extends Control
 @onready var advice = %Advice
 @onready var new_plant = %NewPlant
 @onready var plant_texture = %PlantTexture
-@onready var plant_title = $NewPlant/PlantTitle
+@onready var plant_title = %PlantTitle
 
 
 
-
-@export var advice_text_bad: String
-@export var advice_text_good: String
+@export_multiline var advice_text_bad: String
+@export_multiline var advice_text_good: String
 @export var plant_textures: Dictionary[String, IndividualPlantParameters]
 
 var SCENE_HALL = "res://scenes/hall/hall.tscn"
@@ -19,6 +18,8 @@ var SCENE_HALL = "res://scenes/hall/hall.tscn"
 
 func _ready():
 	get_tree().paused = true
+	new_plant.visible = false
+	results.visible = true
 	sum.text = str(GameWallet.get_day_income())
 	if GameWallet.get_day_income() > global.get_today_goal_sum():
 		advice.text = advice_text_good

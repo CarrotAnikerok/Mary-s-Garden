@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EssentialRecipe" load_steps=4 format=3 uid="uid://2d28qlhiq686"]
+
+[ext_resource type="Resource" uid="uid://c6xsckunsk32q" path="res://custom_resources/plant_ingridients/viola_flowers.tres" id="1_qa2a8"]
+[ext_resource type="Resource" uid="uid://dpe5oaaw4tq2i" path="res://custom_resources/other_ingridients/viola_oil.tres" id="2_2elrh"]
+[ext_resource type="Script" uid="uid://bei0kravl4k3c" path="res://scripts/resources/crafting/essential_recipe.gd" id="3_0kon0"]
+
+[resource]
+script = ExtResource("3_0kon0")
+ingridient = ExtResource("1_qa2a8")
+oil = ExtResource("2_2elrh")
+metadata/_custom_type_script = "uid://bei0kravl4k3c"

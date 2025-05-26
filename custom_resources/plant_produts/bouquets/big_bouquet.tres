@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Bouquet" load_steps=3 format=3 uid="uid://cug8gcq2kf6j"]
+
+[ext_resource type="Script" uid="uid://c56cxj2l5kao4" path="res://scripts/plant_products/bouquet.gd" id="1_bylkw"]
+[ext_resource type="Texture2D" uid="uid://b5sohbtxleskr" path="res://sprites/pixel_plants/plant_products/big_chaotic_bouquet.png" id="2_d684k"]
+
+[resource]
+script = ExtResource("1_bylkw")
+product_name = "Большой Букет"
+price = 60
+texture = ExtResource("2_d684k")
+metadata/_custom_type_script = "uid://c56cxj2l5kao4"

@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://tky518sv2mvi"]
+[gd_resource type="Resource" script_class="Ingridient" load_steps=4 format=3 uid="uid://tky518sv2mvi"]
 
 [ext_resource type="Script" uid="uid://m3kb60dhifs4" path="res://scripts/resources/crafting/ingridient.gd" id="1_rlde0"]
-[ext_resource type="Texture2D" uid="uid://clc8aqgb4cgcf" path="res://sprites/Mary.png" id="2_bk1ld"]
+[ext_resource type="Texture2D" uid="uid://cuo6ct2w5i6e" path="res://sprites/pixel_plants/plant_ingridients/essensia_oil.png" id="2_bk1ld"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_420jc"]
+atlas = ExtResource("2_bk1ld")
+region = Rect2(0, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_rlde0")
-ingridietn_name = "aloe oil"
-texture = ExtResource("2_bk1ld")
+ingridient_name = "Масло Алое"
+texture = SubResource("AtlasTexture_420jc")
 type = 2
 metadata/_custom_type_script = "uid://m3kb60dhifs4"

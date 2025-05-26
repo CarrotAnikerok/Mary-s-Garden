@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Bouquet" load_steps=3 format=3 uid="uid://dpwxvd2t0d8ew"]
+
+[ext_resource type="Script" uid="uid://c56cxj2l5kao4" path="res://scripts/plant_products/bouquet.gd" id="1_a13g5"]
+[ext_resource type="Texture2D" uid="uid://bn55dqkf8mt7n" path="res://sprites/pixel_plants/plant_products/small_chaotic_bouquet.png" id="2_ry658"]
+
+[resource]
+script = ExtResource("1_a13g5")
+product_name = "Маленький Букет"
+price = 40
+texture = ExtResource("2_ry658")
+metadata/_custom_type_script = "uid://c56cxj2l5kao4"

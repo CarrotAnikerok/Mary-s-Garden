@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EssentialRecipe" load_steps=4 format=3 uid="uid://ci760p046eufs"]
+
+[ext_resource type="Resource" uid="uid://th6rjt4ehfku" path="res://custom_resources/plant_ingridients/pelargonium_leaves.tres" id="1_ftyy1"]
+[ext_resource type="Resource" uid="uid://b6uex5v5rgpom" path="res://custom_resources/other_ingridients/pelargonium_oil.tres" id="2_m7jfw"]
+[ext_resource type="Script" uid="uid://bei0kravl4k3c" path="res://scripts/resources/crafting/essential_recipe.gd" id="3_dil78"]
+
+[resource]
+script = ExtResource("3_dil78")
+ingridient = ExtResource("1_ftyy1")
+oil = ExtResource("2_m7jfw")
+metadata/_custom_type_script = "uid://bei0kravl4k3c"

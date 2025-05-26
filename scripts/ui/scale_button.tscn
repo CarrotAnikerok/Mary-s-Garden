@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8m8og1wmqxwp"]
+
+[ext_resource type="Script" uid="uid://cxetbf7k0ncpn" path="res://scenes/plant_room/scale_button.gd" id="1_uxtwk"]
+
+[node name="ScaleButton" type="Node"]
+script = ExtResource("1_uxtwk")

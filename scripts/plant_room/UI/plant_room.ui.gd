@@ -2,16 +2,52 @@ extends Control
 
 var handbook = preload("res://scenes/plant_room/handbook.tscn") as PackedScene
 const PLANT_WORKSHOP = preload("res://scenes/plant_room/plant_workshop/plant_workshop.tscn") as PackedScene
-@onready var time_animation = $DateButton/TImeClock/Arrow/AnimationPlayer
+#@onready var time_animation = $DateButton/TImeClock/Arrow/AnimationPlayer
 @onready var date_button = $DateButton
 @onready var handbook_button = $Panel/HandbookButton
 @onready var door_button = $Panel/DoorButton
 @onready var panel = $Panel
+#@onready var arrow = $DateButton/TImeClock/Arrow
 
 
-func  _ready():
-	time_animation.speed_scale = 1 / GlobalTimer.wait_time
-	time_animation.seek(1 - GlobalTimer.time_left / GlobalTimer.wait_time)
+var arrow_tween: Tween
+
+signal section_ended()
+
+
+#func  _ready():
+	#
+	#start_arrow_animation()
+	#arrow_tween.tween_property(arrow, "rotation", 360, GlobalTimer.phase_time)
+	
+	
+	#time_animation.speed_scale = 1 / GlobalTimer.wait_time
+	#time_animation.seek(1 - GlobalTimer.time_left / GlobalTimer.wait_time)
+	#time_animation.play("line_rotate")
+	##ХУНЯ КАКАЯ ТО
+	## стоить сделать так, чтобы стрелка напрямую от таймера зависела а не вся эта ебатня с анимациями
+	#GlobalTimer.changed_phase.connect(start_arrow_animation)
+	#ScenaryController.cutscene_started.connect(func(): time_animation.pause())
+	#ScenaryController.cutscene_ended.connect(
+		#func(time_left): 
+			##time_animation.play_section("arrow_round", time_animation.current_animation_position, time_left / start_waittime, -1, 4)
+			#time_animation.play_section("line_rotate", time_animation.current_animation_position + float(time_left) / float(GlobalTimer.phase_time))
+			#print("Section play " + str(time_animation.current_animation_position + float(time_left) / float(GlobalTimer.phase_time)))
+			#)
+#
+#func start_arrow_animation():
+	#if arrow_tween:
+		#arrow_tween.kill()
+	#arrow_tween = create_tween()
+	#arrow_tween.tween_property(arrow, "rotation", TAU, GlobalTimer.phase_time)
+	#print(arrow_tween.is_running())
+	#print("LINE ROTATE")
+
+	#time_animation.stop()
+	##time_animation.play("line_rotate")
+	#time_animation.play("line_rotate")
+	#print("time anim " + time_animation.current_animation)
+
 
 func _on_handbook_button_pressed():
 	var handbook_instance = handbook.instantiate()
@@ -70,10 +106,6 @@ func _on_door_button_mouse_entered():
 func _on_door_button_mouse_exited():
 	var tween_door = get_tree().create_tween()
 	tween_door.tween_property(door_button, "scale", Vector2(0.8, 0.8), 0.2)
-
-
-func _on_button_pressed():
-	GlobalTimer._on_timeout()
 
 
 func _on_workshop_button_pressed():

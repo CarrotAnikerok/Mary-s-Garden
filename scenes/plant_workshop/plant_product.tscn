@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpy66xpcfhq0p"]
+[gd_scene load_steps=3 format=3 uid="uid://dpy66xpcfhq0p"]
 
 [ext_resource type="Script" uid="uid://b1vgaxr3agocr" path="res://scripts/plant_workshop/plant_product.gd" id="1_w77sw"]
+[ext_resource type="PackedScene" uid="uid://ckr0aj16ctwm0" path="res://scenes/name_component.tscn" id="2_ygadd"]
 
 [node name="PlantProduct" type="Node2D"]
 script = ExtResource("1_w77sw")
+
+[node name="NameComponent" parent="." node_paths=PackedStringArray("element") instance=ExtResource("2_ygadd")]
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 6.0
+element = NodePath("..")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

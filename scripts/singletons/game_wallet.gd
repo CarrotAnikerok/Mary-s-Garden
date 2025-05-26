@@ -1,9 +1,13 @@
 extends Node
 
 var _money: int = 1000
-var _day_income: Array[int] = [0, 0, 0, 0]
+var _day_income: Array[int]
 
 signal wallet_changed
+
+func _ready():
+	_day_income.resize(40)
+	_day_income.fill(0)
 
 func get_current_sum():
 	return _money
