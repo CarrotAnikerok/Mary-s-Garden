@@ -56,6 +56,7 @@ func _on_timeout():
 	change_phase()
 	print("PHASE RIGHT NOW IS " + str(global.phase_of_day))
 	print("DAY RIGHT NOW IS " + str(global.day_count))
+	start(phase_time)
 
 
 

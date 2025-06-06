@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://u5a6y352fgjt" path="res://scripts/plant_room/handbook/handbook.gd" id="1_805rs"]
 [ext_resource type="Texture2D" uid="uid://bg0o1bk0uxvbu" path="res://sprites/handbook/handbook_bg.png" id="2_805rs"]
-[ext_resource type="FontFile" uid="uid://cctjwlh0005si" path="res://resources/fonts/Sofia Sans/static/SofiaSansSemiCondensed-Medium.ttf" id="3_1d7bk"]
+[ext_resource type="FontFile" uid="uid://r03ahpnkx0kh" path="res://resources/fonts/Sofia Sans/static/SofiaSansSemiCondensed-LightItalic.ttf" id="3_me5a8"]
 [ext_resource type="Texture2D" uid="uid://kx0xafoc11s1" path="res://sprites/handbook/ui_handbook.png" id="3_muvuh"]
 [ext_resource type="FontFile" uid="uid://b6q0wvaf10l3g" path="res://resources/fonts/Micro_5/Micro5-Regular.ttf" id="4_muvuh"]
 [ext_resource type="PackedScene" uid="uid://c4lbn3qb8quya" path="res://scripts/ui/sliding_button.tscn" id="5_u6lt1"]
@@ -32,6 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_805rs")
+title_color = Color(0.690196, 0.454902, 0.313726, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Paper" type="TextureRect" parent="."]
@@ -59,10 +60,12 @@ offset_left = 32.0
 offset_top = 16.0
 offset_right = 133.0
 offset_bottom = 131.0
-theme_override_fonts/normal_font = ExtResource("3_1d7bk")
+theme_override_colors/default_color = Color(0.835294, 0.737255, 0.537255, 1)
+theme_override_fonts/normal_font = ExtResource("3_me5a8")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
 scroll_active = false
+horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Paper"]
 modulate = Color(0.58, 0.564437, 0.4466, 1)
@@ -72,10 +75,12 @@ offset_left = 158.0
 offset_top = 17.0
 offset_right = 259.0
 offset_bottom = 132.0
-theme_override_fonts/normal_font = ExtResource("3_1d7bk")
+theme_override_colors/default_color = Color(0.835294, 0.737255, 0.537255, 1)
+theme_override_fonts/normal_font = ExtResource("3_me5a8")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
 scroll_active = false
+horizontal_alignment = 1
 
 [node name="ExitButton" type="TextureButton" parent="."]
 z_index = -1

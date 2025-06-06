@@ -4,6 +4,8 @@ extends Control
 @onready var paper1 = paper.get_child(0) as RichTextLabel
 @onready var paper2 = paper.get_child(1) as RichTextLabel
 
+@export var title_color: Color
+
 var pages: Array[Vector2]
 var page_number: int = 0
 
@@ -64,14 +66,14 @@ func add_title(note: Dictionary):
 	var text = note.title
 	if check_capacity(paper1):
 		if paper1.text == "":
-			paper1.text += "[center][color=#819567]" + text + "[/color][/center]"
+			paper1.text += "[center][color=#b07450]" + text + "[/color][/center]"
 		else: 
-			paper1.text += "\n" + "[center][color=#819567]" + text + "[/color][/center]"
+			paper1.text += "\n" + "[center][color=#b07450]" + text + "[/color][/center]"
 	elif check_capacity(paper2):
 		if paper2.text == "":
-			paper2.text += "[center][color=#819567]" + text + "[/color][/center]"
+			paper2.text += "[center][color=#b07450]" + text + "[/color][/center]"
 		else: 
-			paper2.text += "\n" + "[center][color=#819567]" + text + "[/color][/center]"
+			paper2.text += "\n" + "[center][color=b07450]" + text + "[/color][/center]"
 	else:
 		push_error("All papers are full even for title")
 
@@ -81,7 +83,7 @@ func _on_exit_button_pressed():
 
 
 func check_capacity(label: RichTextLabel):
-	if label.get_content_height() + 70 >= paper.size.y:
+	if label.get_content_height() + 65 >= paper.size.y:
 		return false
 	else:
 		return true

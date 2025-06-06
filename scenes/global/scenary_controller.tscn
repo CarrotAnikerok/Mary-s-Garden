@@ -1,18 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbagyfxwtvg1u"]
+[gd_scene load_steps=11 format=3 uid="uid://dbagyfxwtvg1u"]
 
 [ext_resource type="Script" uid="uid://kmx2hsflk8db" path="res://scripts/singletons/scenary_controller.gd" id="1_r701e"]
 [ext_resource type="Script" uid="uid://dlpso5tksrycg" path="res://scripts/resources/scenary_time.gd" id="2_0mqf7"]
 [ext_resource type="BehaviorTree" uid="uid://ccu3ptt047jm0" path="res://scenary/scenary_1.tres" id="3_qfdop"]
+[ext_resource type="BehaviorTree" uid="uid://bpf0o8uvwjgbq" path="res://scenary/scenary_2.tres" id="4_qfdop"]
+[ext_resource type="BehaviorTree" uid="uid://0yb4it7l1ffr" path="res://scenary/scenary_3.tres" id="5_217pv"]
+[ext_resource type="BehaviorTree" uid="uid://tsq6q5ydqx7b" path="res://scenary/scenary_4.tres" id="5_pk3vg"]
 
 [sub_resource type="Resource" id="Resource_pk3vg"]
 script = ExtResource("2_0mqf7")
 day = 1
 phase = 0
-time_in_seconds = 1.0
+time_in_seconds = 0.0
 scenary = ExtResource("3_qfdop")
+was_played = false
+metadata/_custom_type_script = "uid://dlpso5tksrycg"
+
+[sub_resource type="Resource" id="Resource_217pv"]
+script = ExtResource("2_0mqf7")
+day = 0
+phase = 0
+time_in_seconds = 1.0
+scenary = ExtResource("4_qfdop")
+was_played = false
+metadata/_custom_type_script = "uid://dlpso5tksrycg"
+
+[sub_resource type="Resource" id="Resource_quift"]
+script = ExtResource("2_0mqf7")
+day = 0
+phase = 0
+time_in_seconds = 2.0
+scenary = ExtResource("5_217pv")
+was_played = false
+metadata/_custom_type_script = "uid://dlpso5tksrycg"
+
+[sub_resource type="Resource" id="Resource_41kxa"]
+script = ExtResource("2_0mqf7")
+day = 1
+phase = 1
+time_in_seconds = 5.0
+scenary = ExtResource("5_pk3vg")
 was_played = false
 metadata/_custom_type_script = "uid://dlpso5tksrycg"
 
 [node name="ScenaryController" type="Node"]
 script = ExtResource("1_r701e")
-scenary_dict = Array[ExtResource("2_0mqf7")]([SubResource("Resource_pk3vg")])
+scenary_dict = Array[ExtResource("2_0mqf7")]([SubResource("Resource_pk3vg"), SubResource("Resource_217pv"), SubResource("Resource_quift"), SubResource("Resource_41kxa")])

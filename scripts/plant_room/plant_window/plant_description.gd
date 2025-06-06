@@ -100,9 +100,9 @@ func add_page(first_index, last_index):
 func add_note(note):
 	if note.type == "phase_change":
 		if label_description.text == "":
-			label_description.text += "[center][color=#819567]" + note.title + "[/color][/center]"
+			label_description.text += "[center][color=#bcd6a9]" + note.title + "[/color][/center]"
 		else:
-			label_description.text += "\n" + "[center][color=#819567]" + note.title + "[/color][/center]"
+			label_description.text += "\n" + "[center][color=#bcd6a9]" + note.title + "[/color][/center]"
 	elif note.name == active_plant.plant_name:
 		if label_description.text == "":
 			label_description.text += note.description
@@ -135,10 +135,10 @@ func update_info():
 		add_plant_notes()
 	elif global.pract_check:
 		label_description.text = plant_description[2]
-	print("pRINTIN UPDATE INFO")
-	print(label_description.get_visible_line_count())
-	print(label_description.get_total_character_count())
-	print(label_description.get_line_count())
+	#print("pRINTIN UPDATE INFO")
+	#print(label_description.get_visible_line_count())
+	#print(label_description.get_total_character_count())
+	#print(label_description.get_line_count())
 
 		
 #добавить перелистывание страниц обычных штучек

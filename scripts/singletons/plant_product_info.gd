@@ -47,15 +47,9 @@ func _ready():
 	add_product(FIELD_MIRACLE)
 	add_product(SMALL_BOUQUET)
 	add_product(BIG_BOUQUET)
-	add_product(SMALL_BOUQUET)
-	add_product(BIG_BOUQUET)
 	add_product(EVENING_BEATY)
 	add_product(FIELD_MIRACLE)
-	add_product(SMALL_BOUQUET)
-	add_product(BIG_BOUQUET)
-	add_product(SMALL_BOUQUET)
-	add_product(BIG_BOUQUET)
-	add_product(BIG_BOUQUET)
+
 	
 	add_product(FLOWER_BLAST)
 	add_product(ALOE_PERFUME)

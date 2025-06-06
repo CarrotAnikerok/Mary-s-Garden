@@ -35,7 +35,7 @@ func _on_watering_can_button_pressed():
 
 func _on_pour_button_pressed():
 	active_plant.pour(slider.value)
-	HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " было полито на " + 
+	HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.public_name + " полили на " + 
 	str(slider.value) + "мл")
 	worked_with_plant.emit()
 	slider.value = 0
@@ -44,7 +44,7 @@ func _on_pour_button_pressed():
 
 func _on_spray_button_pressed():
 	active_plant.spray();
-	HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " было опрыснуто")
+	HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.public_name + " побрызгали")
 	worked_with_plant.emit()
 
 
@@ -69,18 +69,19 @@ func _on_scissors_button_pressed():
 		if active_plant.plant_ingridient_flower != null:
 			print("ingidient added")
 			PlantProductInfo.add_ingridient(active_plant.plant_ingridient_flower)
-			HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " дал цветок")
+			HandbookInfo.add_note("plant_action", active_plant.plant_name, "Получили цветок с " + active_plant.public_name)
 			active_plant.can_give_flowers = false
 	else:
 		print("ingidient not added")
-		HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " не цветет")
+		HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.public_name + " не цветет")
 	if active_plant.can_give_leaves == true:
 		if active_plant.plant_ingridient_leaves != null:
 			PlantProductInfo.add_ingridient(active_plant.plant_ingridient_leaves)
-			HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " дал листья")
+			HandbookInfo.add_note("plant_action", active_plant.plant_name, "Получили листья c " + active_plant.public_name)
 			active_plant.can_give_leaves = false
 	else:
-		HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.name + " листьев недостаточно")
+		HandbookInfo.add_note("plant_action", active_plant.plant_name, active_plant.public_name + " не имеет достаточно листьев")
+	worked_with_plant.emit()
 
 #то есть мне нужно запоминать, на каком растении началась работа. то есть СИГНАЛ пусть дает
 #мне об этом информацию

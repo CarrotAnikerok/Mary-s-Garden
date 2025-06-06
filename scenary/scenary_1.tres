@@ -83,7 +83,6 @@ script = ExtResource("2_8p7tg")
 dialog_name = "dialog_1_1"
 
 [sub_resource type="BTWait" id="BTWait_y4va5"]
-duration = 2.0
 
 [sub_resource type="BTAction" id="BTAction_nk15e"]
 script = ExtResource("2_8p7tg")
@@ -93,7 +92,7 @@ dialog_name = "dialog_1_2"
 
 [sub_resource type="BTAction" id="BTAction_cyerv"]
 script = ExtResource("3_im8xg")
-time_spent = 5
+time_spent = 0
 
 [sub_resource type="BTSequence" id="BTSequence_qxsrd"]
 children = [SubResource("BTCheckVar_jifd5"), SubResource("BTParallel_3d4of"), SubResource("BTParallel_xdwn8"), SubResource("BTWait_ylxa4"), SubResource("BTParallel_w3sew"), SubResource("BTAction_dfwgb"), SubResource("BTWait_y4va5"), SubResource("BTAction_nk15e"), SubResource("BTWait_jifd5"), SubResource("BTAction_cyerv")]

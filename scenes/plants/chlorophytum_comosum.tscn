@@ -16,7 +16,6 @@
 [ext_resource type="Resource" uid="uid://bujjowf0q2km" path="res://custom_resources/plant_ingridients/chlorophytum_flowers.tres" id="11_fulmi"]
 
 [node name="ChlorophytumComosum" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
-top_level = true
 script = ExtResource("1_bho8o")
 public_name = "Хлорофитум"
 acceptable_stats = ExtResource("2_yr3hv")

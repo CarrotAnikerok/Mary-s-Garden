@@ -1,0 +1,27 @@
+[gd_resource type="BehaviorTree" load_steps=8 format=3 uid="uid://4o8124s1kjph"]
+
+[ext_resource type="Script" uid="uid://dbf8dgrovgp0n" path="res://ai/tasks/scenary_end.gd" id="1_q3mye"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ul1ga"]
+
+[sub_resource type="BBVariant" id="BBVariant_fhy3d"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_xibq0"]
+variable = &"start_scenary"
+value = SubResource("BBVariant_fhy3d")
+
+[sub_resource type="BTWait" id="BTWait_1k3xp"]
+
+[sub_resource type="BTAction" id="BTAction_kvrm7"]
+script = ExtResource("1_q3mye")
+time_spent = 2
+
+[sub_resource type="BTSequence" id="BTSequence_2u1ku"]
+children = [SubResource("BTCheckVar_xibq0"), SubResource("BTWait_1k3xp"), SubResource("BTAction_kvrm7")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_ul1ga")
+root_task = SubResource("BTSequence_2u1ku")

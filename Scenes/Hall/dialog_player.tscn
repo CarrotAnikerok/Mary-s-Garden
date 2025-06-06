@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5neg873g5wfk"]
+[gd_scene load_steps=12 format=3 uid="uid://b5neg873g5wfk"]
 
 [ext_resource type="Script" uid="uid://di4isil2vrqy3" path="res://scripts/hall/dialog_system/dialog_player.gd" id="1_4aop0"]
 [ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://sprites/novel_part/Mary/mary_chill.png" id="2_judwd"]
 [ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://sprites/novel_part/Mary/mary_worried.png" id="3_17y02"]
 [ext_resource type="Texture2D" uid="uid://ve4jpk7g24g2" path="res://sprites/novel_part/Arin/arin_chill_1.png" id="3_ompeb"]
+[ext_resource type="Texture2D" uid="uid://b4twnmmb0wbak" path="res://sprites/novel_part/evgeniy.png" id="4_rfoa3"]
 [ext_resource type="Texture2D" uid="uid://b8rv4j3cugocc" path="res://sprites/novel_part/text_box/text_box.png" id="5_fvtql"]
 [ext_resource type="FontFile" uid="uid://b8pvdi5csuer8" path="res://resources/fonts/Blogger/Blogger_Sans-Medium.otf" id="6_dhbxe"]
 [ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://resources/fonts/Neucha/Neucha-Regular.ttf" id="6_p3hlc"]
@@ -23,19 +24,22 @@ font_size = 9
 process_mode = 3
 script = ExtResource("1_4aop0")
 scene_text_file = "res://resources/json/dialog_text.json"
-mary_moods = {
+mary_moods = Dictionary[String, Resource]({
 "mary_chill": ExtResource("2_judwd"),
 "mary_worried": ExtResource("3_17y02")
-}
+})
+guest_moods = Dictionary[String, Resource]({
+"evgeniy": ExtResource("4_rfoa3")
+})
 
 [node name="MarySprite" type="Sprite2D" parent="."]
-position = Vector2(65, 87)
-scale = Vector2(0.151, 0.167)
+position = Vector2(63, 93)
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_judwd")
 
 [node name="GuestSprite" type="Sprite2D" parent="."]
-position = Vector2(263, 90)
-scale = Vector2(0.151, 0.165)
+position = Vector2(259, 93)
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("3_ompeb")
 
 [node name="TextBox" type="Control" parent="."]
@@ -85,6 +89,6 @@ horizontal_alignment = 1
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -20.0
+volume_db = -30.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

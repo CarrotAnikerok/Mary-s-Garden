@@ -12,8 +12,6 @@ const PLANT_WORKSHOP = preload("res://scenes/plant_room/plant_workshop/plant_wor
 
 var arrow_tween: Tween
 
-signal section_ended()
-
 
 #func  _ready():
 	#

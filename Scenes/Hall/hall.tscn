@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://c6mo7fj5a4yvd"]
+[gd_scene load_steps=97 format=3 uid="uid://c6mo7fj5a4yvd"]
 
 [ext_resource type="PackedScene" uid="uid://b5neg873g5wfk" path="res://scenes/hall/dialog_player.tscn" id="1_wkokc"]
 [ext_resource type="Texture2D" uid="uid://do4iu333ej1k2" path="res://sprites/novel_part/Arin/arin_angry.png" id="2_7awf8"]
@@ -12,8 +12,10 @@
 [ext_resource type="Script" uid="uid://d4b1wji5imsun" path="res://scripts/hall/player_camera.gd" id="7_bob82"]
 [ext_resource type="Texture2D" uid="uid://65anf5xqnu66" path="res://sprites/plant_room/bouquet_bottles.png" id="9_4pr67"]
 [ext_resource type="PackedScene" uid="uid://hhpxwqm7546x" path="res://scenes/hall/characters/scarlett.tscn" id="9_cbiwe"]
+[ext_resource type="Script" uid="uid://d3liji4qciama" path="res://scripts/ui/hall_clock.gd" id="9_g6hqy"]
 [ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://sprites/novel_part/Mary/mary_chill.png" id="9_quuig"]
 [ext_resource type="Texture2D" uid="uid://2owqav2c6tsi" path="res://sprites/novel_part/Mary/mary_worried.png" id="10_15elq"]
+[ext_resource type="Theme" uid="uid://b4uu16ao6kfi0" path="res://themes/new_theme.tres" id="10_v4bec"]
 [ext_resource type="Texture2D" uid="uid://bs1hsa04wul3i" path="res://sprites/novel_part/Mary/mary_confidence.png" id="11_revie"]
 [ext_resource type="Texture2D" uid="uid://0bvlsgpp7h3h" path="res://sprites/novel_part/Mary/mary_fear.png" id="12_tk8qh"]
 [ext_resource type="Texture2D" uid="uid://db68wkty71otq" path="res://sprites/novel_part/Mary/mary_sad_1.png" id="13_vs4os"]
@@ -39,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://2iesko6uuwbx" path="res://sprites/novel_part/Mark/mark_thinks_1.png" id="30_xmbh0"]
 [ext_resource type="Texture2D" uid="uid://dy8r1wy035ew" path="res://sprites/novel_part/Chris/chris_angry.png" id="31_arejo"]
 [ext_resource type="Texture2D" uid="uid://b3qu0q7kj1qmg" path="res://sprites/novel_part/Chris/chris_confidence.png" id="32_5bkkr"]
+[ext_resource type="Texture2D" uid="uid://cm11aqm1d7g63" path="res://sprites/novel_part/Arin/arin_worried_2.png" id="32_qanqm"]
 [ext_resource type="Texture2D" uid="uid://dcalgv3tdqcw4" path="res://sprites/novel_part/Chris/chris_oath.png" id="33_7cf3l"]
 [ext_resource type="Texture2D" uid="uid://c7bdyjb5oducm" path="res://sprites/novel_part/Chris/chris_thinks.png" id="34_idsjt"]
 [ext_resource type="Texture2D" uid="uid://ctsjhty1bsnwv" path="res://sprites/novel_part/Chris/chris_worry_1.png" id="35_6ud4u"]
@@ -52,6 +55,8 @@
 [ext_resource type="Script" uid="uid://d28jl8ju6j7co" path="res://scripts/hall/hall_products.gd" id="44_vdr2x"]
 [ext_resource type="Texture2D" uid="uid://baeyp557t4le2" path="res://sprites/novel_part/Chris/chris_worry_2.png" id="46_ih215"]
 [ext_resource type="Script" uid="uid://j0g8nb0t7osq" path="res://scripts/hall/walls.gd" id="47_ih215"]
+[ext_resource type="PackedScene" uid="uid://da2a4csr3v6ub" path="res://scenes/money_label.tscn" id="53_obkld"]
+[ext_resource type="Script" uid="uid://dbeqgwjy0itkj" path="res://scripts/ui/money_label_hall.gd" id="54_bvusc"]
 
 [sub_resource type="Animation" id="Animation_a6q06"]
 length = 0.001
@@ -434,11 +439,21 @@ sprite_frames = SubResource("SpriteFrames_obkld")
 autoplay = "default"
 frame_progress = 0.61302
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="AnimatedBG"]
+[node name="Clock" type="AnimatedSprite2D" parent="AnimatedBG"]
 position = Vector2(72, 77)
 sprite_frames = SubResource("SpriteFrames_nrpb5")
 autoplay = "default"
 frame_progress = 0.402536
+script = ExtResource("9_g6hqy")
+
+[node name="ClockButton" type="Button" parent="AnimatedBG/Clock"]
+unique_name_in_owner = true
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 7.0
+offset_bottom = 3.0
+focus_mode = 0
+theme = ExtResource("10_v4bec")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("main_object")]
 position = Vector2(70, 108)
@@ -558,14 +573,14 @@ texture = ExtResource("9_4pr67")
 unique_name_in_owner = true
 
 [node name="Scarlett" parent="Characters" instance=ExtResource("9_cbiwe")]
-position = Vector2(511, 108)
+position = Vector2(496, 108)
 
 [node name="Arin" parent="Characters" instance=ExtResource("42_4qh33")]
-position = Vector2(147, 108)
+position = Vector2(189, 108)
 
 [node name="Mary" parent="Characters" instance=ExtResource("6_6dx4x")]
 z_index = 1
-position = Vector2(115, 108)
+position = Vector2(157, 108)
 
 [node name="Kris" parent="Characters" instance=ExtResource("15_p8d5n")]
 position = Vector2(544, 108)
@@ -773,23 +788,24 @@ autoplay = "light_moving_hall"
 
 [node name="DialogPlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_wkokc")]
 visible = false
-mary_moods = {
+mary_moods = Dictionary[String, Resource]({
 "mary_chill": ExtResource("9_quuig"),
 "mary_confidence": ExtResource("11_revie"),
 "mary_fear": ExtResource("12_tk8qh"),
 "mary_sad_1": ExtResource("13_vs4os"),
 "mary_sad_2": ExtResource("14_th5da"),
 "mary_worried": ExtResource("10_15elq")
-}
-arin_moods = {
+})
+arin_moods = Dictionary[String, Resource]({
 "arin_angry": ExtResource("2_7awf8"),
 "arin_chill_1": ExtResource("16_rllwe"),
 "arin_chill_2": ExtResource("17_3l4ws"),
 "arin_sad": ExtResource("18_e8l5j"),
 "arin_tired": ExtResource("19_vlhtu"),
-"arin_worried": ExtResource("20_shaur")
-}
-scarlett_moods = {
+"arin_worried": ExtResource("20_shaur"),
+"arin_worried_2": ExtResource("32_qanqm")
+})
+scarlett_moods = Dictionary[String, Resource]({
 "scarlett_arrogance_1": ExtResource("20_wt2ht"),
 "scarlett_arrogance_2": ExtResource("21_sd0lx"),
 "scarlett_chill_1": ExtResource("22_6b4be"),
@@ -797,23 +813,23 @@ scarlett_moods = {
 "scarlett_sigh": ExtResource("24_iir4v"),
 "scarlett_thinks": ExtResource("25_scdvu"),
 "scarlett_tired": ExtResource("27_guqjn")
-}
-mark_moods = {
+})
+mark_moods = Dictionary[String, Resource]({
 "mark_confidence": ExtResource("26_4ynti"),
 "mark_evil": ExtResource("27_nrifc"),
 "mark_offended": ExtResource("28_x5evv"),
 "mark_positive": ExtResource("29_aynh0"),
 "mark_thinks_1": ExtResource("30_xmbh0"),
 "mark_thinks_2": ExtResource("40_4pr67")
-}
-chris_moods = {
+})
+chris_moods = Dictionary[String, Resource]({
 "chris_angry": ExtResource("31_arejo"),
 "chris_confidence": ExtResource("32_5bkkr"),
 "chris_oath": ExtResource("33_7cf3l"),
 "chris_thinks": ExtResource("34_idsjt"),
 "chris_worry_1": ExtResource("35_6ud4u"),
 "chris_worry_2": ExtResource("46_ih215")
-}
+})
 player = NodePath("../Characters/Mary")
 
 [node name="ToPlantRoomArea" type="Area2D" parent="."]
@@ -856,6 +872,19 @@ blackboard_plan = SubResource("BlackboardPlan_poutj")
 [node name="Products" type="Node" parent="Utilities"]
 script = ExtResource("44_vdr2x")
 
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MoneyLabel" parent="UI" instance=ExtResource("53_obkld")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -29.0
+offset_right = -5.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+script = ExtResource("54_bvusc")
+
+[connection signal="pressed" from="AnimatedBG/Clock/ClockButton" to="AnimatedBG/Clock" method="_on_clock_button_pressed"]
 [connection signal="area_entered" from="ToPlantRoomArea" to="." method="_on_to_plant_room_area_entered"]
 [connection signal="area_exited" from="ToPlantRoomArea" to="." method="_on_to_plant_room_area_area_exited"]
 [connection signal="area_entered" from="Walls/Wall1" to="Walls" method="_on_wall_1_area_entered"]

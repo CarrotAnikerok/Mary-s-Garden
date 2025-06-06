@@ -9,8 +9,10 @@ func _ready():
 	_day_income.resize(40)
 	_day_income.fill(0)
 
+
 func get_current_sum():
 	return _money
+
 
 func get_day_income():
 	return _day_income[global.day_count]
@@ -20,6 +22,7 @@ func make_money(sum: int):
 	_money += sum
 	_day_income[global.day_count] += sum
 	wallet_changed.emit()
+	print_debug("WALLET CHANGE EMITTED")
 	return _money
 
 

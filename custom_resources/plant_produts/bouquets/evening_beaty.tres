@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_5bjm4")
 product_name = "Вечерняя Роскошь"
-price = 80
+price = 100
 texture = ExtResource("2_vo85c")
 metadata/_custom_type_script = "uid://c56cxj2l5kao4"

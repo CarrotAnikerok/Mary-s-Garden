@@ -38,7 +38,7 @@ is_overpoured = false
 is_first_pour = true
 deadly_bad_for_too_long = false
 bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/CanvasLayer/GardenSlots/GardenSlot"
+parent_path = "/root/MainLoop/PlantRoom/CanvasLayer/GardenSlots/GardenSlot"
 scene_path = "res://scenes/plants/aloe_vera.tscn"
 
 [sub_resource type="Resource" id="Resource_ipaky"]
@@ -58,7 +58,7 @@ is_overpoured = false
 is_first_pour = true
 deadly_bad_for_too_long = false
 bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/CanvasLayer/GardenSlots/GardenSlot2"
+parent_path = "/root/MainLoop/PlantRoom/CanvasLayer/GardenSlots/GardenSlot2"
 scene_path = "res://scenes/plants/bergenia_crassoifolia.tscn"
 
 [sub_resource type="Resource" id="Resource_ps5qk"]
@@ -78,7 +78,7 @@ is_overpoured = false
 is_first_pour = true
 deadly_bad_for_too_long = false
 bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/CanvasLayer/GardenSlots/GardenSlot3"
+parent_path = "/root/MainLoop/PlantRoom/CanvasLayer/GardenSlots/GardenSlot3"
 scene_path = "res://scenes/plants/chlorophytum_comosum.tscn"
 
 [sub_resource type="Resource" id="Resource_rf602"]
@@ -98,7 +98,7 @@ is_overpoured = false
 is_first_pour = true
 deadly_bad_for_too_long = false
 bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/CanvasLayer/GardenSlots/GardenSlot4"
+parent_path = "/root/MainLoop/PlantRoom/CanvasLayer/GardenSlots/GardenSlot4"
 scene_path = "res://scenes/plants/kalanchoe_blossfeldiana.tscn"
 
 [sub_resource type="Resource" id="Resource_ltmyr"]
@@ -118,7 +118,7 @@ is_overpoured = false
 is_first_pour = true
 deadly_bad_for_too_long = false
 bad_parameters = [0, 0, 0, 0]
-parent_path = "/root/PlantRoom/CanvasLayer/GardenSlots/GardenSlot13"
+parent_path = "/root/MainLoop/PlantRoom/CanvasLayer/GardenSlots/GardenSlot13"
 scene_path = "res://scenes/plants/pelargonium_graveolens.tscn"
 
 [resource]

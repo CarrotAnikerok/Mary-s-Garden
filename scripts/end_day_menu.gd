@@ -8,7 +8,6 @@ extends Control
 @onready var plant_title = %PlantTitle
 
 
-
 @export_multiline var advice_text_bad: String
 @export_multiline var advice_text_good: String
 @export var plant_textures: Dictionary[String, IndividualPlantParameters]

@@ -3,6 +3,7 @@ extends Node
 var SCENE_HALL = "res://scenes/hall/hall.tscn"
 var save_path = "res://SAVES/game_save.tres"
 var SCENE_PLANT_ROOM = "res://scenes/plant_room/plant_room.tscn"
+const MAINLOOP = preload("res://scenes/global/mainloop.tscn")
 
 func _on_new_game_button_pressed():
 	var saved_game:SavedGame = SavedGame.new()
@@ -15,7 +16,7 @@ func _on_new_game_button_pressed():
 	saved_game.plant_room = plants_data
 	
 	ResourceSaver.save(saved_game, save_path)
-	SceneManager.goto_scene(SCENE_HALL)
+	SceneManager.goto_scene(MAINLOOP)
 
 
 func _on_continue_button_pressed():

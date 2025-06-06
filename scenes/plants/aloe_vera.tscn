@@ -16,7 +16,6 @@
 [ext_resource type="Resource" uid="uid://nkbxffdbc66k" path="res://custom_resources/plant_ingridients/aloe_flowers.tres" id="11_yusee"]
 
 [node name="AloeVera" type="Node2D" node_paths=PackedStringArray("plant_tools") groups=["game_events", "plant", "plant_room_events"]]
-top_level = true
 script = ExtResource("1_8b0w6")
 public_name = "Алое"
 acceptable_stats = ExtResource("2_4r8di")

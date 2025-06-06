@@ -1,0 +1,129 @@
+[gd_scene load_steps=19 format=3 uid="uid://bcv4goi301w1o"]
+
+[ext_resource type="Script" uid="uid://cfcmspip7v2vi" path="res://scripts/command_pattern/npc.gd" id="1_62yfk"]
+[ext_resource type="Texture2D" uid="uid://htrmyn71xow4" path="res://sprites/pixel_sprites/Guests/evgeniy/evgeniy_static_anim.png" id="1_wmt86"]
+[ext_resource type="Texture2D" uid="uid://cmex1unasf43r" path="res://sprites/pixel_sprites/Guests/evgeniy/evgeniy_walkcicle-Sheet.png" id="2_62yfk"]
+[ext_resource type="Script" uid="uid://bcqlyi0fojkld" path="res://scripts/hall/dialog_system/dialog_area.gd" id="3_01eeo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62d8k"]
+atlas = ExtResource("1_wmt86")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x1ub"]
+atlas = ExtResource("1_wmt86")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phq16"]
+atlas = ExtResource("1_wmt86")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6o5b"]
+atlas = ExtResource("1_wmt86")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht6wa"]
+atlas = ExtResource("2_62yfk")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lpsw"]
+atlas = ExtResource("2_62yfk")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h51bu"]
+atlas = ExtResource("2_62yfk")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odd07"]
+atlas = ExtResource("2_62yfk")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hckpw"]
+atlas = ExtResource("2_62yfk")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkw8s"]
+atlas = ExtResource("2_62yfk")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwbch"]
+atlas = ExtResource("2_62yfk")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6kiv"]
+atlas = ExtResource("2_62yfk")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osfbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62d8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x1ub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phq16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6o5b")
+}],
+"loop": true,
+"name": &"stay",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ht6wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lpsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h51bu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odd07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hckpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkw8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwbch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6kiv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp266"]
+size = Vector2(29, 58)
+
+[node name="Evgeniy" type="Node2D" node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("1_62yfk")
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_osfbq")
+animation = &"stay"
+autoplay = "stay"
+
+[node name="DialogInterationArea" type="Area2D" parent="."]
+position = Vector2(0, -2)
+script = ExtResource("3_01eeo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInterationArea"]
+position = Vector2(1, 3)
+shape = SubResource("RectangleShape2D_hp266")
+
+[node name="ControllerContainer" type="Node" parent="."]
+
+[connection signal="area_entered" from="DialogInterationArea" to="DialogInterationArea" method="_on_area_entered"]
+[connection signal="area_exited" from="DialogInterationArea" to="DialogInterationArea" method="_on_area_exited"]

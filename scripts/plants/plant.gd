@@ -84,7 +84,7 @@ func place_update():
 	else:
 		base_light_amount = 1000
 		base_temperature = 20
-		
+
 	if get_parent().is_in_group("humid"):
 		base_humidity = 0.6
 	else:
@@ -99,7 +99,7 @@ func place_update():
 
 
 func update_phase_logic():
-	change_light_time(GlobalTimer.phase_time)
+	change_light_time(global.TIME_OF_PERIOD)
 	is_first_pour = true
 
 
@@ -125,8 +125,11 @@ func change_state_logic():
 			break
 	
 	#чек на подачу материала. явно должен быть где-то еще
-	if plant_state == 0 or plant_state == 1:
+	if plant_state == 0 :
 		can_give_flowers = true
+		can_give_leaves = true
+	if plant_state == 1:
+		can_give_flowers = false
 		can_give_leaves = true
 	else:
 		can_give_flowers = false
@@ -140,23 +143,24 @@ func change_state_logic():
 
 func can_be_perfect_logic(): 
 	var can_become_perfect = false
-	if (plant_state == 1 or plant_state == 0):
-		print("wat+coef " + plant_name + " " + str(actual_water_coefficent < perfect_water_coefficent[1]
-				and actual_water_coefficent > perfect_water_coefficent[0]))
-		print("humidity " + plant_name + " " + str(actual_humidity < perfect_humidity[1]
-				and actual_humidity > perfect_humidity[0]))
-		print("temperature " + plant_name + " " + str(actual_temperature < perfect_temperature[1]
-				and actual_temperature > perfect_temperature[0]))
-		print("light_amount " + plant_name + " " + str(actual_light_amount < perfect_light_amount[1]
-				and actual_light_amount > perfect_light_amount[0]))
-		print("i overpoured? " + plant_name + " " + str(!is_overpoured))
-				
-		can_become_perfect = (actual_water_coefficent < perfect_water_coefficent[1]
-				and actual_water_coefficent > perfect_water_coefficent[0]) and (actual_humidity < perfect_humidity[1]
-				and actual_humidity > perfect_humidity[0]) and (actual_temperature < perfect_temperature[1]
-				and actual_temperature > perfect_temperature[0]) and (actual_light_amount < perfect_light_amount[1]
-				and actual_light_amount > perfect_light_amount[0]) and !is_overpoured
-		print("Can become perfect?? " + str(can_become_perfect))
+	if !(plant_state == 1 or plant_state == 0):
+		return can_become_perfect
+	print("wat+coef " + plant_name + " " + str(actual_water_coefficent < perfect_water_coefficent[1]
+			and actual_water_coefficent > perfect_water_coefficent[0]))
+	print("humidity " + plant_name + " " + str(actual_humidity < perfect_humidity[1]
+			and actual_humidity > perfect_humidity[0]))
+	print("temperature " + plant_name + " " + str(actual_temperature < perfect_temperature[1]
+			and actual_temperature > perfect_temperature[0]))
+	print("light_amount " + plant_name + " " + str(actual_light_amount < perfect_light_amount[1] + 1
+			and actual_light_amount >= perfect_light_amount[0]))
+	print("i overpoured? " + plant_name + " " + str(!is_overpoured))
+			
+	can_become_perfect = (actual_water_coefficent < perfect_water_coefficent[1]
+			and actual_water_coefficent > perfect_water_coefficent[0]) and (actual_humidity < perfect_humidity[1]
+			and actual_humidity > perfect_humidity[0]) and (actual_temperature < perfect_temperature[1]
+			and actual_temperature > perfect_temperature[0]) and (actual_light_amount < perfect_light_amount[1] + 1
+			and actual_light_amount >= perfect_light_amount[0]) and !is_overpoured
+	print("Can become perfect?? " + str(can_become_perfect))
 	return can_become_perfect
 
 
@@ -204,12 +208,7 @@ func check_ground(time: float):
 		ground_timer.start(time)
 	else:
 		ground_timer.stop()
-	
-	
-func change_light_time(light_time_on: int):
-	if actual_light_amount > acceptable_light_amount[0]:
-		actual_light_time += light_time_on 
-	#print("light time right now for " + plant_name + " is " + str(actual_light_time) )
+
 
 
 #я думаю свет количество часов света в итоге будет отсчитываться не от фазы,
@@ -276,11 +275,11 @@ func is_water_bad():
 	if actual_water_coefficent < acceptable_water_coefficent[0]:
 		bad_count += 1
 		print("water bad for " + plant_name)
-		HandbookInfo.add_note("plant_after", plant_name, plant_name + " походу засыхает.")
+		HandbookInfo.add_note("plant_after", plant_name, public_name + " походу засыхает.")
 		bad_parameters[0] += 1
 	elif is_overpoured:
 		bad_count += 1
-		HandbookInfo.add_note("plant_after", plant_name, plant_name + " выглядит залитым.")
+		HandbookInfo.add_note("plant_after", plant_name, public_name + " выглядит залитым.")
 		is_overpoured = false
 		bad_parameters[0] += 1
 	if bad_count == 0:
@@ -295,10 +294,12 @@ func is_humidity_bad():
 			or actual_humidity < acceptable_humidity[0]
 	):
 		bad_count += 1
-		HandbookInfo.add_note("plant_after", plant_name, plant_name + " чувствует себя некомфортно в этой влажности")
+		HandbookInfo.add_note("plant_after", plant_name, public_name + " чувствует себя некомфортно в этой влажности")
 		print("humidity bad for " + plant_name)
 		print(actual_humidity)
 	bad_parameters[2] += bad_count
+	if bad_count == 0:
+		bad_parameters[2] = 0
 	return bad_count
 
 
@@ -310,8 +311,10 @@ func is_temperature_bad():
 	):
 		bad_count += 1
 		print("temperature bad for " + plant_name)
-		HandbookInfo.add_note("plant_after", plant_name, plant_name + " чувствет себя плохо из-за температуры.")
+		HandbookInfo.add_note("plant_after", plant_name, public_name + " чувствет себя плохо из-за температуры.")
 	bad_parameters[3] += bad_count
+	if bad_count == 0:
+		bad_parameters[3] = 0
 	return bad_count
 
 
@@ -322,7 +325,7 @@ func is_light_bad():
 			and ((actual_light_amount > acceptable_light_amount[1]) 
 			or (actual_light_amount < acceptable_light_amount[0]))
 		):
-		HandbookInfo.add_note("plant_after", plant_name, "что-то не так со светом для " + plant_name)
+		HandbookInfo.add_note("plant_after", plant_name, public_name + " неправильно освещается")
 		bad_count += 1
 		print("light bad for " + plant_name)
 	if (
@@ -331,19 +334,26 @@ func is_light_bad():
 			or (actual_light_time < acceptable_light_time[0]))
 		): #если новый день наступил, но в пред день свет горел неправильно
 		bad_count += 1
-		HandbookInfo.add_note("plant_after", plant_name, plant_name + " совсем не отдохнуло за ночь")
+		HandbookInfo.add_note("plant_after", plant_name, public_name + " требует ночного отдыха!")
 		print("light time bad for " + plant_name + " " + str(global.phase_of_day))
 	if (global.phase_of_day == 0):
 		actual_light_time = 0 #лучшее ли это место для этого? лучше придумать не могу
 		print("CHECK 2 light time right now for " + plant_name + " is " + str(actual_light_time) )
 	bad_parameters[1] += bad_count
+	if bad_count == 0:
+		bad_parameters[1] = 0
 	return bad_count
 	
 #ночью свет должен быть МЕНЬШЕ определенного значения, меньше 1000 например. отдельная проверка на ночь
 		#больше проверок богу проверок
 		#бля почему то проверка все равно ночью делается, надо разобраться...
+		
+func change_light_time(light_time_on: int):
+	if actual_light_amount >= acceptable_light_amount[0]:
+		actual_light_time += light_time_on 
+	print("LIGHT TIMER right now for " + plant_name + " is " + str(actual_light_time))
+	print("LIGHT AMOUNT right now for " + plant_name + " is " + str(actual_light_amount) )
 
-	
 func bad_too_long():
 	var bad_count = 0
 	

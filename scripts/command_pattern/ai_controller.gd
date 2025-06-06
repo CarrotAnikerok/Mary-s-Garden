@@ -16,9 +16,9 @@ var current_characters: Dictionary[String, Node2D]
 var timer: SceneTreeTimer
 var can_interact: bool  = true
 
-const SCENARY_1 = preload("res://scenary/scenary_1.tres")
+#const SCENARY_1 = preload("res://scenary/scenary_1.tres")
 #const SCENARY_2 = preload("res://scenary/scenary_2.tres")
-const SCENARY_3 = preload("res://scenary/scenary_3.tres")
+#const SCENARY_3 = preload("res://scenary/scenary_3.tres")
 #const SCENARY_4 = preload("res://scenary/scenary_4.tres")
 @onready var bt_player = $BTPlayer
 
@@ -36,11 +36,12 @@ func move_character_to(character: Character, target_pos: Vector2, delta: float, 
 	).normalized()
 	
 	character.animated_sprite.play("walk")
-	sprite_flip(character, direction.x)
+	#sprite_flip(character, direction.x)
 	character.position += direction * delta * speed
 
 
 func sprite_flip(character, dir):
+	print(str(character) + " " + str(dir))
 	character.animated_sprite.flip_h = dir < 0
 
 
@@ -65,10 +66,11 @@ func take_control():
 func scenary_end(time_spent: int):
 	return_control()
 	bt_player.blackboard.set_var("start_scenary", false)
-	GlobalTimer.start(GlobalTimer.time_left - time_spent)
-	GlobalTimer.wait_time = GlobalTimer.phase_time
-	GlobalTimer.paused = false
-	ScenaryController.cutscene_ended.emit(time_spent)
+	if time_spent > 0:
+		GlobalTimer.start(GlobalTimer.time_left - time_spent)
+		GlobalTimer.wait_time = GlobalTimer.phase_time
+		GlobalTimer.paused = false
+		ScenaryController.cutscene_ended.emit(time_spent)
 
 
 func start_scenary(scenary: Resource):

@@ -4,15 +4,23 @@ var SCENE_HALL = "res://scenes/hall/hall.tscn"
 var current_plants: Array[Plant]
 @export var plants_to_add: Dictionary[String, PackedScene]
 @onready var garden_slots = %GardenSlots
+@onready var guest_notice = %GuestNotice
+
 
 signal change_scene
 
-func scenary_waiting_on():
+func scenary_waiting_on(scenary: BehaviorTree):
+	guest_notice.show_notice(scenary)
 	print_debug("STARTED WAITING FOR SCENARY")
+	
+func scenary_ending():
+	guest_notice.change_notice_texture()
 
 
 func scenary_waiting_off():
+	guest_notice.hide_notice()
 	print_debug("STOPPED WAITING FOR SCENARY")
+
 
 
 

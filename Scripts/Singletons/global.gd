@@ -2,7 +2,7 @@ extends Node2D
 
 var save = load("res://custom_resources/plant_saves.tres") as SavedGame
 var is_dragging = false
-var goal_sums: Array[int] = [0, 100, 200, 300]
+var goal_sums: Array[int] = [0, 70, 200, 300]
 @export var plants_to_add: Array[String]
 var random_plant_to_add: String
 

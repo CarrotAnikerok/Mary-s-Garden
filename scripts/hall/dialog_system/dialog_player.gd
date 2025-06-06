@@ -1,11 +1,12 @@
 extends CanvasLayer
 
 @export_file("*json") var scene_text_file: String
-@export var mary_moods: Dictionary
-@export var arin_moods: Dictionary
-@export var scarlett_moods: Dictionary
-@export var mark_moods: Dictionary
-@export var chris_moods: Dictionary
+@export var mary_moods: Dictionary[String, Resource]
+@export var arin_moods: Dictionary[String, Resource]
+@export var scarlett_moods: Dictionary[String, Resource]
+@export var mark_moods: Dictionary[String, Resource]
+@export var chris_moods: Dictionary[String, Resource]
+@export var guest_moods: Dictionary[String, Resource]
 @export var player: Character
 
 var scene_text: Dictionary = {}
@@ -20,7 +21,6 @@ var letter_time = 0.03
 var space_time = 0.06
 var punctuation_time = 0.1
 var text = ""
-
 
 @onready var timer = $Timer
 @onready var background = $TextBox
@@ -65,10 +65,8 @@ func next_line():
 		return
 	print(str(dialog_part.size()) + " and " + str(selected_text.size()))
 	if selected_text.size() > 0:
-		print("next_line is here", selected_text.size())
 		show_text()
 	elif dialog_part.size() > 0:
-		print("next block is here?", dialog_block.size())
 		dialog_block = dialog_part.pop_front()
 		selected_text = dialog_block["text"].duplicate()
 		show_text()
@@ -102,15 +100,12 @@ func change_sprite():
 
 func change_mood():
 	if (dialog_block.has("mood")):
-		print(dialog_block["mood"])
 		if (name_label.text == "Мэри"):
 			mary_sprite.texture = mary_moods[dialog_block["mood"]]
 			text_box_pretty.modulate = Color(0.9, 0.0, 0.42)
-			print($TextBox/TextBoxPretty.modulate)
 		elif (name_label.text == "Арин"):
 			guest_sprite.texture = arin_moods[dialog_block["mood"]]
 			text_box_pretty.modulate = Color(0.325, 0.802, 1.0)
-			print($TextBox/TextBoxPretty.modulate)
 		elif (name_label.text == "Скарлетт"):
 			guest_sprite.texture = scarlett_moods[dialog_block["mood"]]
 			text_box_pretty.modulate = Color(0.494, 0.003, 0.847)
@@ -120,6 +115,9 @@ func change_mood():
 		elif (name_label.text == "Крис"):
 			guest_sprite.texture = chris_moods[dialog_block["mood"]]
 			text_box_pretty.modulate = Color(1.0, 0.62, 0.905)
+		elif (name_label.text == "Гость"):
+			guest_sprite.texture = guest_moods[dialog_block["mood"]]
+			text_box_pretty.modulate = Color(0.36, 0.164, 0.049)
 
 
 func on_display_dialog(text_key):

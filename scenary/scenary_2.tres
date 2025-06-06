@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=27 format=3 uid="uid://bpf0o8uvwjgbq"]
+[gd_resource type="BehaviorTree" load_steps=33 format=3 uid="uid://bpf0o8uvwjgbq"]
 
 [ext_resource type="Script" uid="uid://dbqlubiaib33w" path="res://ai/tasks/move_arin.gd" id="1_jrpkl"]
 [ext_resource type="Script" uid="uid://b6xcuprr7ql6u" path="res://ai/tasks/move_scarlett.gd" id="2_7rxww"]
@@ -26,7 +26,7 @@ value = SubResource("BBVariant_7rxww")
 [sub_resource type="BTAction" id="BTAction_vfwj6"]
 script = ExtResource("5_vfwj6")
 move_to = Vector2(348, 108)
-speed = 150.0
+speed = 140.0
 character = "Mark"
 
 [sub_resource type="BTAction" id="BTAction_gnv6q"]
@@ -61,6 +61,20 @@ speed = 80.0
 num_successes_required = 3
 children = [SubResource("BTAction_h5028"), SubResource("BTAction_ttkm7"), SubResource("BTAction_22dgu")]
 
+[sub_resource type="BTAction" id="BTAction_y2ytt"]
+script = ExtResource("2_7rxww")
+move_to = Vector2(310, 108)
+speed = 100.0
+
+[sub_resource type="BTAction" id="BTAction_eg673"]
+script = ExtResource("1_jrpkl")
+move_to = Vector2(272, 108)
+speed = 100.0
+
+[sub_resource type="BTParallel" id="BTParallel_xghfp"]
+num_successes_required = 2
+children = [SubResource("BTAction_y2ytt"), SubResource("BTAction_eg673")]
+
 [sub_resource type="BTWait" id="BTWait_vfwj6"]
 
 [sub_resource type="BTAction" id="BTAction_wtydl"]
@@ -72,7 +86,7 @@ dialog_name = "dialog_1_3"
 [sub_resource type="BTAction" id="BTAction_wm7yj"]
 script = ExtResource("5_vfwj6")
 move_to = Vector2(500, 108)
-speed = 150.0
+speed = 140.0
 character = "Mark"
 
 [sub_resource type="BTAction" id="BTAction_sgt50"]
@@ -89,12 +103,26 @@ children = [SubResource("BTAction_wm7yj"), SubResource("BTAction_sgt50")]
 script = ExtResource("3_dhpow")
 dialog_name = "dialog_1_4"
 
+[sub_resource type="BTAction" id="BTAction_eh716"]
+script = ExtResource("2_7rxww")
+move_to = Vector2(101, 109)
+speed = 100.0
+
+[sub_resource type="BTAction" id="BTAction_poi2m"]
+script = ExtResource("1_jrpkl")
+move_to = Vector2(44, 109)
+speed = 100.0
+
+[sub_resource type="BTParallel" id="BTParallel_y2ytt"]
+num_successes_required = 2
+children = [SubResource("BTAction_eh716"), SubResource("BTAction_poi2m")]
+
 [sub_resource type="BTAction" id="BTAction_kqc8t"]
 script = ExtResource("3_i4qb2")
 time_spent = 0
 
 [sub_resource type="BTSequence" id="BTSequence_gnv6q"]
-children = [SubResource("BTCheckVar_i4qb2"), SubResource("BTParallel_kqc8t"), SubResource("BTWait_kqc8t"), SubResource("BTParallel_wm7yj"), SubResource("BTWait_vfwj6"), SubResource("BTAction_wtydl"), SubResource("BTWait_gnv6q"), SubResource("BTParallel_eh716"), SubResource("BTAction_ndtp5"), SubResource("BTAction_kqc8t")]
+children = [SubResource("BTCheckVar_i4qb2"), SubResource("BTParallel_kqc8t"), SubResource("BTWait_kqc8t"), SubResource("BTParallel_wm7yj"), SubResource("BTParallel_xghfp"), SubResource("BTWait_vfwj6"), SubResource("BTAction_wtydl"), SubResource("BTWait_gnv6q"), SubResource("BTParallel_eh716"), SubResource("BTAction_ndtp5"), SubResource("BTParallel_y2ytt"), SubResource("BTAction_kqc8t")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_43hkt")

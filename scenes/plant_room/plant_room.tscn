@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://gao1je8jpkpk"]
+[gd_scene load_steps=87 format=3 uid="uid://gao1je8jpkpk"]
 
 [ext_resource type="Texture2D" uid="uid://hk7ole3fkrbf" path="res://sprites/plant_room/windows.png" id="2_7ntu0"]
 [ext_resource type="PackedScene" uid="uid://qi51764v7mh7" path="res://scenes/plants/kalanchoe_blossfeldiana.tscn" id="2_r6sxj"]
@@ -32,7 +32,13 @@
 [ext_resource type="Script" uid="uid://c1mu4sgebqw3e" path="res://scripts/plant_room/UI/garden_slot.gd" id="23_tmx1f"]
 [ext_resource type="PackedScene" uid="uid://cti7uh2emmyxi" path="res://scenes/plants/bergenia_crassoifolia.tscn" id="26_tcsdn"]
 [ext_resource type="Script" uid="uid://dwsm1qsvjsd86" path="res://scripts/plant_room/light.gd" id="28_4tg3j"]
+[ext_resource type="Texture2D" uid="uid://cmw78fdxssc3t" path="res://sprites/plant_room/UI/events.png" id="34_bqpbp"]
+[ext_resource type="PackedScene" uid="uid://da2a4csr3v6ub" path="res://scenes/money_label.tscn" id="35_gag1u"]
+[ext_resource type="Script" uid="uid://celxg14k8chuh" path="res://scenes/plant_room/guest_notice.gd" id="35_r6sxj"]
+[ext_resource type="Texture2D" uid="uid://5ydxbq70f8ec" path="res://sprites/plant_room/UI/mary_textblock.png" id="36_r6sxj"]
 [ext_resource type="Script" uid="uid://bwnfyrfw6j4g5" path="res://scripts/ui/money_label.gd" id="37_bqpbp"]
+[ext_resource type="FontFile" uid="uid://c78pmkeast7au" path="res://resources/fonts/Blogger/Blogger_Sans-Medium_Italic.otf" id="39_gag1u"]
+[ext_resource type="Script" uid="uid://b25ghc6w00dxa" path="res://scenes/plant_room/mary_textblock.gd" id="40_tbwg4"]
 [ext_resource type="Texture2D" uid="uid://ckcfwq1ms2nfo" path="res://sprites/plant_workshop/plant_workshop_button_.png" id="42_8ear1"]
 [ext_resource type="Texture2D" uid="uid://by0o8ugku6jov" path="res://sprites/plant_workshop/plant_workshop_button_outline.png" id="43_f5syj"]
 
@@ -337,6 +343,26 @@ light_mode = 1
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_02e7d"]
 light_mode = 1
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gag1u"]
+atlas = ExtResource("34_bqpbp")
+region = Rect2(38, 29, 36, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqpbp"]
+atlas = ExtResource("34_bqpbp")
+region = Rect2(0, 29, 36, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gag1u"]
+texture = ExtResource("36_r6sxj")
+texture_margin_left = 4.0
+texture_margin_top = 8.0
+texture_margin_right = 4.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_r6sxj"]
+font = ExtResource("39_gag1u")
+font_size = 5
+font_color = Color(0.956863, 0.384314, 0.541176, 1)
+
 [node name="PlantRoom" type="Node2D"]
 script = ExtResource("9_gngg7")
 plants_to_add = Dictionary[String, PackedScene]({
@@ -358,14 +384,16 @@ lifetime = 10.0
 preprocess = 10.0
 process_material = SubResource("ParticleProcessMaterial_1gmqi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+[node name="Node" type="Node" parent="CanvasLayer"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Node"]
 self_modulate = Color(0.96, 0.864, 0.9136, 1)
 light_mask = 8
-position = Vector2(276, 32.0002)
+position = Vector2(273, 32)
 sprite_frames = SubResource("SpriteFrames_c7t48")
 autoplay = "default"
-frame = 12
-frame_progress = 0.783715
+frame = 10
+frame_progress = 0.105832
 
 [node name="PointLight2D" type="PointLight2D" parent="CanvasLayer"]
 position = Vector2(159.5, 29.5002)
@@ -504,6 +532,7 @@ light_mask = 2
 z_index = -1
 position = Vector2(160, 90.0002)
 texture = SubResource("CanvasTexture_4tg3j")
+metadata/_edit_group_ = true
 
 [node name="GardenSlots" type="Node2D" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -513,21 +542,17 @@ script = ExtResource("23_tmx1f")
 [node name="GardenSlot" parent="CanvasLayer/GardenSlots" groups=["high_sunlight", "humid", "table"] instance=ExtResource("2_vglss")]
 position = Vector2(31, 43)
 
-[node name="AloeVera" parent="CanvasLayer/GardenSlots/GardenSlot" instance=ExtResource("5_pstx4")]
-light_mask = 3
-position = Vector2(31, 41)
+[node name="PelargoniumGraveolens" parent="CanvasLayer/GardenSlots/GardenSlot" instance=ExtResource("3_gag1u")]
 
 [node name="GardenSlot2" parent="CanvasLayer/GardenSlots" groups=["high_sunlight", "humid", "table"] instance=ExtResource("2_vglss")]
 position = Vector2(55, 43)
 
-[node name="BergeniaCrassoifolia" parent="CanvasLayer/GardenSlots/GardenSlot2" instance=ExtResource("26_tcsdn")]
-position = Vector2(55, 41)
+[node name="AloeVera" parent="CanvasLayer/GardenSlots/GardenSlot2" instance=ExtResource("5_pstx4")]
 
 [node name="GardenSlot3" parent="CanvasLayer/GardenSlots" groups=["high_sunlight", "humid", "table"] instance=ExtResource("2_vglss")]
 position = Vector2(80, 43)
 
 [node name="ChlorophytumComosum" parent="CanvasLayer/GardenSlots/GardenSlot3" instance=ExtResource("10_bqpbp")]
-position = Vector2(80, 41)
 
 [node name="GardenSlot4" parent="CanvasLayer/GardenSlots" groups=["high_sunlight", "humid", "table"] instance=ExtResource("2_vglss")]
 position = Vector2(104, 43)
@@ -561,7 +586,7 @@ position = Vector2(100, 80)
 [node name="GardenSlot13" parent="CanvasLayer/GardenSlots" groups=["high_sunlight", "table"] instance=ExtResource("2_vglss")]
 position = Vector2(154, 83)
 
-[node name="PelargoniumGraveolens" parent="CanvasLayer/GardenSlots/GardenSlot13" instance=ExtResource("3_gag1u")]
+[node name="BergeniaCrassoifolia" parent="CanvasLayer/GardenSlots/GardenSlot13" instance=ExtResource("26_tcsdn")]
 
 [node name="GardenSlot14" parent="CanvasLayer/GardenSlots" groups=["high_sunlight", "table"] instance=ExtResource("2_vglss")]
 position = Vector2(178, 83)
@@ -622,6 +647,17 @@ position = Vector2(228, 145)
 
 [node name="CanvasLayerUI" type="CanvasLayer" parent="."]
 layer = -1
+
+[node name="WorkshopButton" type="TextureButton" parent="CanvasLayerUI"]
+offset_left = 289.0
+offset_top = 69.0
+offset_right = 323.0
+offset_bottom = 151.0
+texture_normal = ExtResource("42_8ear1")
+texture_pressed = ExtResource("43_f5syj")
+texture_hover = ExtResource("43_f5syj")
+texture_disabled = ExtResource("42_8ear1")
+texture_focused = ExtResource("42_8ear1")
 
 [node name="UI" type="Control" parent="CanvasLayerUI"]
 light_mask = 0
@@ -702,17 +738,48 @@ scale = Vector2(0.8, 0.8)
 mouse_filter = 1
 texture_normal = ExtResource("6_fv2ki")
 
-[node name="MoneyLabel" type="Label" parent="CanvasLayerUI/UI"]
+[node name="MoneyLabel" parent="CanvasLayerUI/UI" instance=ExtResource("35_gag1u")]
 layout_mode = 0
-offset_left = 300.0
+offset_left = 294.0
 offset_top = 1.0
-offset_right = 320.0
-offset_bottom = 13.0
-theme_override_colors/font_color = Color(0.650708, 0.97, 0.2037, 1)
-theme_override_fonts/font = ExtResource("18_f5rt3")
-theme_override_font_sizes/font_size = 11
-text = "1000€"
+offset_right = 318.0
+offset_bottom = 23.3333
 script = ExtResource("37_bqpbp")
+
+[node name="GuestNotice" type="TextureRect" parent="CanvasLayerUI/UI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 265.0
+offset_top = 145.0
+offset_right = 301.0
+offset_bottom = 171.0
+texture = SubResource("AtlasTexture_gag1u")
+script = ExtResource("35_r6sxj")
+icons = Dictionary[String, AtlasTexture]({
+"guest_good": SubResource("AtlasTexture_gag1u"),
+"guest_neutral": SubResource("AtlasTexture_bqpbp")
+})
+
+[node name="TextBlock" type="PanelContainer" parent="CanvasLayerUI/UI"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 29.0
+offset_right = 314.0
+offset_bottom = 46.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gag1u")
+script = ExtResource("40_tbwg4")
+phrases = Array[String](["Привет! Добро пожаловать в оранжерею!", "Здесь я ухаживаю за растениями.", "Для каждого растения нужно следить за его поливом, уровнем влажности и светом.", "В справочнике я записала основную информацию о растениях, но четкие цифры насчет таких вещей сказать сложно.", "Придется эксперементировать и смотреть, как именно растение реагирует на условия, в которых находится,", "И в зависимости от этого что-то менять.", "Так же я делаю букеты, чаи и духи из растений, когда у меня есть материалы.", "Их можно получить, если растение чувствует себя хорошо или цветет.", "За рабочим столом рядом с качелями я экспериментирую и создаю различные композиции.", "Благодаря их продаже мне надо держать магазин на плаву! ", "Мне нужно выполнять планы по доходу, иначе придется закрыться...", "Сегодня, как в день открытия, было бы неплохо заработать хотя бы 100€", "Кстати, нажав на часы в зале можно пропустить время до следующего периода дня!", "Что ж, у меня много работы. Если я не успею сделать все необходимое за период времени, то растению будет плохо.", "Так что для начала стоит заняться поливом!"])
+
+[node name="MaryText" type="Label" parent="CanvasLayerUI/UI/TextBlock"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(57, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.956863, 0.384314, 0.541176, 1)
+text = "Привет! Как твои дела? У меня все хорошо!! Вот Так вот!"
+label_settings = SubResource("LabelSettings_r6sxj")
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Button" type="Button" parent="CanvasLayerUI"]
 visible = false
@@ -724,17 +791,7 @@ offset_bottom = 179.0
 theme_override_font_sizes/font_size = 5
 text = "phase"
 
-[node name="WorkshopButton" type="TextureButton" parent="CanvasLayerUI"]
-offset_left = 289.0
-offset_top = 69.0
-offset_right = 323.0
-offset_bottom = 151.0
-texture_normal = ExtResource("42_8ear1")
-texture_pressed = ExtResource("43_f5syj")
-texture_hover = ExtResource("43_f5syj")
-texture_disabled = ExtResource("42_8ear1")
-texture_focused = ExtResource("42_8ear1")
-
+[connection signal="pressed" from="CanvasLayerUI/WorkshopButton" to="CanvasLayerUI/UI" method="_on_workshop_button_pressed"]
 [connection signal="animation_finished" from="CanvasLayerUI/UI/DateButton/TimePhaseSprite/TimePhaseAnimated" to="CanvasLayerUI/UI/DateButton/TimePhaseSprite" method="_on_time_phase_animated_animation_finished"]
 [connection signal="mouse_entered" from="CanvasLayerUI/UI/Panel" to="CanvasLayerUI/UI" method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayerUI/UI/Panel" to="CanvasLayerUI/UI" method="_on_panel_mouse_exited"]
@@ -744,5 +801,5 @@ texture_focused = ExtResource("42_8ear1")
 [connection signal="mouse_entered" from="CanvasLayerUI/UI/Panel/DoorButton" to="CanvasLayerUI/UI" method="_on_door_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayerUI/UI/Panel/DoorButton" to="CanvasLayerUI/UI" method="_on_door_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayerUI/UI/Panel/DoorButton" to="." method="_on_door_button_pressed"]
+[connection signal="gui_input" from="CanvasLayerUI/UI/TextBlock" to="CanvasLayerUI/UI/TextBlock" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayerUI/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayerUI/WorkshopButton" to="CanvasLayerUI/UI" method="_on_workshop_button_pressed"]

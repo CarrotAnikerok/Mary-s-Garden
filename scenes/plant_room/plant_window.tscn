@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://b20sqxrpc7sei"]
+[gd_scene load_steps=78 format=3 uid="uid://b20sqxrpc7sei"]
 
 [ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://resources/fonts/Neucha/Neucha-Regular.ttf" id="1_2v1e0"]
 [ext_resource type="PackedScene" uid="uid://cuh1yaoty6gvf" path="res://addons/pixel_shader/camera.tscn" id="2_8y0bb"]
@@ -22,9 +22,12 @@
 [ext_resource type="Script" uid="uid://cyilwmt6tl5k8" path="res://scripts/ui/navigation.gd" id="12_deuju"]
 [ext_resource type="Script" uid="uid://djrrwin8nn733" path="res://scripts/plant_room/plant_window/slider_menu.gd" id="13_57xuv"]
 [ext_resource type="Texture2D" uid="uid://5qiccvl2n0yg" path="res://sprites/plant_menu/icons/StateIcons/neutral.png" id="13_rq1v5"]
+[ext_resource type="Texture2D" uid="uid://xgyxjqyufivp" path="res://sprites/plant_menu/icons/HumidityIcons/high_humidity.png" id="14_o4v8h"]
 [ext_resource type="Texture2D" uid="uid://bswya8dal5drr" path="res://sprites/plant_menu/icons/StateIcons/good.png" id="14_toce5"]
 [ext_resource type="Texture2D" uid="uid://cvyhk7i5rogan" path="res://sprites/plant_menu/icons/StateIcons/perfect.png" id="15_8ncot"]
+[ext_resource type="Texture2D" uid="uid://dspk5mors4p2v" path="res://sprites/plant_menu/icons/HumidityIcons/medium_humidity.png" id="15_tvups"]
 [ext_resource type="Texture2D" uid="uid://clq1eq3ekgh1m" path="res://sprites/plant_menu/tools/instriments.png" id="19_fucjw"]
+[ext_resource type="Texture2D" uid="uid://7wmsumffdydt" path="res://sprites/plant_menu/icons/HumidityIcons/low_humidity.png" id="20_kvucr"]
 [ext_resource type="PackedScene" uid="uid://b8m8og1wmqxwp" path="res://scripts/ui/scale_button.tscn" id="21_3ckwq"]
 [ext_resource type="Theme" uid="uid://b4uu16ao6kfi0" path="res://themes/new_theme.tres" id="23_8ncot"]
 [ext_resource type="Texture2D" uid="uid://cplpg4s1grxg" path="res://sprites/plant_menu/tools/clock_text.png" id="23_toce5"]
@@ -57,6 +60,7 @@ var plant_model
 func _ready():
 	update_info()
 	tools_buttons.worked_with_plant.connect(update_info)
+	GlobalTimer.changed_phase.connect(update_info)
 	global_position = active_plant.global_position
 	scale = Vector2(0.1, 0.1)
 	var tween = get_tree().create_tween().set_parallel()
@@ -415,7 +419,6 @@ to_position = Vector2(7, 0)
 time = 0.2
 
 [node name="PlantInfo" type="ColorRect" parent="TextureRect"]
-visible = false
 material = SubResource("CanvasItemMaterial_o7elc")
 layout_mode = 0
 offset_left = 231.533
@@ -507,12 +510,18 @@ light_icons = Dictionary[String, Resource]({
 "low": ExtResource("7_o7elc"),
 "mid": ExtResource("7_05lj3")
 })
+humidity_icons = Dictionary[String, Resource]({
+"high": ExtResource("14_o4v8h"),
+"low": ExtResource("20_kvucr"),
+"medium": ExtResource("15_tvups")
+})
 state_icons = Array[Resource]([ExtResource("15_8ncot"), ExtResource("14_toce5"), ExtResource("13_rq1v5"), ExtResource("12_57xuv"), ExtResource("11_deuju"), ExtResource("10_bl0pt")])
 
 [node name="LightIcon" type="TextureRect" parent="TextureRect/InfoIcons"]
 material = SubResource("CanvasItemMaterial_myes0")
 layout_mode = 0
-offset_right = 15.0
+offset_left = 0.999668
+offset_right = 15.9997
 offset_bottom = 15.0
 texture = ExtResource("7_05lj3")
 expand_mode = 2
@@ -526,6 +535,17 @@ offset_right = 14.0
 offset_bottom = -69.0
 texture = ExtResource("15_8ncot")
 expand_mode = 2
+
+[node name="HumidityIcon" type="TextureRect" parent="TextureRect/InfoIcons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 0.999668
+offset_top = 17.0
+offset_right = 16.9997
+offset_bottom = 33.0
+texture = ExtResource("14_o4v8h")
+expand_mode = 4
 
 [node name="ToolsButtons" type="Control" parent="TextureRect"]
 unique_name_in_owner = true

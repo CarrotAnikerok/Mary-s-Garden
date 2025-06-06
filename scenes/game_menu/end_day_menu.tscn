@@ -22,7 +22,7 @@ advice_text_bad = "Это меньше  необходимой
 сегодняшней суммы, но вы можете 
 отбить ее в следующие дни."
 advice_text_good = "Вы достигли необходимой 
-сегодняшней суммы."
+сегодняшней суммы!"
 plant_textures = Dictionary[String, ExtResource("2_kr380")]({
 "lilium": ExtResource("3_acpwt"),
 "phaleonopsis": ExtResource("5_b0ge0"),
