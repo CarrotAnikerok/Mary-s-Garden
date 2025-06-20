@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://c6mo7fj5a4yvd"]
+[gd_scene load_steps=98 format=3 uid="uid://c6mo7fj5a4yvd"]
 
 [ext_resource type="PackedScene" uid="uid://b5neg873g5wfk" path="res://scenes/hall/dialog_player.tscn" id="1_wkokc"]
 [ext_resource type="Texture2D" uid="uid://do4iu333ej1k2" path="res://sprites/novel_part/Arin/arin_angry.png" id="2_7awf8"]
@@ -55,6 +55,7 @@
 [ext_resource type="Script" uid="uid://d28jl8ju6j7co" path="res://scripts/hall/hall_products.gd" id="44_vdr2x"]
 [ext_resource type="Texture2D" uid="uid://baeyp557t4le2" path="res://sprites/novel_part/Chris/chris_worry_2.png" id="46_ih215"]
 [ext_resource type="Script" uid="uid://j0g8nb0t7osq" path="res://scripts/hall/walls.gd" id="47_ih215"]
+[ext_resource type="PackedScene" uid="uid://bnf4nnslcadxl" path="res://scenes/hall/dialogic_controller.tscn" id="53_neabg"]
 [ext_resource type="PackedScene" uid="uid://da2a4csr3v6ub" path="res://scenes/money_label.tscn" id="53_obkld"]
 [ext_resource type="Script" uid="uid://dbeqgwjy0itkj" path="res://scripts/ui/money_label_hall.gd" id="54_bvusc"]
 
@@ -855,6 +856,8 @@ position = Vector2(-1, 0)
 shape = SubResource("SegmentShape2D_u80b0")
 
 [node name="Utilities" type="Node" parent="."]
+
+[node name="DialogicController" parent="Utilities" instance=ExtResource("53_neabg")]
 
 [node name="AiPlot" type="Node" parent="Utilities" node_paths=PackedStringArray("camera", "arin", "mary", "scarlett")]
 unique_name_in_owner = true

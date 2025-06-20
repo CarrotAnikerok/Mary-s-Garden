@@ -6,8 +6,15 @@ extends Node
 
 #элемент, чекающий день, фазу и время
 signal try_scenary(scenary)
+
 signal cutscene_started()
+func emit_cutscene_started() -> void:
+	cutscene_started.emit()
+
 signal cutscene_ended(spent_time)
+func emit_cutscene_ended(spent_time: float) -> void:
+	cutscene_ended.emit(spent_time)
+
 
 var scenary_index: int = 0
 
@@ -29,6 +36,8 @@ func _process(delta):
 				
 	
 func try_next_scenary() -> void:
+	if !is_plot_check:
+		return
 	print_debug("Try next scenary: " + str(scenary_index))
 	try_scenary.emit(scenary_dict[scenary_index].scenary)
 	scenary_dict[scenary_index].set_played()
@@ -39,7 +48,7 @@ func has_next_scenary_in_phase() -> bool:
 	if scenary_index >= scenary_dict.size():
 		return false
 	if (global.phase_of_day != scenary_dict[scenary_index].phase):
-		false
+		return false
 	return true
 
 

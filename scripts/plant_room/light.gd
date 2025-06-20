@@ -86,9 +86,9 @@ func change_light():
 	match global.phase_of_day:
 		0:
 			start_morning_light()
-		1:
-			start_day_light()
 		2:
+			start_day_light()
+		4:
 			start_evening_light()
 
 			

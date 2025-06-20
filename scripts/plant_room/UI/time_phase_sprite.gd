@@ -23,11 +23,11 @@ func change_phase():
 			animation.play("evening_to_night")
 			color_tween.tween_property(time_clock, "modulate", Color(0.99, 0.975, 0.554), 0.4)
 			#time_clock.modulate = Color(0.54, 1.0, 0.594)
-		1: 
+		2: 
 			animation.play("morning_to_day")
 			color_tween.tween_property(time_clock, "modulate", Color(0.54, 1.0, 0.594), 0.4)
 			#time_clock.modulate = Color(0.82, 0.518, 0.426)
-		2: 
+		4: 
 			animation.play("day_to_evenenig")
 			color_tween.tween_property(time_clock, "modulate", Color(0.82, 0.518, 0.426), 0.4)
 			#time_clock.modulate = Color(0.99, 0.975, 0.554)

@@ -1,0 +1,83 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.403922, 0.172549, 0.619608, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "arrogance_1",
+&"description": "",
+&"display_name": "Скарлетт",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"arrogance_1": {
+"export_overrides": {
+"image": "\"res://sprites/novel_part/Scarlett/scarlett_arrogance_1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"arrogance_2": {
+"export_overrides": {
+"image": "\"res://sprites/novel_part/Scarlett/scarlett_arrogance_2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"chill_1": {
+"export_overrides": {
+"image": "\"res://sprites/novel_part/Scarlett/scarlett_chill_1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"chill_2": {
+"export_overrides": {
+"image": "\"res://sprites/novel_part/Scarlett/scarlett_chill_2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sigh": {
+"export_overrides": {
+"image": "\"res://sprites/novel_part/Scarlett/scarlett_sigh.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"thinking": {
+"export_overrides": {
+"image": "\"res://sprites/novel_part/Scarlett/scarlett_thinks.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"tired": {
+"export_overrides": {
+"image": "\"res://sprites/novel_part/Scarlett/scarlett_tired.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

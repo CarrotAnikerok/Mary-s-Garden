@@ -1,0 +1,16 @@
+join arin rightmost
+arin (chill_good): привет!
+leave arin
+join mary leftmost
+mary (chill): привет!
+leave mary
+join mark rightmost
+mark (positive): привет
+leave mark
+join chris rightmost
+chris (worry_1): hi
+leave chris
+join scarlett rightmost
+scarlett (sigh): hello
+leave scarlett
+[end_timeline]

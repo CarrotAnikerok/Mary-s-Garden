@@ -5,5 +5,5 @@ var character: Character
 
 var movement_command := MovementCommand.new()
 
-func _init(character: Character = null) -> void:
-	self.character = character
+func _init(_character: Character = null) -> void:
+	self.character = _character

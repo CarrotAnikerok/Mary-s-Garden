@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5neg873g5wfk"]
+[gd_scene load_steps=10 format=3 uid="uid://b5neg873g5wfk"]
 
 [ext_resource type="Script" uid="uid://di4isil2vrqy3" path="res://scripts/hall/dialog_system/dialog_player.gd" id="1_4aop0"]
 [ext_resource type="Texture2D" uid="uid://bjpp350535t41" path="res://sprites/novel_part/Mary/mary_chill.png" id="2_judwd"]
@@ -6,19 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ve4jpk7g24g2" path="res://sprites/novel_part/Arin/arin_chill_1.png" id="3_ompeb"]
 [ext_resource type="Texture2D" uid="uid://b4twnmmb0wbak" path="res://sprites/novel_part/evgeniy.png" id="4_rfoa3"]
 [ext_resource type="Texture2D" uid="uid://b8rv4j3cugocc" path="res://sprites/novel_part/text_box/text_box.png" id="5_fvtql"]
-[ext_resource type="FontFile" uid="uid://b8pvdi5csuer8" path="res://resources/fonts/Blogger/Blogger_Sans-Medium.otf" id="6_dhbxe"]
-[ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://resources/fonts/Neucha/Neucha-Regular.ttf" id="6_p3hlc"]
 [ext_resource type="Texture2D" uid="uid://btl1pe1644drn" path="res://sprites/novel_part/text_box/text_box_pretty.png" id="6_rfoa3"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_mxfw7"]
-line_spacing = 1.0
-font = ExtResource("6_dhbxe")
-font_size = 10
-shadow_size = 0
-
-[sub_resource type="LabelSettings" id="LabelSettings_or6hk"]
-font = ExtResource("6_p3hlc")
-font_size = 9
+[ext_resource type="LabelSettings" uid="uid://s3q3nkop1o7m" path="res://themes/text_label_setting.tres" id="8_rfoa3"]
+[ext_resource type="LabelSettings" uid="uid://bmb2njwqqlj6s" path="res://themes/name_label_setting.tres" id="9_th6u5"]
 
 [node name="DialogPlayer" type="CanvasLayer"]
 process_mode = 3
@@ -73,7 +63,8 @@ offset_left = 53.0
 offset_top = 14.0
 offset_right = 267.0
 offset_bottom = 44.0
-label_settings = SubResource("LabelSettings_mxfw7")
+text = "some defolt deolt text some defolt fesolff flekwlomvolw momsodfmo meof"
+label_settings = ExtResource("8_rfoa3")
 autowrap_mode = 3
 
 [node name="NameLabel" type="Label" parent="TextBox"]
@@ -82,7 +73,8 @@ offset_left = 60.0
 offset_top = 129.0
 offset_right = 102.0
 offset_bottom = 140.0
-label_settings = SubResource("LabelSettings_or6hk")
+text = "Мэри"
+label_settings = ExtResource("9_th6u5")
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]

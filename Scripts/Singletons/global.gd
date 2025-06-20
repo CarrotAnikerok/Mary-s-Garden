@@ -6,8 +6,10 @@ var goal_sums: Array[int] = [0, 70, 200, 300]
 @export var plants_to_add: Array[String]
 var random_plant_to_add: String
 
-const TIME_OF_PERIOD = 3
-const NUMBER_OF_PHASES = 3
+#time of one phase in hours. in sum must be 9 hours
+const TIME_OF_PERIOD: float = 1.5
+
+const NUMBER_OF_PHASES: int = 6
 
 var current_scene = 1
 var phase_of_day = 0

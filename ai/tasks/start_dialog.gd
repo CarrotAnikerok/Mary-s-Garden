@@ -4,8 +4,9 @@ extends BTAction
 var is_dialog_over: bool = false
 
 func _enter():
-	SignulBus.emit_signal("display_dialog", dialog_name)
-	SignulBus.dialog_ended.connect(success)
+	SignulBus.emit_display_dialog(dialog_name)
+	#ТУПОЕ НЕОДНОТОННОЕ ФУ
+	Dialogic.timeline_ended.connect(success)
 	
 func _tick(delta):
 	if is_dialog_over:

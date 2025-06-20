@@ -50,7 +50,7 @@ place = Vector2(500, 108)
 script = ExtResource("3_yy0co")
 move_to = Vector2(366, 108)
 speed = 120.0
-character = "Evgeniy"
+character_name = ""
 
 [sub_resource type="BTWait" id="BTWait_e5lyv"]
 
@@ -65,7 +65,7 @@ duration = 0.5
 script = ExtResource("3_yy0co")
 move_to = Vector2(158, 108)
 speed = 120.0
-character = "Evgeniy"
+character_name = ""
 
 [sub_resource type="BTAction" id="BTAction_j81wh"]
 script = ExtResource("1_yy0co")
@@ -89,7 +89,7 @@ duration = 0.8
 script = ExtResource("3_yy0co")
 move_to = Vector2(104, 109)
 speed = 100.0
-character = "Evgeniy"
+character_name = ""
 
 [sub_resource type="BTWait" id="BTWait_nmm0a"]
 duration = 0.8
@@ -110,7 +110,7 @@ duration = 0.5
 script = ExtResource("3_yy0co")
 move_to = Vector2(500, 109)
 speed = 150.0
-character = "Evgeniy"
+character_name = ""
 
 [sub_resource type="BTAction" id="BTAction_22vnt"]
 script = ExtResource("4_1ffio")
