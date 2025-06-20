@@ -37,7 +37,7 @@ func _ready():
 	mary_sprite.visible = false
 	guest_sprite.visible = false
 	scene_text = load_scene_text()
-	#SignulBus.connect("display_dialog", Callable(self, "on_start_dialog"))
+	SignulBus.connect("display_dialog", Callable(self, "on_start_dialog"))
 
 
 func load_scene_text():
@@ -85,7 +85,7 @@ func finish():
 	player.dialog = false
 	await fin_timer.timeout
 	in_progress = false
-	#SignulBus.dialog_ended.emit()
+	SignulBus.dialog_ended.emit()
 	
 
 
@@ -133,8 +133,7 @@ func on_display_dialog(text_key):
 		dialog_block = dialog_part.pop_front()
 		selected_text = dialog_block["text"].duplicate()
 		show_text()
-
-
+		
 func on_start_dialog(text_key: String):
 	if text_key.length() == 0:
 		return

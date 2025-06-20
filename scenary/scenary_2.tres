@@ -27,13 +27,13 @@ value = SubResource("BBVariant_7rxww")
 script = ExtResource("5_vfwj6")
 move_to = Vector2(348, 108)
 speed = 140.0
-character_name = "Mark"
+character = "Mark"
 
 [sub_resource type="BTAction" id="BTAction_gnv6q"]
 script = ExtResource("5_vfwj6")
 move_to = Vector2(379, 108)
 speed = 120.0
-character_name = "Kris"
+character = "Kris"
 
 [sub_resource type="BTParallel" id="BTParallel_kqc8t"]
 num_successes_required = 2
@@ -87,13 +87,13 @@ dialog_name = "dialog_1_3"
 script = ExtResource("5_vfwj6")
 move_to = Vector2(500, 108)
 speed = 140.0
-character_name = ""
+character = "Mark"
 
 [sub_resource type="BTAction" id="BTAction_sgt50"]
 script = ExtResource("5_vfwj6")
 move_to = Vector2(500, 108)
 speed = 120.0
-character_name = ""
+character = "Kris"
 
 [sub_resource type="BTParallel" id="BTParallel_eh716"]
 num_successes_required = 2

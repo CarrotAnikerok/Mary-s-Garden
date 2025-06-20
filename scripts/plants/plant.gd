@@ -31,7 +31,7 @@ var dry_amount: float
 
 #changing individual plant parameteres
 var actual_light_amount: int
-var actual_light_time: float #in hours
+var actual_light_time: int #in hours
 var actual_water_coefficent: float
 var actual_humidity: float
 var actual_temperature: int
@@ -164,9 +164,9 @@ func can_be_perfect_logic():
 	return can_become_perfect
 
 
-func dry_logic(dry_amount_various: float):
-	if (actual_water_coefficent - dry_amount_various > 0):
-		actual_water_coefficent -= dry_amount_various
+func dry_logic(dry_amount: float):
+	if (actual_water_coefficent - dry_amount > 0):
+		actual_water_coefficent -= dry_amount
 	else:
 		actual_water_coefficent = 0
 
@@ -348,7 +348,7 @@ func is_light_bad():
 		#больше проверок богу проверок
 		#бля почему то проверка все равно ночью делается, надо разобраться...
 		
-func change_light_time(light_time_on: float):
+func change_light_time(light_time_on: int):
 	if actual_light_amount >= acceptable_light_amount[0]:
 		actual_light_time += light_time_on 
 	print("LIGHT TIMER right now for " + plant_name + " is " + str(actual_light_time))

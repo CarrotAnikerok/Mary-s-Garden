@@ -1,9 +1,0 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://s3q3nkop1o7m"]
-
-[ext_resource type="FontFile" uid="uid://b8pvdi5csuer8" path="res://resources/fonts/Blogger/Blogger_Sans-Medium.otf" id="1_lt06o"]
-
-[resource]
-line_spacing = 1.0
-font = ExtResource("1_lt06o")
-font_size = 10
-shadow_size = 0

@@ -1,8 +1,0 @@
-join mary (chill) leftmost
-mary (chill): Я говорю что-то.
-leave mary
-join arin (chill_good) rightmost
-arin (chill_good): Я тоже говорю что-то.
-[style]
-What.
-[end_timeline]

@@ -1,10 +1,9 @@
 extends Node
 
 var notes: Array[Dictionary]
-var phases: Array = ["Утро1", "Утро2", "День1", "День2", "Вечер1", "Вечер2"]
+var phases: Array = ["Утро", "День", "Вечер"]
 var notes_dict: Array[Dictionary]
  
-var prev_evening: String = "Конец прошлого дня"
 
 func _ready():
 	add_to_group("handbook_info")
@@ -38,7 +37,7 @@ func add_title(title):
 	
 func change_phase_title():
 	var i = global.phase_of_day + 1
-	if (i == global.NUMBER_OF_PHASES):
+	if (i == 3):
 		i = 0
 		change_day()
 	add_title(phases[i])
@@ -47,22 +46,21 @@ func change_phase_title():
 func change_day():
 	var i = 0
 	for note in notes:
-		#то что тут строка, это оч плоъо
-		if note.get("title") == phases[-1]:
+		if note.get("title") == "Вечер":
 			break
 		else:
 			i += 1
 			
 	for k in range(i):
-		print_debug(notes.pop_front())
-	notes[0].title = prev_evening
+		notes.pop_front()
+	notes[0].title = "Прошлый вечер"
 	
 
 func save_to_file(content):
 	var file = FileAccess.open("res://SAVES/file.json", FileAccess.WRITE)
 	file.store_line(content)
-
-
+	
+	
 func load_from(path):
 	if not FileAccess.file_exists(path):
 		return
@@ -75,13 +73,15 @@ func load_from(path):
 		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 	var data = json.data
 	print(data[1].name)
-
-
+			
+			
 func on_save_game(saved_data: Array[SavedData]):
 	var my_data = SavedNotebookData.new()
 	my_data.notes = notes
 	saved_data.append(my_data)
-
+	
 
 func on_load_game(saved_data: SavedData):
 	notes = saved_data.notes
+		
+	

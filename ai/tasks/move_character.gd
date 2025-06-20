@@ -2,12 +2,12 @@ extends BTAction
 
 @export var move_to: Vector2 = Vector2(100, 108)
 @export var speed: float = 100
-@export var character_name: String
+@export var character: String
 
 
 func _enter():
 	var ai = agent as AiController
-	var character = ai.characters.get_node(character_name)
+	var character = ai.characters.get_node(character)
 	
 	var target_pos: Vector2 = move_to
 	var current_pos: Vector2 = character.global_position
@@ -17,7 +17,7 @@ func _enter():
 	
 func _tick(_delta: float) -> Status:
 	var ai = agent as AiController
-	var character = ai.characters.get_node(character_name)
+	var character = ai.characters.get_node(character)
 	
 	var target_pos: Vector2 = move_to
 	var current_pos: Vector2 = character.global_position

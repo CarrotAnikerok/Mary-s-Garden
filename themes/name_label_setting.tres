@@ -1,7 +1,0 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bmb2njwqqlj6s"]
-
-[ext_resource type="FontFile" uid="uid://d2adfxafalg0u" path="res://resources/fonts/Neucha/Neucha-Regular.ttf" id="1_d4ojn"]
-
-[resource]
-font = ExtResource("1_d4ojn")
-font_size = 9

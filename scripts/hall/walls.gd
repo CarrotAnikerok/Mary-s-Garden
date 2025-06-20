@@ -8,10 +8,7 @@ var scenary_passed: bool = false
 var charac: Character
 
 
-
-
 func _input(event):
-	#that one scene with mark and kris
 	if is_in_wall_2 and event.is_action_pressed("ui_accept") and !scenary_passed:
 		print("emit scenary!")
 		ScenaryController.try_next_scenary()
